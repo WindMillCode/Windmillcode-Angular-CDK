@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "template",
+  "title": "WindmillCode Template Service Method Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the Service Method.",
+      "type": "string"
+    },
+    "entityName": {
+      "description": "If transformation type is paging or scrolling the name of the entity coming back from the server as page data or page rows .",
+      "type": "string",
+      "default":"entity"
+    },
+    "envFilePath": {
+      "type": "string",
+      "format": "path",
+      "description": "The environment file to update"
+    },
+    "serviceName": {
+      "type": "string",
+      "description": "The name of the service."
+    },
+    "apiRoute": {
+      "type": "string",
+      "description": "The http api route."
+    },
+    "scrollName": {
+      "type": "string",
+      "description": "If transformationType === 'scrolling' the name of the scrollPageObject",
+      "default":"placeholder"
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path where the service is.",
+      "$default": {
+        "$source": "workingDirectory"
+      }
+    },
+    "transformationType": {
+      "type": "string",
+      "description": "Whether to use regular transformation or page transformation ",
+      "default": "default",
+      "enum": ["default","paging"]
+    },
+    "httpMethod": {
+      "type": "string",
+      "description": "the http method for the service method (get,post,put,patch,delete,options,head) ",
+      "default": "post",
+      "enum": ["get", "post", "put", "patch", "delete", "options", "head"]
+    },
+    "useDataSourceStrategy": {
+      "type": "boolean",
+      "description": "Whether to use the datasource strategy for the service method",
+      "default": true
+    }
+   },
+  "required": [
+    "name","serviceName"
+  ]
+}

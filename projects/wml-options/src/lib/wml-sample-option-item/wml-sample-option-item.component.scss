@@ -1,0 +1,48 @@
+@import "../styles.scss";
+
+
+:host {
+  @mixin WmlSampleOptionItemBtn1{
+    background-color: $bs-dark;
+    label{
+      color: $bs-light;
+    }
+  }
+
+  &.WmlSampleOptionItemView{
+    display: block;
+    .WmlSampleOptionItem{
+      &Main{
+        &Pod{
+
+
+        }
+        &Btn {
+          &0 {
+            background-color: lighten($color: $bs-grey, $amount: 40);
+            border-radius: calc(80/16 * 1rem);
+            padding:calc(12/16 * 1rem) calc(16/16 * 1rem);
+            margin:0 calc(12/16 * 1rem) calc(12/16 * 1rem) 0 ;
+
+            label{
+              font-weight: bold;
+            }
+
+            &:hover{
+              @include WmlSampleOptionItemBtn1;
+              border:calc(1/16 * 1rem) solid $bs-tertiary;
+            }
+          }
+          &1{
+            @include WmlSampleOptionItemBtn1
+          }
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

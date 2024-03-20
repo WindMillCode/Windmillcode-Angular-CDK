@@ -1,0 +1,28 @@
+{
+    "dependencies": {
+        "@ngx-translate/core": ">=15.0.0",
+        "tslib": "^2.3.0"
+    },
+    "name": "@windmillcode/angular-wml-table-zero",
+    "peerDependencies": {
+        "@angular/common": "^17.0.0",
+        "@angular/core": "^17.0.0",
+        "@windmillcode/angular-wml-button-zero": "^17.3.0",
+        "@windmillcode/angular-wml-components-base": "^17.3.0",
+        "@windmillcode/angular-wml-field": "^17.3.0",
+        "@windmillcode/angular-wml-form": "^17.3.0",
+        "@windmillcode/angular-wml-infinite-dropdown": "^17.3.0",
+        "@windmillcode/angular-wml-input": "^17.3.0",
+        "@windmillcode/angular-wml-options": "^17.3.0",
+        "@windmillcode/angular-wml-popup": "^17.3.0",
+        "@windmillcode/angular-wml-select-zero": "^17.3.0"
+    },
+    "private": false,
+    "schematics": "",
+    "scripts": {
+        "analyze": "npx ng build -c production --stats-json && webpack-bundle-analyzer --port 9000 dist/angular-app-prod/stats.json",
+        "build": "npx ng build -c production",
+        "test": "npx ng test wml-table-zero --code-coverage"
+    },
+    "version": "17.3.0"
+}

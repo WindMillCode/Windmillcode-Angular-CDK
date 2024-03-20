@@ -1,0 +1,24 @@
+@import "../../../styles.scss";
+
+:host {
+
+
+  &.WmlTableZeroRowTypeView{
+    display: block;
+    height: 100%;
+    @include WmlTableZeroCtrlBackground;
+    .WmlTableZeroRowType{
+      &Main{
+        &Pod{
+
+
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

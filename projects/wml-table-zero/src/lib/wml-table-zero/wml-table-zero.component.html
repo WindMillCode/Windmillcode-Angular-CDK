@@ -1,0 +1,23 @@
+<div [class]="classPrefix('MainPod')">
+
+  <div [class]="classPrefix('Pod0')">
+      <wml-infinite-dropdown
+      [class]="classPrefix('Pod0Item0')"
+      [params]="params.tableControls">
+      </wml-infinite-dropdown>
+  </div>
+  <table [class]="classPrefix('Pod1')">
+    <tr
+    [ngStyle]="row.currentCpnt.trContainer.style"
+    *ngFor="let row of params.displayRows"
+    [class]="classPrefix('Pod1Item0')">
+      <wml-table-zero-item
+      [class]="classPrefix('Pod1Item1')"
+      [params]="row"
+      ></wml-table-zero-item>
+    </tr>
+
+  </table>
+
+</div>
+

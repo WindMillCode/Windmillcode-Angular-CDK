@@ -1,0 +1,56 @@
+<ng-container [formGroup]="params.wmlField.field.parentForm">
+  <input
+  [id]="params.input.id"
+  [style]="params.input.style"
+  [class]="classPrefix('MainPodInput0') + params.input.class"
+  [type]="params.type"
+  *ngIf="['input','password'].includes(params.type)"
+  [formControlName]="params.wmlField.field.formControlName"
+  (input)="triggerChange($event)"
+  [placeholder]="params.input.placeholder ?? '' | translate"
+  />
+
+  <textarea
+  [id]="params.textarea.id"
+  [style]="params.textarea.style"
+  [class]="classPrefix('MainPodInput1') + params.textarea.class"
+  *ngIf="params.type==='textarea' "
+  [formControlName]="params.wmlField.field.formControlName"
+  (input)="triggerChange($event)"
+  [placeholder]="params.textarea.placeholder ?? '' | translate"
+  ></textarea>
+
+  <input
+  [id]="params.range.id"
+  type="range"
+  [class]="params.range.class"
+  *ngIf="params.type==='range' "
+  [formControlName]="params.wmlField.field.formControlName"
+  (input)="triggerChange($event)" min="0" max="10"/>
+
+  <div
+  [id]="params.checkbox.id"
+  [class]="classPrefix('Pod0') + params.checkbox.class " *ngIf="params.type ==='checkbox'">
+    <label>
+      <input [type]="params.type" [formControlName]="params.wmlField.field.formControlName" (input)="triggerChange($event)"/>
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+      <span>{{( (params.checkbox.desc ?? params.checkboxDesc) | translate) ?? "Check as appropriate"}}</span>
+    </label>
+  </div>
+
+  <input
+    [min]="params.datetime.htmlMin"
+    [max]="params.datetime.htmlMax"
+    [id]="params.datetime.id"
+    [style]="params.datetime.style"
+    [class]="classPrefix('MainPodInput0') + params.datetime.class"
+    [type]="'datetime-local'"
+    *ngIf="params.type==='datetime'"
+    [formControlName]="params.wmlField.field.formControlName"
+    (input)="triggerChange($event)"
+    [placeholder]="params.datetime.placeholder ?? '' | translate"
+  />
+</ng-container>

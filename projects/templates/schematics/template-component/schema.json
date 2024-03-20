@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "template",
+  "title": "WindmillCode template Component Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the component.",
+      "type": "string"
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to create the component.",
+      "$default": {
+        "$source": "workingDirectory"
+      }
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "projectName"
+      }
+
+    },
+    "cpntType": {
+      "type": "string",
+      "description": "The type of component.",
+      "enum": ["default", "library","default-zero","library-zero"],
+      "default": "default"
+    },
+    "isIdIncluded":{
+      "type":"boolean",
+      "default":true,
+      "description": "Whether or not the component seclector gets added"
+    },
+    "isParamsChild":{
+      "type":"boolean",
+      "default":false,
+      "description":"determines wheter the component is present or container if its container it will get a params class as well as a @Input params"
+    },
+    "isPropsChild":{
+      "type":"boolean",
+      "default":false,
+      "description":"determines wheter the component is present or container if its container it will get a params class as well as a @Input params"
+    },
+    "standalone": {
+      "description": "Whether the generated component is standalone.",
+      "type": "boolean",
+      "default": false,
+      "x-user-analytics": 15
+    },
+    "styleType": {
+      "type": "string",
+      "description": "preset scss to choose from.",
+      "enum": ["type0","type1", "none"],
+      "default": "none"
+    }
+   },
+  "required": [
+    "name"
+  ]
+}

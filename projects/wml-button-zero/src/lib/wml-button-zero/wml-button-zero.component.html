@@ -1,0 +1,12 @@
+<button [id]="params.button.id"  (click)="params.button.click($event)" [class]="params.button.class" [ngStyle]="params.button.style">
+  <ng-container *ngFor="let icon of params.icons">
+    <ng-container *ngIf="icon.isPresent" >
+      <img [id]="icon.id" *ngIf="icon.type === 'img'" [src]=icon.src [alt]="icon.alt" [class]="icon.class" [ngStyle]="icon.style"/>
+      <i   [id]="icon.id" *ngIf="icon.type === 'icon'"  [class]="icon.class" [ngStyle]="icon.style"></i>
+    </ng-container>
+  </ng-container>
+  <span
+  *ngIf="params.text.isPresent"
+  [id]="params.text.id" [ngStyle]="params.text.style" [class]="params.text.class">{{ params.text.text! | translate}}</span>
+</button>
+

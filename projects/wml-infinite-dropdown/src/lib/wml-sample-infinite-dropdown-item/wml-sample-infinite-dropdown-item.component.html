@@ -1,0 +1,8 @@
+<p
+  (pointerenter)="$any(params).pointerenter($event)"
+  (click)="$any(params).click()"
+  [ngStyle]="params.style"
+  *ngIf="params.isPresent"
+  [class]="classPrefix('MainItem1')"
+  >{{$any(params).text | translate}}
+</p>

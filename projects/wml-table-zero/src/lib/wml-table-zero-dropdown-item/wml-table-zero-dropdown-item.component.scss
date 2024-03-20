@@ -1,0 +1,30 @@
+@import "../../../styles";
+
+wml-table-zero-dropdown-item {
+
+
+  &.WmlTableZeroDropdownItemView{
+    display: block;
+    .WmlTableZeroDropdownItem{
+      &Main{
+        &Pod{
+          background-color: $wml-secondary;
+          color:$wml-primary;
+          display:flex;
+          padding: .5rem 3rem
+        }
+        &Text {
+          &0 {
+            margin: 0 0 0 $spacing2;
+          }
+        }
+
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

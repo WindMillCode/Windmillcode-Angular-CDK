@@ -1,0 +1,20 @@
+{
+    "dependencies": {
+        "tslib": "^2.3.0"
+    },
+    "name": "@windmillcode/angular-templates",
+    "peerDependencies": {
+        "@angular/common": "^17.0.0",
+        "@angular/core": "^17.0.0",
+        "@windmillcode/angular-wml-components-base": "^17.3.0"
+    },
+    "private": false,
+    "schematics": "./schematics/collection.json",
+    "scripts": {
+        "build": "npx ng build && tsc -p tsconfig.schematics.json",
+        "linkbuild": "npx copyfiles  schematics/** ../../dist/templates/",
+        "postbuild": "npx copyfiles  schematics/collection.json schematics/*/schema.json schematics/*/files/** ../../dist/templates/",
+        "test": "npx ng test templates --code-coverage"
+    },
+    "version": "17.3.0"
+}

@@ -1,0 +1,22 @@
+
+
+:host {
+
+
+  &.WmlTabBodyView{
+    display: block;
+    .WmlTabBody{
+      &Main{
+        &Pod{
+          
+          
+        }
+      }
+      &Pod{
+        
+        &0{}
+      }
+    }
+  }
+
+}

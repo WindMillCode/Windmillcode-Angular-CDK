@@ -1,0 +1,76 @@
+@import "../styles";
+
+
+wml-chips-zero {
+
+
+  $chipIconColor:lighten($color: $wml-grey, $amount: 30);
+  &.WMLChipsZeroView{
+    display: block;
+    .WMLChipsZero{
+      &Main{
+        &Pod{
+          width:100%;
+          max-height:calc(250/16* 1rem);
+          padding: $spacing3 $spacing5;
+          border-radius: calc(5/16 * 1rem);
+          background-color: lighten($wml-grey,$amount:80);
+          @include FlexColumnCenter;
+          align-items: flex-start;
+        }
+      }
+      &Pod{
+
+        &0{
+          max-height: calc(250/16* 1rem);
+          overflow: auto;
+          display: flex;
+          flex-flow:row wrap;
+
+          &Item {
+            &0 {
+              background-color: $chipIconColor;
+              padding: $spacing3;
+              border-radius: calc(100/16 * 1rem);
+              color: $wml-dark;
+              margin: 0 $spacing5 $spacing5 0;
+              word-break: break-all;
+
+              button{
+                border:none;
+
+                i{
+                  color:$chipIconColor;
+                }
+                background-color:$wml-grey;
+                width: $spacing5;
+                border-radius: 100%;
+              }
+            }
+          }
+        }
+
+        &1{
+          width: 100%;
+          &Input {
+            &0 {
+              padding: $spacing4;
+              width: 100%;
+              height: auto;
+              min-height: calc(1/16 * 1rem);
+              overflow: hidden;
+              border:none;
+              background-color: transparent;
+              &::placeholder {
+                margin:0;
+                padding:0;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+}

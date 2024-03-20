@@ -1,0 +1,34 @@
+
+
+
+
+  @import '../../../styles';
+
+
+
+
+
+
+  wml-carousel-zero-sample-item {
+
+
+
+  &.WmlCarouselZeroSampleItemView{
+    display: block;
+    height:100%;
+    .WmlCarouselZeroSampleItem{
+      &Main{
+        &Pod{
+          
+          
+          height:100%;
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

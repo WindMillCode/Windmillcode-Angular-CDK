@@ -1,0 +1,54 @@
+ @import '../../../styles';
+
+
+wml-select-zero-select {
+
+
+
+  &.WmlSelectZeroSelectView{
+    display: block;
+    .WmlSelectZeroSelect{
+      &Main{
+        &Pod{
+
+
+        }
+
+
+      }
+      &Pod{
+
+        &0{
+          display: flex;
+          background: var(--wml-select-zero-secondary-gradient);
+          border-bottom: calc(1/16 * 1rem) solid rgba(var(--wml-select-zero-primary));
+          *{
+            color:rgba(var(--wml-select-zero-primary));
+          }
+          &Item {
+            &0 {
+              width: calc(39.5/10.6 * 1rem);
+              flex:  0 0 calc(39.5/10.6 * 1rem);
+              border-left: calc(1/16 * 1rem) solid rgba(var(--wml-select-zero-primary));
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+          &Icon {
+            &0 {
+              font-size: calc(28/16 * 1rem);
+            }
+          }
+          &Text {
+            &0 {
+              flex:  1 1 90%;
+              padding:$wml-select-zero-spacing3 $wml-select-zero-spacing8;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

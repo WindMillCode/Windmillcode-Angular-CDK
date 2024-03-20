@@ -1,0 +1,16 @@
+{
+  "name": "@windmillcode/profile-detail-card",
+  "version": "16.2.80",
+  "peerDependencies": {
+    "@angular/common": ">14.2.7",
+    "@angular/core": ">14.2.7",
+    "@angular/material": ">=13.3.9",
+    "@windmillcode/wml-components-base": ">=0.0.4"
+  },
+  "scripts": {
+    "build": "npx ng build"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

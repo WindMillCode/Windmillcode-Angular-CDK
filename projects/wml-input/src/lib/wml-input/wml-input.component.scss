@@ -1,0 +1,32 @@
+$spacing5: calc(16/16* 1rem);
+$spacing3: calc(8/16* 1rem);
+$spacing12: calc(128/16* 1rem);
+
+:host {
+
+
+  &.WMLInputView{
+    .WMLInput{
+      &Main{
+        &Input{
+          &0{}
+          &1{
+            height: $spacing12;
+            padding:$spacing3;
+          }
+        }
+      }
+      &Pod {
+        &0 {
+          display: flex;
+          justify-content: flex-start;
+          *{
+            margin: 0 $spacing5 0  0;
+          }
+        }
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,76 @@
+@import '../../../styles';
+@import "wml-table-zero.component.phone.scss";
+@import '../../../media_queries';
+
+
+
+
+wml-table-zero {
+  &.WmlTableZeroView{
+
+    display: block;
+    height: 100%;
+    position: relative;
+    .WmlTableZero{
+      &Main{
+        &Pod{
+          display: flex;
+          height: 100%;
+        }
+      }
+      &Pod{
+        &0{
+          flex:20%;
+          border: calc(4/16 * 1rem) solid $wml-black;
+          border-radius:  $wml-border-radius0 0 0 $wml-border-radius0 ;
+          display: flex;
+          position: relative;
+          @media #{$mobile}{
+            flex: 50%;
+          }
+          &Item {
+            &0{
+              width:100%;
+
+            }
+
+          }
+        }
+        &1{
+          overflow:hidden auto;
+          flex:80%;
+          border: calc(4/16 * 1rem) solid $wml-black;
+          border-left: none;
+          border-radius: 0 $wml-border-radius0  $wml-border-radius0 0 ;
+          @media #{$mobile}{
+            flex: 50%;
+          }
+          padding:0 $spacing5;
+          display: flex;
+          flex-flow: row wrap;
+          align-content: flex-start;
+
+          &Item {
+            &0 {
+              padding:$spacing3;
+              // width: ;
+              flex: 0 1 25%;
+              @media #{$tablet}{
+                flex: 0 1 50%;
+              }
+              @media #{$mobile}{
+                flex: 0 1 100%;
+              }
+              min-height: calc(320/16 * 1rem);
+            }
+            &1{
+              height: 100%;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+}

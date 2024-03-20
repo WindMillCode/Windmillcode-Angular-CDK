@@ -1,0 +1,29 @@
+@import '../../../styles';
+@import "./wml-select-zero.component.global.scss";
+
+wml-select-zero {
+
+
+  &.WMLSelectZeroView{
+    display: block;
+    .WMLSelectZero{
+      &Main{
+        &Pod{
+
+
+        }
+
+        &State {
+          &0 {
+            opacity: .5;
+          }
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

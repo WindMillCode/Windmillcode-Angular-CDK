@@ -1,0 +1,74 @@
+@import '../../../styles';
+
+
+:host {
+
+
+  &.WmlTableZeroSampleCardView{
+    display: block;
+    height: 100%;
+    .WmlTableZeroSampleCard{
+      &Main{
+        &Pod{
+          overflow:hidden auto;
+
+          background-color: $wml-white;
+          border-radius: $wml-border-radius0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          border-top: calc(8/16 * 1rem) solid $wml-primary;
+          border-bottom: calc(16/16 * 1rem) solid $wml-primary;
+          padding:$spacing3;
+          height: 100%;
+          max-height: calc(200/10.6 * 1rem);
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+
+        &Img {
+          &0 {
+            width: calc(150/16 * 1rem);
+            height: auto;
+            align-self: center;
+          }
+        }
+
+        &Title {
+          &0 {
+            margin:$spacing3 0 0 0;
+            font-size: calc(22/16 * 1rem);
+            color:$wml-black;
+          }
+          &1 {
+            color:$wml-secondary;
+            font-size: calc(18/16 * 1rem);
+          }
+        }
+
+        &Text {
+          &0 {
+            align-self: flex-end;
+            color:$wml-black;
+          }
+        }
+
+        &Item {
+          &0 {
+            flex:1 0 auto;
+            display: flex;
+            flex-direction:column ;
+            justify-content: flex-end;
+          }
+        }
+      }
+
+
+      &Pod{
+        &0{}
+      }
+    }
+  }
+
+}

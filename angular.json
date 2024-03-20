@@ -1,0 +1,808 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "cli": {
+        "analytics": "29a80f52-325e-4cb9-933b-635e8c0850e1"
+    },
+    "newProjectRoot": "projects",
+    "projects": {
+        "profile-detail-card": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/profile-detail-card/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/profile-detail-card/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/profile-detail-card/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/profile-detail-card/src/test.ts",
+                        "polyfills": [],
+                        "tsConfig": "projects/profile-detail-card/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "lib",
+            "projectType": "library",
+            "root": "projects/profile-detail-card",
+            "sourceRoot": "projects/profile-detail-card/src"
+        },
+        "templates": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/templates/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/templates/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/templates/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/templates/src/test.ts",
+                        "polyfills": [],
+                        "tsConfig": "projects/templates/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "lib",
+            "projectType": "library",
+            "root": "projects/templates",
+            "sourceRoot": "projects/templates/src"
+        },
+        "wml-accordion-zero": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-accordion-zero/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-accordion-zero/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-accordion-zero/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-accordion-zero/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-accordion-zero/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-accordion-zero",
+            "sourceRoot": "projects/wml-accordion-zero/src"
+        },
+        "wml-button-zero": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-button-zero/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-button-zero/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-button-zero/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-button-zero/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-button-zero/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-button-zero",
+            "sourceRoot": "projects/wml-button-zero/src"
+        },
+        "wml-carousel-zero": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-carousel-zero/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-carousel-zero/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-carousel-zero/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-carousel-zero/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-carousel-zero/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-carousel-zero",
+            "sourceRoot": "projects/wml-carousel-zero/src"
+        },
+        "wml-chips-zero": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-chips-zero/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-chips-zero/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-chips-zero/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-chips-zero/src/test.ts",
+                        "polyfills": [],
+                        "tsConfig": "projects/wml-chips-zero/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "lib",
+            "projectType": "library",
+            "root": "projects/wml-chips-zero",
+            "sourceRoot": "projects/wml-chips-zero/src"
+        },
+        "wml-components-base": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-components-base/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-components-base/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-components-base/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-components-base/src/test.ts",
+                        "polyfills": [],
+                        "tsConfig": "projects/wml-components-base/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "lib",
+            "projectType": "library",
+            "root": "projects/wml-components-base",
+            "sourceRoot": "projects/wml-components-base/src"
+        },
+        "wml-field": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-field/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-field/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-field/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-field/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-field/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-field",
+            "sourceRoot": "projects/wml-field/src"
+        },
+        "wml-file-manager": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-file-manager/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-file-manager/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-file-manager/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-file-manager/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-file-manager/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-file-manager",
+            "sourceRoot": "projects/wml-file-manager/src"
+        },
+        "wml-form": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-form/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-form/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-form/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-form/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-form/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-form",
+            "sourceRoot": "projects/wml-form/src"
+        },
+        "wml-infinite-dropdown": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-infinite-dropdown/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-infinite-dropdown/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-infinite-dropdown/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-infinite-dropdown/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-infinite-dropdown/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-infinite-dropdown",
+            "sourceRoot": "projects/wml-infinite-dropdown/src"
+        },
+        "wml-input": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-input/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-input/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-input/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-input/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-input/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-input",
+            "sourceRoot": "projects/wml-input/src"
+        },
+        "wml-mobile-nav-zero": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-mobile-nav-zero/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-mobile-nav-zero/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-mobile-nav-zero/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-mobile-nav-zero/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-mobile-nav-zero/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-mobile-nav-zero",
+            "sourceRoot": "projects/wml-mobile-nav-zero/src"
+        },
+        "wml-notify": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-notify/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-notify/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-notify/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-notify/src/test.ts",
+                        "polyfills": [],
+                        "tsConfig": "projects/wml-notify/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "lib",
+            "projectType": "library",
+            "root": "projects/wml-notify",
+            "sourceRoot": "projects/wml-notify/src"
+        },
+        "wml-options": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-options/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-options/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-options/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-options/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-options/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-options",
+            "sourceRoot": "projects/wml-options/src"
+        },
+        "wml-panel": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-panel/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-panel/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-panel/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-panel/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-panel/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-panel",
+            "sourceRoot": "projects/wml-panel/src"
+        },
+        "wml-penrose": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-penrose/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-penrose/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-penrose/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-penrose/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-penrose/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-penrose",
+            "sourceRoot": "projects/wml-penrose/src"
+        },
+        "wml-popup": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-popup/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-popup/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-popup/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-popup/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-popup/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-popup",
+            "sourceRoot": "projects/wml-popup/src"
+        },
+        "wml-select-zero": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-select-zero/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-select-zero/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-select-zero/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-select-zero/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-select-zero/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-select-zero",
+            "sourceRoot": "projects/wml-select-zero/src"
+        },
+        "wml-slicebox": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-slicebox/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-slicebox/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-slicebox/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-slicebox/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-slicebox/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-slicebox",
+            "sourceRoot": "projects/wml-slicebox/src"
+        },
+        "wml-table-zero": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-table-zero/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-table-zero/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-table-zero/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-table-zero/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-table-zero/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-table-zero",
+            "sourceRoot": "projects/wml-table-zero/src"
+        },
+        "wml-tabs": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-tabs/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-tabs/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-tabs/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-tabs/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-tabs/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-tabs",
+            "sourceRoot": "projects/wml-tabs/src"
+        },
+        "wml-toggle-zero": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-toggle-zero/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-toggle-zero/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-toggle-zero/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wml-toggle-zero/src/test.ts",
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
+                        "tsConfig": "projects/wml-toggle-zero/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "wml",
+            "projectType": "library",
+            "root": "projects/wml-toggle-zero",
+            "sourceRoot": "projects/wml-toggle-zero/src"
+        },
+        "wmlComponents": {
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "configurations": {
+                        "development": {
+                            "tsConfig": "projects/wml-components/tsconfig.lib.json"
+                        },
+                        "production": {
+                            "tsConfig": "projects/wml-components/tsconfig.lib.prod.json"
+                        }
+                    },
+                    "defaultConfiguration": "production",
+                    "options": {
+                        "project": "projects/wml-components/ng-package.json"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wmlComponents/src/test.ts",
+                        "polyfills": [],
+                        "tsConfig": "projects/wml-components/tsconfig.spec.json"
+                    }
+                }
+            },
+            "prefix": "lib",
+            "projectType": "library",
+            "root": "projects/wml-components",
+            "sourceRoot": "projects/wml-components/src"
+        }
+    },
+    "version": 1
+}

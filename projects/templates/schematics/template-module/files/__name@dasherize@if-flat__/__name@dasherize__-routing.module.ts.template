@@ -1,0 +1,23 @@
+import { NgModule } from '@angular/core';
+import { Route, RouterModule, Routes } from '@angular/router';<% if (lazyRoute) { %>
+import { <%= classify(componentName) %>Component } from './<%= dasherize(componentName) %>/<%= dasherize(componentName) %>.component';<% } %>
+import { addPageTitlesToRoute } from '@core/utility/route-utils';
+
+let children:Route["children"] = [
+
+]
+
+children = addPageTitlesToRoute(children)
+
+const layoutRoutes: Routes = [
+<% if (lazyRoute) { %>{
+  path: '',
+  component: <%= classify(componentName) %>Component,
+  children
+}<% } %>];
+
+@NgModule({
+  imports: [RouterModule.for<%= routingScope %>(layoutRoutes)],
+  exports: [RouterModule]
+})
+export class <%= classify(name) %>RoutingModule { }

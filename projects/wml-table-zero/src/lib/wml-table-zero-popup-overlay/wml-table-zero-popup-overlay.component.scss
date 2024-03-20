@@ -1,0 +1,24 @@
+@import '../../../styles';
+
+:host {
+
+
+  &.WmlTableZeroPopupOverlayView{
+    display: block;
+    .WmlTableZeroPopupOverlay{
+      &Main{
+        &Pod{
+          position: fixed;
+          inset:0;
+          background-color: $wml-overlay-0;
+
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

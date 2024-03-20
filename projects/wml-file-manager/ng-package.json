@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/wml-file-manager",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "assets": [
+    "src/lib/styles.scss",
+    "src/lib/fontawesome.scss"
+  ],
+  "allowedNonPeerDependencies": [
+    "@ngx-translate/core"
+  ]
+}

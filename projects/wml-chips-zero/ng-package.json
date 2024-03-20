@@ -1,0 +1,16 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/wml-chips-zero",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "assets": [
+    "src/lib/styles.scss",
+    "src/lib/material.scss",
+    "src/lib/fontawesome.scss"
+  ],
+  "allowedNonPeerDependencies": [
+    "@angular/material",
+    "@ngx-translate/core"
+  ]
+}

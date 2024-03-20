@@ -1,0 +1,21 @@
+@import '../../../styles';
+
+:host {
+
+  &.WmlTableZeroCardItemView{
+    display: block;
+    .WmlTableZeroCardItem{
+      &Main{
+        &Pod{
+          height: 100%;
+
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

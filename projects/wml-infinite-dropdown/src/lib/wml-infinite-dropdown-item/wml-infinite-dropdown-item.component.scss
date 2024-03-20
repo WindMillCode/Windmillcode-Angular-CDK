@@ -1,0 +1,24 @@
+
+@import '../../../styles';
+
+wml-infinite-dropdown-item {
+
+
+  &.WmlInfiniteDropdownItemView{
+    display: block;
+    @include WMLInfiniteDropdownCursorPointer0;
+    .WmlInfiniteDropdownItem{
+      &Main{
+        &Pod{
+
+
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

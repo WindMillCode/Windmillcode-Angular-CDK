@@ -1,0 +1,22 @@
+{
+    "dependencies": {
+        "@angular/material": ">=16.0.0",
+        "@ngx-translate/core": ">=15.0.0",
+        "tslib": "^2.3.0"
+    },
+    "name": "@windmillcode/angular-wml-chips-zero",
+    "peerDependencies": {
+        "@angular/animations": "^17.0.0",
+        "@angular/cdk": "^17.0.0",
+        "@angular/common": "^17.0.0",
+        "@angular/core": "^17.0.0",
+        "@windmillcode/angular-wml-components-base": "^17.3.0"
+    },
+    "private": false,
+    "schematics": "",
+    "scripts": {
+        "build": "npx ng build",
+        "test": "npx ng test wml-chips-zero --code-coverage"
+    },
+    "version": "17.3.0"
+}

@@ -1,0 +1,27 @@
+<div (keydown.enter)="add($event)"  [class]="classPrefix('MainPod')">
+  <ul [class]="classPrefix('Pod0')"  #chipGrid [attr.aria-label]="params.userInputsAriaLabel | translate">
+    <li [class]="classPrefix('Pod0Item0')" *ngFor="let fruit of params.userInputs" (removed)="remove(fruit)">
+      {{fruit}}
+      <button (click)="remove(fruit)"  [attr.aria-label]="params.removeChipAriaLabel | translate">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </li>
+  </ul>
+  <div [class]="classPrefix('Pod1')">
+    <textarea
+    #myTextArea
+    (input)="resizeBasedOnTextContent()"
+    [ngStyle]="textAreaStyle"
+    rows =1
+    [class]="classPrefix('Pod1Input0')"
+    [placeholder]="params.placeholder | translate"  [formControl]="fruitCtrl"
+    [matAutocomplete]="auto"></textarea>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let value of filteredValues | async" [value]="value">
+      {{value | translate}}
+    </mat-option>
+  </mat-autocomplete>
+  </div>
+
+
+</div>

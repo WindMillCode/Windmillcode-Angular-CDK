@@ -1,0 +1,23 @@
+@import '../../../styles';
+
+:host {
+
+
+  &.WmlTableZeroSelectPageView{
+    display: block;
+    @include WmlTableZeroCtrlBackground;
+    .WmlTableZeroSelectPage{
+      &Main{
+        &Pod{
+
+        }
+      }
+      &Pod{
+        &0{
+
+        }
+      }
+    }
+  }
+
+}

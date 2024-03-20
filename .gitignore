@@ -1,0 +1,11 @@
+node_modules
+.angular
+dist
+site-packages
+docs/feature-requests/angular-cli/.git
+npm-registry/node_modules
+angular-libraries\dist
+yarn.lock
+package-lock.json
+yarn-error.log
+coverage

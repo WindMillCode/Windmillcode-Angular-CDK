@@ -1,0 +1,21 @@
+<div [class]="classPrefix('MainPod')">
+  <div [class]="classPrefix('MainItem0')">
+    <div
+      *ngFor="let option of $any(params).options; let i = index"
+      (pointerleave)="$any(option).pointerleave($event)"
+      [class]="classPrefix('MainItem3')">
+
+      <wml-infinite-dropdown-item
+      [class]="classPrefix('MainItem1')"
+      [params]="option"></wml-infinite-dropdown-item>
+
+      <wml-infinite-dropdown
+
+      [ngStyle]="$any(option).dropdown.style"
+      [class]="classPrefix('MainItem2') + ' '+ $any(option).dropdown.class"
+      *ngIf="$any(option).dropdown"
+      [params]="$any(option).dropdown"></wml-infinite-dropdown>
+    </div>
+
+  </div>
+</div>

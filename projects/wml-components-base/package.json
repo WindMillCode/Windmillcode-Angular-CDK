@@ -1,0 +1,19 @@
+{
+    "dependencies": {
+        "tslib": ">2.3.0"
+    },
+    "name": "@windmillcode/angular-wml-components-base",
+    "peerDependencies": {
+        "@angular/common": "^17.0.0",
+        "@angular/core": "^17.0.0",
+        "@ngx-translate/core": ">=15.0.0",
+        "@ngx-translate/http-loader": ">=8.0.0"
+    },
+    "private": false,
+    "schematics": "",
+    "scripts": {
+        "build": "ng build",
+        "test": "npx ng test wml-components-base --code-coverage"
+    },
+    "version": "17.3.0"
+}

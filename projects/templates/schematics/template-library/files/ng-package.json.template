@@ -1,0 +1,17 @@
+{
+  "$schema": "<%= relativePathToWorkspaceRoot %>/node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "<%= relativePathToWorkspaceRoot %>/<%= distRoot %>",
+  "lib": {
+    "entryFile": "src/<%= entryFile %>.ts"
+  },
+  "assets": [
+    "styles.scss",
+    "media_queries.scss",
+    "spacing.scss",
+    "common.scss",
+    "color_pallete.scss"
+  ],
+  "allowedNonPeerDependencies": [
+    "@ngx-translate/core"
+  ]
+}

@@ -1,0 +1,44 @@
+// testing
+import { TestBed } from '@angular/core/testing';
+import { wmlTestUtils } from '@core/utility/test-utils/test-utils';
+import { resetImports } from '@core/utility/test-utils/mock-imports';
+import { resetProviders } from '@core/utility/test-utils/mock-providers';
+
+
+// services
+import { UtilityService } from '@core/utility/utility.service';
+
+import { <%= classify(name) %>Service } from './<%= dasherize(name) %>.service';
+
+describe('<%= classify(name) %>Service', () => {
+  let service: <%= classify(name) %>Service;
+  let utilService:UtilityService
+
+  // mock-api-result-to-spec-file (IMPT DONT DELETE THIS LINE)
+
+  beforeEach(() => {
+    resetImports()
+    resetProviders(<%= classify(name) %>Service)
+    service = wmlTestUtils.configureTestingModuleForServices(<%= classify(name) %>Service)
+    utilService =TestBed.inject(UtilityService)
+
+    // mock-add-spies-to-spec-file (IMPT DONT DELETE THIS LINE)
+    
+    spyOn(service.http,"get").and.callThrough()
+    spyOn(service.http,"post").and.callThrough()
+  });
+
+  describe("init", () => {
+
+    it("should create", () => {
+      expect(service).toBeTruthy()
+    })
+
+    it("should have all values initalize properly", () => {
+    })
+
+    it("should have all properties be the correct class instance", () => {
+
+    })
+  })
+});

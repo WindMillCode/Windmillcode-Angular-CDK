@@ -1,0 +1,31 @@
+@import '../../../styles';
+
+
+:host {
+
+
+  &.WmlTableZeroPageSizeView{
+    display: block;
+    @include WmlTableZeroCtrlBackground;
+
+    .WmlTableZeroPageSize{
+      &Main{
+        &Pod{
+
+
+        }
+
+        &Form {
+          &0 {
+            margin:$spacing7 0 0 0;
+          }
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

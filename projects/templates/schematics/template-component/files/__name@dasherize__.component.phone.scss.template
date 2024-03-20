@@ -1,0 +1,5 @@
+#root <%= dasherize(name) %>{
+  @media #{$mobile}{
+
+  }
+}

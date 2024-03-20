@@ -1,0 +1,17 @@
+
+
+:host {
+
+
+  &.WmlNotifyMsgView{
+    .WmlNotifyMsg{
+      &Main{
+        &Pod{}
+      }
+      &Pod{
+        &0{}
+      }
+    }
+  }
+
+}

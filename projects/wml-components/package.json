@@ -1,0 +1,11 @@
+{
+  "name": "wml-components",
+  "version": "16.2.80",
+  "peerDependencies": {
+    "@angular/common": "^14.1.0",
+    "@angular/core": "^14.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

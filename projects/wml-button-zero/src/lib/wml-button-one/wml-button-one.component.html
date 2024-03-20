@@ -1,0 +1,8 @@
+<button  *ngIf=params.btnIsPresent (click)="params.click($event)" [class]="params.btnClass" [ngStyle]="params.btnStyle">
+  <ng-container *ngIf="params.iconIsPresent" >
+    <img *ngIf="params.iconType === 'img'" [src]=params.iconSrc [alt]="params.iconAlt" [class]="params.iconClass" />
+    <i *ngIf="params.iconType === 'icon'"  [class]="params.iconClass"></i>
+  </ng-container>
+  <span [ngStyle]="params.style" [class]="params.class">{{ params.text | translate}}</span>
+</button>
+

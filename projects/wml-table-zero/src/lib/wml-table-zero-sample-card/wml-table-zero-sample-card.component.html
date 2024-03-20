@@ -1,0 +1,9 @@
+<div (click)="params.container.click($event)" [class]="classPrefix('MainPod')">
+  <img [class]="classPrefix('MainImg0')" [src]=params.img.src [alt]="params.img.alt | translate" />
+  <div [class]="classPrefix('MainItem0')">
+    <h3 [class]="classPrefix('MainTitle0')">{{ $any(params.title.text)  | translate}}</h3>
+    <h4 [class]="classPrefix('MainTitle1')">{{ $any(params.subtitle.text)  | translate}}</h4>
+    <p [class]="classPrefix('MainText0')">{{ $any(params.price.text)  | translate}}</p>
+  </div>
+
+</div>

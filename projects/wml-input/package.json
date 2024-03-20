@@ -1,0 +1,20 @@
+{
+    "dependencies": {
+        "@ngx-translate/core": ">=15.0.0",
+        "tslib": "^2.3.0"
+    },
+    "name": "@windmillcode/angular-wml-input",
+    "peerDependencies": {
+        "@angular/common": "^17.0.0",
+        "@angular/core": "^17.0.0",
+        "@windmillcode/angular-wml-components-base": "^17.3.0",
+        "@windmillcode/angular-wml-field": "^17.3.0"
+    },
+    "private": false,
+    "schematics": "",
+    "scripts": {
+        "build": "npx ng build",
+        "test": "npx ng test wml-input --code-coverage"
+    },
+    "version": "17.3.0"
+}

@@ -1,0 +1,10 @@
+<div class="notification-bar-wrapper">
+  <div (transitionend)="manageTransition($event,notification)" *ngFor="let notification of notifications; let index=index"
+    [ngStyle]="notification.style"
+    [class]="'notification-bar notification-bar-' + notification.type ">
+    <button *ngIf="notification.closeable" class="notification-close-button"
+      (click)="onClose(notification, index)">X</button>
+    <div class="notification-bar-message">
+      <wml-notify-msg [notify]="notification"></wml-notify-msg>
+    </div>
+  </div>

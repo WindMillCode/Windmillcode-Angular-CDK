@@ -1,0 +1,31 @@
+.toggle-container.boo & {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://assets.codepen.io/4175254/boo-face.png');
+    background-size: (14 * 100 / 22 * 1%) (12 * 100 / 22 * 1%);
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 em(-2px) em(4px) rgb(0 0 0 / .2);
+    image-rendering: pixelated;
+    opacity: 0;
+    transition: opacity .2s linear;
+
+    @at-root {
+      .toggle-container.boo > .WMLToggleZeroMainInput0:checked + .toggle-track > .toggle-thumb::after {
+        opacity: 1;
+      }
+
+      @media (hover: hover) {
+        .toggle-container.boo > .WMLToggleZeroMainInput0:hover + .toggle-track > .toggle-thumb::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

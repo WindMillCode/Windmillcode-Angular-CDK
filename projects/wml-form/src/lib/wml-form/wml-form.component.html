@@ -1,0 +1,10 @@
+<form [class]="classPrefix('MainPod')" (ngSubmit)="silenceSubmitAction($event)">
+  <section [style]="section.style"  [class]="classPrefix('Pod0')" *ngFor="let section of params.displayFields">
+    <div [class]="classPrefix('Pod0Item0')" *ngFor="let field of section.value">
+      <div [class]="classPrefix('Pod0Item1') + ' glassmorphism'" *ngIf="field.self.type === 'wml-card'">
+        <wml-field [field]="field"></wml-field>
+      </div>
+      <wml-field [field]="field" *ngIf="field.self.type === 'standalone'"></wml-field>
+    </div>
+  </section>
+</form>
