@@ -1,3 +1,9 @@
+# Overview
+
+
+The Windmillcode Angular Schematic library serves as a foundational toolkit for Angular web application development, establishing a solid baseline from which developers can construct and expand their projects. Central to this library is the concept of WMLUIProperty, a fundamental element that encapsulates the essence of web application components, down to the finest detail. This library not only streamlines the development process by providing pre-defined subclasses like WMLRoute for routing, WMLView for dynamic components, and WMLAnimateUIProperty for CSS animations but also ensures consistency and scalability across your application. Dive into the documentation to explore how these building blocks can be leveratively orchestrated to create robust, maintainable, and dynamic web applications.
+
+
 # Changelog
 
 ## 0.8.0
@@ -292,7 +298,7 @@ and instead of params now we have props
 [UPDATE] In the index.ts file, updated the deprecated option warning from 'isParamsChild' to 'isPropsChild' and removed a console.log statement.
 [BREAKING CHANGE] Changed the default value in the schema.json for the 'preset scss' option from 'type0' to 'none'.
 
-,
+
 ## v17.2.4003 [3/13/24]
  * updated package to conform with @windmillcode/angular-wml-components-base   ,
 ## v17.2.4004 [3/13/24]
