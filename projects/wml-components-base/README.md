@@ -5,6 +5,13 @@ all those features are encapsulated into WMLUIProperty
 then there are subclasses like WMLRoute for routes WMLView for dynamic compoennts and WMLAnimateUIProperty for css animations
 check out the docs below!
 
+# Installation
+
+```bash
+npm install -s @windmillcode/angular-wml-components-base
+
+```
+
 # Docs
 
 ## WMLUIProperty

@@ -6,7 +6,7 @@ The project is still in beta because we want to make fundamental changes to our 
 
 ## Features
 
-- **Constant and conforming updates** : For every angular version  we create a new version of the library. They based on @angular-core  This means that you can be sure that the library is always up to date with the latest angular version. down to the patch version. Dont believe use check a packages CHANGELOG.md file.
+- **Constant and conforming updates** : Since around Angular 16.2 for every angular version  we create a new version of the library. They based on @angular-core  This means that you can be sure that the library is always up to date with the latest angular version. down to the patch version. Dont believe use check a packages CHANGELOG.md file.
 
 
 - **Extensive Component Collection**: Our library includes a wide array of components, ranging from UI elements like buttons and input fields to complex constructs like carousels and dropdowns. Each component is designed to be modular, making it easy to integrate into your existing Angular projects.
@@ -22,93 +22,92 @@ The Windmillcode Angular Library offers a diverse range of components, each desi
 
 
 
-1. **WML Components Base**:
+1. **[WML Components Base](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-components-base)**:
 * PRODUCTION READY
 This is the foundational package that our whole library focuses on. Its foundation is the WMLUIProperty the very basic building block of our Angular Application. From here the basis of pagination, animation ,dynamic components, and more are built.
 
 
-2. **Templates**:
+2. **[Templates](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/templates)**:
 * BETA
-A set of predefined templates or layout patterns that can be reused across your application. These templates could range from simple UI sections to complex page layouts.
+Our own angular schematics to generate Angular classes according to our angular project template
 
-3. **WML Accordion Zero**:
+3. [**WML Accordion Zero**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-accordion-zero):
 * BETA
 An accordion component that allows you to display content in a collapsible format. It's useful for FAQs, lists, or any content that benefits from a compact presentation.
 
-4. **WML Button Zero**:
+4. [**WML Button Zero**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-button-zero):
 * BETA
 A customizable button component that can be used across your application, ensuring consistency and themability.
 
-5. **WML Carousel Zero**:
+5. [**WML Carousel Zero**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-carousel-zero):
 * BETA
 A carousel component that enables the display of multiple items in a sliding or rotating fashion, perfect for galleries or showcasing multiple products.
 
-6. **WML Chips Zero**:
+6. [**WML Chips Zero**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-chips-zero):
 * BETA
 A component that represents input, attributes, or actions as compact elements, commonly used for tags, contact information, or interactive elements.
 
-
-8. **WML Field**:
+8. [**WML Field**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-field):
 * BETA
 A field component, potentially for forms, providing a standardized way to input data.
 
-9. **WML File Manager**:
+9. [**WML File Manager**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-file-manager  ):
 * BETA
 A comprehensive component for handling file interactions, including uploading, downloading, and displaying file information.
 
-10. **WML Form**:
+10. [**WML Form**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-form):
 * BETA
 A component or set of components designed to create consistent and functional forms, including various form controls.
 
-11. **WML Infinite Dropdown**:
+11. [**WML Infinite Dropdown**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-infinite-dropdown):
 * BETA
 A dropdown component that supports infinite scrolling, ideal for scenarios where you need to handle a large set of selectable options.
 
-12. **WML Input**:
+12. [**WML Input**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-input):
 * BETA
 A versatile input component for forms, providing a uniform way to collect user input.
 
-13. **WML Mobile Nav Zero**:
+13. [**WML Mobile Nav Zero**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-mobile-nav-zero):
 * BETA
 A navigation component designed specifically for mobile user interfaces, providing an optimized menu for smaller screens.
 
-14. **WML Notify**:
+14. [**WML Notify**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-notify):
 * BETA
 A notification component, allowing you to display alerts, messages, or other important information to users.
 
-15. **WML Options**:
+15. [**WML Options**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-options):
 * BETA
 A component that likely provides a set of selectable options, possibly as a more advanced dropdown or select component.
 
-16. **WML Panel**:
+16. [**WML Panel**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-panel):
 * BETA
 A panel component, which could be used to group content or controls together, often used in dashboards or as part of complex interfaces.
 
-17. **WML Penrose**:
+17. [**WML Penrose**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-penrose):
 * BETA
 A custom loading component
 
-18. **WML Popup**:
+18. [**WML Popup**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-popup):
 * BETA
 A component for displaying pop-up content, such as modals, dialogues, or tooltips.
 
-19. **WML Select Zero**:
+19. [**WML Select Zero**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-select-zero):
 * BETA
 A select component that provides a dropdown list of options for users to choose from.
 
-20. **WML Slicebox**:
+20. [**WML Slicebox**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-slicebox):
 * PRODUCTION READY
 Potentially a component offering a unique way of presenting content, perhaps with a 3D or animated effect.
 
-21. **WML Table Zero**:
+21. [**WML Table Zero**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-table-zero):
 * BETA
 A table component designed for displaying tabular data, with features possibly including sorting, filtering, and pagination.
 
-22. **WML Tabs**:
+22. [**WML Tabs**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-tabs):
 * BETA
 A component for creating tabbed interfaces, allowing users to switch between different views or content sections within the same context.
 
-23. **WML Toggle Zero**:
+23. [**WML Toggle Zero**](https://github.com/WindMillCode/Windmillcode-Angular-CDK/tree/master/projects/wml-toggle-zero):
 * BETA
  A toggle switch component, providing an intuitive way for users to make binary choices, such as enabling/disabling settings.
 
@@ -121,13 +120,6 @@ Each component is crafted to address specific UI needs while ensuring consistenc
 
 To get started with the Windmillcode Angular Library, you can clone the repository or install it via your preferred package manager.
 
-### Installation
-
-```bash
-npm install windmillcode-angular-library
-# or
-yarn add windmillcode-angular-library
-```
 
 ### Usage
 
