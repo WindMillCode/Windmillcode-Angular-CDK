@@ -107,8 +107,12 @@ accordionParams.items.forEach(group => {
 });
 ```
 
+## Customization
+There are the [color pallete](./_color_pallete.scss)
+and [media queries](./_media_queries.scss) that you can use to customize the accordion. in your css simply replace the values with the ones you want to use and the component will take on the look. the variables are very specific and even named after the component to avoid any overlapping issues
 
-# WML Accordion Zero Docs
+
+#  Docs
 
 
 ## WMLAccordionZeroParams
