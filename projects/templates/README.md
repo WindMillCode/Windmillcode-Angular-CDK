@@ -4,6 +4,73 @@
 The Windmillcode Angular Schematic library serves as a foundational toolkit for Angular web application development, establishing a solid baseline from which developers can construct and expand their projects. Central to this library is the concept of WMLUIProperty, a fundamental element that encapsulates the essence of web application components, down to the finest detail. This library not only streamlines the development process by providing pre-defined subclasses like WMLRoute for routing, WMLView for dynamic components, and WMLAnimateUIProperty for CSS animations but also ensures consistency and scalability across your application. Dive into the documentation to explore how these building blocks can be leveratively orchestrated to create robust, maintainable, and dynamic web applications.
 
 
+
+# Installation
+
+```bash
+npm install -d @windmillcode/angular-templates
+```
+
+
+## template-component Schematic
+
+
+### Options
+
+- `name`: Specifies the name of the component. It's a required option that defines the base name for the component files.
+- `path`: The path where the new component will be generated. By default, it uses the current working directory.
+- `project`: The name of the Angular project within which the component should be created. It defaults to the project name defined in your workspace.
+- `cpntType`: Determines the type of component to generate. Options include `default`, `library`, `default-zero`, and `library-zero`. Each type tailors the generated component to fit different architectural styles or library requirements.
+- `isIdIncluded`: A boolean flag that indicates whether the component selector should include an ID. It's set to `true` by default.
+- `isParamsChild`: (Deprecated) A boolean flag to determine if the component should be generated with a params class and an `@Input` params property. Use `isPropsChild` instead.
+- `isPropsChild`: A boolean option that specifies whether the component is a presentation or a container. If `true`, the component is generated with a props class and an `@Input` props property.
+- `standalone`: A boolean flag that indicates whether the generated component is standalone. Defaults to `false`.
+- `styleType`: Specifies the preset SCSS style to use. Options include `type0`, `type1`, and `none`. It allows for predefined styling to be applied to the component.
+
+The `template-component` schematic provides a robust and flexible way to create components, supporting a variety of configurations to suit different development needs and preferences.
+
+
+## Template-Form Schematic
+
+The `template-form` schematic in the Windmillcode Angular Schematic library facilitates the creation of form structures within Angular applications. This schematic automates the generation of form-related code, ensuring adherence to best practices and consistency across your forms.
+
+### Options
+
+- `name`: The name of the form. This is used as an identifier and is essential for generating the corresponding form group within your Angular component.
+- `apiCall`: Specifies the API call function that will be triggered upon form submission. This should be a method defined within your service that handles the form's submit action.
+- `apiCallClass`: If the API call requires a specific class for its argument, this option allows you to specify that class. The generated form submission function will instantiate this class with the form's value.
+- `path`: The path where the new form-related code will be generated. This typically points to the directory of the component or service that will utilize the form.
+- `fields`: An array of strings representing the field names within the form. These names are used to generate the form control elements within the Angular FormGroup.
+- `fieldType`: Determines whether the fields are `simple` or `complex`. Simple fields are generated with basic configurations, while complex fields allow for more detailed and customized setups.
+
+
+## Template-Library Schematic
+
+The `template-library` schematic is essential for developers looking to create reusable Angular libraries efficiently. It sets up the fundamental structure and configuration necessary for developing, building, and publishing Angular libraries.
+
+### Options
+
+- `name`: Specifies the name of the library. This is a crucial identifier that will be used throughout the library's files and configuration.
+- `path`: The path where the library should be created. It defines the directory structure within the project workspace.
+- `entryFile`: Designates the main entry point of the library. This is typically a file like `public-api.ts` that exports the components, services, or modules that the library provides.
+- `dest`: This is the destination directory where the build artifacts of the library will be placed. It's usually set to a `dist/` directory.
+- `project`: Defines the Angular project within which the library will be created. This option is vital for workspaces containing multiple projects to ensure the library is associated with the correct project context.
+
+## Template-Module Schematic
+
+The `template-module` schematic is designed to streamline the creation of Angular modules, providing a standardized structure that promotes consistency and best practices across your Angular applications.
+
+### Options
+
+- `name`: The name of the module to be created. This name is used to generate the directory and filenames for the module, ensuring they align with Angular's naming conventions.
+- `path`: Specifies the directory path where the new module will be generated. This helps in organizing the module within the appropriate section of your application's directory structure.
+- `project`: Identifies the project within which the module will be created. This is particularly useful in a multi-project workspace to ensure that the module is scaffolded within the correct Angular project.
+- `flat`: A boolean flag that, when set to `true`, prevents the creation of a new folder for the module. If `false`, a new directory will be created to house the module files.
+- `routing`: When set to `true`, this option indicates that a routing module should be generated alongside the standard module, facilitating routing configuration for the module's components.
+- `route`: This option allows specifying a route path that will be added to the nearest module's routing configuration, making it easier to integrate the new module into the application's navigation structure.
+- `module`: The path to the module file that will import the new module. This is useful for automatically updating the imports and declarations in an existing module to include the newly generated module.
+
+
 # Changelog
 
 ## 0.8.0
