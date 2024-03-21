@@ -111,6 +111,30 @@ accordionParams.items.forEach(group => {
 There are the [color pallete](./_color_pallete.scss)
 and [media queries](./_media_queries.scss) that you can use to customize the accordion. in your css simply replace the values with the ones you want to use and the component will take on the look. the variables are very specific and even named after the component to avoid any overlapping issues
 
+### CSS Customization
+# CSS Customization
+* to globally customize in your  css file
+
+```py
+.WMLAccordionZeroView {
+  &MainPod {
+    &Pod {
+      &ItemMainPod {
+        &ItemPod0 {
+          &Icon0 {}
+          &Title0 {}
+        }
+        &ItemPod1 {
+          &ContentPod {}
+        }
+      }
+    }
+  }
+}
+
+```
+
+
 
 #  Docs
 

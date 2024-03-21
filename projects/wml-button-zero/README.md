@@ -1,7 +1,9 @@
 
 # Overview
 
-The `WmlButtonZeroParams` and `WmlButtonOneParams` classes offer a flexible and customizable approach to implementing button components within Angular applications. They encapsulate common button functionalities, such as click handling and dynamic class assignment, while also providing support for Angular's `ChangeDetectorRef` to ensure that UI updates are efficiently rendered. These classes can be used to create buttons with different styles and behaviors by simply adjusting their properties and methods.
+The `wml-button-zero` library is an Angular-focused toolkit designed to provide developers with versatile and customizable button components. Its primary goal is to offer a streamlined approach to implementing interactive buttons within Angular applications, addressing common challenges such as dynamic content loading, user interaction handling, and flexible styling. By delivering a set of modular and adaptable components, the library aims to enhance the development workflow and enrich the user experience across diverse application scenarios.
+
+Within this library, WmlButtonZeroComponent stands as the central component, offering a comprehensive suite of customization options. It's built to cater to developers seeking to implement buttons with specific behaviors, styles, and functionalities, providing a deep level of control over the component's properties. On the other hand, WmlButtonOneComponent serves as a simpler alternative, designed for use cases that demand a straightforward button with less complexity in customization. While it retains core interactive features, it's streamlined for easier implementation, making it suitable for scenarios where a basic button suffices. This structural differentiation within the library ensures that developers have access to both detailed and simplified button components, aligning with varied application requirements and developer preferences.
 
 ## WmlButtonZeroParams
 
@@ -77,31 +79,31 @@ let wmlButtonOneParams = new WmlButtonOneParams({
 &[number] represents the button
 &Text&0 represents the btn text
 ```py
-    .WmlButtonOneMainButton{
+.WmlButtonOneMainButton{
+  &0 {
+    &Text {
       &0 {
-        &Text {
-          &0 {
 
-          }
-        }
-      }
-
-      &1 {
-        &Text {
-          &0 {
-
-          }
-        }
-      }
-
-      &2 {
-        &Text {
-          &0 {
-
-          }
-        }
       }
     }
+  }
+
+  &1 {
+    &Text {
+      &0 {
+
+      }
+    }
+  }
+
+  &2 {
+    &Text {
+      &0 {
+
+      }
+    }
+  }
+}
 ```
 
 
