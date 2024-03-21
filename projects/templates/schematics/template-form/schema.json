@@ -14,7 +14,7 @@
       "type": "string"
     },
     "apiCallClass": {
-      "description": "The api call to make after a user has submitted the form",
+      "description": "the api request body class that the reuqest body goes into to be transformed to be sent to the api",
       "type": "string"
     },
     "path": {
