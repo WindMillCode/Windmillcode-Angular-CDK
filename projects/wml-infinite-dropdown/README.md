@@ -1,8 +1,15 @@
-# Overview 
+# Overview
 
 The `wml-infinite-dropdown` library provides a flexible and dynamic dropdown component for Angular applications, aiming to enhance user interfaces with nested and infinitely cascading options. It addresses the need for a versatile dropdown menu in Angular projects, offering a solution that supports multiple levels of navigation and interaction. This library is particularly useful for developers looking to implement complex menu structures without the hassle of managing intricate state logic or nested structures manually.
 
 Central to this library is the `WmlInfiniteDropdownComponent`, which serves as the main container for the dropdown items. This component can be dynamically populated with a variety of options and sub-options, allowing for deep nesting and a hierarchical menu structure. Alongside it, the `WmlInfiniteDropdownItemComponent` represents individual items within the dropdown, which can be further customized using the `WmlSampleInfiniteDropdownItemComponent`. These components work in tandem to render the dropdown menu, manage its state, and handle user interactions. Developers can customize the appearance and behavior of the dropdown through parameters like `WmlInfiniteDropdownParams` and `WmlInfiniteDropdownOption`, which offer control over the items' content, styling, and interaction handlers. This level of interactivity and customization enables the creation of complex menu systems that are both functional and visually appealing. The library's design encourages a modular approach, where the main dropdown component acts as a container that can be filled with various configurable options, promoting reusability and maintainability in Angular applications.
+
+
+# Installation
+
+```bash
+npm install -d @windmillcode/angular-wml-infinite-dropdown
+```
 
 # Usage
 

@@ -3,6 +3,12 @@ The `wml-file-upload` library is designed to enhance Angular applications by pro
 
 At the heart of the `wml-file-upload` library are several key components that facilitate its core functionality. The library includes components for file selection, upload progress indication, and error handling. These components work in concert to provide a seamless user experience, allowing for the asynchronous upload of files with real-time progress feedback. Developers have the ability to customize these components, tailoring the file upload experience to their application's specific needs. Parameters and services are exposed to enable customization, such as defining file size limits, specifying allowed file types, and customizing the UI elements. The library also supports interactivity, offering hooks and events that developers can leverage to create dynamic responses to the file upload process. In terms of implementation, the library encourages a modular approach, where developers can integrate and configure the file upload components within their existing Angular applications, ensuring flexibility and adaptability to various use cases.
 
+# Installation
+
+```bash
+npm install -d @windmillcode/angular-wml-file-manager
+```
+
 # Usage
 
 

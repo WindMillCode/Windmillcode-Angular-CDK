@@ -5,6 +5,12 @@ The `wml-button-zero` library is an Angular-focused toolkit designed to provide 
 
 Within this library, WmlButtonZeroComponent stands as the central component, offering a comprehensive suite of customization options. It's built to cater to developers seeking to implement buttons with specific behaviors, styles, and functionalities, providing a deep level of control over the component's properties. On the other hand, WmlButtonOneComponent serves as a simpler alternative, designed for use cases that demand a straightforward button with less complexity in customization. While it retains core interactive features, it's streamlined for easier implementation, making it suitable for scenarios where a basic button suffices. This structural differentiation within the library ensures that developers have access to both detailed and simplified button components, aligning with varied application requirements and developer preferences.
 
+
+# Installation
+
+```bash
+npm install -d @windmillcode/angular-wml-button-zero
+```
 ## WmlButtonZeroParams
 
 ### Properties

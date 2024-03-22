@@ -4,6 +4,12 @@ The `wml-notify` library is an Angular-based toolkit designed to enhance user no
 
 At the heart of the `wml-notify` library are two central components: `WmlNotifyComponent` and `WmlNotifyMsgComponent`. `WmlNotifyComponent` acts as a container for individual notifications, managing their display and behavior, including auto-hiding, user-initiated closure, and actions. It integrates with the `WmlNotifyService` to listen for notification events and render them appropriately. `WmlNotifyMsgComponent`, on the other hand, is responsible for rendering the message content, supporting both default text messages and custom Angular components for more dynamic and interactive content. Developers can customize notifications using various attributes and methods provided by these components, such as message types, auto-hide functionality, and custom action handlers. The library encourages a modular approach, allowing developers to leverage these components either independently or together, facilitating a versatile implementation that aligns with the specific requirements of their Angular applications.
 
+# Installation
+
+```bash
+npm install -d @windmillcode/angular-wml-notify
+```
+
 
 # Usage
 

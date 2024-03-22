@@ -4,6 +4,13 @@ The `wml-select-zero` library is a specialized Angular component library designe
 
 At the core of the `wml-select-zero` library are its central components: `WmlSelectComponent` and `WmlSelectOptionComponent`. The `WmlSelectComponent` acts as the main container for the select functionality, encapsulating the logic for opening and closing the dropdown, managing selections, and triggering custom events. The `WmlSelectOptionComponent` represents individual selectable items within the dropdown, providing a flexible structure for displaying options and handling user interactions. Developers can leverage these components to create highly interactive and customizable select menus, with support for single or multiple selections, search and filtering, and even asynchronous data loading. The library's design encourages a modular approach, where the `WmlSelectComponent` can be dynamically populated with `WmlSelectOptionComponent` instances, allowing for a high degree of customization and adaptability in different usage scenarios.
 
+
+# Installation
+
+```bash
+npm install -d @windmillcode/angular-wml-select-zero
+```
+
 # Usage
 
 

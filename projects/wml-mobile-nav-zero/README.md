@@ -4,7 +4,11 @@ The `wml-mobile-nav-zero` library offers a comprehensive solution for integratin
 
 Central to the `wml-mobile-nav-zero` library is the `WmlMobileNavZeroComponent`, which acts as the main container for the navigation system. This component utilizes the `WmlInfiniteDropdownParams` to dynamically generate a mobile-friendly, nested dropdown structure. The interactivity within the components allows for a highly customizable user experience, enabling developers to define their navigation hierarchy and visual style with ease. Customization is further supported through a variety of parameters and methods, allowing for dynamic content loading and real-time updates to the navigation structure. The typical implementation involves integrating the `WmlMobileNavZeroComponent` within an Angular application, configuring its parameters to define the navigation items, and customizing its appearance and behavior to match the application's design and functional requirements.
 
+# Installation
 
+```bash
+npm install -d @windmillcode/angular-wml-mobile-nav-zero
+```
 
 # Usage
 

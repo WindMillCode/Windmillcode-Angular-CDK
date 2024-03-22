@@ -5,6 +5,12 @@ The `wml-table-zero` library is an Angular-based toolkit designed to streamline 
 At the heart of `wml-table-zero` are its central components, each serving a distinct role within the library's ecosystem. These components are designed to work together harmoniously, allowing developers to construct tables that are both dynamic and interactive. Key components include the table container, row and cell definitions, and utilities for pagination and sorting. These elements offer a solid foundation, enabling developers to build tables that cater to a variety of use cases and data representations. The library's structure promotes interactivity and customization, offering various parameters and services that developers can leverage to tailor table behavior and appearance. Customization options extend to aspects like column configuration, data transformation, and event handling, providing a high degree of control over the table's functionality and presentation. Through the thoughtful integration of these components, `wml-table-zero` facilitates a coherent and streamlined approach to table implementation, encouraging best practices and efficient data handling within Angular applications.
 
 
+# Installation
+
+```bash
+npm install -d @windmillcode/angular-wml-table-zero
+```
+
 # Usage
 
 ## Basic Table Setup

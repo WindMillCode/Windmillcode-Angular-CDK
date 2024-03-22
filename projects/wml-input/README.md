@@ -4,6 +4,13 @@ The `wml-input` library is a specialized Angular component designed to enhance t
 
 At the heart of the `wml-input` library are its central components, which include `WmlInputTextComponent`, `WmlInputNumberComponent`, and `WmlInputDateComponent`, among others. Each of these components is tailored to handle specific types of input, offering features like formatting, validation, and custom styling. For instance, `WmlInputTextComponent` is optimized for text input and includes properties for trimming and formatting, while `WmlInputNumberComponent` focuses on numerical input with features for number formatting and validation. These components are designed to work together seamlessly, providing a consistent and intuitive API for developers. They can be easily customized through a variety of parameters and methods, allowing for dynamic content loading and real-time interaction. Additionally, the library encourages certain implementation patterns, such as using specific components as containers or specifying child components, to promote best practices in Angular form development and ensure optimal performance and usability.
 
+
+# Installation
+
+```bash
+npm install -d @windmillcode/angular-wml-input
+```
+
 # Usage
 
 ## Text Input Example

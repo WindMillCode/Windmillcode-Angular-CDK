@@ -5,6 +5,12 @@ The `wml-toggle-zero` library offers a specialized Angular component designed to
 At the heart of the `wml-toggle-zero` library is the `WMLToggleZeroComponent`, a central component that embodies the toggle switch's functionality. This component allows for a high degree of customization and interactivity, offering developers the flexibility to adapt the toggle switch's appearance and behavior to fit their application's needs. Parameters such as `toggleBackgroundOffColor`, `toggleBackgroundOnColor`, and `textToggleLeftMargin` enable developers to customize the look and feel of the toggle, while properties like `toggleText` and `thumb` provide control over the switch's text labels and thumb indicator. Additionally, the `onToggle` method and `triggerToggle` function offer ways to interact with the toggle's state, enabling dynamic responses to user interactions. The library encourages a pattern where the `WMLToggleZeroComponent` acts as a standalone, reusable UI element, promoting modularity and ease of integration within larger application structures.
 
 
+
+# Installation
+
+```bash
+npm install -d @windmillcode/angular-wml-toggle-zero
+```
 # Usage
 
 To integrate and utilize the `wml-toggle-zero` component in your Angular application, follow the examples below. These examples demonstrate how to incorporate the toggle switch into your templates and manage its state and configurations through your component's TypeScript file.

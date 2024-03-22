@@ -1,10 +1,15 @@
 # Overview
 
-The `wml-panel` library is a sophisticated Angular module designed to offer a robust and versatile panel component system within Angular applications. This library is meticulously engineered to provide developers with a seamless and intuitive interface for creating, managing, and interacting with panels in their web applications. The core objective of the `wml-panel` library is to streamline the process of panel management, offering a suite of features that cater to various panel-related needs, such as dynamic content loading, customization, and responsive layout management.
+The `wml-penrose` library is an Angular module that provides a specialized set of components designed to create and manage complex penrose patterns within Angular applications. This library serves as a toolkit for developers to integrate sophisticated penrose designs into their web interfaces, offering a blend of aesthetic appeal and interactivity. With a focus on customization and dynamic content integration, `wml-penrose` aims to enhance the visual dimension of Angular applications while providing a seamless user experience.
 
-Central to the `wml-panel` library are its principal components, which include the main panel container and various subcomponents designed for specific functionalities. The main panel component acts as the container, orchestrating the overall behavior and layout of the panel, while the subcomponents provide granular control over the panel's content and interactive features. Developers can leverage these components to build intricate panel layouts, customize appearance and behavior, and dynamically load content based on application context or user interactions. The library emphasizes modularity and reusability, encouraging developers to utilize these components in a composable manner to construct complex yet maintainable panel structures. Furthermore, the library provides APIs and services that enable extensive customization and interactivity, allowing developers to tailor the panel's functionality to meet the specific requirements of their applications.
+At the heart of the `wml-penrose` library is the `PenroseComponent`, a central component responsible for rendering penrose patterns. This component serves as the primary interface for developers, encapsulating the complexity of penrose generation while exposing customizable properties and methods. Through its well-defined API, the `PenroseComponent` allows for dynamic adjustments, enabling developers to modify aspects of the pattern such as size, color, and animation. Additionally, the library is structured to facilitate interactivity, allowing components to respond to user actions or application events. By leveraging Angular's data binding and event handling capabilities, developers can create interactive penrose patterns that adapt to user interactions or application state changes, offering a dynamic and engaging user experience.
 
 
+# Installation
+
+```bash
+npm install -d @windmillcode/angular-wml-penrose
+```
 
 # Changelong
 ## v16.2.80

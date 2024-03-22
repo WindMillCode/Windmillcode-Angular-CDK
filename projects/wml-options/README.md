@@ -6,6 +6,12 @@ Central to the `wml-options` library are its core components: `WmlOptionsCompone
 
 The library encourages a pattern where `WmlOptionsComponent` is used as a container to hold multiple `WmlOptionItemComponent` instances, representing individual selectable options. This architecture enables a clear separation of concerns, making the management of options more intuitive and maintainable. Through the use of input parameters and services, developers can dynamically load content, bind data, and handle user interactions, allowing for a flexible and dynamic implementation of option selection features within Angular applications.
 
+# Installation
+
+```bash
+npm install -d @windmillcode/angular-wml-options
+```
+
 
 # Usage
 

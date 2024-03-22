@@ -6,6 +6,12 @@ Central to the `wml-form` library is the `WmlFormComponent`, which serves as the
 
 In terms of implementation, developers typically use the `WmlFormComponent` to define the structure of their forms, specifying fields and their corresponding attributes through the component's input properties. The component's reactive API allows for dynamic updates to the form's structure and data, responding to user interactions or application state changes. Customization is facilitated through input parameters and CSS, enabling developers to tailor the look and feel of their forms to match their application's design. Additionally, the library encourages best practices such as the use of Angular's form control mechanisms and reactive programming patterns, ensuring that forms are both performant and maintainable.
 
+# Installation
+
+```bash
+npm install -d @windmillcode/angular-wml-form
+```
+
 # Usage
 
 The `wml-form` library offers a flexible and efficient way to create and manage forms in Angular applications. Below are some usage examples demonstrating different developer needs.

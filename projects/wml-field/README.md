@@ -4,6 +4,12 @@ The `angular-wml-field` library is an Angular-based framework designed to enhanc
 
 At the core of the `angular-wml-field` library are several central components, including `WMLField` and `WmlLabelComponent`, each serving a distinct purpose within the form management ecosystem. `WMLField` acts as a container for individual form fields, encapsulating the logic for field rendering, validation, and interaction. It allows for the integration of custom components, enhancing flexibility and extensibility. `WmlLabelComponent`, on the other hand, is dedicated to managing field labels and validation messages, supporting dynamic content and translation capabilities. These components are designed to work in unison, with `WMLField` typically serving as a parent container that orchestrates the behavior of nested label and input components. Developers can customize these components through various input parameters and methods, enabling the creation of tailored form experiences that cater to specific application needs.
 
+# Installation
+
+```bash
+npm install -d @windmillcode/angular-wml-field
+```
+
 # Usage
 
 ### HTML Template (`app.component.html`):
