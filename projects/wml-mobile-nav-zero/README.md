@@ -1,3 +1,121 @@
+# Overview
+
+The `wml-mobile-nav-zero` library offers a comprehensive solution for integrating a mobile navigation menu into Angular applications. It's designed to enhance user experience on mobile devices by providing a dynamic and responsive navigation system. The library leverages Angular's powerful framework to offer a seamless and interactive menu system, which is both easy to integrate and customizable to fit the specific needs of an application. The primary goal of `wml-mobile-nav-zero` is to simplify the implementation of a mobile navigation menu, providing developers with a set of tools that facilitate the creation of a multi-level, collapsible, and accessible navigation structure.
+
+Central to the `wml-mobile-nav-zero` library is the `WmlMobileNavZeroComponent`, which acts as the main container for the navigation system. This component utilizes the `WmlInfiniteDropdownParams` to dynamically generate a mobile-friendly, nested dropdown structure. The interactivity within the components allows for a highly customizable user experience, enabling developers to define their navigation hierarchy and visual style with ease. Customization is further supported through a variety of parameters and methods, allowing for dynamic content loading and real-time updates to the navigation structure. The typical implementation involves integrating the `WmlMobileNavZeroComponent` within an Angular application, configuring its parameters to define the navigation items, and customizing its appearance and behavior to match the application's design and functional requirements.
+
+
+
+# Usage
+
+To integrate the `wml-mobile-nav-zero` component into your Angular project, you can follow these examples to cater to various development needs. These examples illustrate how to use the component in your template (HTML) and how to configure it in your TypeScript file.
+
+## Basic Example
+
+To use the `wml-mobile-nav-zero` component, you first need to define the dropdown items using `WmlInfiniteDropdownParams`. Then, incorporate the `wml-mobile-nav-zero` component in your template and bind the parameters.
+
+### HTML
+
+```html
+<wml-mobile-nav-zero [params]="mobileNavParams"></wml-mobile-nav-zero>
+```
+
+### TypeScript
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { WmlMobileNavZeroParams, WmlInfiniteDropdownParams } from '@windmillcode/angular-wml-mobile-nav-zero';
+
+@Component({
+  selector: 'app-my-component',
+  templateUrl: './my-component.component.html',
+})
+export class MyComponent implements OnInit {
+  mobileNavParams: WmlMobileNavZeroParams;
+
+  ngOnInit() {
+    this.mobileNavParams = new WmlMobileNavZeroParams({
+      items: [
+        new WmlInfiniteDropdownParams({ items: ['Home'] }),
+        new WmlInfiniteDropdownParams({ items: ['About'] }),
+        new WmlInfiniteDropdownParams({ items: ['Contact'] }),
+      ],
+      isPresent: true, // Initially visible
+    });
+  }
+}
+```
+
+## Interactive Dropdown
+
+To create an interactive dropdown where each item has a different action or navigation path, you can add click event handlers to the `WmlInfiniteDropdownOption` items.
+
+### TypeScript
+
+```typescript
+import { WmlInfiniteDropdownParams, WmlInfiniteDropdownOption } from '@windmillcode/angular-wml-mobile-nav-zero';
+
+this.mobileNavParams = new WmlMobileNavZeroParams({
+  items: [
+    new WmlInfiniteDropdownParams({
+      items: [
+        new WmlInfiniteDropdownOption({
+          text: 'Interactive Option 1',
+          click: () => this.onSelectOption(1),
+        }),
+        new WmlInfiniteDropdownOption({
+          text: 'Interactive Option 2',
+          click: () => this.onSelectOption(2),
+        }),
+      ],
+    }),
+  ],
+});
+
+onSelectOption(optionId: number) {
+  console.log(`Option ${optionId} selected`);
+}
+```
+
+In the HTML, you would use the same template as in the basic example, binding `mobileNavParams` to the `[params]` input of `wml-mobile-nav-zero`.
+
+
+```markdown
+# Docs
+
+## WmlMobileNavZeroParams
+
+| Property       | Type                          | Description                                              |
+|----------------|-------------------------------|----------------------------------------------------------|
+| `items`        | `WmlInfiniteDropdownParams[]` | An array of `WmlInfiniteDropdownParams` to define the dropdown items in the navigation. |
+| `isPresent`    | `boolean`                     | Determines if the mobile navigation is present on the DOM. |
+| `state`        | `"open" \| "closed"`          | The initial state of the mobile navigation ("open" or "closed"). |
+
+## Methods
+
+### WmlMobileNavZeroParams
+
+| Method     | Parameters | Return Type | Description                                           |
+|------------|------------|-------------|-------------------------------------------------------|
+| `open`     | None       | `void`      | Opens the mobile navigation.                          |
+| `close`    | None       | `void`      | Closes the mobile navigation.                         |
+| `toggle`   | None       | `void`      | Toggles the mobile navigation's open/close state.     |
+| `update`   | `params: Partial<WmlMobileNavZeroParams>` | `void` | Updates the parameters of the mobile navigation. |
+
+## Events
+
+### WmlMobileNavZeroParams
+
+| Event      | Type       | Description                                              |
+|------------|------------|----------------------------------------------------------|
+| `opened`   | `Subject<void>` | Observable that emits when the navigation is opened.    |
+| `closed`   | `Subject<void>` | Observable that emits when the navigation is closed.    |
+```
+
+
+
+
+
 # Changelog
 
 ## v0.0.1

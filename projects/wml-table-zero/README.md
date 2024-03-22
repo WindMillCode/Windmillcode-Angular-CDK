@@ -1,3 +1,140 @@
+# Overview
+
+The `wml-table-zero` library is an Angular-based toolkit designed to enhance the development of table components within Angular applications. It focuses on providing developers with a streamlined and efficient way to create and manage tables, addressing common challenges such as data binding, sorting, and pagination. The library's aim is to simplify the integration of complex table functionalities, ensuring that developers can focus on the unique aspects of their applications while leveraging robust, pre-built solutions for table management.
+
+Central to the `wml-table-zero` library are its core components, which facilitate the creation and manipulation of tables. One of the key components is the `WmlTableZeroComponent`, which serves as the primary interface for table creation and configuration. This component allows for the dynamic loading of data, sorting, and pagination, making it a versatile tool for developers. Additionally, the library offers customization options through various parameters and services, enabling developers to tailor the table's behavior and appearance to their specific needs. Through the use of these components, the `wml-table-zero` library promotes a pattern of modularity and reusability, encouraging developers to construct table functionalities in a scalable and maintainable manner.
+
+# Usage
+
+## Basic Table Setup
+
+To integrate a basic table using `wml-table-zero`, you need to define the table structure in your HTML and configure the data source in your TypeScript file.
+
+### HTML
+
+```html
+<wml-table-zero [params]="tableParams"></wml-table-zero>
+```
+
+### TypeScript
+
+```typescript
+import { Component } from '@angular/core';
+import { WMLTableZeroParams } from '@windmillcode/angular-wml-table-zero';
+
+@Component({
+  selector: 'app-my-table',
+  templateUrl: './my-table.component.html',
+})
+export class MyTableComponent {
+  tableParams: WMLTableZeroParams;
+
+  constructor() {
+    this.tableParams = new WMLTableZeroParams({
+      // Define your table parameters here
+    });
+  }
+}
+```
+
+## Customizing Columns
+
+To customize the columns in your table, you can specify the `columns` property within the `WMLTableZeroParams`.
+
+### TypeScript
+
+```typescript
+this.tableParams = new WMLTableZeroParams({
+  columns: [
+    { header: 'ID', field: 'id' },
+    { header: 'Name', field: 'name' },
+    // Add more columns as needed
+  ],
+  // Additional parameters
+});
+```
+
+## Handling User Interactions
+
+To handle user interactions like sorting or selecting a row, you can utilize event bindings and callbacks provided by `wml-table-zero`.
+
+### HTML
+
+```html
+<wml-table-zero
+  [params]="tableParams"
+  (sort)="onSort($event)"
+  (selectRow)="onSelectRow($event)">
+</wml-table-zero>
+```
+
+### TypeScript
+
+```typescript
+onSort(event: any) {
+  // Handle sorting logic here
+}
+
+onSelectRow(event: any) {
+  // Handle row selection logic here
+}
+```
+
+## Integrating Pagination
+
+If your table supports pagination, you can configure the pagination parameters within `WMLTableZeroParams`.
+
+### TypeScript
+
+```typescript
+this.tableParams = new WMLTableZeroParams({
+  // Other parameters
+  pagination: {
+    pageSize: 10,
+    totalItems: 100, // Total number of items in the data source
+  },
+});
+```
+
+# Docs
+
+## WmlTableZeroParams
+Configuration parameters for `wml-table-zero` component.
+
+| Property           | Type                 | Description                                                  |
+|--------------------|----------------------|--------------------------------------------------------------|
+| `columns`          | `WmlTableColumn[]`   | Array defining the columns of the table, including header text and corresponding field names in the data. |
+| `rows`             | `any[]`              | Array containing the data to be displayed in the table rows. Each object in the array represents a row. |
+| `sortable`         | `boolean`            | Determines if the table columns are sortable.                |
+| `paginationConfig` | `PaginationConfig`   | Configuration object for pagination, specifying items per page and other related settings. |
+| `filterConfig`     | `FilterConfig`       | Configuration for enabling and handling data filtering.     |
+
+## PaginationConfig
+Configuration for table pagination.
+
+| Property       | Type      | Description                                  |
+|----------------|-----------|----------------------------------------------|
+| `itemsPerPage` | `number`  | Number of items to display per page.         |
+| `currentPage`  | `number`  | Current active page.                         |
+| `totalItems`   | `number`  | Total number of items across all pages.      |
+
+## FilterConfig
+Configuration for table filtering.
+
+| Property    | Type     | Description                                               |
+|-------------|----------|-----------------------------------------------------------|
+| `enabled`   | `boolean`| Determines if filtering is enabled for the table.         |
+| `fields`    | `string[]`| Array of field names that can be filtered.               |
+
+## WmlTableColumn
+Defines the structure and behavior of a table column.
+
+| Property    | Type      | Description                                  |
+|-------------|-----------|----------------------------------------------|
+| `header`    | `string`  | The text to display in the column header.    |
+| `field`     | `string`  | The field name in the row data to display in this column. |
+| `sortable`  | `boolean` | Indicates if the column is sortable.         |
+
 # Changelog
   ## 0.0.1
   developer has a full table that supports server side pagination if you want to use for client side just transform and pass your data to businessRows on the WmlTableZeroParams and use the table, the table handles the rest

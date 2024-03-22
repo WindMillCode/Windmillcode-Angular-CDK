@@ -1,13 +1,111 @@
+# Overview
+
+The `wml-input` library is a specialized Angular component designed to enhance the form input experience in Angular applications. It provides a robust set of features that simplify the process of creating, validating, and managing form inputs, particularly focusing on user interaction and data binding. The library aims to solve common problems associated with form handling in Angular, such as maintaining sync between the UI and the model, providing instant feedback to users, and integrating seamlessly with Angular's form validation mechanisms. By offering a comprehensive suite of input-related functionalities, `wml-input` helps developers build more interactive, user-friendly forms with less boilerplate code.
+
+At the heart of the `wml-input` library are its central components, which include `WmlInputTextComponent`, `WmlInputNumberComponent`, and `WmlInputDateComponent`, among others. Each of these components is tailored to handle specific types of input, offering features like formatting, validation, and custom styling. For instance, `WmlInputTextComponent` is optimized for text input and includes properties for trimming and formatting, while `WmlInputNumberComponent` focuses on numerical input with features for number formatting and validation. These components are designed to work together seamlessly, providing a consistent and intuitive API for developers. They can be easily customized through a variety of parameters and methods, allowing for dynamic content loading and real-time interaction. Additionally, the library encourages certain implementation patterns, such as using specific components as containers or specifying child components, to promote best practices in Angular form development and ensure optimal performance and usability.
+
 # Usage
+
+## Text Input Example
+
+In your component's HTML file, you can use `wml-input-text` to create a text input field. It's integrated with Angular forms to support features like data binding and validation.
+
 ```html
-    <wml-input
-    [params]="searchInput"></wml-input>
+<!-- app.component.html -->
+<form [formGroup]="form">
+  <wml-input-text formControlName="textInput" placeholder="Enter text"></wml-input-text>
+</form>
 ```
 
-```js
-searchInput = new WmlInputParams()
+In the corresponding TypeScript file, you define the form control within an Angular form group.
+
+```typescript
+// app.component.ts
+import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+})
+export class AppComponent {
+  form: FormGroup;
+
+  constructor() {
+    this.form = new FormGroup({
+      textInput: new FormControl(''),
+    });
+  }
+}
 ```
-* by default the type is input
+
+## Number Input Example
+
+For numerical inputs, use `wml-input-number` to allow users to enter numbers, which also supports Angular form validation and binding.
+
+```html
+<!-- app.component.html -->
+<form [formGroup]="form">
+  <wml-input-number formControlName="numberInput" placeholder="Enter number"></wml-input-number>
+</form>
+```
+
+And in your TypeScript file:
+
+```typescript
+// app.component.ts
+import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+})
+export class AppComponent {
+  form: FormGroup;
+
+  constructor() {
+    this.form = new FormGroup({
+      numberInput: new FormControl(0),
+    });
+  }
+}
+```
+
+## Date Input Example
+
+To include a date input, `wml-input-date` is used. This component facilitates the input of dates and integrates smoothly with Angular's reactive forms.
+
+```html
+<!-- app.component.html -->
+<form [formGroup]="form">
+  <wml-input-date formControlName="dateInput" placeholder="Select date"></wml-input-date>
+</form>
+```
+
+The TypeScript setup might look like this:
+
+```typescript
+// app.component.ts
+import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+})
+export class AppComponent {
+  form: FormGroup;
+
+  constructor() {
+    this.form = new FormGroup({
+      dateInput: new FormControl(new Date()),
+    });
+  }
+}
+```
+
+
 
 # Docs
 

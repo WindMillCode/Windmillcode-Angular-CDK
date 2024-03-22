@@ -1,16 +1,76 @@
-# WMLToggleZero
-* a switch control compoent
+# Overview
+
+The `wml-toggle-zero` library offers a specialized Angular component designed to enhance user interfaces with a toggle switch functionality. This library focuses on delivering a straightforward and efficient way to implement toggle switches in Angular applications, providing an intuitive and interactive element for users. The core purpose of this library is to offer a highly customizable toggle switch that can be seamlessly integrated into various Angular projects, facilitating user interactions for settings, preferences, or any scenario where a binary choice is required.
+
+At the heart of the `wml-toggle-zero` library is the `WMLToggleZeroComponent`, a central component that embodies the toggle switch's functionality. This component allows for a high degree of customization and interactivity, offering developers the flexibility to adapt the toggle switch's appearance and behavior to fit their application's needs. Parameters such as `toggleBackgroundOffColor`, `toggleBackgroundOnColor`, and `textToggleLeftMargin` enable developers to customize the look and feel of the toggle, while properties like `toggleText` and `thumb` provide control over the switch's text labels and thumb indicator. Additionally, the `onToggle` method and `triggerToggle` function offer ways to interact with the toggle's state, enabling dynamic responses to user interactions. The library encourages a pattern where the `WMLToggleZeroComponent` acts as a standalone, reusable UI element, promoting modularity and ease of integration within larger application structures.
+
 
 # Usage
-```ts
-  myToggle = new WMLToggleZeroParams({
-    textToggleLeftMargin:-.6
-  })
-```
+
+To integrate and utilize the `wml-toggle-zero` component in your Angular application, follow the examples below. These examples demonstrate how to incorporate the toggle switch into your templates and manage its state and configurations through your component's TypeScript file.
+
+## Basic Toggle Switch
+
+### In Your Component's HTML
 
 ```html
-<wml-toggle-zero [class]="classPrefix('Pod0Item2')" [params]="myToggle"></wml-toggle-zero>
+<wml-toggle-zero [params]="basicToggleParams"></wml-toggle-zero>
 ```
+
+### In Your Component's TypeScript
+
+```typescript
+import { Component } from '@angular/core';
+import { WMLToggleZeroParams } from '@windmillcode/angular-wml-toggle-zero';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: './example.component.html',
+})
+export class ExampleComponent {
+  basicToggleParams = new WMLToggleZeroParams({
+    toggleText: { text: 'Off' },
+    thumb: { value: false },
+    onToggle: (self) => {
+      self.toggleText.text = self.thumb.value ? 'On' : 'Off';
+    }
+  });
+}
+```
+
+## Customized Toggle Switch
+
+### In Your Component's HTML
+
+```html
+<wml-toggle-zero [params]="customToggleParams"></wml-toggle-zero>
+```
+
+### In Your Component's TypeScript
+
+```typescript
+import { Component } from '@angular/core';
+import { WMLToggleZeroParams } from '@windmillcode/angular-wml-toggle-zero';
+
+@Component({
+  selector: 'app-custom-toggle',
+  templateUrl: './custom-toggle.component.html',
+})
+export class CustomToggleComponent {
+  customToggleParams = new WMLToggleZeroParams({
+    toggleText: { text: 'Off', class: 'custom-toggle-text' },
+    thumb: { value: false, class: 'custom-thumb' },
+    container: { class: 'custom-container' },
+    toggleBackgroundOffColor: 'rgba(255, 0, 0)',  // Red when off
+    toggleBackgroundOnColor: 'rgba(0, 255, 0)',  // Green when on
+    onToggle: (self) => {
+      self.toggleText.text = self.thumb.value ? 'Active' : 'Inactive';
+    }
+  });
+}
+```
+
+In the above examples, `WMLToggleZeroParams` is used to configure the toggle switch. The `toggleText` property sets the text label, `thumb` manages the toggle's thumb, and `container` styles the overall toggle component. The `onToggle` function updates the toggle's state and label dynamically based on user interaction.
 
 # Docs
 | Property                  | Type                    | Description                                                                                      |

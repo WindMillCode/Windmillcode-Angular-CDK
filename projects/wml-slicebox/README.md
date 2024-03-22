@@ -1,11 +1,8 @@
-# WmlSlicebox
+# Overview
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0. but is comptablile as far back as angular 11. this design was remodeled by older code found in this [link](https://tympanus.net/Development/Slicebox/). Remastered for angular w/ additional features. to be used as a carousel
+The `wml-slicebox` library is an Angular-based library designed to enhance the visual interactivity of web applications by introducing a 3D slicebox carousel component. This library provides a sophisticated and engaging way to display images or content in a carousel format, with a 3D rotation effect that adds depth and dynamism to the user experience. Aimed at integrating seamlessly with Angular applications, `wml-slicebox` offers a set of configurable options to tailor the carousel's behavior and appearance, making it a versatile tool for developers looking to enhance their UI with 3D interactive elements.
 
-![](docs/promo.gif)
-
-
-
+At the heart of the `wml-slicebox` library is the `WmlSliceboxComponent`, which serves as the central component orchestrating the 3D slicebox carousel's functionality. This component manages the carousel's state, handles user interactions, and renders the 3D slices that comprise the carousel's visual structure. Developers can customize the carousel through a variety of parameters, such as orientation, rotation speed, and disperse factor, allowing for a high degree of control over the carousel's behavior and appearance. Additionally, the library provides mechanisms for dynamically loading content into the carousel and responding to user interactions, making it a flexible solution for presenting content in an engaging and interactive format. The component's design encourages modularity and reusability, adhering to Angular's component-based architecture, and offering developers a straightforward way to incorporate 3D carousel functionality into their applications.
 
 
 

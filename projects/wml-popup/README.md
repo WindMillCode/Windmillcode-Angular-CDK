@@ -1,4 +1,9 @@
-# WMLPopup
+# Overview
+
+The `wml-popup` library is an Angular-based toolkit designed to simplify the creation and management of pop-up components within web applications. It provides developers with a streamlined approach to integrate pop-ups, facilitating interactions and enhancing user engagement without the need for extensive boilerplate code. The library is crafted to address common challenges associated with pop-up management, such as dynamic content loading, positioning, and responsiveness, ensuring a versatile solution adaptable to various application scenarios.
+
+Central to the `wml-popup` library is the `WmlPopupComponent`, which serves as the foundational element for pop-up creation and manipulation. This component is designed to be flexible, allowing for the embedding of custom content and the adjustment of its behavior and appearance through a range of input parameters. Developers can leverage the `WMLPopupParams` class to configure the pop-up, defining properties such as the component to display, its initialization parameters, and control mechanisms for opening and closing the pop-up. The library emphasizes interactivity and customization, providing mechanisms such as the `togglePopupSubj` subject to programmatically control the pop-up's visibility. Furthermore, the library supports inter-component communication and dynamic content loading, enabling developers to create rich, interactive user experiences. By adhering to the library's design patterns, such as utilizing `WmlPopupComponent` as a container for dynamic content, developers can implement consistent and effective pop-up functionalities within their Angular applications.
+
 
 # Docs
 

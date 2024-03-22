@@ -1,3 +1,244 @@
+# Overview 
+
+The `wml-infinite-dropdown` library provides a flexible and dynamic dropdown component for Angular applications, aiming to enhance user interfaces with nested and infinitely cascading options. It addresses the need for a versatile dropdown menu in Angular projects, offering a solution that supports multiple levels of navigation and interaction. This library is particularly useful for developers looking to implement complex menu structures without the hassle of managing intricate state logic or nested structures manually.
+
+Central to this library is the `WmlInfiniteDropdownComponent`, which serves as the main container for the dropdown items. This component can be dynamically populated with a variety of options and sub-options, allowing for deep nesting and a hierarchical menu structure. Alongside it, the `WmlInfiniteDropdownItemComponent` represents individual items within the dropdown, which can be further customized using the `WmlSampleInfiniteDropdownItemComponent`. These components work in tandem to render the dropdown menu, manage its state, and handle user interactions. Developers can customize the appearance and behavior of the dropdown through parameters like `WmlInfiniteDropdownParams` and `WmlInfiniteDropdownOption`, which offer control over the items' content, styling, and interaction handlers. This level of interactivity and customization enables the creation of complex menu systems that are both functional and visually appealing. The library's design encourages a modular approach, where the main dropdown component acts as a container that can be filled with various configurable options, promoting reusability and maintainability in Angular applications.
+
+# Usage
+
+To integrate the `wml-infinite-dropdown` component into your Angular project, you can follow these examples to cater to various development needs. The examples demonstrate how to use the component in your template (HTML) and how to configure it in your TypeScript file.
+
+## Basic Example
+
+### HTML
+
+```html
+<wml-infinite-dropdown [params]="dropdownParams"></wml-infinite-dropdown>
+```
+
+### TypeScript
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { WmlInfiniteDropdownParams } from '@windmillcode/angular-wml-infinite-dropdown';
+
+@Component({
+  selector: 'app-my-component',
+  templateUrl: './my-component.component.html',
+})
+export class MyComponent implements OnInit {
+  dropdownParams: WmlInfiniteDropdownParams;
+
+  ngOnInit() {
+    this.dropdownParams = new WmlInfiniteDropdownParams({
+      items: ['Option 1', ['Option 2', 'Sub-option 1', 'Sub-option 2'], 'Option 3'],
+    });
+  }
+}
+```
+
+## Customizing Dropdown Options
+
+### HTML
+
+```html
+<wml-infinite-dropdown [params]="customDropdownParams"></wml-infinite-dropdown>
+```
+
+### TypeScript
+
+```typescript
+import { WmlInfiniteDropdownParams, WmlInfiniteDropdownOption } from '@windmillcode/angular-wml-infinite-dropdown';
+
+// Define your custom option component similar to WmlSampleInfiniteDropdownItemComponent in the library
+
+this.customDropdownParams = new WmlInfiniteDropdownParams({
+  items: [
+    new WmlInfiniteDropdownOption({
+      text: 'Custom Option 1',
+      custom: {
+        cpnt: MyCustomDropdownItemComponent,
+        params: { /* custom params */ },
+      },
+    }),
+    'Option 2',
+  ],
+});
+```
+
+## Handling Selection
+
+You can handle selection by adding click event listeners to the dropdown options. Define your event handling logic in the TypeScript file and bind it to the `click` property of the `WmlInfiniteDropdownOption`.
+
+### TypeScript
+
+```typescript
+this.selectionDropdownParams = new WmlInfiniteDropdownParams({
+  items: [
+    new WmlInfiniteDropdownOption({
+      text: 'Selectable Option 1',
+      click: () => this.onSelectOption(1),
+    }),
+    new WmlInfiniteDropdownOption({
+      text: 'Selectable Option 2',
+      click: () => this.onSelectOption(2),
+    }),
+  ],
+});
+
+onSelectOption(optionId: number) {
+  console.log(`Option ${optionId} selected`);
+}
+```
+
+In the HTML, you would use the same template as in the basic example, passing `selectionDropdownParams` to the `[params]` input of `wml-infinite-dropdown`.
+```
+
+```markdown
+# Usage
+
+To integrate the `wml-infinite-dropdown` component into your Angular project, you can follow these examples to cater to various development needs. The examples demonstrate how to use the component in your template (HTML) and how to configure it in your TypeScript file.
+
+## Basic Example
+
+### HTML
+
+```html
+<wml-infinite-dropdown [params]="dropdownParams"></wml-infinite-dropdown>
+```
+
+### TypeScript
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { WmlInfiniteDropdownParams } from '@windmillcode/angular-wml-infinite-dropdown';
+
+@Component({
+  selector: 'app-my-component',
+  templateUrl: './my-component.component.html',
+})
+export class MyComponent implements OnInit {
+  dropdownParams: WmlInfiniteDropdownParams;
+
+  ngOnInit() {
+    this.dropdownParams = new WmlInfiniteDropdownParams({
+      items: ['Option 1', ['Option 2', 'Sub-option 1', 'Sub-option 2'], 'Option 3'],
+    });
+  }
+}
+```
+
+## Customizing Dropdown Options
+
+### HTML
+
+```html
+<wml-infinite-dropdown [params]="customDropdownParams"></wml-infinite-dropdown>
+```
+
+### TypeScript
+
+```typescript
+import { WmlInfiniteDropdownParams, WmlInfiniteDropdownOption } from '@windmillcode/angular-wml-infinite-dropdown';
+
+// Define your custom option component similar to WmlSampleInfiniteDropdownItemComponent in the library
+
+this.customDropdownParams = new WmlInfiniteDropdownParams({
+  items: [
+    new WmlInfiniteDropdownOption({
+      text: 'Custom Option 1',
+      custom: {
+        cpnt: MyCustomDropdownItemComponent,
+        params: { /* custom params */ },
+      },
+    }),
+    'Option 2',
+  ],
+});
+```
+
+## Handling Selection
+
+You can handle selection by adding click event listeners to the dropdown options. Define your event handling logic in the TypeScript file and bind it to the `click` property of the `WmlInfiniteDropdownOption`.
+
+### TypeScript
+
+```typescript
+this.selectionDropdownParams = new WmlInfiniteDropdownParams({
+  items: [
+    new WmlInfiniteDropdownOption({
+      text: 'Selectable Option 1',
+      click: () => this.onSelectOption(1),
+    }),
+    new WmlInfiniteDropdownOption({
+      text: 'Selectable Option 2',
+      click: () => this.onSelectOption(2),
+    }),
+  ],
+});
+
+onSelectOption(optionId: number) {
+  console.log(`Option ${optionId} selected`);
+}
+```
+
+In the HTML, you would use the same template as in the basic example, passing `selectionDropdownParams` to the `[params]` input of `wml-infinite-dropdown`.
+
+
+
+# Docs
+
+## WmlInfiniteDropdownParams
+
+| Property            | Type                                   | Description                                               |
+|---------------------|----------------------------------------|-----------------------------------------------------------|
+| `options`           | `Array<WmlInfiniteDropdownOption \| WmlInfiniteDropdownParams>` | List of options or sub-dropdowns.                         |
+| `customize`         | `Object`                               | Object to customize dropdown and option properties.       |
+
+## WmlInfiniteDropdownOption
+
+| Property          | Type                               | Description                                            |
+|-------------------|------------------------------------|--------------------------------------------------------|
+| `text`            | `string`                           | Display text for the dropdown option.                  |
+| `click`           | `Function`                         | Click event handler for the option.                    |
+| `dropdown`        | `WmlInfiniteDropdownParams`        | Nested dropdown parameters, if any.                    |
+| `openDropdown`    | `Function`                         | Function to programmatically open the dropdown.        |
+| `closeDropdown`   | `Function`                         | Function to programmatically close the dropdown.       |
+| `pointerleave`    | `Function`                         | Pointer leave event handler.                           |
+| `pointerenter`    | `Function`                         | Pointer enter event handler.                           |
+| `custom`          | `WMLCustomComponent`               | Custom component to be used as the dropdown item.      |
+
+## Functions
+
+### generateClassPrefix
+
+| Parameter   | Type     | Description                           |
+|-------------|----------|---------------------------------------|
+| `prefix`    | `string` | Prefix to be added to the class name. |
+
+**Returns:** A function that, when called with a string, concatenates the prefix and the provided string.
+
+### updateClassString
+
+| Parameter    | Type     | Description                                |
+|--------------|----------|--------------------------------------------|
+| `obj`        | `Object` | Object containing class-related properties.|
+| `myClassDefault` | `string` | Default class string.                  |
+| `classListDefault` | `string` | Default class list string.             |
+
+**Returns:** A function to update the class string based on the provided parameters.
+
+### addCustomComponent
+
+| Parameter    | Type               | Description                          |
+|--------------|--------------------|--------------------------------------|
+| `vcf`        | `ViewContainerRef` | Reference to the view container.     |
+| `cpnt`       | `Type<any>`        | Component type to be added.          |
+| `params`     | `any`              | Parameters to be passed to the component. |
+
+**Returns:** The reference to the created component.
+
+
 # Changelog
 ## .0.0.1
   infinite dropdown supported

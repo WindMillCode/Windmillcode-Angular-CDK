@@ -1,4 +1,95 @@
-# WMLSelectZero
+# Overview
+
+The `wml-select-zero` library is a specialized Angular component library designed to enhance form inputs by providing a robust and flexible select component. Its primary objective is to offer a more dynamic and feature-rich alternative to the native HTML select element, catering to the diverse needs of modern web applications. With its advanced functionalities, the library addresses common challenges faced in creating user-friendly, interactive forms, such as handling dynamic data sets, enabling search and filtering capabilities, and offering better control over the styling and behavior of select menus.
+
+At the core of the `wml-select-zero` library are its central components: `WmlSelectComponent` and `WmlSelectOptionComponent`. The `WmlSelectComponent` acts as the main container for the select functionality, encapsulating the logic for opening and closing the dropdown, managing selections, and triggering custom events. The `WmlSelectOptionComponent` represents individual selectable items within the dropdown, providing a flexible structure for displaying options and handling user interactions. Developers can leverage these components to create highly interactive and customizable select menus, with support for single or multiple selections, search and filtering, and even asynchronous data loading. The library's design encourages a modular approach, where the `WmlSelectComponent` can be dynamically populated with `WmlSelectOptionComponent` instances, allowing for a high degree of customization and adaptability in different usage scenarios.
+
+# Usage
+
+
+## Basic Example
+
+This example demonstrates how to integrate a simple select component with static options.
+
+### HTML
+
+```html
+<wml-select [params]="selectParams">
+  <wml-select-option *ngFor="let option of options" [value]="option.value">
+    {{ option.label }}
+  </wml-select-option>
+</wml-select>
+```
+
+### TypeScript
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { WmlSelectParams } from 'wml-select-zero';
+
+@Component({
+  selector: 'app-my-select',
+  templateUrl: './my-select.component.html'
+})
+export class MySelectComponent implements OnInit {
+  selectParams: WmlSelectParams;
+  options = [
+    { label: 'Option 1', value: '1' },
+    { label: 'Option 2', value: '2' },
+    { label: 'Option 3', value: '3' }
+  ];
+
+  ngOnInit() {
+    this.selectParams = new WmlSelectParams({
+      placeholder: 'Select an option',
+      multiple: false
+    });
+  }
+}
+```
+
+## Customizing Options
+
+In this example, we customize the appearance of select options.
+
+### HTML
+
+```html
+<wml-select [params]="customSelectParams">
+  <wml-select-option *ngFor="let option of options" [value]="option.value" [customClass]="'custom-option-class'">
+    {{ option.label }}
+  </wml-select-option>
+</wml-select>
+```
+
+### TypeScript
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { WmlSelectParams } from 'wml-select-zero';
+
+@Component({
+  selector: 'app-custom-select',
+  templateUrl: './custom-select.component.html'
+})
+export class CustomSelectComponent implements OnInit {
+  customSelectParams: WmlSelectParams;
+  options = [
+    { label: 'Custom Option 1', value: '1' },
+    { label: 'Custom Option 2', value: '2' },
+    { label: 'Custom Option 3', value: '3' }
+  ];
+
+  ngOnInit() {
+    this.customSelectParams = new WmlSelectParams({
+      placeholder: 'Select a custom option',
+      multiple: true
+    });
+  }
+}
+```
+
+
 
 ## Changelog
 ### v0.0.1

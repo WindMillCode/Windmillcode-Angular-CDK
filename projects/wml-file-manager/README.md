@@ -1,4 +1,160 @@
-# WmlFileManager
+# WML File Upload
+The `wml-file-upload` library is designed to enhance Angular applications by providing robust file upload capabilities. This library streamlines the process of integrating file upload functionality, addressing common challenges such as handling multiple file formats, validating file sizes, and providing feedback on the upload process. Its primary goal is to offer a configurable and efficient solution for developers to incorporate file upload features into their applications, with a focus on ease of use and flexibility.
+
+At the heart of the `wml-file-upload` library are several key components that facilitate its core functionality. The library includes components for file selection, upload progress indication, and error handling. These components work in concert to provide a seamless user experience, allowing for the asynchronous upload of files with real-time progress feedback. Developers have the ability to customize these components, tailoring the file upload experience to their application's specific needs. Parameters and services are exposed to enable customization, such as defining file size limits, specifying allowed file types, and customizing the UI elements. The library also supports interactivity, offering hooks and events that developers can leverage to create dynamic responses to the file upload process. In terms of implementation, the library encourages a modular approach, where developers can integrate and configure the file upload components within their existing Angular applications, ensuring flexibility and adaptability to various use cases.
+
+# Usage
+
+
+## `wml-file-upload` Component Usage
+
+The `wml-file-upload` component from the `@windmillcode/angular-wml-file-manager` library provides a robust solution for implementing file upload functionality in Angular applications. This guide illustrates how to use the component for various developer needs.
+
+### Basic Usage
+
+To start using `wml-file-upload`, first ensure that the `WmlFileManagerModule` is imported into your module:
+
+```typescript
+import { WmlFileManagerModule } from '@windmillcode/angular-wml-file-manager';
+
+@NgModule({
+  declarations: [
+    // other components
+  ],
+  imports: [
+    // other modules
+    WmlFileManagerModule,
+  ],
+})
+export class YourModule {}
+```
+
+#### HTML
+
+Create a simple file upload interface:
+
+```html
+<wml-file-upload [params]="uploadParams"></wml-file-upload>
+```
+
+#### TypeScript
+
+Configure the `uploadParams` in your component:
+
+```typescript
+import { WMLFileUploadParams } from '@windmillcode/angular-wml-file-manager';
+
+@Component({
+  selector: 'your-component',
+  templateUrl: './your-component.component.html',
+})
+export class YourComponent {
+  uploadParams = new WMLFileUploadParams({
+    dragDropText: 'Drag and drop files here or click to browse',
+    browseFileText: 'Browse Files',
+  });
+
+  constructor() {}
+}
+```
+
+### Advanced Usage
+
+#### Custom Validation
+
+You can provide custom file validation logic by defining the `uploadAllowedPredicate` function:
+
+#### TypeScript
+
+```typescript
+uploadParams = new WMLFileUploadParams({
+  dragDropText: 'Drag and drop files here or click to browse',
+  browseFileText: 'Browse Files',
+  uploadAllowedPredicate: (file: File, fileList: File[]) => {
+    // Custom validation logic, for example, restrict file size and type
+    return file.size <= 1048576 && ['image/jpeg', 'image/png'].includes(file.type);
+  },
+});
+```
+
+#### Handling File Upload
+
+To handle file uploads, define an `uploadFn` function that returns an `Observable` to handle the upload process:
+
+#### TypeScript
+
+```typescript
+uploadParams = new WMLFileUploadParams({
+  dragDropText: 'Drag and drop files here or click to browse',
+  browseFileText: 'Browse Files',
+  uploadFn: (fileItem: WMLFileUploadItem) => {
+    // Return an Observable from the upload service
+    return this.fileUploadService.upload(fileItem.file);
+  },
+});
+```
+
+#### TypeScript: File Upload Service
+
+An example upload service method:
+
+```typescript
+@Injectable({
+  providedIn: 'root',
+})
+export class FileUploadService {
+  constructor(private httpClient: HttpClient) {}
+
+  upload(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    return this.httpClient.post('/api/upload', formData);
+  }
+}
+```
+
+By following these examples, you can configure the `wml-file-upload` component for basic and advanced use cases, including custom validation and file upload handling.
+
+
+
+
+---
+
+# Docs
+### Properties
+
+| Property                 | Type                                  | Description                                                   |
+|--------------------------|---------------------------------------|---------------------------------------------------------------|
+| `params`                 | `WMLFileUploadParams`                 | Configuration parameters for the file upload component.      |
+
+### `WMLFileUploadParams` Configuration
+
+| Property                  | Type                              | Description                                                     |
+|---------------------------|-----------------------------------|-----------------------------------------------------------------|
+| `automation`              | `boolean`                         | If set to true, enables automation features.                    |
+| `files`                   | `WMLFileUploadItem[]`             | The list of files to be uploaded.                               |
+| `dragDropText`            | `string`                          | Text displayed for the drag-and-drop area.                      |
+| `browseFileText`          | `string`                          | Text displayed on the browse button.                            |
+| `limit`                   | `number`                          | The maximum number of files that can be uploaded.               |
+| `formArray`               | `FormArray<AbstractControl>`      | Angular FormArray to track the state of uploads.                |
+| `duplicates`              | `boolean`                         | Whether to allow duplicate files.                               |
+| `uploadFn`                | `Function`                        | Function to call when a file is uploaded.                       |
+| `updateFormArrayPredicate`| `Function`                        | Function to update the FormArray based on current files.        |
+| `uploadAllowedPredicate`  | `(file: File, fileList: File[]) => boolean` | Function to determine if a file upload is allowed.  |
+| `afterUploadPredicate`    | `() => WMLFileUploadItem[]`       | Function called after files are selected/uploaded.              |
+
+### Methods
+
+These are methods you might need to interact with in your component:
+
+| Method                   | Parameters                  | Return Type | Description                                              |
+|--------------------------|-----------------------------|-------------|----------------------------------------------------------|
+| `chooseFiles`            | `myFileList: FileList | Array<any>` | `void`      | Triggers the file selection and processes the selected files. |
+| `uploadFile`             | `item: WMLFileUploadItem`   | `void`      | Initiates the upload process for a single file item.     |
+| `deleteFile`             | `item: WMLFileUploadItem`   | `void`      | Removes a file from the list of files to be uploaded.    |
+| `retryUpload`            | `item: WMLFileUploadItem`   | `void`      | Retries the upload process for a file.                   |
+| `cancelUpload`           | `item: WMLFileUploadItem`   | `void`      | Cancels the upload process for a file.                   |
 
 
 ## Changelog

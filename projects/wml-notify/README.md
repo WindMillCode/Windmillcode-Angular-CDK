@@ -1,3 +1,163 @@
+# Overview
+
+The `wml-notify` library is an Angular-based toolkit designed to enhance user notifications and messaging within applications. Its primary objective is to offer a streamlined and efficient way for developers to integrate and manage notifications, alerts, and informational messages in their Angular projects. The library provides a set of components and services that enable the display of various types of messages, such as errors, information, success, and warnings, with customizable options to cater to different needs and scenarios. It leverages Angular's powerful features to create a responsive and interactive user experience, addressing common challenges in handling user notifications with ease and precision.
+
+At the heart of the `wml-notify` library are two central components: `WmlNotifyComponent` and `WmlNotifyMsgComponent`. `WmlNotifyComponent` acts as a container for individual notifications, managing their display and behavior, including auto-hiding, user-initiated closure, and actions. It integrates with the `WmlNotifyService` to listen for notification events and render them appropriately. `WmlNotifyMsgComponent`, on the other hand, is responsible for rendering the message content, supporting both default text messages and custom Angular components for more dynamic and interactive content. Developers can customize notifications using various attributes and methods provided by these components, such as message types, auto-hide functionality, and custom action handlers. The library encourages a modular approach, allowing developers to leverage these components either independently or together, facilitating a versatile implementation that aligns with the specific requirements of their Angular applications.
+
+
+# Usage
+
+To effectively utilize the `wml-notify` library in your Angular applications, you can follow the examples below which demonstrate various use cases catering to different developer needs. These examples show how to integrate `WmlNotifyComponent` and `WmlNotifyMsgComponent` within your Angular project.
+
+### Displaying a Simple Notification
+
+#### HTML:
+```html
+<wml-notify></wml-notify>
+```
+
+#### TypeScript:
+```typescript
+import { Component } from '@angular/core';
+import { WmlNotifyService, WmlNotifyBarModel, WmlNotifyBarType } from '@windmillcode/angular-wml-notify';
+
+@Component({
+  selector: 'app-your-component',
+  templateUrl: './your-component.component.html',
+})
+export class YourComponent {
+  constructor(private notifyService: WmlNotifyService) {}
+
+  showNotification() {
+    const notification = new WmlNotifyBarModel({
+      message: 'This is an info message!',
+      type: WmlNotifyBarType.Info,
+    });
+
+    this.notifyService.create(notification);
+  }
+}
+```
+
+### Displaying a Notification with Custom Content
+
+#### HTML:
+```html
+<wml-notify></wml-notify>
+```
+
+#### TypeScript:
+```typescript
+import { Component } from '@angular/core';
+import { WmlNotifyService, WmlNotifyBarModel, WmlNotifyBarType, WMLCustomComponent } from '@windmillcode/angular-wml-notify';
+
+@Component({
+  selector: 'app-your-component',
+  templateUrl: './your-component.component.html',
+})
+export class YourComponent {
+  constructor(private notifyService: WmlNotifyService) {}
+
+  showCustomNotification() {
+    const customNotification = new WmlNotifyBarModel({
+      message: 'This is a custom message!',
+      type: WmlNotifyBarType.Success,
+      msgtype: 'custom',
+      custom: new WMLCustomComponent({
+        cpnt: YourCustomComponent,
+        params: { /* your custom params */ },
+      }),
+    });
+
+    this.notifyService.create(customNotification);
+  }
+}
+```
+
+### Handling Notification Actions
+
+#### HTML:
+```html
+<wml-notify (action)="onAction($event)" (closed)="onClosed($event)"></wml-notify>
+```
+
+#### TypeScript:
+```typescript
+import { Component } from '@angular/core';
+import { WmlNotifyService, WmlNotifyBarModel, WmlNotifyBarType } from '@windmillcode/angular-wml-notify';
+
+@Component({
+  selector: 'app-your-component',
+  templateUrl: './your-component.component.html',
+})
+export class YourComponent {
+  constructor(private notifyService: WmlNotifyService) {}
+
+  showActionNotification() {
+    const actionNotification = new WmlNotifyBarModel({
+      message: 'This message needs your action',
+      type: WmlNotifyBarType.Warning,
+      action: true,
+      actionText: 'Retry',
+    });
+
+    this.notifyService.create(actionNotification);
+  }
+
+  onAction(notification: WmlNotifyBarModel) {
+    console.log('Action clicked for notification:', notification);
+  }
+
+  onClosed(notification: WmlNotifyBarModel) {
+    console.log('Notification closed:', notification);
+  }
+}
+```
+
+These examples demonstrate basic implementations of `wml-notify` for various scenarios, providing a foundational understanding of how to integrate and customize the library within your Angular applications.
+
+# Docs
+
+### `WmlNotifyBarModel` Properties
+
+| Property          | Type                | Description                                                           |
+|-------------------|---------------------|-----------------------------------------------------------------------|
+| `message`         | `string`            | The message to be displayed in the notification.                      |
+| `type`            | `WmlNotifyBarType`  | The type of the notification (Error, Info, Success, Warning).         |
+| `action`          | `boolean`           | Indicates if the notification includes an action button.              |
+| `actionText`      | `string`            | Text to display on the action button.                                 |
+| `autoHide`        | `boolean`           | Determines if the notification should auto-hide.                      |
+| `closed`          | `boolean`           | Indicates if the notification is closed.                              |
+| `closeable`       | `boolean`           | Determines if the notification can be manually closed by the user.    |
+| `hideDelay`       | `number`            | Time in milliseconds before the notification auto-hides.              |
+| `hideOnHover`     | `boolean`           | Determines if the notification should hide when hovered.              |
+| `style`           | `CSSStyleDeclaration` | Styles to be applied to the notification bar.                       |
+| `msgtype`         | `string`            | Defines the message type (default or custom).                         |
+| `custom`          | `WMLCustomComponent` | Custom component to be used as the notification content.              |
+
+### `WmlNotifyService` Methods
+
+| Method         | Parameters                 | Description                                     |
+|----------------|----------------------------|-------------------------------------------------|
+| `create`       | `notification: WmlNotifyBarModel` | Creates and displays a new notification.    |
+| `clear`        | None                       | Clears all displayed notifications.             |
+
+### `WmlNotifyComponent` Events
+
+| Event         | Parameters                 | Description                                     |
+|---------------|----------------------------|-------------------------------------------------|
+| `action`      | `notification: WmlNotifyBarModel` | Emitted when an action on a notification is triggered. |
+| `closed`      | `notification: WmlNotifyBarModel` | Emitted when a notification is closed.            |
+
+### `WmlNotifyBarType` Enumeration
+
+| Value         | Description                      |
+|---------------|----------------------------------|
+| `Error`       | Represents an error notification.|
+| `Info`        | Represents an informational notification. |
+| `Success`     | Represents a success notification.|
+| `Warning`     | Represents a warning notification.|
+
 # Changelog
 
 ## v1.0.0
