@@ -7,7 +7,7 @@
     "peerDependencies": {
         "@angular/common": "^17.0.0",
         "@angular/core": "^17.0.0",
-        "@windmillcode/angular-wml-components-base": "^17.3.0"
+        "@windmillcode/angular-wml-components-base": "^17.3.1000"
     },
     "private": false,
     "schematics": "",
@@ -16,5 +16,5 @@
         "postbuild": "npx copyfiles  src/lib/wml-label/wml-label.component.scss  ../../dist/wml-field -fE",
         "test": "npx ng test wml-field --code-coverage"
     },
-    "version": "17.3.0"
+    "version": "17.3.1000"
 }
