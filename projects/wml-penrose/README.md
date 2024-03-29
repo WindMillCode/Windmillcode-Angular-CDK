@@ -11,6 +11,117 @@ At the heart of the `wml-penrose` library is the `PenroseComponent`, a central c
 npm install -d @windmillcode/angular-wml-penrose
 ```
 
+# Usage
+
+## Basic Penrose Pattern
+
+### HTML
+
+```html
+<wml-penrose></wml-penrose>
+```
+
+### TypeScript
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+})
+export class AppComponent {}
+```
+
+## Penrose Pattern with Dynamic Style
+
+### HTML
+
+```html
+<wml-penrose [style]="{'width': width, 'height': height}"></wml-penrose>
+```
+
+### TypeScript
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+})
+export class AppComponent {
+  width = '300px';
+  height = '300px';
+}
+```
+
+## Penrose Pattern with Toggle Visibility
+
+### HTML
+
+```html
+<button (click)="toggleVisibility()">Toggle Penrose Visibility</button>
+<wml-penrose *ngIf="isVisible"></wml-penrose>
+```
+
+### TypeScript
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+})
+export class AppComponent {
+  isVisible = true;
+
+  toggleVisibility() {
+    this.isVisible = !this.isVisible;
+  }
+}
+```
+
+## Penrose Pattern with External Control
+
+### HTML
+
+```html
+<wml-penrose [isPresent]="isPresent"></wml-penrose>
+<button (click)="togglePresent()">Toggle Presence</button>
+```
+
+### TypeScript
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+})
+export class AppComponent {
+  isPresent = true;
+
+  togglePresent() {
+    this.isPresent = !this.isPresent;
+  }
+}
+```
+
+# Docs
+
+## Properties
+
+| Property     | Type      | Description                                            |
+|--------------|-----------|--------------------------------------------------------|
+| `isPresent`  | `boolean` | Controls the visibility of the Penrose pattern.       |
+| `style`      | `Object`  | Custom styles that can be applied to the Penrose component. |
+
+
+
+
 # Changelong
 ## v16.2.80
  * updated package to reflect the version  16.2.80 of @angular/core package,
