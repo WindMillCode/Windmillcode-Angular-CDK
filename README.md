@@ -118,38 +118,8 @@ Each component is crafted to address specific UI needs while ensuring consistenc
 
 ## Getting Started
 
-To get started with the Windmillcode Angular Library, you can clone the repository or install it via your preferred package manager.
+* Click on the any of the links of the component you need and install with npm, or your preferred package manager
 
-
-### Usage
-
-After installation, you can import the components you need into your Angular modules:
-
-```typescript
-import { WmlButtonZeroModule } from 'windmillcode-angular-library';
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    // other components
-  ],
-  imports: [
-    WmlButtonZeroModule,
-    // other modules
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-```
-
-Now, you can use the component in your templates:
-
-```html
-<wml-button-zero>
-  Click me!
-</wml-button-zero>
-```
 
 ## Documentation
 

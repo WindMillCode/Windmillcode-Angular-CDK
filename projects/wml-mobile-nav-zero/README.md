@@ -248,4 +248,6 @@ WmlMobileNavZeroModule
  * updated package to reflect the version  ^17.3.0 of @angular/core package
 ,
 ## v17.3.1000 [3/22/24]
- * updated package to reflect the version  ^17.3.1 of @angular/core package
+ * updated package to reflect the version  ^17.3.1 of @angular/core package,
+## v17.3.2000 [3/28/24]
+ * updated package to reflect the version  ^17.3.2 of @angular/core package
