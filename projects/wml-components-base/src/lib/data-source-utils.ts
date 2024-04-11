@@ -11,6 +11,10 @@ let getIndexInfo =(pageNum,pageSize)=>{
   }
 }
 
+
+export type WMLAPIPageRequestModelFilterPredicateEnum= {
+  EQUALS,STARTSWITH,ENDSWITH,CONTAINS
+}
 export class WMLAPIPaginationRequestModel {
   constructor(params:Partial<WMLAPIPaginationRequestModel>={}){
     Object.assign(
@@ -21,7 +25,7 @@ export class WMLAPIPaginationRequestModel {
     )
   }
   fields:Array<{value:any}> =[]
-  filter:Array<{key:string,value:any}> =[]
+  filter:Array<{key:string,value:any,predicate?:WMLAPIPageRequestModelFilterPredicateEnum}> =[]
   sort:Array<{key:string,direction:"ASC" | "DESC" |"" }> =[]
   cursor:{
     value?:string
