@@ -42,8 +42,7 @@ function excludeSubFolders(options: TemplateComponentSchema, host: Tree, context
     let relativePath = filePath.replace(targetDir, '');
     relativePath = normalize(relativePath);
     let relativePathSegments = relativePath.split('/');
-    console.log(relativePathSegments)
-    console.log(relativePath)
+
     if (relativePathSegments.length > 2) {
       // It's inside a subdirectory, so delete it
       host.delete(filePath);
@@ -54,7 +53,6 @@ function excludeSubFolders(options: TemplateComponentSchema, host: Tree, context
 export function generateComponentTemplate(
   options: TemplateComponentSchema
 ): Rule {
-  return () => {
     if (options.isParamsChild) {
       console.warn('Option "isParamsChild" is deprecated. Use "isPropsChild" instead.');
     }
@@ -108,17 +106,10 @@ export function generateComponentTemplate(
         }
 
     ])
-    // (tree,context)
-    // // @ts-ignore
-    // .then((modifiedTree: Tree)=>{
 
-    //   removeExcessWhitespace(options,modifiedTree)
-    //   throw new SchematicsException("got here")
-    // })
 
 
   };
-}
 
 
 
@@ -134,47 +125,50 @@ let modifyAppToAddNewPage = (options: TemplateComponentSchema) => {
 function addDeclarationToModuleCpntsArr(options: TemplateComponentSchema) {
   return (tree: Tree) => {
     options.module = findModuleFromOptions(tree, options);
-    let modulePath = options.module?.toString() as string;
+    if(!options.standalone){
+      let modulePath = options.module?.toString() as string;
 
-    let file = tree.read(modulePath);
-    if (!file) {
-      throw new SchematicsException(`${modulePath} not found`);
+      let file = tree.read(modulePath);
+      if (!file) {
+        throw new SchematicsException(`${modulePath} not found`);
+      }
+      let moduleFile = ts.createSourceFile(
+        modulePath,
+        file.toString(),
+        ts.ScriptTarget.Latest,
+        true
+      );
+      let cpntsVar: any = moduleFile.statements
+        .filter(ts.isVariableStatement)
+        .find((v) => {
+          return (
+            ['components','cpnts'].includes(v.declarationList.declarations[0].name.getText())
+          );
+        });
+      let cpntsArr = findNodes(
+        cpntsVar,
+        ts.SyntaxKind.ArrayLiteralExpression,
+        1
+      )[0] as ts.ArrayLiteralExpression;
+      let occurrencesCount = cpntsArr.elements.length;
+      let text = cpntsArr.getFullText(moduleFile);
+
+      let componentVar = strings.classify(options.name) + 'Component';
+      let insertPos = cpntsArr.elements.pos;
+      let finalVar = componentVar;
+      if (occurrencesCount > 0) {
+        let lastRouteLiteral = [...cpntsArr.elements].pop() as ts.Expression;
+        let indentation = text.match(/\r?\n(\r?)\s*/) || [];
+        let routeText = `${indentation[0] || ' '}${componentVar}`;
+        insertPos = lastRouteLiteral.end;
+        finalVar = `,${routeText}`;
+      }
+      let changes: Change[] = [new InsertChange(modulePath, insertPos, finalVar)];
+
+      // add import path
+      addTsImportPath(options, modulePath, changes, moduleFile, componentVar, tree);
     }
-    let moduleFile = ts.createSourceFile(
-      modulePath,
-      file.toString(),
-      ts.ScriptTarget.Latest,
-      true
-    );
-    let cpntsVar: any = moduleFile.statements
-      .filter(ts.isVariableStatement)
-      .find((v) => {
-        return (
-          ['components','cpnts'].includes(v.declarationList.declarations[0].name.getText())
-        );
-      });
-    let cpntsArr = findNodes(
-      cpntsVar,
-      ts.SyntaxKind.ArrayLiteralExpression,
-      1
-    )[0] as ts.ArrayLiteralExpression;
-    let occurrencesCount = cpntsArr.elements.length;
-    let text = cpntsArr.getFullText(moduleFile);
 
-    let componentVar = strings.classify(options.name) + 'Component';
-    let insertPos = cpntsArr.elements.pos;
-    let finalVar = componentVar;
-    if (occurrencesCount > 0) {
-      let lastRouteLiteral = [...cpntsArr.elements].pop() as ts.Expression;
-      let indentation = text.match(/\r?\n(\r?)\s*/) || [];
-      let routeText = `${indentation[0] || ' '}${componentVar}`;
-      insertPos = lastRouteLiteral.end;
-      finalVar = `,${routeText}`;
-    }
-    let changes: Change[] = [new InsertChange(modulePath, insertPos, finalVar)];
-
-    // add import path
-    addTsImportPath(options, modulePath, changes, moduleFile, componentVar, tree);
 
     // add scss
     addScssToAppStyles(options, tree);

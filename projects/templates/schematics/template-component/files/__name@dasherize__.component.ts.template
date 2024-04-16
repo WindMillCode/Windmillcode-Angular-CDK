@@ -24,10 +24,6 @@ import { ENV } from '@env/environment';
 <%  if(standalone === true){ %>import { SharedModule } from '@shared/shared.module';<% } %>
 
 @Component({
-  <%  if(standalone === true){ %>standalone:true,
-  imports:[
-    SharedModule
-  ],<% } %>
   selector: '<%= dasherize(name) %>',
   templateUrl: './<%= dasherize(name) %>.component.html',
   styleUrls: ['./<%= dasherize(name) %>.component.scss'],
@@ -35,6 +31,10 @@ import { ENV } from '@env/environment';
   <%  if(cpntType === 'library') { %>
   encapsulation:ViewEncapsulation.None
   <% } %>
+  <%  if(standalone === true){ %>standalone:true,
+  imports:[
+    SharedModule
+  ],<% } %>
 })
 export class <%= classify(name) %>Component  {
 
