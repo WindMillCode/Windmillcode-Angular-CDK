@@ -280,6 +280,8 @@ export class WMLImage<V=any,T=any> extends WMLUIProperty {
   alt!:string
   ariaLabel!:string
   ariaExpanded= false
+  onError?:Function
+
 }
 
 export class WMLE2ETarget {

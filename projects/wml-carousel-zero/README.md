@@ -96,4 +96,8 @@
 ## v17.3.2000 [3/28/24]
  * updated package to reflect the version  ^17.3.2 of @angular/core package,
 ## v17.3.3000 [4/4/24]
- * updated package to reflect the version  ^17.3.3 of @angular/core package
+ * updated package to reflect the version  ^17.3.3 of @angular/core package,
+## v17.3.4000 [4/11/24]
+ * updated package to reflect the version  ^17.3.4 of @angular/core package,
+## v17.3.4001 [4/16/24]
+ * updated package to conform with @windmillcode/angular-wml-components-base   
