@@ -2,11 +2,23 @@ import * as ts from '@schematics/angular/third_party/github.com/Microsoft/TypeSc
 import {
   SchematicsException,
   Tree,
-  strings
+  strings,Rule
 } from '@angular-devkit/schematics';
 import { wmlUpdateFile } from './updateFile';
 import { InsertChange, Change } from '@schematics/angular/utility/change';
-import {normalize } from '@angular-devkit/core';
+import { Path,normalize } from '@angular-devkit/core';
+import {
+  MODULE_EXT,
+  ROUTING_MODULE_EXT,
+  buildRelativePath
+} from '@schematics/angular/utility/find-module';
+import {
+  addRouteDeclarationToModule
+
+} from '@schematics/angular/utility/ast-utils';
+import { addRouteDeclarationToModuleOnChildrenProperty } from '../template-module/my_helper';
+import { TemplateModuleSchema } from '../template-module';
+import { TemplateComponentSchema } from '../template-component';
 
 export function removeLeadingWhitespace(inputString:string,prefixString:string,allowFirstLineUnshift=true) {
   const lines:string[] = inputString.split('\n');
@@ -380,6 +392,105 @@ export function performDependencyInjection(
 
 }
 
+export function buildRelativeModulePath(options: TemplateModuleSchema |TemplateComponentSchema, modulePath: string,type:"module" | "component" = "module"): string {
+
+  let importModulePath = ""
+  if(type === "module"  ){
+    importModulePath = normalize(
+      `/${options.path}/` +
+        (options.flat ? '' : strings.dasherize(options.name) + '/') +
+        strings.dasherize(options.name) +
+        '.module',
+    );
+  }
+  if(type === "component"  ){
+    importModulePath = normalize(
+      `/${options.path}/` +
+        (options.flat ? '' : strings.dasherize(options.name) + '/') +
+        strings.dasherize(options.name) +
+        '.component',
+    );
+  }
+
+  return buildRelativePath(normalize("/"+modulePath), importModulePath);
+}
+
+export function buildRoute(options: TemplateModuleSchema, modulePath: string,type:"module"| "component" ="module") {
+  const relativeModulePath = buildRelativeModulePath(options, modulePath,type);
+
+  if(type ==="module"){
+    const moduleName = `${strings.classify(options.name)}Module`;
+    const loadChildren = `() => import('${relativeModulePath}').then(m => m.${moduleName})`;
+
+    return `{ path: '${options.route}', loadChildren: ${loadChildren} }`;
+  }
+  else {
+    const componentName = `${strings.classify(options.name)}Component`;
+    const loadComponent = `() => import('${relativeModulePath}').then(m => m.${componentName})`;
+
+    return `{ path: '${options.route}', loadComponent: ${loadComponent} }`;
+  }
+}
+
+
+export function addRouteDeclarationToNgModule(
+  options: any,
+  routingModulePath: Path | undefined,
+  type:"component"|"module"="module"
+): Rule {
+  return (host: Tree) => {
+    if (!options.route) {
+      return host;
+    }
+    if (!options.module) {
+      throw new Error('Module option required when creating a lazy loaded routing module.');
+    }
+
+    let path: string;
+    if (routingModulePath) {
+      path = routingModulePath;
+    } else {
+      path = options.module;
+    }
+
+    const sourceText = host.readText(path);
+    let addRouteDeclarationToModulePredicate = (options.componentName || options.addToChildrenArray) ? addRouteDeclarationToModuleOnChildrenProperty : addRouteDeclarationToModule
+    const addDeclaration = addRouteDeclarationToModulePredicate(
+      // @ts-ignore
+      ts.createSourceFile(path, sourceText, ts.ScriptTarget.Latest, true),
+      path,
+      buildRoute(options, options.module,type),
+    ) as InsertChange;
+
+    const recorder = host.beginUpdate(path);
+    recorder.insertLeft(addDeclaration.pos, addDeclaration.toAdd);
+    host.commitUpdate(recorder);
+
+    return host;
+  };
+}
+
+
+export function getRoutingModulePath(host: Tree, modulePath: string): Path | undefined {
+  console.log('Original module path:', modulePath);  // Debugging output
+
+  const routingModulePath = modulePath.endsWith(ROUTING_MODULE_EXT)
+    ? modulePath
+    : modulePath.replace(MODULE_EXT, ROUTING_MODULE_EXT);
+
+  console.log('Potential routing module path:', routingModulePath);
+
+  if (host.exists(routingModulePath)) {
+    const normalizedPath = normalize(routingModulePath);
+    console.log('Normalized routing module path:', normalizedPath);
+    return normalizedPath;
+  } else {
+    console.error('Routing module path does not exist:', routingModulePath);  // Error output
+    return undefined;
+  }
+}
+
+
 export let DevEnvFile = "src/environments/environment.dev.ts"
 export let FormsServiceFilePath ="src/app/shared/services/forms/forms.service.ts"
 export let i18nEnJSONFilePath = "src/assets/i18n/en.json"
@@ -387,3 +498,4 @@ export let i18nEnJSONFilePath = "src/assets/i18n/en.json"
 export let WMLschematicMsgs ={
   removePlacehoders0:"and for the beginners remember to remove the arrows as they are placeholders and dont belong in javascript!!"
 }
+

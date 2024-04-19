@@ -51,12 +51,32 @@
       "default": false,
       "x-user-analytics": 15
     },
+    "routing": {
+      "type": "boolean",
+      "description": "(experimental) Create a routing module. or if standalone create routing",
+      "default": false,
+      "x-user-analytics": "ep.ng_routing"
+    },
+    "routeKey": {
+      "type": "string",
+      "description": "The route that gets added to the innerNav.urls object in the environment.dev.ts file"
+    },
+    "route": {
+      "type": "string",
+      "description": "The route path for a lazy-loaded module. When supplied, creates a component in the new module, and adds the route to that component in the `Routes` array declared in the module provided in the `--module` option."
+    },
+    "module": {
+      "type": "string",
+      "description": "The declaring NgModule.",
+      "alias": "m"
+    },
     "styleType": {
       "type": "string",
       "description": "preset scss to choose from.",
       "enum": ["type0","type1", "none"],
       "default": "none"
     }
+
    },
   "required": [
     "name"

@@ -1,4 +1,4 @@
-import {Rule,apply,SchematicContext,SchematicsException,applyTemplates,url,move,chain,mergeWith,MergeStrategy,externalSchematic,Tree,forEach,FileEntry} from '@angular-devkit/schematics';
+import {Rule,apply,SchematicContext,SchematicsException,applyTemplates,url,move,chain,mergeWith,MergeStrategy,externalSchematic,Tree,noop} from '@angular-devkit/schematics';
 import { strings, normalize, Path } from '@angular-devkit/core';
 import {
   findModuleFromOptions,
@@ -9,12 +9,12 @@ import { findNodes, insertImport } from '@schematics/angular/utility/ast-utils';
 import * as ts from '@schematics/angular/third_party/github.com/Microsoft/TypeScript/lib/typescript';
 import { InsertChange, Change } from '@schematics/angular/utility/change';
 import { wmlUpdateFile } from '../utils/updateFile';
-import { DevEnvFile, wmlCreateSourceFile } from '../utils/utils';
+import { DevEnvFile, addRouteDeclarationToNgModule, getRoutingModulePath, wmlCreateSourceFile } from '../utils/utils';
 import * as fs from 'fs';
 import * as path from 'path';
 
 let needsIdUpdate= true
-type TemplateComponentSchema = {
+export type TemplateComponentSchema = {
   name: string;
   cpntType: string;
   path: string;
@@ -30,6 +30,8 @@ type TemplateComponentSchema = {
   route?: string;
   routeKey?: string;
   idPrefix: string;
+  routing:boolean
+  addToChildrenArray?:boolean
 };
 
 function excludeSubFolders(options: TemplateComponentSchema, host: Tree, context: SchematicContext) {
@@ -53,13 +55,16 @@ function excludeSubFolders(options: TemplateComponentSchema, host: Tree, context
 export function generateComponentTemplate(
   options: TemplateComponentSchema
 ): Rule {
+  return async (host: Tree) => {
+
+
     if (options.isParamsChild) {
       console.warn('Option "isParamsChild" is deprecated. Use "isPropsChild" instead.');
     }
     if(options.isPropsChild){
       options.isParamsChild = options.isPropsChild
     }
-    options.idPrefix = options.routeKey ?? strings.camelize(options.name)
+    options.idPrefix =  strings.camelize(options.name)
     options.name = options.name.replace(/^wml-/,"WML-")
     options.type = 'Component';
     let subFolder =options.cpntType.match(/(?:default|library)-(.+)$/)?.[1] ??""
@@ -87,6 +92,13 @@ export function generateComponentTemplate(
       templateSources.push(mergeWith(subTemplateSource, MergeStrategy.Overwrite));
     }
 
+    let routingModulePath: Path | undefined;
+
+    if(options.routing){
+      routingModulePath = getRoutingModulePath(host, options.module as string);
+      options.addToChildrenArray = true
+    }
+
     return  chain([
       externalSchematic('@schematics/angular', 'component', {
         name: options.name,
@@ -95,7 +107,9 @@ export function generateComponentTemplate(
         project: options.project,
         style: 'scss',
         skipImport: !options.isPageModule,
+        module:options.module
       }),
+      options.routing ? addRouteDeclarationToNgModule(options, routingModulePath,"component") : noop(),
       options.isPageModule
         ? modifyAppToAddNewPage(options)
         : addDeclarationToModuleCpntsArr(options),
@@ -106,6 +120,7 @@ export function generateComponentTemplate(
         }
 
     ])
+  }
 
 
 
@@ -262,8 +277,7 @@ let addRouteEntryToEnvArr = (options: TemplateComponentSchema, tree: Tree) => {
 
     let route = '/' + options.route;
     let routeKey = (options.routeKey ?? strings.camelize(options.name)) as string;
-    // updateIdPrefixObj(options,tree)
-    // Not sure why this was here
+
 
     if(routeKey === ""){
       return

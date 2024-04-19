@@ -1,11 +1,5 @@
 
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
+
 import { Path, normalize } from '@angular-devkit/core';
 import {Rule,Tree,apply,applyTemplates,chain,filter,mergeWith,move,noop,schematic,strings,url} from '@angular-devkit/schematics';
 import * as ts from '@schematics/angular/third_party/github.com/Microsoft/TypeScript/lib/typescript';
@@ -13,15 +7,14 @@ import * as ts from '@schematics/angular/third_party/github.com/Microsoft/TypeSc
 import { addImportToModule, addRouteDeclarationToModule } from '@schematics/angular/utility/ast-utils';
 import { InsertChange } from '@schematics/angular/utility/change';
 import {
-  MODULE_EXT,
-  ROUTING_MODULE_EXT,
-  buildRelativePath,
+
   findModuleFromOptions,
 } from '@schematics/angular/utility/find-module';
 import { parseName } from '@schematics/angular/utility/parse-name';
 import { validateClassName } from '@schematics/angular/utility/validation';
 import { createDefaultPath } from '@schematics/angular/utility/workspace';
 import { addRouteDeclarationToModuleOnChildrenProperty } from './my_helper';
+import { addRouteDeclarationToNgModule, buildRelativeModulePath, buildRoute, getRoutingModulePath } from '../utils/utils';
 
 export type TemplateModuleSchema=  {
   name:string
@@ -38,16 +31,7 @@ export type TemplateModuleSchema=  {
   fromLibrary:boolean
 }
 
-function buildRelativeModulePath(options: TemplateModuleSchema, modulePath: string): string {
-  const importModulePath = normalize(
-    `/${options.path}/` +
-      (options.flat ? '' : strings.dasherize(options.name) + '/') +
-      strings.dasherize(options.name) +
-      '.module',
-  );
 
-  return buildRelativePath(modulePath, importModulePath);
-}
 
 
 function addImportToNgModule(options: TemplateModuleSchema): Rule {
@@ -81,57 +65,11 @@ function addImportToNgModule(options: TemplateModuleSchema): Rule {
   };
 }
 
-function addRouteDeclarationToNgModule(
-  options: any,
-  routingModulePath: Path | undefined,
-): Rule {
-  return (host: Tree) => {
-    if (!options.route) {
-      return host;
-    }
-    if (!options.module) {
-      throw new Error('Module option required when creating a lazy loaded routing module.');
-    }
 
-    let path: string;
-    if (routingModulePath) {
-      path = routingModulePath;
-    } else {
-      path = options.module;
-    }
 
-    const sourceText = host.readText(path);
-    let addRouteDeclarationToModulePredicate = options.componentName ? addRouteDeclarationToModuleOnChildrenProperty : addRouteDeclarationToModule
-    const addDeclaration = addRouteDeclarationToModulePredicate(
-      // @ts-ignore
-      ts.createSourceFile(path, sourceText, ts.ScriptTarget.Latest, true),
-      path,
-      buildRoute(options, options.module),
-    ) as InsertChange;
 
-    const recorder = host.beginUpdate(path);
-    recorder.insertLeft(addDeclaration.pos, addDeclaration.toAdd);
-    host.commitUpdate(recorder);
 
-    return host;
-  };
-}
 
-function getRoutingModulePath(host: Tree, modulePath: string): Path | undefined {
-  const routingModulePath = modulePath.endsWith(ROUTING_MODULE_EXT)
-    ? modulePath
-    : modulePath.replace(MODULE_EXT, ROUTING_MODULE_EXT);
-
-  return host.exists(routingModulePath) ? normalize(routingModulePath) : undefined;
-}
-
-function buildRoute(options: TemplateModuleSchema, modulePath: string) {
-  const relativeModulePath = buildRelativeModulePath(options, modulePath);
-  const moduleName = `${strings.classify(options.name)}Module`;
-  const loadChildren = `() => import('${relativeModulePath}').then(m => m.${moduleName})`;
-
-  return `{ path: '${options.route}', loadChildren: ${loadChildren} }`;
-}
 
 
 export default function (options: TemplateModuleSchema): Rule {
