@@ -13,8 +13,8 @@ import {
 import { parseName } from '@schematics/angular/utility/parse-name';
 import { validateClassName } from '@schematics/angular/utility/validation';
 import { createDefaultPath } from '@schematics/angular/utility/workspace';
-import { addRouteDeclarationToModuleOnChildrenProperty } from './my_helper';
-import { addRouteDeclarationToNgModule, buildRelativeModulePath, buildRoute, getRoutingModulePath } from '../utils/utils';
+
+import { addRouteDeclarationToNgModule, buildRelativeModulePath, buildRoute, getRoutingModuleOrRoutesPath } from '../utils/utils';
 
 export type TemplateModuleSchema=  {
   name:string
@@ -86,7 +86,7 @@ export default function (options: TemplateModuleSchema): Rule {
     const isLazyLoadedModuleGen = !!( !!(options.route === "" ? true:options.route ) && options.module);
     if (isLazyLoadedModuleGen) {
 
-      routingModulePath = getRoutingModulePath(host, options.module as string);
+      routingModulePath = getRoutingModuleOrRoutesPath(host, options.module as string);
     }
 
     const parsedPath = parseName(options.path, options.name);

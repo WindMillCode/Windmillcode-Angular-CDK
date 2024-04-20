@@ -45,7 +45,7 @@ The `template-library` schematic is essential for developers looking to create r
 
 - `name`: Specifies the name of the library. This is a crucial identifier that will be used throughout the library's files and configuration.
 - `path`: The path where the library should be created. It defines the directory structure within the project workspace.
-- `entryFile`: Designates the main entry point of the library. This is typically a file like `public-api.ts` that exports the components, services, or modules that the library provides. you should not have set this 
+- `entryFile`: Designates the main entry point of the library. This is typically a file like `public-api.ts` that exports the components, services, or modules that the library provides. you should not have set this
 - `dest`: This is the destination directory where the build artifacts of the library will be placed. It's usually set to a `dist/` directory.
 - `project`: Defines the Angular project within which the library will be created. This option is vital for workspaces containing multiple projects to ensure the library is associated with the correct project context.
 
@@ -547,4 +547,9 @@ npx ng g @windmillcode/angular-templates:service-method --name [YOUR SERVICE MET
 ## v17.3.4000 [4/11/24]
  * updated package to reflect the version  ^17.3.4 of @angular/core package,
 ## v17.3.4001 [4/16/24]
- * updated package to conform with @windmillcode/angular-wml-components-base   
+ * updated package to conform with @windmillcode/angular-wml-components-base
+
+ ## v17.3.4100 [4/19/2024 12:00:00 PM EST]
+
+[UPDATE] Updated utility function imports and expanded routing support in both template-component and template-module sections. This includes support for new routing mechanisms aligned with Angular 17. Specifically, in projects/templates/schematics/template-component/index.ts, the getRoutingModuleOrRoutesPath function is now used to determine the routing path based on options provided, supporting a new routesFilePath parameter for flexible routing configurations. long story short code generation for standalone is now fully supported
+[UPDATE] Added routesFilePath to TemplateComponentSchema in projects/templates/schematics/template-component/schema.json. This parameter helps specify the path for routes when using new routing configurations in Angular 17, particularly helpful for less experienced developers managing routes directly in src/app/app.routes.ts.

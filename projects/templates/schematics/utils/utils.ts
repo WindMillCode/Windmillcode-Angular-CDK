@@ -14,9 +14,8 @@ import {
 } from '@schematics/angular/utility/find-module';
 import {
   addRouteDeclarationToModule
-
 } from '@schematics/angular/utility/ast-utils';
-import { addRouteDeclarationToModuleOnChildrenProperty } from '../template-module/my_helper';
+import { addRouteDeclarationToModuleOrRoutesFileOnChildrenProperty } from '../template-module/my_helper';
 import { TemplateModuleSchema } from '../template-module';
 import { TemplateComponentSchema } from '../template-component';
 
@@ -68,7 +67,7 @@ export let wmlMsgs ={
 
 export function getTsMemberInfo(x: ts.Node,returnIt = false,printIt = true) {
   if(printIt){
-    console.log(x.kind,ts.SyntaxKind[x.kind], x.getText().split("\n")[0]);
+    console.log(x.kind,ts.SyntaxKind[x.kind], x.getFullText());
   }
 
 
@@ -164,7 +163,7 @@ export function prepareForUpdate(
 type ParameterSyntaxType = ts.Node | ts.ClassElement;
 
 export function wmlFindChildNode(
-  parent: ts.Node | ts.NodeArray<ts.ClassElement>,
+  parent: ts.Node | ts.NodeArray<ts.ClassElement> | ts.NodeArray<ts.Statement>,
   syntaxKind:
   ts.SyntaxKind | ((node: ParameterSyntaxType) => boolean),
   issueMsg:string ="There was an issue finding the node",
@@ -422,13 +421,20 @@ export function buildRoute(options: TemplateModuleSchema, modulePath: string,typ
     const moduleName = `${strings.classify(options.name)}Module`;
     const loadChildren = `() => import('${relativeModulePath}').then(m => m.${moduleName})`;
 
-    return `{ path: '${options.route}', loadChildren: ${loadChildren} }`;
+    return `{
+      path: '${options.route}',
+      loadChildren: ${loadChildren}
+    }`;
   }
   else {
     const componentName = `${strings.classify(options.name)}Component`;
-    const loadComponent = `() => import('${relativeModulePath}').then(m => m.${componentName})`;
+    const loadComponent = `() => import('${relativeModulePath.replace("src/app/","")}').then(m => m.${componentName})`;
 
-    return `{ path: '${options.route}', loadComponent: ${loadComponent} }`;
+    return `{
+      path: '${options.route}',
+      loadComponent: ${loadComponent},
+      children:[]
+    }`;
   }
 }
 
@@ -442,25 +448,36 @@ export function addRouteDeclarationToNgModule(
     if (!options.route) {
       return host;
     }
-    if (!options.module) {
-      throw new Error('Module option required when creating a lazy loaded routing module.');
+    if (!options.module && !options.routesFilePath) {
+      throw new Error('Module or  routesFilePath option required when creating a lazy loaded routing module.');
     }
 
-    let path: string;
-    if (routingModulePath) {
-      path = routingModulePath;
-    } else {
-      path = options.module;
-    }
+    let path: string = routingModulePath ?? options?.routesFilePath ?? options?.module
+
+
 
     const sourceText = host.readText(path);
-    let addRouteDeclarationToModulePredicate = (options.componentName || options.addToChildrenArray) ? addRouteDeclarationToModuleOnChildrenProperty : addRouteDeclarationToModule
-    const addDeclaration = addRouteDeclarationToModulePredicate(
-      // @ts-ignore
-      ts.createSourceFile(path, sourceText, ts.ScriptTarget.Latest, true),
-      path,
-      buildRoute(options, options.module,type),
-    ) as InsertChange;
+
+    let addDeclaration;
+    if((options.componentName || options.addToChildrenArray)){
+      addDeclaration = addRouteDeclarationToModuleOrRoutesFileOnChildrenProperty(
+        // @ts-ignore
+        ts.createSourceFile(path, sourceText, ts.ScriptTarget.Latest, true),
+        path,
+        buildRoute(options, options.module ?? options.routesFilePath,type),
+        options.module
+      ) as InsertChange;
+    }
+
+    else{
+      addDeclaration = addRouteDeclarationToModule(
+        // @ts-ignore
+        ts.createSourceFile(path, sourceText, ts.ScriptTarget.Latest, true),
+        path,
+        buildRoute(options, options.module,type),
+      ) as InsertChange;
+    }
+
 
     const recorder = host.beginUpdate(path);
     recorder.insertLeft(addDeclaration.pos, addDeclaration.toAdd);
@@ -471,23 +488,26 @@ export function addRouteDeclarationToNgModule(
 }
 
 
-export function getRoutingModulePath(host: Tree, modulePath: string): Path | undefined {
-  console.log('Original module path:', modulePath);  // Debugging output
-
-  const routingModulePath = modulePath.endsWith(ROUTING_MODULE_EXT)
+export function getRoutingModuleOrRoutesPath(host: Tree, modulePath: string): Path | undefined {
+  const ROUTES_FILE_EXT = '.routes.ts';
+  // Check for routing module first
+  let targetPath = modulePath.endsWith(ROUTING_MODULE_EXT)
     ? modulePath
     : modulePath.replace(MODULE_EXT, ROUTING_MODULE_EXT);
 
-  console.log('Potential routing module path:', routingModulePath);
-
-  if (host.exists(routingModulePath)) {
-    const normalizedPath = normalize(routingModulePath);
-    console.log('Normalized routing module path:', normalizedPath);
-    return normalizedPath;
-  } else {
-    console.error('Routing module path does not exist:', routingModulePath);  // Error output
-    return undefined;
+  if (host.exists(targetPath)) {
+    return normalize(targetPath);
   }
+
+  // If no routing module, look for routes.ts
+  targetPath = modulePath.replace(MODULE_EXT, ROUTES_FILE_EXT);
+  if (host.exists(targetPath)) {
+    return normalize(targetPath);
+  }
+
+  // Log error if neither path exists
+  console.error('Neither routing module path nor routes file exists:', targetPath);
+  return undefined;
 }
 
 

@@ -9,7 +9,7 @@ import { findNodes, insertImport } from '@schematics/angular/utility/ast-utils';
 import * as ts from '@schematics/angular/third_party/github.com/Microsoft/TypeScript/lib/typescript';
 import { InsertChange, Change } from '@schematics/angular/utility/change';
 import { wmlUpdateFile } from '../utils/updateFile';
-import { DevEnvFile, addRouteDeclarationToNgModule, getRoutingModulePath, wmlCreateSourceFile } from '../utils/utils';
+import { DevEnvFile, addRouteDeclarationToNgModule, getRoutingModuleOrRoutesPath, wmlCreateSourceFile } from '../utils/utils';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -29,6 +29,7 @@ export type TemplateComponentSchema = {
   isPageModule: boolean;
   route?: string;
   routeKey?: string;
+  routesFilePath?:string;
   idPrefix: string;
   routing:boolean
   addToChildrenArray?:boolean
@@ -94,9 +95,10 @@ export function generateComponentTemplate(
 
     let routingModulePath: Path | undefined;
 
-    if(options.routing){
-      routingModulePath = getRoutingModulePath(host, options.module as string);
+    if(options.route){
+      routingModulePath = getRoutingModuleOrRoutesPath(host, options.module ?? options.routesFilePath as string);
       options.addToChildrenArray = true
+      options.isPageModule = true
     }
 
     return  chain([
@@ -109,7 +111,7 @@ export function generateComponentTemplate(
         skipImport: !options.isPageModule,
         module:options.module
       }),
-      options.routing ? addRouteDeclarationToNgModule(options, routingModulePath,"component") : noop(),
+      options.route && options.standalone ? addRouteDeclarationToNgModule(options, routingModulePath,"component") : noop(),
       options.isPageModule
         ? modifyAppToAddNewPage(options)
         : addDeclarationToModuleCpntsArr(options),
@@ -122,9 +124,7 @@ export function generateComponentTemplate(
     ])
   }
 
-
-
-  };
+};
 
 
 
@@ -139,8 +139,11 @@ let modifyAppToAddNewPage = (options: TemplateComponentSchema) => {
 
 function addDeclarationToModuleCpntsArr(options: TemplateComponentSchema) {
   return (tree: Tree) => {
-    options.module = findModuleFromOptions(tree, options);
-    if(!options.standalone){
+    options.module = findModuleFromOptions(tree, {
+      ...options,
+      standalone:options.isPageModule
+    });
+
       let modulePath = options.module?.toString() as string;
 
       let file = tree.read(modulePath);
@@ -153,15 +156,27 @@ function addDeclarationToModuleCpntsArr(options: TemplateComponentSchema) {
         ts.ScriptTarget.Latest,
         true
       );
-      let cpntsVar: any = moduleFile.statements
+      let entitiesVar: any
+
+      if(!options.standalone){
+        entitiesVar = moduleFile.statements
         .filter(ts.isVariableStatement)
         .find((v) => {
           return (
             ['components','cpnts'].includes(v.declarationList.declarations[0].name.getText())
           );
         });
+      } else{
+        entitiesVar = moduleFile.statements
+        .filter(ts.isVariableStatement)
+        .find((v) => {
+          return (
+            ['modules'].includes(v.declarationList.declarations[0].name.getText())
+          );
+        });
+      }
       let cpntsArr = findNodes(
-        cpntsVar,
+        entitiesVar,
         ts.SyntaxKind.ArrayLiteralExpression,
         1
       )[0] as ts.ArrayLiteralExpression;
@@ -182,7 +197,7 @@ function addDeclarationToModuleCpntsArr(options: TemplateComponentSchema) {
 
       // add import path
       addTsImportPath(options, modulePath, changes, moduleFile, componentVar, tree);
-    }
+
 
 
     // add scss
@@ -291,6 +306,7 @@ let addRouteEntryToEnvArr = (options: TemplateComponentSchema, tree: Tree) => {
     updateTsObject(navObj, objInfo.targetSourceFile, objInfo.targetPath, tree,componentVar);
     needsIdUpdate = false
   } catch (e) {
+
     return;
   }
 };
