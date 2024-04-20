@@ -15,5 +15,5 @@
         "build": "npx ng build",
         "test": "npx ng test wml-penrose --code-coverage"
     },
-    "version": "17.3.4001"
+    "version": "17.3.5000"
 }

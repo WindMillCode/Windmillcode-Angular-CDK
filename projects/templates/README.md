@@ -553,3 +553,6 @@ npx ng g @windmillcode/angular-templates:service-method --name [YOUR SERVICE MET
 
 [UPDATE] Updated utility function imports and expanded routing support in both template-component and template-module sections. This includes support for new routing mechanisms aligned with Angular 17. Specifically, in projects/templates/schematics/template-component/index.ts, the getRoutingModuleOrRoutesPath function is now used to determine the routing path based on options provided, supporting a new routesFilePath parameter for flexible routing configurations. long story short code generation for standalone is now fully supported
 [UPDATE] Added routesFilePath to TemplateComponentSchema in projects/templates/schematics/template-component/schema.json. This parameter helps specify the path for routes when using new routing configurations in Angular 17, particularly helpful for less experienced developers managing routes directly in src/app/app.routes.ts.
+,
+## v17.3.5000 [4/20/24]
+ * updated package to reflect the version  ^17.3.5 of @angular/core package

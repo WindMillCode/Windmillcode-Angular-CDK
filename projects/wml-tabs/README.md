@@ -303,4 +303,6 @@ WmlTabsModule
 ## v17.3.4000 [4/11/24]
  * updated package to reflect the version  ^17.3.4 of @angular/core package,
 ## v17.3.4001 [4/16/24]
- * updated package to conform with @windmillcode/angular-wml-components-base   
+ * updated package to conform with @windmillcode/angular-wml-components-base   ,
+## v17.3.5000 [4/20/24]
+ * updated package to reflect the version  ^17.3.5 of @angular/core package
