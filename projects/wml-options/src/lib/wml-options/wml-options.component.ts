@@ -17,12 +17,10 @@ import { generateClassPrefix } from '@windmillcode/angular-wml-components-base';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WmlOptionsComponent {
-  constructor(public cdref: ChangeDetectorRef) {}
-
-
-
+  constructor(
+    public cdref: ChangeDetectorRef
+  ) {}
   classPrefix = generateClassPrefix('WmlOptions');
-
   @Input('params') params: WMLOptionsParams = new WMLOptionsParams();
   @HostBinding('class') myClass: string = this.classPrefix(`View`);
   @ViewChild("customOption", { read: ViewContainerRef, static: true }) customOption!: ViewContainerRef;
@@ -45,16 +43,16 @@ export class WmlOptionsComponent {
     );
   };
 
-  populateFields = () => {
+  populateFields = (init=false) => {
     this.params.options.forEach((btn) => {
-      let chosen = this.params.formArray.value.includes(btn);
+      let chosen = this.params.formArray.value.includes(btn) ;
 
       btn.clickPredicate = () => {
-        this.toggleChosen(btn);
+        this.toggleChosen(btn,false);
         btn.click();
       };
       if (chosen) {
-        this.toggleChosen(btn);
+        this.toggleChosen(btn,init);
       }
     });
   };
@@ -71,8 +69,11 @@ export class WmlOptionsComponent {
     this.cdref.detectChanges();
   };
 
-  toggleChosen = (btn: WMLOptionItemParams) => {
-    btn.isChosen = !btn.isChosen;
+  toggleChosen = (btn: WMLOptionItemParams,init=false) => {
+
+    if(!init){
+      btn.isChosen = !btn.isChosen;
+    }
     btn.isChosen ? btn.updateClassString(btn.toggleClass) : btn.updateClassString("", "clear");
 
     if (btn.isChosen) {
@@ -97,11 +98,14 @@ export class WmlOptionsComponent {
   ngOnInit() {
     this.params.options.forEach((btn) => {
       btn.wmlOptions = this.params;
+      if(btn.isChosen){
+        this.params.formArray.push(new FormControl(btn))
+      }
     });
   }
 
   ngAfterViewInit(): void {
-    this.populateFields();
+    this.populateFields(true);
     if (this.params.listenForClearedFormIsEnabled) {
       this.listenForClearedForm().subscribe();
     }

@@ -2,6 +2,7 @@
 
 
 :host {
+  cursor: pointer;
   @mixin WmlSampleOptionItemBtn1{
     background-color: $bs-dark;
     label{
@@ -30,6 +31,7 @@
 
             &:hover{
               @include WmlSampleOptionItemBtn1;
+
               border:calc(1/16 * 1rem) solid $bs-tertiary;
             }
           }

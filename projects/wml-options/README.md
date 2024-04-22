@@ -301,3 +301,6 @@ WmlOptionsModule
  * updated package to conform with @windmillcode/angular-wml-components-base   ,
 ## v17.3.5000 [4/20/24]
  * updated package to reflect the version  ^17.3.5 of @angular/core package
+
+## v17.3.5100 [4/22/24]
+* [BREAKING CHANGE]- can speciify default chosen values with the isChosen property although this might break functionalitty of previous apps
