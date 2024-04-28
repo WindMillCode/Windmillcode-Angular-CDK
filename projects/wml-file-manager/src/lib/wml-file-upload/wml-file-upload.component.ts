@@ -1,6 +1,7 @@
 // angular
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { AbstractControl, FormArray, FormControl } from '@angular/forms';
+import { AbstractControl, Form, FormArray, FormControl } from '@angular/forms';
+import { WMLField } from '@windmillcode/angular-wml-field';
 
 
 
@@ -37,17 +38,7 @@ export class WmlFileUploadComponent  {
   @HostBinding('class') myClass: string = this.classPrefix(`View`);
   ngUnsub= new Subject<void>()
 
-  ngOnInit(): void {}
 
-  ngAfterViewInit(): void {
-    this.browseFileElement = this.browseFileElementRef.nativeElement;
-    // specifacally for automation purposes
-    if(this.params.automation){
-      ;(this.browseFileElement as any).chooseFiles = this.chooseFiles
-    }
-    this.listenForFileUpload().subscribe()
-    this.populateFields()
-  }
 
 
   populateFields = ()=>{
@@ -134,6 +125,23 @@ export class WmlFileUploadComponent  {
   }
 
 
+  ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
+    if(this.params.wmlField){
+      this.params.formArray = this.params.wmlField.getReactiveFormControl() as FormArray
+    }
+    this.browseFileElement = this.browseFileElementRef.nativeElement;
+    // specifacally for automation purposes
+    if(this.params.automation){
+      ;(this.browseFileElement as any).chooseFiles = this.chooseFiles
+    }
+    this.listenForFileUpload().subscribe()
+    this.populateFields()
+
+  }
+
+
   ngOnDestroy(){
     this.ngUnsub.next();
     this.ngUnsub.complete()
@@ -164,6 +172,7 @@ export class WMLFileUploadParams {
   browseFileText= "Browse Files"
   limit = 4
   formArray =new FormArray<AbstractControl<WMLFileUploadItem>>([])
+  wmlField!:WMLField
   duplicates = false
   uploadFn! : ()=> Observable<any>
   updateFormArrayPredicate:(val:any) => any =(val)=> val

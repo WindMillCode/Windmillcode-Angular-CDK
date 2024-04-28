@@ -48,6 +48,7 @@ wml-file-upload {
               margin: $spacing5 0 0 0;
 
               &:hover{
+                cursor: pointer;
                 background: $wml-primary-gradient;
                 label{
                   color:$wml-light;

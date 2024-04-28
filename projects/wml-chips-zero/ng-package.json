@@ -6,11 +6,9 @@
   },
   "assets": [
     "src/lib/styles.scss",
-    "src/lib/material.scss",
     "src/lib/fontawesome.scss"
   ],
   "allowedNonPeerDependencies": [
-    "@angular/material",
     "@ngx-translate/core"
   ]
 }

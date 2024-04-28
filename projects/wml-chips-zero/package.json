@@ -1,6 +1,5 @@
 {
     "dependencies": {
-        "@angular/material": ">=16.0.0",
         "@ngx-translate/core": ">=15.0.0",
         "tslib": "^2.3.0"
     },
@@ -10,7 +9,8 @@
         "@angular/cdk": "^17.0.0",
         "@angular/common": "^17.0.0",
         "@angular/core": "^17.0.0",
-        "@windmillcode/angular-wml-components-base": "^17.3.5000"
+        "@windmillcode/angular-wml-components-base": "^17.3.5000",
+        "@windmillcode/angular-wml-button-zero": "^17.3.5000"
     },
     "private": false,
     "schematics": "",

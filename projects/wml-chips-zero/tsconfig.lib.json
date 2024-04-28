@@ -7,7 +7,8 @@
     "declarationMap": true,
     "inlineSources": true,
     "types": [],
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "skipLibCheck": true
   },
   "exclude": [
     "**/*.spec.ts"

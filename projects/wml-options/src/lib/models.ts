@@ -1,6 +1,7 @@
 import { FormArray, FormControl } from "@angular/forms"
 import { WMLButton, WMLCustomComponent } from "@windmillcode/angular-wml-components-base"
 import { WmlSampleOptionItemComponent } from "./wml-sample-option-item/wml-sample-option-item.component"
+import { WMLField } from "@windmillcode/angular-wml-field"
 
 
 export class WMLOptionsParams {
@@ -12,6 +13,7 @@ export class WMLOptionsParams {
       }
     )
   }
+  hasBeenInitalized = false
   chosen:WMLOptionsParams["options"]=[]
   options:WMLOptionItemParams[]= ["Provide","Options","in","the","WMLOptionsParams['options']","array"]
   .map((text,index0)=>{
@@ -20,6 +22,7 @@ export class WMLOptionsParams {
     })
   })
   limit= Infinity
+  wmlField!:WMLField
   formArray=  new FormArray<any>([])
   listenForClearedFormIsEnabled = true
   updateFormArrayPredicate:(val:any) => any =(val)=> val

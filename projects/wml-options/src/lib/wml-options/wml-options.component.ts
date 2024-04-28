@@ -95,20 +95,28 @@ export class WmlOptionsComponent {
     }
   };
 
-  ngOnInit() {
+
+
+  ngAfterViewInit(): void {
+
+    if(this.params.hasBeenInitalized){
+      return
+    }
+    if(this.params.wmlField){
+      this.params.formArray = this.params.wmlField.getReactiveFormControl() as FormArray
+    }
     this.params.options.forEach((btn) => {
       btn.wmlOptions = this.params;
       if(btn.isChosen){
         this.params.formArray.push(new FormControl(btn))
       }
     });
-  }
-
-  ngAfterViewInit(): void {
     this.populateFields(true);
     if (this.params.listenForClearedFormIsEnabled) {
       this.listenForClearedForm().subscribe();
     }
+    this.params.hasBeenInitalized = true
+
   }
 
   ngOnDestroy() {

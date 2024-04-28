@@ -1,7 +1,9 @@
 // angular
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnInit,  Input, ElementRef, ViewChild, ViewEncapsulation   } from '@angular/core';
 import { FormArray, FormControl, Validators } from '@angular/forms';
-import { MatAutocomplete, MatAutocompleteSelectedEvent, MAT_AUTOCOMPLETE_SCROLL_STRATEGY, MAT_AUTOCOMPLETE_SCROLL_STRATEGY_FACTORY_PROVIDER } from '@angular/material/autocomplete';
+import { WmlButtonOneParams } from '@windmillcode/angular-wml-button-zero';
+import { generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { WMLField } from '@windmillcode/angular-wml-field/public-api';
 
 
 
@@ -24,41 +26,37 @@ export class WMLChipsZeroComponent  {
   constructor (
     public cdref:ChangeDetectorRef,
   ) {
-    this.filteredValues = this.fruitCtrl.valueChanges.pipe(
+    this.filteredValues = this.itemCtrl.valueChanges.pipe(
       startWith(null),
-      map((fruit: string | null) => (fruit ? this._filter(fruit) : this.params.suggestions.slice())),
+      map((fruit: string | null) => (fruit ? this.filter(fruit) : this.params.suggestions.slice())),
     );
   }
 
-  generateClassPrefix(prefix:string) {
-    return (val: string) => {
-      return prefix + val
-    }
-  }
-  classPrefix = this.generateClassPrefix('WMLChipsZero')
+
+  classPrefix = generateClassPrefix('WMLChipsZero')
 
 
   @Input('params') params: WMLChipsParams = new WMLChipsParams()
   @ViewChild("myTextArea", { static: true }) myTextArea!:ElementRef<HTMLInputElement>
   @HostBinding('class') myClass: string = this.classPrefix(`View`);
   ngUnsub= new Subject<void>()
+  itemCtrl = new FormControl('',Validators.required);
+  filteredValues: Observable<string[]>;
+  textAreaStyle:Partial<CSSStyleDeclaration>={}
 
 
-  ngAfterViewInit(){
-    this.populateFields()
-    this.initResizeTextArea().subscribe();
 
-  }
+
   populateFields =()=>{
     this.params.formArray.value
     .forEach((userInput:string)=>{
-      this.fruitCtrl.setValue(userInput)
+      this.itemCtrl.setValue(userInput)
       this.add()
     })
   }
 
 
-  private initResizeTextArea() {
+  initResizeTextArea() {
     return timer(300)
       .pipe(
         takeUntil(this.ngUnsub),
@@ -80,15 +78,6 @@ export class WMLChipsZeroComponent  {
     }
   }
 
-
-  ngOnDestroy(){
-    this.ngUnsub.next();
-    this.ngUnsub.complete()
-  }
-
-  fruitCtrl = new FormControl('',Validators.required);
-  filteredValues: Observable<string[]>;
-
   remove(fruit: string): void {
     const index = this.params.userInputs.indexOf(fruit);
 
@@ -98,35 +87,48 @@ export class WMLChipsZeroComponent  {
     this.updateFormArray()
   }
 
+  clear= ()=>{
+    this.params.userInputs = []
+    this.updateFormArray()
+  }
+
   add(evt?:Event){
     evt?.preventDefault()
-    if([undefined,null,''].includes(this.fruitCtrl.value )){
+    if([undefined,null,''].includes(this.itemCtrl.value )){
       return
     }
-    this.params.userInputs.push(this.fruitCtrl.value as string)
-    this.fruitCtrl.setValue(null,{emitEvent:false})
+    this.params.userInputs.push(this.itemCtrl.value as string)
+    this.itemCtrl.setValue(null,{emitEvent:false})
     this.cdref.detectChanges()
     this.updateFormArray()
   }
 
-  textAreaStyle:Partial<CSSStyleDeclaration>={
-
-  }
   resizeBasedOnTextContent(){
     this.textAreaStyle.height = "0"
     this.textAreaStyle.height = (this.myTextArea.nativeElement.scrollHeight) + "px";
     this.cdref.detectChanges();
   }
 
-  selected(event: MatAutocompleteSelectedEvent): void {
 
-    this.fruitCtrl.setValue(event.option.viewValue)
+
+  filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.params.suggestions.filter(item => item.toLowerCase().includes(filterValue));
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
 
-    return this.params.suggestions.filter(fruit => fruit.toLowerCase().includes(filterValue));
+  ngAfterViewInit(){
+    if(this.params.wmlField){
+      this.params.formArray = this.params.wmlField.getReactiveFormControl() as FormArray
+    }
+    this.params.clearBtn.click = this.clear
+    this.params.userInputs = []
+    this.populateFields()
+    this.initResizeTextArea().subscribe();
+  }
+  ngOnDestroy(){
+    this.ngUnsub.next();
+    this.ngUnsub.complete()
   }
 
 
@@ -143,6 +145,7 @@ export class WMLChipsParams {
     )
   }
   limit= Infinity
+  wmlField!:WMLField
   formArray = new FormArray<any>([])
   updateFormArrayPredicate:(val:string) => any =(val)=> val
   placeholder = "Type your value then press enter to see it appear"
@@ -156,6 +159,9 @@ export class WMLChipsParams {
     "Sample",
     "Values"
   ]
+  clearBtn = new WmlButtonOneParams({
+    text:"Clear"
+  })
 }
 
 

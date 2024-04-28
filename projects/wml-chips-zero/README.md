@@ -141,3 +141,12 @@ WmlChipsModule
  * updated package to conform with @windmillcode/angular-wml-components-base   ,
 ## v17.3.5000 [4/20/24]
  * updated package to reflect the version  ^17.3.5 of @angular/core package
+
+## v17.3.5100 [4/23/24]
+* [BREAKING CHANGE] - removed mat-autocomplete from chip control
+
+
+
+## v17.3.5110 [4/27/24]
+* [UPDATE] added wmlField so now formArray does not need to be specified and comes from wml-form
+* [UPDATE] update chip styling

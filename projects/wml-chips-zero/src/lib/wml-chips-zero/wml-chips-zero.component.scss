@@ -4,17 +4,16 @@
 wml-chips-zero {
 
 
-  $chipIconColor:lighten($color: $wml-grey, $amount: 30);
+  $chipIconColor:lighten($color: $wml-chips-zero-grey, $amount: 30);
   &.WMLChipsZeroView{
     display: block;
     .WMLChipsZero{
       &Main{
         &Pod{
           width:100%;
-          max-height:calc(250/16* 1rem);
-          padding: $spacing3 $spacing5;
+          padding: $wml-chips-zero-spacing3 $wml-chips-zero-spacing5;
           border-radius: calc(5/16 * 1rem);
-          background-color: lighten($wml-grey,$amount:80);
+          background-color: lighten($wml-chips-zero-grey,$amount:80);
           @include FlexColumnCenter;
           align-items: flex-start;
         }
@@ -30,21 +29,40 @@ wml-chips-zero {
           &Item {
             &0 {
               background-color: $chipIconColor;
-              padding: $spacing3;
+              padding: $wml-chips-zero-spacing3;
               border-radius: calc(100/16 * 1rem);
-              color: $wml-dark;
-              margin: 0 $spacing5 $spacing5 0;
+              color: $wml-chips-zero-dark;
+              margin: 0 $wml-chips-zero-spacing5 $wml-chips-zero-spacing5 0;
               word-break: break-all;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
 
-              button{
-                border:none;
 
-                i{
-                  color:$chipIconColor;
-                }
-                background-color:$wml-grey;
-                width: $spacing5;
-                border-radius: 100%;
+
+            }
+          }
+
+          &Text {
+            &0 {
+              // color:$wml-chips-zero-dark
+            }
+          }
+
+
+          &Btn {
+            &0 {
+              cursor: pointer;
+              border:none;
+              width:  calc(18/10.6 * 1rem) !important;
+              margin: 0 0 0 $wml-chips-zero-spacing3;
+              background-color:$wml-chips-zero-grey;
+              width: $wml-chips-zero-spacing5;
+              border-radius: calc(100/10.6 * 1rem);
+
+
+              i{
+                color:$chipIconColor;
               }
             }
           }
@@ -54,13 +72,14 @@ wml-chips-zero {
           width: 100%;
           &Input {
             &0 {
-              padding: $spacing4;
+              padding: $wml-chips-zero-spacing4;
               width: 100%;
               height: auto;
               min-height: calc(1/16 * 1rem);
               overflow: hidden;
               border:none;
               background-color: transparent;
+              font-size: $wml-chips-zero-font-size2;
               &::placeholder {
                 margin:0;
                 padding:0;
@@ -68,6 +87,12 @@ wml-chips-zero {
             }
           }
 
+        }
+
+        &2{
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
         }
       }
     }

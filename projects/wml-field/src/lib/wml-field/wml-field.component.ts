@@ -7,6 +7,7 @@ import { addCustomComponent, generateClassPrefix, WMLCustomComponent, WMLWrapper
 import { Subject } from 'rxjs';
 import { WmlLabelComponent, WmlLabelParams } from '../wml-label/wml-label.component';
 
+
 @Component({
   selector: 'wml-field',
   templateUrl: './wml-field.component.html',
@@ -63,7 +64,7 @@ export class WmlFieldComponent  {
 }
 
 
-export class WMLField<T=any> extends WMLWrapper {
+export class WMLField<FC=any,FP=any> extends WMLWrapper {
   constructor(
     params:{
       type:"default" | "custom",
@@ -143,7 +144,10 @@ export class WMLField<T=any> extends WMLWrapper {
     type:"input" | "custom"  //may just make all components dynamic and provide metas
     parentForm:FormGroup
     formControlName:string
-    custom:WMLCustomComponent
+    custom:WMLCustomComponent<FC,FP>
+
+    // should only use when not used in wml-form will break things unlss you know what you are doing
+    formControl?:AbstractControl
 
   } = {
     type:"custom",
@@ -179,8 +183,11 @@ export class WMLField<T=any> extends WMLWrapper {
     })
   }
 
+  getFieldProps = ():FP =>{
+    return this.field.custom.params
+  }
   getReactiveFormControl = ():AbstractControl=>{
-    return this.field.parentForm.controls[this.field.formControlName]
+    return this.field.parentForm.controls[this.field.formControlName] ?? this.field.formControl
   }
   getParentForm = ():FormGroup=>{
     return this.field.parentForm

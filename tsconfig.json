@@ -54,9 +54,9 @@
       "@windmillcode/wml-options": [
         "dist/wml-options"
       ],
-      "@windmillcode/angular-wml-button-zero": [
-        "dist/wml-button-zero"
-      ],
+      // "@windmillcode/angular-wml-button-zero": [
+      //   "dist/wml-button-zero"
+      // ],
       "@windmillcode/wml-mobile-nav-zero": [
         "dist/wml-mobile-nav-zero/src/public-api.ts"
       ],

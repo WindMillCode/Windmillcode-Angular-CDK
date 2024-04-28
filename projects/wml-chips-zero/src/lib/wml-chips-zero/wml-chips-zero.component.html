@@ -1,9 +1,14 @@
 <div (keydown.enter)="add($event)"  [class]="classPrefix('MainPod')">
   <ul [class]="classPrefix('Pod0')"  #chipGrid [attr.aria-label]="params.userInputsAriaLabel | translate">
-    <li [class]="classPrefix('Pod0Item0')" *ngFor="let fruit of params.userInputs" (removed)="remove(fruit)">
-      {{fruit}}
-      <button (click)="remove(fruit)"  [attr.aria-label]="params.removeChipAriaLabel | translate">
-        <i class="fa-solid fa-xmark"></i>
+    <li [class]="classPrefix('Pod0Item0')" *ngFor="let item of params.userInputs" (removed)="remove(item)">
+      <span [class]="classPrefix('Pod0Text0')">{{item}}</span>
+      <button
+      [class]="classPrefix('Pod0Btn0')"
+      (click)="remove(item)"
+      [attr.aria-label]="params.removeChipAriaLabel | translate">
+        <i
+        [class]="'fa-solid fa-xmark'"
+        ></i>
       </button>
     </li>
   </ul>
@@ -14,14 +19,13 @@
     [ngStyle]="textAreaStyle"
     rows =1
     [class]="classPrefix('Pod1Input0')"
-    [placeholder]="params.placeholder | translate"  [formControl]="fruitCtrl"
-    [matAutocomplete]="auto"></textarea>
-  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-    <mat-option *ngFor="let value of filteredValues | async" [value]="value">
-      {{value | translate}}
-    </mat-option>
-  </mat-autocomplete>
+    [placeholder]="params.placeholder | translate"  [formControl]="itemCtrl"
+    ></textarea>
+
   </div>
+  <section [class]="classPrefix('Pod2')">
+    <wml-button-one [params]="params.clearBtn"></wml-button-one>
+  </section>
 
 
 </div>
