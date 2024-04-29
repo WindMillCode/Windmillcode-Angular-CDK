@@ -1,5 +1,6 @@
 import { transformObjectKeys } from "@core/utility/common-utils"
 import { RecursiveSnakeCaseType, transformFromCamelCaseToSnakeCase, transformFromSnakeCaseToCamelCase } from "@core/utility/string-utils"
+import { WMLConstructor } from "@windmillcode/angular-wml-components-base"
 import { Observable, of, take } from "rxjs"
 
 export let <%= name %>Load = (uiBody:<%= capitalize(name)%>UIRequestBody): Observable<<%= capitalize(name)%>APIRequestBody>=>{
@@ -24,42 +25,21 @@ export let <%= name %>Success = (apiBody:<%= capitalize(name)%>APIResponseBody):
   return uiBody
 }
 
-export class <%= capitalize(name)%>UIRequestBody {
-  constructor(params:Partial<<%= capitalize(name)%>UIRequestBody>={}){
-    let origParams = Object.entries(params).filter(([key, val]) => {
-      return !key.startsWith('param');
-    });
-    Object.assign(this, { ...Object.fromEntries(origParams) });
-  }
+export class <%= capitalize(name)%>UIRequestBody extends WMLConstructor<<%= capitalize(name)%>UIRequestBody>  {
+
 }
 
-export class <%= capitalize(name)%>APIRequestBody {
-  constructor(params:Partial<<%= capitalize(name)%>APIRequestBody>={}){
-    let origParams = Object.entries(params).filter(([key, val]) => {
-      return !key.startsWith('param');
-    });
-    Object.assign(this, { ...Object.fromEntries(origParams) });
-  }
+export class <%= capitalize(name)%>APIRequestBody extends WMLConstructor<<%= capitalize(name)%>APIRequestBody> {
+
   data:RecursiveSnakeCaseType<<%= capitalize(name)%>UIRequestBody>
 }
 
-export class <%= capitalize(name)%>UIResponseBody {
-  constructor(params:Partial<<%= capitalize(name)%>UIResponseBody>={}){
-    let origParams = Object.entries(params).filter(([key, val]) => {
-      return !key.startsWith('param');
-    });
-    Object.assign(this, { ...Object.fromEntries(origParams) });
-  }
+export class <%= capitalize(name)%>UIResponseBody extends WMLConstructor<<%= capitalize(name)%>UIResponseBody> {
 
 }
 
-export class <%= capitalize(name)%>APIResponseBody {
-  constructor(params:Partial<<%= capitalize(name)%>APIResponseBody>={}){
-    let origParams = Object.entries(params).filter(([key, val]) => {
-      return !key.startsWith('param');
-    });
-    Object.assign(this, { ...Object.fromEntries(origParams) });
-  }
+export class <%= capitalize(name)%>APIResponseBody extends WMLConstructor<<%= capitalize(name)%>APIResponseBody>  {
+
   data:RecursiveSnakeCaseType<<%= capitalize(name)%>UIResponseBody>
 }
 

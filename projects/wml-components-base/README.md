@@ -431,3 +431,16 @@ This update signifies our commitment to improving the developer experience and s
  * updated package to conform with @windmillcode/angular-wml-components-base   ,
 ## v17.3.5000 [4/20/24]
  * updated package to reflect the version  ^17.3.5 of @angular/core package
+
+## v17.3.5110 [4/20/24]
+* [UPDATE] ensure dervied class passed type to base classes
+* [UPDATE] added WMLConstuctor a class  that does
+```ts
+  constructor(params:Partial<T>={}){
+    let origParams = Object.entries(params).filter(([key, val]) => {
+      return !key.startsWith('param');
+    });
+    Object.assign(this, { ...Object.fromEntries(origParams) });
+  }
+```
+so as not to overwhelm developers

@@ -61,9 +61,9 @@ export class WmlOptionsComponent {
     this.params.formArray.clear({
       emitEvent: this.params.chosen.length === 0,
     });
-    this.params.chosen.forEach((chosen) => {
+    this.params.chosen.forEach((chosen,index0) => {
       let result = this.params.updateFormArrayPredicate(chosen);
-      this.params.formArray.push(new FormControl(result));
+      this.params.formArray.push(new FormControl(result),{emitEvent:index0 === this.params.chosen.length-1});
     });
     this.params.formArray.markAsDirty();
     this.cdref.detectChanges();

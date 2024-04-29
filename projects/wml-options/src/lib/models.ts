@@ -43,7 +43,7 @@ export class WMLOptionsParams {
   }
 }
 
-export class WMLOptionItemParams<V=any,T=any> extends WMLButton {
+export class WMLOptionItemParams<V=any,T=any> extends WMLButton<V,T> {
   constructor(params:Partial<WMLOptionItemParams>={}){
     super();
     Object.assign(

@@ -3,18 +3,6 @@ import { updateClassString } from "./functions";
 import { TranslateLoader } from "@ngx-translate/core";
 import { Subject, of } from "rxjs";
 
-export class WMLEndpoint {
-  constructor(params:Partial<WMLEndpoint>={}){
-    Object.assign(
-      this,
-      {
-        ...params
-      }
-    )
-  }
-  url!:Function
-  automate =false
-}
 
 
 export class WMLUIProperty<V=any,T=any>{
@@ -57,7 +45,113 @@ export class WMLUIProperty<V=any,T=any>{
 }
 
 
-export class WMLRoute<V=any,T=any>  extends WMLUIProperty {
+export function WMLBaseClassDecorator<T extends { new(...args: any[]): {} }>(constructor: T) {
+  return class extends constructor {
+      constructor(...args: any[]) {
+          super();
+          // Assume the first argument is the params object if provided
+          const params: Partial<T> = args[0] || {};
+
+          Object.entries(params).forEach(([key, value]) => {
+            if (!key.startsWith('param')) {
+              this[key] = value;
+            }
+          });
+      }
+  } as unknown as T;;
+}
+
+export class WMLConstructor<T=any> {
+  constructor(params: Partial<T> = {}) {
+      let protoChain = this.getPrototypeChain()
+
+      const handler = {
+
+          set: (obj, prop, value,receiver) => {
+              if(prop ==="filter"){
+                // console.log(protoChain)
+                // console.log(obj.constructor.name)
+                // console.log(obj)
+                // console.log(prop)
+                // console.log(value)
+                // console.log(params[prop])
+                // console.log(prop in Object.getPrototypeOf(receiver))
+                // prop in Object.getPrototypeOf(receiver) && receiver[prop] === undefined
+                // debugger
+              }
+
+
+              // console.log(receiver)
+              if(!prop.startsWith('param')){
+                obj[prop] = params[prop] ??value;
+              }
+              if(params[prop]){
+                delete params[prop]
+              }
+              return true; // indicates success
+          }
+      };
+
+      this.init(params);
+
+      // Wrap 'this' with the proxy
+      const proxy = new Proxy(this, handler);
+
+
+
+      return proxy; // Return the proxy instance instead of 'this'
+  }
+
+  init =(params: Partial<T>)=> {
+    Object.entries(params).forEach(([key, value]) => {
+      if (!key.startsWith('param')) {
+        this[key] = value;
+      }
+    });
+  }
+
+  getPrototypeChain = ()=> {
+    let chain:any = [];
+    let currentPrototype = Object.getPrototypeOf(this);
+
+    // Traverse up the prototype chain until no more prototypes
+    while (currentPrototype !== null) {
+        if(currentPrototype.constructor.name === "WMLConstructor"){
+          break
+        }
+        // Retrieve properties and their values from the current prototype
+        let properties:any = Object.getOwnPropertyNames(currentPrototype)
+            .concat(Object.getOwnPropertySymbols(currentPrototype) as any)
+            .reduce((acc, prop) => {
+                acc[prop] = currentPrototype[prop];
+                return acc;
+            }, {});
+
+        chain.push(properties); // Add current prototype's properties to the chain array
+        currentPrototype = Object.getPrototypeOf(currentPrototype); // Move up in the prototype chain
+    }
+
+    return chain;
+}
+}
+
+
+
+export class WMLEndpoint {
+  constructor(params:Partial<WMLEndpoint>={}){
+    Object.assign(
+      this,
+      {
+        ...params
+      }
+    )
+  }
+  url!:Function
+  automate =false
+}
+
+
+export class WMLRoute<V=any,T=any>  extends WMLUIProperty<V,T> {
   constructor(params:Partial<WMLRoute>={}){
     super()
     Object.assign(
@@ -188,7 +282,7 @@ export class WMLAnimateUIProperty<V=any,T=any> extends WMLView<V,T> {
 
 }
 
-export class WMLWrapper {
+export class WMLWrapper<V=any,T=any> {
   constructor(params:Partial<WMLWrapper> = {}){
     Object.assign(
       this,
@@ -197,11 +291,11 @@ export class WMLWrapper {
       }
     )
   }
-  view:WMLView =new WMLView()
+  view:WMLView<V,T> =new WMLView<V,T>()
 }
 
 
-export class WMLButton<V=any,T=any>  extends WMLView {
+export class WMLButton<V=any,T=any>  extends WMLView<V,T> {
   constructor(params:Partial<WMLButton> = {}){
     super()
     Object.assign(
@@ -266,7 +360,7 @@ export class WMLCustomComponent<C=any,P=any> {
   }
 }
 
-export class WMLImage<V=any,T=any> extends WMLUIProperty {
+export class WMLImage<V=any,T=any> extends WMLUIProperty<V,T> {
   constructor(params:Partial<WMLImage> = {}){
     super()
     Object.assign(
@@ -355,3 +449,4 @@ export class WMLModuleForRootParams {
 export type WMLDeepPartial<T> = {
   [K in keyof T]?: T[K] extends object ? WMLDeepPartial<T[K]> : T[K];
 };
+

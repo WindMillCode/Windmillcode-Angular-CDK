@@ -17,7 +17,7 @@ let getIndexInfo =(pageNum,pageSize)=>{
 export type WMLAPIPageRequestModelFilterPredicateEnum= {
   EQUALS,STARTSWITH,ENDSWITH,CONTAINS
 }
-export class WMLAPIPaginationRequestModel {
+export class WMLAPIPaginationRequestModel extends WMLConstructor<WMLAPIPaginationRequestModel> {
 
   fields:Array<{value:any}> =[]
   filter:Array<{key:string,value:any,predicate?:WMLAPIPageRequestModelFilterPredicateEnum}> =[]
@@ -33,8 +33,7 @@ export class WMLAPIPaginationRequestModel {
     return getIndexInfo(this.pageNum,this.pageSize)
   }
 }
-export class WMLAPIPaginationResponseModel<DT=any,T=any> extends WMLConstructor<T>  {
-
+export class WMLAPIPaginationResponseModel<DT=any> extends WMLConstructor<WMLAPIPaginationResponseModel<DT>>  {
 
   columns:Array<{
     value:string,
