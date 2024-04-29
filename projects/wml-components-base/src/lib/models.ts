@@ -44,96 +44,38 @@ export class WMLUIProperty<V=any,T=any>{
 
 }
 
-
-export function WMLBaseClassDecorator<T extends { new(...args: any[]): {} }>(constructor: T) {
-  return class extends constructor {
-      constructor(...args: any[]) {
-          super();
-          // Assume the first argument is the params object if provided
-          const params: Partial<T> = args[0] || {};
-
-          Object.entries(params).forEach(([key, value]) => {
-            if (!key.startsWith('param')) {
-              this[key] = value;
-            }
-          });
-      }
-  } as unknown as T;;
-}
-
 export class WMLConstructor<T=any> {
-  constructor(params: Partial<T> = {}) {
-      let protoChain = this.getPrototypeChain()
-
-      const handler = {
-
-          set: (obj, prop, value,receiver) => {
-              if(prop ==="filter"){
-                // console.log(protoChain)
-                // console.log(obj.constructor.name)
-                // console.log(obj)
-                // console.log(prop)
-                // console.log(value)
-                // console.log(params[prop])
-                // console.log(prop in Object.getPrototypeOf(receiver))
-                // prop in Object.getPrototypeOf(receiver) && receiver[prop] === undefined
-                // debugger
-              }
-
-
-              // console.log(receiver)
-              if(!prop.startsWith('param')){
-                obj[prop] = params[prop] ??value;
-              }
-              if(params[prop]){
-                delete params[prop]
-              }
-              return true; // indicates success
-          }
-      };
-
-      this.init(params);
-
-      // Wrap 'this' with the proxy
-      const proxy = new Proxy(this, handler);
-
-
-
-      return proxy; // Return the proxy instance instead of 'this'
-  }
-
-  init =(params: Partial<T>)=> {
-    Object.entries(params).forEach(([key, value]) => {
+  constructor(props: Partial<T> = {}) {
+    Object.entries(props).forEach(([key, value]) => {
       if (!key.startsWith('param')) {
         this[key] = value;
       }
     });
   }
-
-  getPrototypeChain = ()=> {
-    let chain:any = [];
-    let currentPrototype = Object.getPrototypeOf(this);
-
-    // Traverse up the prototype chain until no more prototypes
-    while (currentPrototype !== null) {
-        if(currentPrototype.constructor.name === "WMLConstructor"){
-          break
-        }
-        // Retrieve properties and their values from the current prototype
-        let properties:any = Object.getOwnPropertyNames(currentPrototype)
-            .concat(Object.getOwnPropertySymbols(currentPrototype) as any)
-            .reduce((acc, prop) => {
-                acc[prop] = currentPrototype[prop];
-                return acc;
-            }, {});
-
-        chain.push(properties); // Add current prototype's properties to the chain array
-        currentPrototype = Object.getPrototypeOf(currentPrototype); // Move up in the prototype chain
-    }
-
-    return chain;
 }
+
+
+export function WMLBaseClassDecorator<T extends { new(...args: any[]): { } }>(ReversedBase: T) {
+
+  return class extends ReversedBase {
+      constructor(...args: any[]) {
+        super();
+        const props: Partial<T> = args[0] || {};
+        Object.entries(props).forEach(([key, value]) => {
+          if (!key.startsWith('param')) {
+            this[key] = value;
+          }
+        });
+        // @ts-ignore
+        this.wmlInit?.()
+
+      }
+  } ;
 }
+
+
+
+
 
 
 
@@ -447,6 +389,7 @@ export class WMLModuleForRootParams {
 }
 
 export type WMLDeepPartial<T> = {
-  [K in keyof T]?: T[K] extends object ? WMLDeepPartial<T[K]> : T[K];
+  [K in keyof T]?: T[K] extends Function ? T[K] : T[K] extends object ? WMLDeepPartial<T[K]> : T[K];
 };
+
 

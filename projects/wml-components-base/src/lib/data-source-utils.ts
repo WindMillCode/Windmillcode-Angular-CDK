@@ -1,4 +1,4 @@
-import { WMLConstructor } from "./models"
+import { WMLBaseClassDecorator } from "./models"
 
 let getStartIndex = (pageNum,pageSize)=>{
   return pageNum * pageSize
@@ -17,8 +17,9 @@ let getIndexInfo =(pageNum,pageSize)=>{
 export type WMLAPIPageRequestModelFilterPredicateEnum= {
   EQUALS,STARTSWITH,ENDSWITH,CONTAINS
 }
+@WMLBaseClassDecorator
 export class WMLAPIPaginationRequestModel {
-
+  constructor(props: Partial<WMLAPIPaginationRequestModel> = {}) {}
   fields:Array<{value:any}> =[]
   filter:Array<{key:string,value:any,predicate?:WMLAPIPageRequestModelFilterPredicateEnum}> =[]
   sort:Array<{key:string,direction:"ASC" | "DESC" |"" }> =[]
@@ -33,7 +34,10 @@ export class WMLAPIPaginationRequestModel {
     return getIndexInfo(this.pageNum,this.pageSize)
   }
 }
-export class WMLAPIPaginationResponseModel<DT=any,T=any> extends WMLConstructor<T>  {
+
+@WMLBaseClassDecorator
+export class WMLAPIPaginationResponseModel<DT=any>  {
+  constructor(props: Partial<WMLAPIPaginationResponseModel<DT>> = {}) {}
 
 
   columns:Array<{
