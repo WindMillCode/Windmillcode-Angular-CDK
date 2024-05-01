@@ -439,3 +439,6 @@ Enhanced WMLField class in wml-field.component.ts by adding generic types for fo
 
 [UPDATE]
 Added getFieldProps and updated getReactiveFormControl methods in WMLField class for better handling and customization of form controls and their properties.
+,
+## v17.3.6000 [5/1/24]
+ * updated package to reflect the version  ^17.3.6 of @angular/core package

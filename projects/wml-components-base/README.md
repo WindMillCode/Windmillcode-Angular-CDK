@@ -455,4 +455,6 @@ export class T {
 
 ,
 ## v17.3.5110 [5/1/24]
- * updated package to conform with @windmillcode/angular-wml-components-base   
+ * updated package to conform with @windmillcode/angular-wml-components-base   ,
+## v17.3.6000 [5/1/24]
+ * updated package to reflect the version  ^17.3.6 of @angular/core package
