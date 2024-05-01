@@ -7,9 +7,9 @@
     "peerDependencies": {
         "@angular/common": "^17.0.0",
         "@angular/core": "^17.0.0",
-        "@windmillcode/angular-wml-components-base": "^17.3.5000",
-        "@windmillcode/angular-wml-field": "^17.3.5000",
-        "@windmillcode/angular-wml-infinite-dropdown": "^17.3.5000"
+        "@windmillcode/angular-wml-components-base": "^17.3.5110",
+        "@windmillcode/angular-wml-field": "^17.3.5110",
+        "@windmillcode/angular-wml-infinite-dropdown": "^17.3.5110"
     },
     "private": false,
     "schematics": "",
@@ -17,5 +17,5 @@
         "build": "npx ng build",
         "test": "npx ng test wml-select-zero --code-coverage"
     },
-    "version": "17.3.5000"
+    "version": "17.3.5110"
 }

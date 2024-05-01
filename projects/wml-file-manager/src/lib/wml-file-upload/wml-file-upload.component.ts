@@ -58,7 +58,7 @@ export class WmlFileUploadComponent  {
       this.params.formArray.clear()
       this.params.files
       .forEach((file:WMLFileUploadItem)=>{
-        let result = this.params.updateFormArrayPredicate(file)
+        let result = this.params.updateFormArrayPredicate(new WMLFileUploadItem(file))
         this.params.formArray.push(new FormControl(result))
       })
       this.params.formArray.markAsDirty()

@@ -6,7 +6,7 @@
     "peerDependencies": {
         "@angular/common": "^17.0.0",
         "@angular/core": "^17.0.0",
-        "@windmillcode/angular-wml-components-base": "^17.3.5000"
+        "@windmillcode/angular-wml-components-base": "^17.3.5110"
     },
     "private": false,
     "schematics": "./schematics/collection.json",
@@ -16,5 +16,5 @@
         "postbuild": "npx copyfiles  schematics/collection.json schematics/*/schema.json schematics/*/files/** ../../dist/templates/",
         "test": "npx ng test templates --code-coverage"
     },
-    "version": "17.3.5000"
+    "version": "17.3.5110"
 }

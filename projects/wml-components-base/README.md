@@ -434,7 +434,8 @@ This update signifies our commitment to improving the developer experience and s
 
 ## v17.3.5110 [4/20/24]
 * [UPDATE] ensure dervied class passed type to base classes
-* [UPDATE] added WMLConstuctor a class  that does
+Updated models.ts by add the WMLConstructorDecorator function, to streamline and optimize object initialization practices within the framework.
+
 ```ts
   constructor(params:Partial<T>={}){
     let origParams = Object.entries(params).filter(([key, val]) => {
@@ -444,3 +445,14 @@ This update signifies our commitment to improving the developer experience and s
   }
 ```
 so as not to overwhelm developers
+to use
+```ts
+@WMLConstructorDecorator
+export class T {
+  constructor(params: Partial<T> = {}) { }
+}
+```
+
+,
+## v17.3.5110 [5/1/24]
+ * updated package to conform with @windmillcode/angular-wml-components-base   

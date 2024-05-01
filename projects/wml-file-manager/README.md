@@ -309,3 +309,10 @@ WmlFileManagerModule
  * updated package to conform with @windmillcode/angular-wml-components-base   ,
 ## v17.3.5000 [4/20/24]
  * updated package to reflect the version  ^17.3.5 of @angular/core package
+
+## v17.3.5110 [5/1/24]
+* [UPDATE]
+Changed the updateFormArrayPredicate function in WmlFileUploadComponent of wml-file-upload.component.ts to wrap the file parameter in a new WMLFileUploadItem. This helps ensure that items are handled correctly in the form array, affecting how files are uploaded using the component.
+,
+## v17.3.5110 [5/1/24]
+ * updated package to conform with @windmillcode/angular-wml-components-base   

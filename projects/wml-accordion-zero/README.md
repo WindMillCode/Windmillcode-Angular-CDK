@@ -313,4 +313,6 @@ here are the default values that get passed to the scss
 ## v17.3.4001 [4/16/24]
  * updated package to conform with @windmillcode/angular-wml-components-base   ,
 ## v17.3.5000 [4/20/24]
- * updated package to reflect the version  ^17.3.5 of @angular/core package
+ * updated package to reflect the version  ^17.3.5 of @angular/core package,
+## v17.3.5110 [5/1/24]
+ * updated package to conform with @windmillcode/angular-wml-components-base   

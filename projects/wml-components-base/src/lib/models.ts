@@ -44,19 +44,8 @@ export class WMLUIProperty<V=any,T=any>{
 
 }
 
-export class WMLConstructor<T=any> {
-  constructor(props: Partial<T> = {}) {
-    Object.entries(props).forEach(([key, value]) => {
-      if (!key.startsWith('param')) {
-        this[key] = value;
-      }
-    });
-  }
-}
-
-
-export function WMLBaseClassDecorator<T extends { new(...args: any[]): { } }>(ReversedBase: T) {
-
+export function WMLConstructorDecorator<T extends { new(...args: any[]): { } }>(ReversedBase: T) {
+  
   return class extends ReversedBase {
       constructor(...args: any[]) {
         super();
@@ -66,12 +55,15 @@ export function WMLBaseClassDecorator<T extends { new(...args: any[]): { } }>(Re
             this[key] = value;
           }
         });
-        // @ts-ignore
         this.wmlInit?.()
 
       }
+
+      wmlInit?:Function
   } ;
 }
+
+
 
 
 

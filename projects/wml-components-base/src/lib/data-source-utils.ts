@@ -1,4 +1,4 @@
-import { WMLBaseClassDecorator } from "./models"
+import { WMLConstructorDecorator } from "./models"
 
 let getStartIndex = (pageNum,pageSize)=>{
   return pageNum * pageSize
@@ -17,7 +17,7 @@ let getIndexInfo =(pageNum,pageSize)=>{
 export type WMLAPIPageRequestModelFilterPredicateEnum= {
   EQUALS,STARTSWITH,ENDSWITH,CONTAINS
 }
-@WMLBaseClassDecorator
+@WMLConstructorDecorator
 export class WMLAPIPaginationRequestModel {
   constructor(props: Partial<WMLAPIPaginationRequestModel> = {}) {}
   fields:Array<{value:any}> =[]
@@ -35,7 +35,7 @@ export class WMLAPIPaginationRequestModel {
   }
 }
 
-@WMLBaseClassDecorator
+@WMLConstructorDecorator
 export class WMLAPIPaginationResponseModel<DT=any>  {
   constructor(props: Partial<WMLAPIPaginationResponseModel<DT>> = {}) {}
 

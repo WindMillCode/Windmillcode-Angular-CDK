@@ -304,3 +304,13 @@ WmlOptionsModule
 
 ## v17.3.5100 [4/22/24]
 * [BREAKING CHANGE]- can speciify default chosen values with the isChosen property although this might break functionalitty of previous apps
+
+## v17.3.5110 [5/1/2024]
+[UPDATE]
+Refined the generics in WMLOptionItemParams class extending WMLButton in models.ts to ensure type safety and versatility in button parameter handling.
+
+[PATCH]
+Optimized form array updates in wml-options.component.ts by adjusting the emitEvent property during form control additions, improving performance by limiting event emissions to only the final element addition in the list.
+,
+## v17.3.5110 [5/1/24]
+ * updated package to conform with @windmillcode/angular-wml-components-base   

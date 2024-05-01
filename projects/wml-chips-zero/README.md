@@ -149,4 +149,13 @@ WmlChipsModule
 
 ## v17.3.5110 [4/27/24]
 * [UPDATE] added wmlField so now formArray does not need to be specified and comes from wml-form
-* [UPDATE] update chip styling
+[UPDATE]
+Updated chip styling in wml-chips-zero component for a more modern look and feel.
+
+[PATCH]
+Removed dependency on @angular/material in wml-chips-zero, reducing the package's dependency footprint
+[UPDATE]
+Introduced @windmillcode/angular-wml-button-zero in dependencies to enhance button functionalities in wml-chips-zero.
+,
+## v17.3.5110 [5/1/24]
+ * updated package to conform with @windmillcode/angular-wml-components-base   
