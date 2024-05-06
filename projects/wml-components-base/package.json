@@ -15,5 +15,5 @@
         "build": "ng build",
         "test": "npx ng test wml-components-base --code-coverage"
     },
-    "version": "17.3.6000"
+    "version": "17.3.7000"
 }

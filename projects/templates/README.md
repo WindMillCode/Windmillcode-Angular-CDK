@@ -568,3 +568,15 @@ Added WMLConstructorDecorator in various classes across the service method templ
  * updated package to conform with @windmillcode/angular-wml-components-base   ,
 ## v17.3.6000 [5/1/24]
  * updated package to reflect the version  ^17.3.6 of @angular/core package
+
+## v17.3.6100 [5/5/24]
+
+[PATCH] `template-component/files/__name@dasherize__.component.ts.template` - Replaced `updateSubj` with `setStateSubj` in `listenForUpdate` method for better state management.
+
+[PATCH] `template-component/files/__name@dasherize__.component.ts.template` - Added `@WMLConstructorDecorator` to enhance component props initialization.
+
+[PATCH] `template-component/files/__name@dasherize__.component.ts.template` - Simplified constructor in `<%= classify(name) %>Props` to improve ease of prop setup.
+
+[PATCH] `template-component/files/__name@dasherize__.component.ts.template` - Changed `updateSubj` to `setStateSubj` and added a new method `setState` for updating component states more intuitively.
+
+[BREAKING CHANGE] `template-component/files/__name@dasherize__.component.ts.template` - Modifications in props and state handling may require changes in how developers interact with component state and initialization.

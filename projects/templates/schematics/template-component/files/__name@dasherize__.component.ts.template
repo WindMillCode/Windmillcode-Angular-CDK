@@ -14,7 +14,7 @@ import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
 
 // wml-components
-import { generateClassPrefix, generateIdPrefix } from '@windmillcode/angular-wml-components-base';
+import { <%  if(isParamsChild) { %>WMLConstructorDecorator <% } %>,generateClassPrefix, generateIdPrefix } from '@windmillcode/angular-wml-components-base';
 
 
 // misc
@@ -65,7 +65,7 @@ export class <%= classify(name) %>Component  {
 
   <%  if(isParamsChild) { %>
   listenForUpdate = ()=>{
-    return this.params.updateSubj
+    return this.params.setStateSubj
     .pipe(
       takeUntil(this.ngUnsub),
       tap((res?)=>{
@@ -97,18 +97,16 @@ export class <%= classify(name) %>Component  {
 
 
 <%  if(isParamsChild) { %>
+@WMLConstructorDecorator
 export class <%= classify(name) %>Props {
-  constructor(params:Partial<<%= classify(name) %>Props>={}){
-    let origProps = Object.entries(params)
-    .filter(([key,val]) => {
-      return !key.startsWith('param');
-    });
-    Object.assign(this, { ...Object.fromEntries(origProps) })
-  }
+  constructor(params:Partial<<%= classify(name) %>Props>={}){ }
   <%  if(cpntType === 'library' && isIdIncluded) { %>
   id = ""
   <% } %>
-  updateSubj = new Subject<<%= classify(name) %>Props>()
+  setStateSubj = new Subject<<%= classify(name) %>Props>()
+  setState = (value)=>{
+    this.setStateSubj.next(value)
+  }
 }
 <% } %>
 
