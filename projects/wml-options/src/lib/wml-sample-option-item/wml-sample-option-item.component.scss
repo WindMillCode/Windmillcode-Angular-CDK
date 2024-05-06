@@ -24,6 +24,10 @@
             border-radius: calc(80/16 * 1rem);
             padding:calc(12/16 * 1rem) calc(16/16 * 1rem);
             margin:0 calc(12/16 * 1rem) calc(12/16 * 1rem) 0 ;
+            cursor: pointer;
+            * {
+              cursor: pointer;
+            }
 
             label{
               font-weight: bold;
