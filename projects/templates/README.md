@@ -580,3 +580,6 @@ Added WMLConstructorDecorator in various classes across the service method templ
 [PATCH] `template-component/files/__name@dasherize__.component.ts.template` - Changed `updateSubj` to `setStateSubj` and added a new method `setState` for updating component states more intuitively.
 
 [BREAKING CHANGE] `template-component/files/__name@dasherize__.component.ts.template` - Modifications in props and state handling may require changes in how developers interact with component state and initialization.
+,
+## v17.3.7000 [5/9/24]
+ * updated package to reflect the version  ^17.3.7 of @angular/core package

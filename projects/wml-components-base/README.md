@@ -459,4 +459,6 @@ export class T {
 ## v17.3.6000 [5/1/24]
  * updated package to reflect the version  ^17.3.6 of @angular/core package,
 ## v17.3.7000 [5/4/24]
+ * updated package to reflect the version  ^17.3.7 of @angular/core package,
+## v17.3.7000 [5/9/24]
  * updated package to reflect the version  ^17.3.7 of @angular/core package

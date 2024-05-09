@@ -320,3 +320,6 @@ Optimized form array updates in wml-options.component.ts by adjusting the emitEv
 ## v17.3.6002 [5/1/24]
 * added cursor pointer for option btn
 
+,
+## v17.3.7000 [5/9/24]
+ * updated package to reflect the version  ^17.3.7 of @angular/core package
