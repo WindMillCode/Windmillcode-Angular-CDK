@@ -321,4 +321,6 @@ Changed the updateFormArrayPredicate function in WmlFileUploadComponent of wml-f
 ## v17.3.7000 [5/9/24]
  * updated package to reflect the version  ^17.3.7 of @angular/core package,
 ## v17.3.8000 [5/9/24]
- * updated package to reflect the version  ^17.3.8 of @angular/core package
+ * updated package to reflect the version  ^17.3.8 of @angular/core package,
+## v17.3.9000 [5/16/24]
+ * updated package to reflect the version  ^17.3.9 of @angular/core package
