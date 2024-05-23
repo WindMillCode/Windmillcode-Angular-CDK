@@ -1,5 +1,5 @@
 // testing
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Type, NO_ERRORS_SCHEMA, ChangeDetectorRef, Component, Renderer2 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Route } from '@angular/router';

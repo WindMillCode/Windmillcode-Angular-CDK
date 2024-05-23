@@ -1,5 +1,5 @@
 // angular
-import { HttpClientModule, HttpHandler, HttpResponse } from "@angular/common/http";
+import { HttpHandler, HttpResponse, provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import { Component, NO_ERRORS_SCHEMA, Type, ViewChild } from "@angular/core";
 import { TestBed } from "@angular/core/testing";
 import { Route } from "@angular/router";
@@ -93,11 +93,9 @@ export class WMLTestUtils {
     targetService:Function
   )=>{
     TestBed.configureTestingModule({
-      imports:[
-        HttpClientModule
-      ],
-      providers:this.mockProviders,
-    })
+    imports: [],
+    providers: [provideHttpClient(withInterceptorsFromDi())]
+})
 
     let service = TestBed.inject(targetService);
     return service

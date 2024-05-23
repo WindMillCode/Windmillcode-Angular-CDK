@@ -1,4 +1,4 @@
-import { HttpClientModule } from "@angular/common/http";
+import {} from "@angular/common/http";
 import { RouterTestingModule } from "@angular/router/testing";
 import { TranslateModule } from "@ngx-translate/core";
 import { wmlTestUtils } from "./test-utils";

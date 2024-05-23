@@ -4,9 +4,9 @@
     },
     "name": "@windmillcode/angular-templates",
     "peerDependencies": {
-        "@angular/common": "^17.0.0",
-        "@angular/core": "^17.0.0",
-        "@windmillcode/angular-wml-components-base": "^17.3.7000"
+        "@angular/common": "^18.0.0",
+        "@angular/core": "^18.0.0",
+        "@windmillcode/angular-wml-components-base": "^18.0.1"
     },
     "private": false,
     "schematics": "./schematics/collection.json",
@@ -16,5 +16,5 @@
         "postbuild": "npx copyfiles  schematics/collection.json schematics/*/schema.json schematics/*/files/** ../../dist/templates/",
         "test": "npx ng test templates --code-coverage"
     },
-    "version": "17.3.7000"
+    "version": "18.0.1"
 }

@@ -5,9 +5,9 @@
     },
     "name": "@windmillcode/angular-wml-tabs",
     "peerDependencies": {
-        "@angular/common": "^17.0.0",
-        "@angular/core": "^17.0.0",
-        "@windmillcode/angular-wml-components-base": "^17.3.9000"
+        "@angular/common": "^18.0.0",
+        "@angular/core": "^18.0.0",
+        "@windmillcode/angular-wml-components-base": "^18.0.1"
     },
     "private": false,
     "schematics": "",
@@ -15,5 +15,5 @@
         "build": "npx ng build",
         "test": "npx ng test wml-tabs --code-coverage"
     },
-    "version": "17.3.9000"
+    "version": "18.0.1"
 }
