@@ -27,11 +27,11 @@ let importsToAdd = [
     importStatement: "import { BaseService, BaseServiceSubmitFormParams } from '@core/base/base.service';\n",
     importMembers: ["BaseService", "BaseServiceSubmitFormParams"]
   },
-  {
-    packageName: "@core/utility/form-utils",
-    importStatement: "import { createFieldString , createI18nErrorMsgsBasedOnValidations } from '@core/utility/form-utils';\n",
-    importMembers: ["createFieldString","createI18nErrorMsgsBasedOnValidations"]
-  },
+  // {
+  //   packageName: "@core/utility/form-utils",
+  //   importStatement: "import { createFieldString , createI18nErrorMsgsBasedOnValidations } from '@core/utility/form-utils';\n",
+  //   importMembers: ["createFieldString","createI18nErrorMsgsBasedOnValidations"]
+  // },
   {
     packageName: "@shared/services/forms/forms.service",
     importStatement: "import { FormsService } from '@shared/services/forms/forms.service';\n",
@@ -115,7 +115,6 @@ function updateCpntFile(
   addInitFormCallToNgOnInit(  targetFilePath, tree,options);
   performDependencyInjection(  targetFilePath, tree,`public formsService:FormsService`,getCpntClassVar(sourceFile));
   addImportStatements(sourceFile, targetFilePath, tree,importsToAdd);
-  updateEnvFile(tree,lowerCamelCaseCpntClassName,options)
   updateFormsServiceFile(tree,lowerCamelCaseCpntClassName,options)
   updateEnJSONFile(tree,classNamePrefix,options)
   updateSpecFile(options,tree,cpntString.dasherize() +".component.spec.ts",nameString,cpntString)
@@ -176,12 +175,11 @@ _add_newline_here_
 }` : ``
 
   let simpleFieldsSnippet = options.fieldType === "simple" ? `
-    create${nameString.capitalize(false)}Field = (params)=>{
-      let {formControlName,createWMLFieldFn,errorMsgKeyArray,fieldCustomParams} = params
+    create${nameString.capitalize(false)}Field = (params:Partial<{createWMLFieldFn:any,errorMsgKeyArray:any,fieldCustomParams:any,formControlName: keyof  FormsService["${lowerCamelCaseCpntClassName}"]["mainForm"]["value"]}>)=>{
+      let {createWMLFieldFn,errorMsgKeyArray,fieldCustomParams,formControlName} = params
       let field =this.baseService.createWMLField({
         i18nPrefix:"${classNamePrefix}.${options.name}",
         idPrefixFn:this.idPrefix,
-        formVars:this.${options.name}Vars,
         fieldParentForm:this.${options.name}Group,
         formControlName,createWMLFieldFn,errorMsgKeyArray,fieldCustomParams
       })
@@ -190,7 +188,6 @@ _add_newline_here_
   ` : ``
   let snippet = `
     ${options.name} = new WMLForm({})
-    ${options.name}Vars = ENV.${lowerCamelCaseCpntClassName}.${options.name}
     ${options.name}Group = this.formsService.${lowerCamelCaseCpntClassName}.${options.name}
 _add_newline_here_
     ${simpleFieldsSnippet}
@@ -310,117 +307,6 @@ function addInitFormCallToNgOnInit(targetFilePath: string, tree:Tree,options:Tem
 
 }
 
-let  updateEnvFile = (
-  tree:Tree,
-  lowerCamelCaseCpntClassName:string,
-  options:TemplateFormSchema)=>{
-  let { targetPath } = getFile(tree,DevEnvFile);
-  let sourceFile = wmlCreateSourceFile(targetPath, tree);
-  let targetClass = sourceFile?.statements
-  ?.filter(ts.isClassDeclaration)
-  .find((v) => {
-    return v.name?.getText() === 'DevEnv';
-  }) as ts.ClassDeclaration;
-  let insertPos = 0
-  let snippet = ""
-  let indentTarget: ts.Node
-  let spacingPrefix = ""
-  let fieldsArray= options.fields.map((val)=>{
-    return `${val+"FormControlName"}:"${val}"`
-  })
-  let fieldsString ="{_add_newline_here_\t"+fieldsArray.join(",_add_newline_here_\t") +"_add_newline_here_}"
-  let formBlock = `${options.name} :${
-    fieldsString
-  }
-  `
-
-  let entityProp = wmlFindChildNode(
-    targetClass.members,
-    // @ts-ignore
-    (prop:ts.ClassElement)=>{
-      let name =prop.name?.getText()
-      return name === lowerCamelCaseCpntClassName
-    },
-    "its with the properties of DevENv",
-    false,false
-  );
-  if(!entityProp){
-    let navVar = wmlFindChildNode(
-      targetClass.members,
-      // @ts-ignore
-      (prop:ts.ClassElement) => {
-        return prop.name?.getText() === 'nav';
-      },
-      "look like the nav property is missing",
-      false,false
-    )
-
-    snippet = `
-    ${lowerCamelCaseCpntClassName}={
-      ${formBlock}
-    }
-    `
-    if(!navVar){
-      let openBrace = wmlFindChildNode(
-        targetClass,
-        ts.SyntaxKind.OpenBraceToken,
-        "its with DevEnv classes open brace token is it missing"
-      );
-      indentTarget = openBrace
-      insertPos = openBrace.end
-      spacingPrefix = "\n"
-    }
-    else{
-      indentTarget = navVar
-      insertPos = navVar.end
-
-    }
-
-
-  }
-  else{
-    let fieldsString ="{_add_newline_here_\t"+fieldsArray.join(",_add_newline_here_\t") +"_add_newline_here_\t}"
-    let formBlock = `${options.name} :${
-      fieldsString
-    }
-    `
-    let objLiteral = wmlFindChildNode(
-      entityProp,
-      ts.SyntaxKind.ObjectLiteralExpression,
-      "its with the braces on  the " + entityProp + " property"
-      ,false
-    ) as ts.ObjectLiteralExpression;
-    let closeBrace = wmlFindChildNode(
-      objLiteral,
-      ts.SyntaxKind.CloseBraceToken,
-      "its with the braces on  the " + entityProp + " property"
-    );
-    indentTarget = closeBrace
-    insertPos = closeBrace.pos
-    let occurencess = objLiteral.properties.length
-    snippet = "\n"+formBlock
-    if(occurencess > 0){
-      let lastRouteLiteral = objLiteral.properties.at(-1) as ts.ObjectLiteralElementLike;
-      indentTarget = lastRouteLiteral
-      insertPos = lastRouteLiteral.end
-      spacingPrefix=","
-    }
-
-
-
-  }
-
-  prepareForUpdate(
-    snippet,
-    targetPath, tree,
-    insertPos,
-    indentTarget?.getFullText(),
-    spacingPrefix
-  );
-
-
-}
-
 let updateFormsServiceFile = (
   tree:Tree,
   lowerCamelCaseCpntClassName:string,
@@ -438,7 +324,7 @@ let updateFormsServiceFile = (
   let indentTarget: ts.Node
   let spacingPrefix = ""
   let fieldsArray= options.fields.map((val)=>{
-    return `[ENV.${lowerCamelCaseCpntClassName}.${options.name}.${val}FormControlName]:new FormControl("")`
+    return `${val}:new FormControl("")`
 
   })
   let fieldsString ="_add_newline_here_\t"+fieldsArray.join(",_add_newline_here_\t") +"_add_newline_here_"
@@ -562,7 +448,7 @@ function createSimpleFieldSnippets(options: TemplateFormSchema, lowerCamelCaseCp
   fnBody:`_add_newline_here_
     ${fnName} =()=>{
       let field= this.create${nameString.capitalize(false)}Field({
-        formControlName:ENV.${lowerCamelCaseCpntClassName}.${options.name}.${field ?? "name"}FormControlName,
+        formControlName:"${field}",
         errorMsgKeyArray:[],
         fieldCustomParams:null
       })

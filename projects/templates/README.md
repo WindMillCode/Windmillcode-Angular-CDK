@@ -587,3 +587,22 @@ Added WMLConstructorDecorator in various classes across the service method templ
  * updated package to reflect the version  ^18.0.0 of @angular/core package,
 ## v18.0.1 [5/22/24]
  * updated package to reflect the version  ^18.0.0 of @angular/core package
+
+## v18.0.3 [5/23/24] 11:49:32 PM EST
+
+[UPDATE]
+
+Removed the need  for updateEnvFile as typescript type checking enforces field names for types removing the need for field env vars altogehter
+
+Removed `createFieldString` and `createI18nErrorMsgsBasedOnValidations` from `@core/utility/form-utils` in `projects/templates/schematics/template-form/index.ts`.
+
+Removed `updateEnvFile` function from `projects/templates/schematics/template-form/index.ts`.
+
+Updated type for `create${nameString.capitalize(false)}Field` function parameters in `projects/templates/schematics/template-form/index.ts`.
+
+Removed `ENV.${lowerCamelCaseCpntClassName}.${options.name}Vars` in `projects/templates/schematics/template-form/index.ts`.
+
+Removed `formControlName: ENV.${lowerCamelCaseCpntClassName}.${options.name}.${field ?? "name"}FormControlName` and replaced it with `formControlName: "${field}"` in `projects/templates/schematics/template-form/index.ts`.
+
+
+Changed field control initialization to `return ${val}:new FormControl("")` in `updateFormsServiceFile` function in `projects/templates/schematics/template-form/index.ts`.
