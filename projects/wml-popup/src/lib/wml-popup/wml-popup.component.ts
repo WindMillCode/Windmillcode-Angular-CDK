@@ -1,5 +1,5 @@
 // angular
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Input, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, HostListener, Input, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
 
 
 // rxjs
@@ -28,6 +28,8 @@ export class WmlPopupComponent  {
   ngUnsub= new Subject<void>()
   @Input('params')params: WMLPopupParams = new  WMLPopupParams()
   @ViewChild("customPopup",{read:ViewContainerRef,static:true}) customPopup!:ViewContainerRef;
+
+
 
   listenForTogglePopup = ()=>{
     return this.params.togglePopupSubj

@@ -213,3 +213,9 @@ WmlPanelModule
  * updated package to reflect the version  ^17.3.9 of @angular/core package,
 ## v18.0.1 [5/23/24]
  * updated package to reflect the version  ^18.0.0 of @angular/core package
+
+## v18.0.2 [5/24/2024 12:45:23 PM EST]
+[UPDATE] when clicking on the outer space of the popup the popup now closes without having to provide a feature to close it
+
+## v18.0.3 [5/24/2024 11:03:23 AM EST]
+[FIX] prevent the popup from closing click on the non-close area

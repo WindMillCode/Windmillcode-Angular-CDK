@@ -15,5 +15,5 @@
         "build": "npx ng build",
         "test": "npx ng test wml-popup --code-coverage"
     },
-    "version": "18.0.1"
+    "version": "18.0.3"
 }

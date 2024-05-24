@@ -42,6 +42,12 @@ $spacing16: calc(512/16* 1rem);
           width: 80%;
           height: 80%;
         }
+        &1{
+          position: fixed;
+          inset:0;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }

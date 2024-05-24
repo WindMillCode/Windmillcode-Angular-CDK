@@ -37,7 +37,7 @@
     "@windmillcode/angular-wml-options": "^18.0.1",
     "@windmillcode/angular-wml-panel": "^18.0.1",
     "@windmillcode/angular-wml-penrose": "^18.0.1",
-    "@windmillcode/angular-wml-popup": "^18.0.1",
+    "@windmillcode/angular-wml-popup": "^18.0.3",
     "@windmillcode/angular-wml-select-zero": "^18.0.1",
     "@windmillcode/angular-wml-slicebox": "^18.0.1",
     "@windmillcode/angular-wml-table-zero": "^18.0.1",
