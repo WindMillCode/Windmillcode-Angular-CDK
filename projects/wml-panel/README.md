@@ -273,4 +273,6 @@ WmlPanelModule
 ## v17.3.9000 [5/16/24]
  * updated package to reflect the version  ^17.3.9 of @angular/core package,
 ## v18.0.1 [5/22/24]
- * updated package to reflect the version  ^18.0.0 of @angular/core package
+ * updated package to reflect the version  ^18.0.0 of @angular/core package,
+## v18.0.4 [5/25/24]
+ * updated package to conform with @windmillcode/angular-wml-components-base   

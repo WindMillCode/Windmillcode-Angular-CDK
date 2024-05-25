@@ -7,8 +7,8 @@
     "peerDependencies": {
         "@angular/common": "^18.0.0",
         "@angular/core": "^18.0.0",
-        "@windmillcode/angular-wml-components-base": "^18.0.1",
-        "@windmillcode/angular-wml-field": "^18.0.1"
+        "@windmillcode/angular-wml-components-base": "^18.0.4",
+        "@windmillcode/angular-wml-field": "^18.0.4"
     },
     "private": false,
     "schematics": "",
@@ -16,5 +16,5 @@
         "build": "npx ng build",
         "test": "npx ng test wml-form --code-coverage"
     },
-    "version": "18.0.1"
+    "version": "18.0.4"
 }

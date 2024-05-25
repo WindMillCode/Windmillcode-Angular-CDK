@@ -135,18 +135,23 @@ export let selectRandomOptionFromArray = (myArray: Array<any>, index?: number) =
 }
 
 
-export const replaceValuesWithPaths = <T = any>(obj, path = "") => {
+export const replaceValuesWithPaths = <T = any>(
+  obj: any,
+  path = "",
+  predicate = (params:{key: string, value: any, path: string, defaultAssignment: any}) => params.defaultAssignment
+): T => {
   // @ts-ignore
   const newObj: T = Array.isArray(obj) ? [] : {};
 
   for (let key in obj) {
+    let defaultAssignment;
     if (typeof obj[key] === "object" && obj[key] !== null) {
-      newObj[key] = replaceValuesWithPaths(obj[key], path + key + ".");
+      defaultAssignment = replaceValuesWithPaths(obj[key], path + key + ".", predicate);
     } else {
-      newObj[key] = path + key;
+      defaultAssignment = path + key;
     }
+    newObj[key] = predicate({key, value:obj[key], path, defaultAssignment});
   }
 
   return newObj;
-}
-
+};

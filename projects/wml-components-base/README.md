@@ -470,3 +470,14 @@ export class T {
  * updated package to reflect the version  ^18.0.0 of @angular/core package,
 ## v18.0.1 [5/22/24]
  * updated package to reflect the version  ^18.0.0 of @angular/core package
+
+## v18.0.4 [5/25/2024 12:50:12 AM EST]
+
+[UPDATE] Modified replaceValuesWithPaths function in functions.ts to include a predicate for custom assignments.
+
+File: functions.ts
+Section: replaceValuesWithPaths
+Function: replaceValuesWithPaths()
+,
+## v18.0.4 [5/25/24]
+ * updated package to conform with @windmillcode/angular-wml-components-base   
