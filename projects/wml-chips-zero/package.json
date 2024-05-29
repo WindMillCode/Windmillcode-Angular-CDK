@@ -9,8 +9,8 @@
         "@angular/cdk": "^18.0.0",
         "@angular/common": "^18.0.0",
         "@angular/core": "^18.0.0",
-        "@windmillcode/angular-wml-button-zero": "^18.0.4",
-        "@windmillcode/angular-wml-components-base": "^18.0.4"
+        "@windmillcode/angular-wml-button-zero": "^18.0.1000",
+        "@windmillcode/angular-wml-components-base": "^18.0.1000"
     },
     "private": false,
     "schematics": "",
@@ -18,5 +18,5 @@
         "build": "npx ng build",
         "test": "npx ng test wml-chips-zero --code-coverage"
     },
-    "version": "18.0.4"
+    "version": "18.0.1000"
 }

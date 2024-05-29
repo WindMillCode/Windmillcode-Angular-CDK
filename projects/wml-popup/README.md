@@ -221,4 +221,6 @@ WmlPanelModule
 [FIX] prevent the popup from closing click on the non-close area
 ,
 ## v18.0.4 [5/25/24]
- * updated package to conform with @windmillcode/angular-wml-components-base   
+ * updated package to conform with @windmillcode/angular-wml-components-base   ,
+## v18.0.1000 [5/29/24]
+ * updated package to reflect the version  ^18.0.1 of @angular/core package
