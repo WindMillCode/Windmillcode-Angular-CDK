@@ -16,5 +16,5 @@
         "postbuild": "npx copyfiles  schematics/collection.json schematics/*/schema.json schematics/*/files/** ../../dist/templates/",
         "test": "npx ng test templates --code-coverage"
     },
-    "version": "18.0.4"
+    "version": "18.0.1000"
 }
