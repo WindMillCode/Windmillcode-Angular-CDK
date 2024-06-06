@@ -608,4 +608,6 @@ Removed `formControlName: ENV.${lowerCamelCaseCpntClassName}.${options.name}.${f
 Changed field control initialization to `return ${val}:new FormControl("")` in `updateFormsServiceFile` function in `projects/templates/schematics/template-form/index.ts`.
 ,
 ## v18.0.4 [5/25/24]
- * updated package to conform with @windmillcode/angular-wml-components-base   
+ * updated package to conform with @windmillcode/angular-wml-components-base   ,
+## v18.0.2000 [6/6/24]
+ * updated package to reflect the version  ^18.0.2 of @angular/core package
