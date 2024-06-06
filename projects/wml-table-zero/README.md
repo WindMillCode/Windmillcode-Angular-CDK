@@ -403,4 +403,6 @@ rewrite all logic from WmlTableZeroItemParams["custom"] to WmlTableZeroItemParam
 ## v18.0.4 [5/25/24]
  * updated package to conform with @windmillcode/angular-wml-components-base   ,
 ## v18.0.1000 [5/29/24]
- * updated package to reflect the version  ^18.0.1 of @angular/core package
+ * updated package to reflect the version  ^18.0.1 of @angular/core package,
+## v18.0.2000 [6/6/24]
+ * updated package to reflect the version  ^18.0.2 of @angular/core package
