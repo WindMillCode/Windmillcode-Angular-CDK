@@ -611,3 +611,8 @@ Changed field control initialization to `return ${val}:new FormControl("")` in `
  * updated package to conform with @windmillcode/angular-wml-components-base   ,
 ## v18.0.2000 [6/6/24]
  * updated package to reflect the version  ^18.0.2 of @angular/core package
+
+
+## v18.0.3001 6/10/2024 11:35:22 AM EST
+
+[FIX] -fixed minor bug while generating components
