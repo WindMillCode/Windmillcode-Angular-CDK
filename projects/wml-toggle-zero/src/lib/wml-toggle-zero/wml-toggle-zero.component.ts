@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnI
 
 // rxjs
 import { Subject, fromEvent } from 'rxjs';
-import { takeUntil,tap } from 'rxjs/operators';
+import { distinctUntilChanged, takeUntil,tap } from 'rxjs/operators';
 
 // wml-components
 import { WMLUIProperty, generateClassPrefix } from '@windmillcode/angular-wml-components-base';
@@ -12,14 +12,11 @@ import { AbstractControl } from '@angular/forms';
 // misc
 
 @Component({
-
   selector: 'wml-toggle-zero',
   templateUrl: './wml-toggle-zero.component.html',
   styleUrls: ['./wml-toggle-zero.component.scss'],
   changeDetection:ChangeDetectionStrategy.OnPush,
-
   encapsulation:ViewEncapsulation.None
-
 })
 export class WMLToggleZeroComponent  {
 
@@ -36,13 +33,13 @@ export class WMLToggleZeroComponent  {
   formControl!:AbstractControl
 
 
-  toggle = (val?)=>{
+  toggle = (val?,updateFormControl=true)=>{
     if(this.formControl?.disabled === true){
       return
     }
     this.params.thumb.value = ![null,undefined].includes(val) ? val: !this.params.thumb.value
-    if(this.formControl){
-      this.formControl.patchValue(this.params.thumb.value,{emitEvent:false})
+    if(this.formControl && updateFormControl){
+      this.formControl.patchValue(this.params.thumb.value,{emitEvent:true})
     }
     this.toggleThumb()
     this.toggleText()
@@ -88,9 +85,10 @@ export class WMLToggleZeroComponent  {
   listenForformControlChanges =()=>{
     return this.formControl?.valueChanges
     .pipe(
+      distinctUntilChanged(),
       takeUntil(this.ngUnsub),
       tap((res)=>{
-        this.toggle(res)
+        this.toggle(res,false)
       })
     )
   }

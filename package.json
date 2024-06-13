@@ -42,7 +42,7 @@
     "@windmillcode/angular-wml-slicebox": "^18.0.1000",
     "@windmillcode/angular-wml-table-zero": "^18.0.1000",
     "@windmillcode/angular-wml-tabs": "^18.0.1000",
-    "@windmillcode/angular-wml-toggle-zero": "^18.0.1000",
+    "@windmillcode/angular-wml-toggle-zero": "^18.0.2002",
     "clone": "^1.0.4",
     "copyfiles": "^2.4.1",
     "gulp-watch": "^5.0.1",

@@ -15,5 +15,5 @@
         "build": "npx ng build",
         "test": "npx ng test wml-toggle-zero --code-coverage"
     },
-    "version": "18.0.2000"
+    "version": "18.0.2002"
 }

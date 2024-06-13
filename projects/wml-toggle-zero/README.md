@@ -208,3 +208,15 @@ In the above examples, `WMLToggleZeroParams` is used to configure the toggle swi
  * updated package to reflect the version  ^18.0.1 of @angular/core package,
 ## v18.0.2000 [6/6/24]
  * updated package to reflect the version  ^18.0.2 of @angular/core package
+
+
+
+## v18.0.2002 [6/11/2024 10:21:45 AM EST]
+
+
+[FIX]
+
+In wml-toggle-zero.component.html, modified the click event to call toggle with parameters null and true.
+
+Added distinctUntilChanged to listenForformControlChanges in wml-toggle-zero.component.ts to prevent redundant updates.
+In wml-toggle-zero.component.ts, adjusted toggle method to conditionally patch form control based on the new updateFormControl parameter.
