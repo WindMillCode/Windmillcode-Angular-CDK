@@ -490,4 +490,6 @@ Function: replaceValuesWithPaths()
 ## v18.0.3000 [6/13/24]
  * updated package to reflect the version  ^18.0.3 of @angular/core package,
 ## v18.0.3000 [6/13/24]
+ * updated package to reflect the version  ^18.0.3 of @angular/core package,
+## v18.0.3000 [6/13/24]
  * updated package to reflect the version  ^18.0.3 of @angular/core package

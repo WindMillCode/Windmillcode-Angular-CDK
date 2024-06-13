@@ -220,3 +220,6 @@ In wml-toggle-zero.component.html, modified the click event to call toggle with 
 
 Added distinctUntilChanged to listenForformControlChanges in wml-toggle-zero.component.ts to prevent redundant updates.
 In wml-toggle-zero.component.ts, adjusted toggle method to conditionally patch form control based on the new updateFormControl parameter.
+,
+## v18.0.3000 [6/13/24]
+ * updated package to reflect the version  ^18.0.3 of @angular/core package
