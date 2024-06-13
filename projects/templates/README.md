@@ -618,4 +618,6 @@ Changed field control initialization to `return ${val}:new FormControl("")` in `
 [FIX] -fixed minor bug while generating components
 ,
 ## v18.0.3000 [6/13/24]
+ * updated package to reflect the version  ^18.0.3 of @angular/core package,
+## v18.0.3000 [6/13/24]
  * updated package to reflect the version  ^18.0.3 of @angular/core package
