@@ -273,4 +273,6 @@ import { faker } from '@faker-js/faker';
 ## v18.0.2000 [6/6/24]
  * updated package to reflect the version  ^18.0.2 of @angular/core package,
 ## v18.0.3000 [6/13/24]
- * updated package to reflect the version  ^18.0.3 of @angular/core package
+ * updated package to reflect the version  ^18.0.3 of @angular/core package,
+## v18.0.3010 [6/18/24]
+ * updated package to conform with @windmillcode/angular-wml-components-base   

@@ -175,7 +175,7 @@ _add_newline_here_
 }` : ``
 
   let simpleFieldsSnippet = options.fieldType === "simple" ? `
-    create${nameString.capitalize(false)}Field = (params:Partial<{createWMLFieldFn:any,errorMsgKeyArray:any,fieldCustomParams:any,formControlName: keyof  FormsService["${lowerCamelCaseCpntClassName}"]["${options.name}"]["value"]}>)=>{
+    create${nameString.capitalize(false)}Field = (params:Partial<{createWMLFieldFn:(params?: GenerateFieldParams<any>) => WMLField<any, any>,errorMsgKeyArray:any,fieldCustomParams:any,formControlName: keyof  FormsService["${lowerCamelCaseCpntClassName}"]["${options.name}"]["value"]}>)=>{
       let {createWMLFieldFn,errorMsgKeyArray,fieldCustomParams,formControlName} = params
       let field =this.baseService.createWMLField({
         i18nPrefix:"${classNamePrefix}.${options.name}",
@@ -520,6 +520,16 @@ function addNeededImportsToTestFile(
       packageName: "@windmillcode/angular-wml-form",
       importStatement: "import { WMLForm } from '@windmillcode/angular-wml-form';\n",
       importMembers: ["WMLForm"]
+    },
+    {
+      packageName: "@windmillcode/angular-wml-field",
+      importStatement: "import { WMLField } from '@windmillcode/angular-wml-field';\n",
+      importMembers: ["WMLField"]
+    },
+    {
+      packageName: "@core/utility/form-utils",
+      importStatement: "import { GenerateFieldParams } from '@core/utility/form-utils';\n",
+      importMembers: ["GenerateFieldParams"]
     },
   ]
 

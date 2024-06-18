@@ -45,7 +45,7 @@ export class WMLUIProperty<V=any,T=any>{
 }
 
 export function WMLConstructorDecorator<T extends { new(...args: any[]): { } }>(ReversedBase: T) {
-  
+
   return class extends ReversedBase {
       constructor(...args: any[]) {
         super();
@@ -55,7 +55,7 @@ export function WMLConstructorDecorator<T extends { new(...args: any[]): { } }>(
             this[key] = value;
           }
         });
-        this.wmlInit?.()
+        this.wmlInit?.(props)
 
       }
 

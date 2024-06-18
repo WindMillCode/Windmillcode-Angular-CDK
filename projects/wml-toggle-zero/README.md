@@ -222,4 +222,6 @@ Added distinctUntilChanged to listenForformControlChanges in wml-toggle-zero.com
 In wml-toggle-zero.component.ts, adjusted toggle method to conditionally patch form control based on the new updateFormControl parameter.
 ,
 ## v18.0.3000 [6/13/24]
- * updated package to reflect the version  ^18.0.3 of @angular/core package
+ * updated package to reflect the version  ^18.0.3 of @angular/core package,
+## v18.0.3010 [6/18/24]
+ * updated package to conform with @windmillcode/angular-wml-components-base   

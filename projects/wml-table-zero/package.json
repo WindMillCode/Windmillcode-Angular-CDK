@@ -7,15 +7,15 @@
     "peerDependencies": {
         "@angular/common": "^18.0.0",
         "@angular/core": "^18.0.0",
-        "@windmillcode/angular-wml-button-zero": "^18.0.3000",
-        "@windmillcode/angular-wml-components-base": "^18.0.3000",
-        "@windmillcode/angular-wml-field": "^18.0.3000",
-        "@windmillcode/angular-wml-form": "^18.0.3000",
-        "@windmillcode/angular-wml-infinite-dropdown": "^18.0.3000",
-        "@windmillcode/angular-wml-input": "^18.0.3000",
-        "@windmillcode/angular-wml-options": "^18.0.3000",
-        "@windmillcode/angular-wml-popup": "^18.0.3000",
-        "@windmillcode/angular-wml-select-zero": "^18.0.3000"
+        "@windmillcode/angular-wml-button-zero": "^18.0.3010",
+        "@windmillcode/angular-wml-components-base": "^18.0.3010",
+        "@windmillcode/angular-wml-field": "^18.0.3010",
+        "@windmillcode/angular-wml-form": "^18.0.3010",
+        "@windmillcode/angular-wml-infinite-dropdown": "^18.0.3010",
+        "@windmillcode/angular-wml-input": "^18.0.3010",
+        "@windmillcode/angular-wml-options": "^18.0.3010",
+        "@windmillcode/angular-wml-popup": "^18.0.3010",
+        "@windmillcode/angular-wml-select-zero": "^18.0.3010"
     },
     "private": false,
     "schematics": "",
@@ -24,5 +24,5 @@
         "build": "npx ng build -c production",
         "test": "npx ng test wml-table-zero --code-coverage"
     },
-    "version": "18.0.3000"
+    "version": "18.0.3010"
 }
