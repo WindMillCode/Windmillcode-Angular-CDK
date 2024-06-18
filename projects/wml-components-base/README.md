@@ -498,4 +498,6 @@ Function: replaceValuesWithPaths()
 - [FIX] `projects/wml-components-base/src/lib/models.ts` - `WMLConstructorDecorator` function: Added `props` to `this.wmlInit?.(props)`. This means developers can now pass `props` to `wmlInit`.
 ,
 ## v18.0.3010 [6/18/24]
+ * updated package to conform with @windmillcode/angular-wml-components-base   ,
+## v18.0.3010 [6/18/24]
  * updated package to conform with @windmillcode/angular-wml-components-base   
