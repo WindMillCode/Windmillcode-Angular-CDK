@@ -617,9 +617,12 @@ Changed field control initialization to `return ${val}:new FormControl("")` in `
 
 [FIX] -fixed minor bug while generating components
 ,
-## v18.0.3000 [6/13/24]
- * updated package to reflect the version  ^18.0.3 of @angular/core package,
-## v18.0.3000 [6/13/24]
- * updated package to reflect the version  ^18.0.3 of @angular/core package,
-## v18.0.3000 [6/13/24]
- * updated package to reflect the version  ^18.0.3 of @angular/core package
+## v18.0.4000 [6/13/24]
+ * updated package to reflect the version  ^18.0.4 of @angular/cli package,
+
+## v18.0.4001 [6/18/24]
+
+[FIX] Changed fieldType handling in template-form/index.ts. Modified create${nameString.capitalize(false)}Field function to use ${options.name} for formControlName instead of ${lowerCamelCaseCpntClassName}.
+
+
+

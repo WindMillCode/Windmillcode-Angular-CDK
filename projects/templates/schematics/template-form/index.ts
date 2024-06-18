@@ -175,7 +175,7 @@ _add_newline_here_
 }` : ``
 
   let simpleFieldsSnippet = options.fieldType === "simple" ? `
-    create${nameString.capitalize(false)}Field = (params:Partial<{createWMLFieldFn:any,errorMsgKeyArray:any,fieldCustomParams:any,formControlName: keyof  FormsService["${lowerCamelCaseCpntClassName}"]["mainForm"]["value"]}>)=>{
+    create${nameString.capitalize(false)}Field = (params:Partial<{createWMLFieldFn:any,errorMsgKeyArray:any,fieldCustomParams:any,formControlName: keyof  FormsService["${lowerCamelCaseCpntClassName}"]["${options.name}"]["value"]}>)=>{
       let {createWMLFieldFn,errorMsgKeyArray,fieldCustomParams,formControlName} = params
       let field =this.baseService.createWMLField({
         i18nPrefix:"${classNamePrefix}.${options.name}",
@@ -323,9 +323,9 @@ let updateFormsServiceFile = (
   let snippet = ""
   let indentTarget: ts.Node
   let spacingPrefix = ""
+  console.log(options.fields)
   let fieldsArray= options.fields.map((val)=>{
     return `${val}:new FormControl("")`
-
   })
   let fieldsString ="_add_newline_here_\t"+fieldsArray.join(",_add_newline_here_\t") +"_add_newline_here_"
   let formBlock = `${options.name} :new FormGroup({${
