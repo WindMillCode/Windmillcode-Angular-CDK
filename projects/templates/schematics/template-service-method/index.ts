@@ -58,6 +58,7 @@ let updateServiceFile = (options:TemplateServiceMethodSchema)=>{
     let scrollingNameString = createStringObject(options.scrollName??"")
     let serviceString = createStringObject(options.serviceName+"Service","Service")
     let serviceMethodString =createStringObject(options.name,"")
+    
     let serviceClassVar = sourceFile.statements
     .filter(ts.isClassDeclaration)
     .find((v)=>{
@@ -297,6 +298,7 @@ function updateEnvFile(
   tree:Tree, serviceString: CreateStringObjectType) {
 
     let sourceFile = wmlCreateSourceFile(options.envFilePath, tree);
+
     let devEnv = sourceFile?.statements
       ?.filter(ts.isClassDeclaration)
       .find((v) => {
