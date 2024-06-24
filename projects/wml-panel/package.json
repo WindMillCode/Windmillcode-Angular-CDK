@@ -7,7 +7,7 @@
     "peerDependencies": {
         "@angular/common": "^18.0.0",
         "@angular/core": "^18.0.0",
-        "@windmillcode/angular-wml-components-base": "^18.0.3010"
+        "@windmillcode/angular-wml-components-base": "^18.0.4000"
     },
     "private": false,
     "schematics": "",
@@ -15,5 +15,5 @@
         "build": "npx ng build",
         "test": "npx ng test wml-panel --code-coverage"
     },
-    "version": "18.0.3010"
+    "version": "18.0.4000"
 }
