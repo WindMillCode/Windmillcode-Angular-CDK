@@ -506,4 +506,6 @@ Function: replaceValuesWithPaths()
 ## v18.0.4000 [6/23/24]
  * updated package to conform with @windmillcode/angular-wml-components-base   ,
 ## v18.0.4000 [6/23/24]
- * updated package to conform with @windmillcode/angular-wml-components-base   
+ * updated package to conform with @windmillcode/angular-wml-components-base   ,
+## v18.0.5000 [6/26/24]
+ * updated package to reflect the version  ^18.0.5 of @angular/core package
