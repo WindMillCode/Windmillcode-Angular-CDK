@@ -1,0 +1,3 @@
+<div [class]="classPrefix('MainPod')">
+  <p [class]="classPrefix('MainText0')" *ngFor="let text of props.texts">{{ $any(text.text)  | translate}}</p>
+</div>

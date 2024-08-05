@@ -1,0 +1,72 @@
+@import '../../../../styles';
+
+
+:host {
+
+
+  &.WMLTableZeroSortView{
+    display: block;
+    @include WMLTableCtrlBackground;
+    .WMLTableZeroSort{
+      &Main{
+        &Pod{
+          justify-content: space-between;
+
+        }
+      }
+      &Pod{
+
+        &0{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          max-height: 90%;
+          flex: 1 0 90%;
+          max-width: calc(1000/16 * 1rem);
+          overflow: hidden auto;
+
+          &Form {
+            &0 {
+              margin:var(--wml-table-spacing7) 0 0 0;
+              max-height: 80%;
+              flex: 0 1 80%;
+              width: 100%;
+
+            }
+          }
+
+          &Btn {
+            &0 {
+              margin: var(--wml-table-spacing3)  0 0 var(--wml-table-spacing3);
+            }
+          }
+
+          &Text {
+            &0 {
+              margin:var(--wml-table-spacing5) 0 0 0;
+              @media #{$mobile} {
+                text-align: center;
+                margin:var(--wml-table-spacing3) 0 0 0;
+              }
+            }
+          }
+
+          &Item {
+            &0 {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              @media #{$mobile} {
+                flex-direction: column;
+                align-items: center;
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

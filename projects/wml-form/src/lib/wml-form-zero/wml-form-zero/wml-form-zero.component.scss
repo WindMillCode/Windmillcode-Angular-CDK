@@ -1,0 +1,29 @@
+@import "../../../../styles.scss";
+
+
+:host {
+
+  &.WMLFormView{
+    // display: flex;
+    .WMLForm{
+      &Main{
+        &Pod{
+          width: 100%;
+        }
+      }
+      &Pod{
+        &0{
+          &Item {
+            &0 {
+              margin: 0 0 $wml-form-spacing5 0;
+            }
+            &1{
+              padding:$wml-form-spacing7
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

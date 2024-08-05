@@ -1,0 +1,38 @@
+$wml-chips-spacing0: calc(1/16* 1rem);
+$wml-chips-spacing1: calc(2/16* 1rem);
+$wml-chips-spacing2: calc(4/16* 1rem);
+$wml-chips-spacing3: calc(8/16* 1rem);
+$wml-chips-spacing4: calc(12/16* 1rem);
+$wml-chips-spacing5: calc(16/16* 1rem);
+$wml-chips-spacing6: calc(24/16* 1rem);
+$wml-chips-spacing7: calc(32/16* 1rem);
+$wml-chips-spacing8: calc(48/16* 1rem);
+$wml-chips-spacing9: calc(64/16* 1rem);
+$wml-chips-spacing10: calc(72/16* 1rem);
+$wml-chips-spacing11: calc(96/16* 1rem);
+$wml-chips-spacing12: calc(128/16* 1rem);
+$wml-chips-spacing13: calc(192/16* 1rem);
+$wml-chips-spacing14: calc(256/16* 1rem);
+$wml-chips-spacing15: calc(384/16* 1rem);
+$wml-chips-spacing16: calc(512/16* 1rem);
+
+:root{
+  --wml-chips-spacing0: #{$wml-chips-spacing0};
+  --wml-chips-spacing1: #{$wml-chips-spacing1};
+  --wml-chips-spacing2: #{$wml-chips-spacing2};
+  --wml-chips-spacing3: #{$wml-chips-spacing3};
+  --wml-chips-spacing4: #{$wml-chips-spacing4};
+  --wml-chips-spacing5: #{$wml-chips-spacing5};
+  --wml-chips-spacing6: #{$wml-chips-spacing6};
+  --wml-chips-spacing7: #{$wml-chips-spacing7};
+  --wml-chips-spacing8: #{$wml-chips-spacing8};
+  --wml-chips-spacing9: #{$wml-chips-spacing9};
+  --wml-chips-spacing10: #{$wml-chips-spacing10};
+  --wml-chips-spacing11: #{$wml-chips-spacing11};
+  --wml-chips-spacing12: #{$wml-chips-spacing12};
+  --wml-chips-spacing13: #{$wml-chips-spacing13};
+  --wml-chips-spacing14: #{$wml-chips-spacing14};
+  --wml-chips-spacing15: #{$wml-chips-spacing15};
+  --wml-chips-spacing16: #{$wml-chips-spacing16};
+}
+

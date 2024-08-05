@@ -1,0 +1,8 @@
+<div [class]="classPrefix('MainPod')">
+  <section [class]="classPrefix('Pod0')">
+    <div [class]="classPrefix('Pod0Item0')">
+      <wml-infinite-dropdown-zero *ngFor="let item of props.items" [props]="item" [ngStyle]="item.style"></wml-infinite-dropdown-zero>
+    </div>
+  </section>
+  <p [class]="classPrefix('MainClose0')" (click)="close()">X</p>
+</div>

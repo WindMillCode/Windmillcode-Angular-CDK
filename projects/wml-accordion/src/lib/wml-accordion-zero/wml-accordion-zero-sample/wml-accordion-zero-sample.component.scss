@@ -1,0 +1,30 @@
+
+  @import '../../../../styles';
+
+  wml-accordion-zero-sample {
+
+  &.WMLAccordionZeroSampleView{
+    display: block;
+
+    .WMLAccordionZeroSample{
+      &Main{
+        &Pod{
+
+          background: var(--wml-accordion-primary-gradient);
+          height: calc(300/10.6 * 1rem);
+
+          p{
+            font-size: calc(32/10.6 * 1rem);
+            white-space:pre-wrap;
+            margin:0
+          }
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

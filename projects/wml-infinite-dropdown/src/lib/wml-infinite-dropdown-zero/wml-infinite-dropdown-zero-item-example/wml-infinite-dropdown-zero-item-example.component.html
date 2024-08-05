@@ -1,0 +1,30 @@
+<p
+  (pointerenter)="$any(props).pointerenter($event)"
+  (click)="$any(props).click()"
+  [ngStyle]="props.style"
+  *ngIf="props.isPresent && !props.routerLink && !props.link"
+  [class]="classPrefix('MainItem1')"
+  >{{$any(props).text | translate}}
+</p>
+
+<a [href]="props.link" *ngIf="props.isPresent && props.link">
+  <p
+    (pointerenter)="$any(props).pointerenter($event)"
+    (click)="$any(props).click($event)"
+    [ngStyle]="props.style"
+    [class]="classPrefix('MainItem1')"
+    >{{$any(props).text | translate}}
+  </p>
+</a>
+
+<a [routerLink]="props.routerLink" *ngIf="props.isPresent && props.routerLink">
+  <p
+    (pointerenter)="$any(props).pointerenter($event)"
+    (click)="$any(props).click($event)"
+    [ngStyle]="props.style"
+    [class]="classPrefix('MainItem1')"
+    >{{$any(props).text | translate}}
+  </p>
+</a>
+
+

@@ -1,0 +1,83 @@
+@import "../../../../styles";
+
+:host {
+  $wml-mobile-nav-zero-black-opacity-0:rgba(0,0,0,.5);
+  $wml-mobile-nav-zero-spacing7: calc(32/16* 1rem);
+  $wml-mobile-nav-zero-display:calc(40/16 * 1rem);
+  $wml-mobile-nav-zero-AnimationDuration: 1s;
+  $wml-mobile-nav-zero-AnimationStart:-100%;
+  $wml-mobile-nav-zero-AnimationEnd:0%;
+  --wml-mobile-nav-zero-container-position:30%;
+  @keyframes wml-mobile-nav-zero-keyframe0{
+    0%{left: $wml-mobile-nav-zero-AnimationStart}
+    100%{left: $wml-mobile-nav-zero-AnimationEnd}
+  }
+
+  @keyframes wml-mobile-nav-zero-keyframe1{
+    0%{left:$wml-mobile-nav-zero-AnimationEnd}
+    100%{left:$wml-mobile-nav-zero-AnimationStart}
+  }
+
+
+  --wml-mobile-nav-zero-white:#ffffff;
+  &.WMLMobileNavZeroView{
+    display: block;
+    position: absolute;
+    inset: 0;
+    width:100vw;
+    height:100vh;
+    z-index:7;
+    background-color: $wml-mobile-nav-zero-black-opacity-0;
+
+    &0{
+      display: block;
+    }
+
+    &1{
+      display: none;
+    }
+    .WMLMobileNavZero{
+      &Main{
+        &Pod{
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          overflow: hidden auto;
+        }
+        &Close {
+          &0 {
+            @include WMLCursorPointer0;
+            font-size: $wml-mobile-nav-zero-display;
+            font-weight: bolder;
+            margin:$wml-mobile-nav-zero-spacing7;
+            color:var(--wml-mobile-nav-zero-white);
+            position:fixed;
+            right:0;
+          }
+        }
+      }
+      &Pod{
+
+        &0{
+          position: relative;
+          height: 100%;
+          flex: 0 0 var(--wml-mobile-nav-zero-container-position);
+          min-width: calc(200/16 * 1rem);
+          left:0;
+          animation: wml-mobile-nav-zero-keyframe0 $wml-mobile-nav-zero-AnimationDuration;
+          background-color: convert-to-rgb($wml-mobile-nav-secondary);
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          &Item {
+            &0 {
+              height: 10%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

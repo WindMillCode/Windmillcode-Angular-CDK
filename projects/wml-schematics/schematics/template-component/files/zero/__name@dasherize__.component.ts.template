@@ -1,0 +1,62 @@
+// angular
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+
+<%  if(cpntType !== 'library-zero'){ %>
+// services
+import { UtilityService } from '@app/core/utility/utility.service';
+import { BaseService } from '@core/base/base.service';
+<% } %>
+
+// rxjs
+import { takeUntil,tap } from 'rxjs/operators';
+
+// wml-components
+import { WMLComponentBaseZero, WMLComponentBaseZeroPropsMixin } from '@windmillcode/angular-wml-components-base';
+
+// misc
+<%  if(cpntType !== 'library-zero') { %>
+import { ENV } from '@env/environment';
+<% } %>
+<%  if(standalone === true){ %>import { SharedModule } from '@shared/shared.module';<% } %>
+
+@Component({
+  <%  if(standalone === true){ %>standalone:true,
+  imports:[
+    SharedModule
+  ],<% } %>
+  selector: '<%= dasherize(name) %>',
+  templateUrl: './<%= dasherize(name) %>.component.html',
+  styleUrls: ['./<%= dasherize(name) %>.component.scss'],
+  changeDetection:ChangeDetectionStrategy.OnPush,
+  <%  if(cpntType === 'library-zero') { %>
+  encapsulation:ViewEncapsulation.None
+  <% } %>
+})
+export class <%= classify(name) %>Component extends WMLComponentBaseZero<%  if(isPropsChild) { %><<%= classify(name) %>Props><% } %>  {
+
+  constructor(
+    public override cdref:ChangeDetectorRef,
+    <% if(cpntType !== 'library-zero'){ %>
+    public utilService:UtilityService,
+    public baseService:BaseService
+    <% } %>
+  ) {
+    super({
+      classPrefix:'<%= classify(name) %>',
+      <%  if(cpntType === 'default-zero' && isIdIncluded) { %>
+      idPrefix:ENV.idPrefix.<%= camelize(name) %>
+      <% } %>
+    })
+    <%  if(isPropsChild) { %>
+    this.props  = new <%= classify(name) %>Props()
+    <% } %>
+  }
+}
+
+
+<%  if(isPropsChild) { %>
+export class <%= classify(name) %>Props extends WMLComponentBaseZeroPropsMixin(class  {
+  // PROPERTIES AND METHODS ONLY INSIDE HERE OR YOU WILL BREAK THE CODE
+}) {}
+<% } %>
+

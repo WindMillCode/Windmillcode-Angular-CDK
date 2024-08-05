@@ -1,0 +1,85 @@
+
+@import '../../../../styles';
+
+
+wml-accordion-zero-item {
+
+    --wml-accordion-zero-startHeight: calc(0/10.6 * 1rem);
+    --wml-accordion-zero-endHeight0 : calc(20000/10.6 * 1rem);
+    --wml-accordion-zero-endHeight1 : calc(2000/10.6 * 1rem);
+    --wml-accordion-zero-animationDuration0: 10s;
+    --wml-accordion-zero-animationDuration1: 1.25s;
+
+    @keyframes open-accordion {
+      0%{
+        max-height:var(--wml-accordion-zero-startHeight);
+      }
+      100%{
+        max-height:var(--wml-accordion-zero-endHeight0);
+      }
+    }
+
+    @keyframes close-accordion {
+      0%{
+        max-height:var(--wml-accordion-zero-endHeight1);
+      }
+      100%{
+        max-height:var(--wml-accordion-zero-startHeight);
+      }
+    }
+
+  &.WMLAccordionZeroItemView{
+    display: block;
+    .WMLAccordionZeroItem{
+      &Main{
+
+        &Pod{
+          max-width: 100%;
+          overflow: hidden;
+          // display: inline-block;
+        }
+
+      }
+      &Pod{
+
+        &0{
+          max-width: 100%;
+          overflow: hidden;
+          background: var(--wml-accordion-secondary-gradient);
+          padding: $wml-accordion-spacing3;
+          display: flex;
+          align-items: center;
+
+          &Icon {
+            &0 {
+              color: rgba(var(--wml-accordion-white));
+              font-size: calc(20/10.6 * 1rem);
+              cursor: pointer;
+            }
+          }
+
+          &Title {
+            &0 {
+              margin: 0 0 0 $wml-accordion-spacing5;
+            }
+          }
+
+
+        }
+        &1{
+
+          max-width: 100%;
+          max-height: var(--wml-accordion-zero-endHeight0);
+          animation: open-accordion var(--wml-accordion-zero-animationDuration0);
+          background-color: rgba(var(--wml-accordion-white),.7);
+          overflow: hidden;
+          &Closing{
+            max-height: var(--wml-accordion-zero-startHeight);
+            animation: close-accordion var(--wml-accordion-zero-animationDuration1);
+          }
+        }
+      }
+    }
+  }
+
+}

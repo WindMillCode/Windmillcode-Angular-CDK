@@ -1,0 +1,24 @@
+@import "../../../../styles.scss";
+
+:host {
+
+
+  &.WMLTableZeroRowTypeView{
+    display: block;
+    height: 100%;
+    @include WMLTableCtrlBackground;
+    .WMLTableZeroRowType{
+      &Main{
+        &Pod{
+
+
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

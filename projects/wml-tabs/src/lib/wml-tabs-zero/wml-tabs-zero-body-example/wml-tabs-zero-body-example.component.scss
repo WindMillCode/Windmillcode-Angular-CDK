@@ -1,0 +1,22 @@
+
+
+:host {
+
+
+  &.WMLSampleTabBodyView{
+    display: block;
+    .WMLSampleTabBody{
+      &Main{
+        &Pod{
+
+
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

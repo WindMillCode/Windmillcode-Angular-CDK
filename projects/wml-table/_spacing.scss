@@ -1,0 +1,39 @@
+$wml-table-spacing0: calc(1/16* 1rem);
+$wml-table-spacing1: calc(2/16* 1rem);
+$wml-table-spacing2: calc(4/16* 1rem);
+$wml-table-spacing3: calc(8/16* 1rem);
+$wml-table-spacing4: calc(12/16* 1rem);
+$wml-table-spacing5: calc(16/16* 1rem);
+$wml-table-spacing6: calc(24/16* 1rem);
+$wml-table-spacing7: calc(32/16* 1rem);
+$wml-table-spacing8: calc(48/16* 1rem);
+$wml-table-spacing9: calc(64/16* 1rem);
+$wml-table-spacing10: calc(72/16* 1rem);
+$wml-table-spacing11: calc(96/16* 1rem);
+$wml-table-spacing12: calc(128/16* 1rem);
+$wml-table-spacing13: calc(192/16* 1rem);
+$wml-table-spacing14: calc(256/16* 1rem);
+$wml-table-spacing15: calc(384/16* 1rem);
+$wml-table-spacing16: calc(512/16* 1rem);
+
+
+
+:root{
+  --wml-table-spacing0:#{$wml-table-spacing0};
+  --wml-table-spacing1:#{$wml-table-spacing1};
+  --wml-table-spacing2:#{$wml-table-spacing2};
+  --wml-table-spacing3:#{$wml-table-spacing3};
+  --wml-table-spacing4:#{$wml-table-spacing4};
+  --wml-table-spacing5:#{$wml-table-spacing5};
+  --wml-table-spacing6:#{$wml-table-spacing6};
+  --wml-table-spacing7:#{$wml-table-spacing7};
+  --wml-table-spacing8:#{$wml-table-spacing8};
+  --wml-table-spacing9:#{$wml-table-spacing9};
+  --wml-table-spacing10:#{$wml-table-spacing10};
+  --wml-table-spacing11:#{$wml-table-spacing11};
+  --wml-table-spacing12:#{$wml-table-spacing12};
+  --wml-table-spacing13:#{$wml-table-spacing13};
+  --wml-table-spacing14:#{$wml-table-spacing14};
+  --wml-table-spacing15:#{$wml-table-spacing15};
+  --wml-table-spacing16:#{$wml-table-spacing16};
+}

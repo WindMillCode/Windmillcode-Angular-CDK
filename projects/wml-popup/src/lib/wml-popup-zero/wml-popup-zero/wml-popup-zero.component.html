@@ -1,0 +1,10 @@
+<div
+[class]="classPrefix('MainPod')">
+  <div (click)="this.props.closePopup()" [class]="classPrefix('Pod1')">
+
+  </div>
+  <div [class]="classPrefix('Pod0')">
+    <ng-template #customPopup></ng-template>
+  </div>
+
+</div>

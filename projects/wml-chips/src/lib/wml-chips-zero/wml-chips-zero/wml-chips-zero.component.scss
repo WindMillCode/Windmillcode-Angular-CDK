@@ -1,0 +1,98 @@
+@import '../../../../styles';
+
+$chipIconColor:lighten($color: convert-to-rgb($wml-chips-grey), $amount: 30);
+$chipsFontSize:calc(25/16 * 1em);
+.WMLChipsZeroView{
+  display: block;
+  .WMLChipsZero{
+    &Main{
+      &Pod{
+        width:100%;
+        padding: var(--wml-chips-spacing3) var(--wml-chips-spacing5);
+        border-radius: calc(5/16 * 1rem);
+        background-color: lighten(convert-to-rgb($wml-chips-grey),$amount: 80);
+        @include FlexColumnCenter;
+        align-items: flex-start;
+      }
+    }
+    &Pod{
+
+      &0{
+        max-height: calc(250/16* 1rem);
+        overflow: auto;
+        display: flex;
+        flex-flow:row wrap;
+
+        &Item {
+          &0 {
+            background-color: $chipIconColor;
+            padding: var(--wml-chips-spacing3);
+            border-radius: calc(100/16 * 1rem);
+            color: rgba(var(--wml-chips-dark));
+            margin: 0 var(--wml-chips-spacing5) var(--wml-chips-spacing5) 0;
+            word-break: break-all;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+
+
+          }
+        }
+
+        &Text {
+          &0 {
+            // color:rgba(var(----wml-chips-dark))
+            font-size:$chipsFontSize
+          }
+        }
+
+
+        &Btn {
+          &0 {
+            cursor: pointer;
+            border:none;
+            width:  calc(18/10.6 * 1rem) !important;
+            margin: 0 0 0 var(--wml-chips-spacing3);
+            background-color:var(--wml-chips-grey);
+            border-radius: calc(100/10.6 * 1rem);
+
+
+            .fa-xmark{
+              color:rgba(var(--wml-chips-dark))
+            }
+          }
+        }
+      }
+
+      &1{
+        width: 100%;
+        &Input {
+          &0 {
+            padding: var(--wml-chips-spacing4);
+            width: 100%;
+            height: auto;
+            min-height: calc(1/16 * 1rem);
+            overflow: hidden;
+            border:none;
+            background-color: transparent;
+            font-size: $chipsFontSize;
+            &::placeholder {
+              margin:0;
+              padding:0;
+            }
+          }
+        }
+
+      }
+
+      &2{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+

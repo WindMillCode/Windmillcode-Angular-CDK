@@ -1,0 +1,10 @@
+ wml-table-zero-sort{
+  @media #{$mobile}{
+    .WMLTableZeroSortPod0Item1{
+      max-width: 100%;
+    }
+    p{
+      white-space: break-spaces;
+    }
+  }
+}

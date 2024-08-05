@@ -1,0 +1,69 @@
+/***********************************************
+ Media query variables
+***********************************************/
+
+/* media queries */
+$mobileFont:                  'only screen and (max-width: 600px)';
+$mobile:              		    'only screen and (max-width: 767px)';
+// $mobile:              		    'only screen and (max-width: 899px)';
+$smallMobile:				    'only screen and (max-width: 320px)';
+$mediumMobile:				    'only screen and (max-width: 374px)';
+$tablet:              		    'only screen and (min-width: 768px) and (max-width: 1199px)';
+$tabletPortrait:      		    'only screen and (min-width: 768px) and (max-width: 991px)';
+$tabletPortraitDown:  		    'only screen and (max-width: 991px)';
+$tabletLandscape:     		    'only screen and (min-width: 992px) and (max-width: 1199px)';
+$smallDesktop:             	    'only screen and (min-width: 992px)';
+$tabletLandscapeDown: 		    'only screen and (max-width: 1199px)';
+$desktop:             		    'only screen and (min-width: 1200px)';
+$notMobile:           		    'only screen and (min-width: 768px)';
+$laptop:              		    'only screen and (min-width: 1200px) and (max-width: 1440px)';
+$laptopDown:          		    'only screen and (max-width: 1440px)';
+$laptopTablet:        		    'only screen and (min-width: 768px) and (max-width: 1440px)';
+$laptopTabletLandscape:         'only screen and (min-width: 992px) and (max-width: 1440px)';
+$largeDesktop:        		    'only screen and (min-width: 1441px)';
+$largeDesktopDown:        	    'only screen and (max-width: 1599px)';
+$xlDesktop:           		    'only screen and (min-width: 1600px)';
+$xlDesktopDown:           	    'only screen and (max-width: 1919px)';
+$xxlDesktop:           		    'only screen and (min-width: 1920px)';
+
+$xxxlDesktop:           	    'only screen and (min-width: 2000px)';
+$dekstopDownForCampaigns:	    'only screen and (max-width: 1250px)';
+
+/* media queries for header */
+$tabletForHeader:              	'only screen and (min-width: 768px) and (max-width: 1230px)';
+$tabletLandscapeForHeader:     	'only screen and (min-width: 992px) and (max-width: 1230px)';
+$tabletLandscapeDownForHeader: 	'only screen and (max-width: 1230px)';
+$desktopForHeader:             	'only screen and (min-width: 1231px)';
+$laptopForHeader:              	'only screen and (min-width: 1231px) and (max-width: 1440px)';
+
+
+:root {
+  --wml-notify-mobile-font: #{$mobileFont};
+  --wml-notify-mobile: #{$mobile};
+  --wml-notify-small-mobile: #{$smallMobile};
+  --wml-notify-medium-mobile: #{$mediumMobile};
+  --wml-notify-tablet: #{$tablet};
+  --wml-notify-tablet-portrait: #{$tabletPortrait};
+  --wml-notify-tablet-portrait-down: #{$tabletPortraitDown};
+  --wml-notify-tablet-landscape: #{$tabletLandscape};
+  --wml-notify-small-desktop: #{$smallDesktop};
+  --wml-notify-tablet-landscape-down: #{$tabletLandscapeDown};
+  --wml-notify-desktop: #{$desktop};
+  --wml-notify-not-mobile: #{$notMobile};
+  --wml-notify-laptop: #{$laptop};
+  --wml-notify-laptop-down: #{$laptopDown};
+  --wml-notify-laptop-tablet: #{$laptopTablet};
+  --wml-notify-laptop-tablet-landscape: #{$laptopTabletLandscape};
+  --wml-notify-large-desktop: #{$largeDesktop};
+  --wml-notify-large-desktop-down: #{$largeDesktopDown};
+  --wml-notify-xl-desktop: #{$xlDesktop};
+  --wml-notify-xl-desktop-down: #{$xlDesktopDown};
+  --wml-notify-xxl-desktop: #{$xxlDesktop};
+  --wml-notify-xxxl-desktop: #{$xxxlDesktop};
+  --wml-notify-dekstop-down-for-campaigns: #{$dekstopDownForCampaigns};
+  --wml-notify-tablet-for-header: #{$tabletForHeader};
+  --wml-notify-tablet-landscape-for-header: #{$tabletLandscapeForHeader};
+  --wml-notify-tablet-landscape-down-for-header: #{$tabletLandscapeDownForHeader};
+  --wml-notify-desktop-for-header: #{$desktopForHeader};
+  --wml-notify-laptop-for-header: #{$laptopForHeader};
+}

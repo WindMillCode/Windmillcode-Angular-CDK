@@ -1,0 +1,6 @@
+<div [class]="classPrefix('MainPod')">
+  <section [class]="classPrefix('Pod'+i) + ' ' +classPrefix('MainItem0')" *ngFor="let section of props.items;let i = index;">
+    <wml-accordion-zero-item [class]="classPrefix('MainItem1') + ' ' +item.class"
+    *ngFor="let item of section" [props]="item"></wml-accordion-zero-item>
+  </section>
+</div>

@@ -1,0 +1,12 @@
+<button [attr.id]="props.button.id"  (click)="props.button.click($event)" [class]="props.button.class" [ngStyle]="props.button.style">
+  <ng-container *ngFor="let icon of props.icons">
+    <ng-container *ngIf="icon.isPresent" >
+      <img [attr.id]="icon.id" *ngIf="icon.type === 'img'" [src]=icon.src [alt]="icon.alt" [class]="icon.class" [ngStyle]="icon.style"/>
+      <i   [attr.id]="icon.id" *ngIf="icon.type === 'icon'"  [class]="icon.class" [ngStyle]="icon.style"></i>
+    </ng-container>
+  </ng-container>
+  <span
+  *ngIf="props.text.isPresent"
+  [attr.id]="props.text.id" [ngStyle]="props.text.style" [class]="props.text.class">{{ props.text.text! | translate}}</span>
+</button>
+

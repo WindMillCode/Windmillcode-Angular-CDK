@@ -1,0 +1,28 @@
+<div (keydown.enter)="add($event)"  [class]="classPrefix('MainPod')">
+  <ul [class]="classPrefix('Pod0')"  #chipGrid [attr.aria-label]="props.userInputsAriaLabel | translate">
+    <li [class]="classPrefix('Pod0Item0')" *ngFor="let item of props.userInputs" (removed)="remove(item)">
+      <span [class]="classPrefix('Pod0Text0')">{{item}}</span>
+      <button
+      [class]="classPrefix('Pod0Btn0')"
+      (click)="remove(item)"
+      [attr.aria-label]="props.removeChipAriaLabel | translate">
+        <i
+        [class]="'fa-solid fa-xmark'"
+        ></i>
+      </button>
+    </li>
+  </ul>
+  <div [class]="classPrefix('Pod1')">
+    <textarea
+    #myTextArea
+    (input)="resizeBasedOnTextContent()"
+    [ngStyle]="textAreaStyle"
+    rows =1
+    [class]="classPrefix('Pod1Input0')"
+    [placeholder]="props.placeholder | translate"  [formControl]="itemCtrl"
+    ></textarea>
+  </div>
+  <section [class]="classPrefix('Pod2')">
+    <wml-button-one [props]="props.clearBtn"></wml-button-one>
+  </section>
+</div>

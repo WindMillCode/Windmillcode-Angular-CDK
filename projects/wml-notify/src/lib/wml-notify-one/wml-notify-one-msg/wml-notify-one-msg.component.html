@@ -1,0 +1,2 @@
+<span *ngIf="notification.msgtype === 'default'" >{{ notification.message | translate }}</span>
+<ng-template *ngIf="notification.msgtype === 'custom'" #customMsg ></ng-template>

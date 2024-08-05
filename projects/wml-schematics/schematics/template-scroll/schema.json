@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "template",
+  "title": "WindmillCode Template Scroll Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the scroll object.",
+      "type": "string"
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path where the target class is.",
+      "$default": {
+        "$source": "workingDirectory"
+      }
+    },
+    "serviceFilePath": {
+      "type": "string",
+      "format": "path",
+      "description": "The path where the service is. to be passed to template-service-method schematic"
+    },
+    "serviceMethodName":{
+      "type": "string",
+      "description":"The name of the service method, to be passed to template-service-method schematic"
+    },
+    "serviceMethodApiRoute": {
+      "type": "string",
+      "description": "The http api route.,to be passed to template-service-method schematic"
+    },
+    "serviceMethodEntityName":{
+      "description": "to be passed to template-service-method schematic, look up entiyName definition there",
+      "type": "string",
+      "default":"entity"
+    },
+    "serviceMethodUseDataSourceStrategy": {
+      "type": "boolean",
+      "description": "Whether to use the datasource strategy for the service method",
+      "default": true
+    },
+    "createServiceMethod":{
+      "description": "whether or not to create the service method",
+      "type": "boolean",
+      "default":true
+    }
+
+
+  },
+  "required":["name","serviceFilePath"]
+}

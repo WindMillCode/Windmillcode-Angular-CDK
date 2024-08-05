@@ -1,0 +1,63 @@
+{
+  // "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    // "sourceType": "module",
+    // "ecmaVersion": 2021
+    "project": "./apps/frontend/AngularApp/tsconfig.json",
+    "createDefaultProgram": true
+  },
+  "ignorePatterns": [
+    "*.html"
+  ],
+  "plugins": [
+    "unused-imports",
+    "@typescript-eslint"
+    // "@windmillcode/eslint-rules"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "rules": {
+
+    "no-trailing-spaces": "error",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+        // "plugin:@windmillcode/eslint-rules/recommended"
+      ],
+      "rules": {
+        "no-trailing-spaces": "error",
+        "no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "no-undef": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "prefer-const": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+        "no-prototype-builtins": "off",
+        "no-sparse-arrays": "off",
+        "@typescript-eslint/ban-types": "warn"
+      }
+    }
+  ]
+}

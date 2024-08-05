@@ -1,0 +1,56 @@
+@import "spacing";
+@import "media_queries";
+@import "color_pallete";
+@import "common";
+
+
+$wml-white: rgba(255,255,255);
+$wml-black: rgba(0,0,0);
+$wml-primary: #90ee90;
+$wml-secondary:#707070;
+$wml-gradient-0: radial-gradient(farthest-corner at 100% 0px,grey 0%,#000 150%);
+$wml-overlay-0:rgba(0,0,0,.7);
+$wml-border-radius0:calc(8/16 * 1rem);
+$wml-border-radius1:calc(10/16 * 1rem);
+$wml-border-radius2:calc(20/16 * 1rem);
+$wml-transition-0:1s;
+
+@mixin WMLCursorPointer0{
+  &:hover{
+    cursor: pointer;
+  }
+}
+@mixin WMLButtonMainButton0{
+  border-radius: $wml-border-radius0;
+  padding:$wml-button-spacing3;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  &Text{
+    &0{
+      flex: 1 1 auto;
+      max-width: 100%;
+      white-space: break-spaces;
+      img + &, i + & {
+        margin: 0 0 0 $wml-button-spacing3;
+      }
+    }
+  }
+  img{
+    display: inline;
+    width: calc(29/16 * 1rem);
+    height: auto;
+  }
+  i{
+    font-size: calc(20/16 * 1rem);
+  }
+  img,i{
+    flex:0 1 10%
+  }
+}
+
+
+
+
+

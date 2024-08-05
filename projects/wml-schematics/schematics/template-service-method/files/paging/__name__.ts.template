@@ -1,0 +1,54 @@
+import { transformObjectKeys } from "@core/utility/common-utils"
+import { RecursiveSnakeCaseType, transformFromCamelCaseToSnakeCase, transformFromSnakeCaseToCamelCase } from "@core/utility/string-utils"
+import { WMLAPIPaginationRequestModel, WMLAPIPaginationResponseModel } from "@windmillcode/angular-wml-components-base"
+import { Observable, of, take } from "rxjs"
+import { WMLConstructorDecorator } from "@windmillcode/angular-wml-components-base"
+
+export let <%= name %>Load = (uiBody:<%= capitalize(name)%>UIRequestBody): Observable<<%= capitalize(name)%>APIRequestBody>=>{
+
+  let apiBody = new <%= capitalize(name)%>APIRequestBody({data:transformObjectKeys(
+    uiBody,
+    transformFromCamelCaseToSnakeCase
+  )})
+  return of(apiBody)
+  .pipe(
+    take(1),
+  )
+}
+
+
+export let <%= name %>Success = (apiBody:<%= capitalize(name)%>APIResponseBody):<%= capitalize(name)%>UIResponseBody=>{
+  let uiBody = new <%= capitalize(name)%>UIResponseBody(transformObjectKeys(
+    apiBody.data,
+    transformFromSnakeCaseToCamelCase
+  ))
+  return uiBody
+}
+
+@WMLConstructorDecorator
+export class <%= capitalize(name)%>UIRequestBody extends WMLAPIPaginationRequestModel  {
+  constructor(props:Partial<<%= capitalize(name)%>UIRequestBody>={}){super();}
+}
+
+@WMLConstructorDecorator
+export class <%= capitalize(name)%>APIRequestBody {
+  constructor(props:Partial<<%= capitalize(name)%>APIRequestBody>={}){}
+  data:RecursiveSnakeCaseType<<%= capitalize(name)%>UIRequestBody>
+}
+
+@WMLConstructorDecorator
+export class <%= capitalize(name)%>UIResponseBody<T = <%= capitalize(name)%><%= capitalize(entityName)%>>  extends WMLAPIPaginationResponseModel<T>{
+  constructor(props:Partial<<%= capitalize(name)%>UIResponseBody>={}){super();}
+
+}
+
+@WMLConstructorDecorator
+export class <%= capitalize(name)%>APIResponseBody<T = <%= capitalize(name)%><%= capitalize(entityName)%> > {
+  constructor(props:Partial<<%= capitalize(name)%>APIResponseBody>={}){ }
+  data:RecursiveSnakeCaseType<<%= capitalize(name)%>UIResponseBody>
+}
+
+@WMLConstructorDecorator
+export class <%= capitalize(name)%><%= capitalize(entityName)%>{
+  constructor(props:Partial<<%= capitalize(name)%><%= capitalize(entityName)%>>={}){}
+}

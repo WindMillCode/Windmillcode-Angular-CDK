@@ -1,0 +1,41 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics":{
+
+    "component":{
+      "description": "Generates template component",
+      "factory": "./template-component/index#generateComponentTemplate",
+      "schema":  "./template-component/schema.json"
+    },
+    "module": {
+      "description": "Create an template module  usually meant for libraries",
+      "factory": "./template-module",
+      "schema": "./template-module/schema.json"
+    },
+    "library": {
+      "description": "Generate template library.",
+      "factory": "./template-library",
+      "schema": "./template-library/schema.json"
+    },
+    "service":{
+      "description": "Generates template service",
+      "factory": "./template-service/index#generateServiceTemplate",
+      "schema":  "./template-service/schema.json"
+    },
+    "serviceMethod":{
+      "description": "Generates template service method",
+      "factory": "./template-service-method/index#generateServiceMethodTemplate",
+      "schema":  "./template-service-method/schema.json"
+    },
+    "form":{
+      "description": "Generates code required for a new form",
+      "factory": "./template-form/index#generateFormTemplate",
+      "schema":  "./template-form/schema.json"
+    },
+    "scrollObject":{
+      "description": "Generates code required for a new scroll object",
+      "factory": "./template-scroll/index#generateFn",
+      "schema":  "./template-scroll/schema.json"
+    }
+  }
+}

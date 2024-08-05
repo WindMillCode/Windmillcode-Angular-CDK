@@ -1,0 +1,9 @@
+<div [class]="classPrefix('MainPod')">
+  <img *ngIf="props.img.isPresent" [class]="classPrefix('MainImg0')" [src]=props.img.src [alt]="props.img.alt | translate" />
+  <section [class]="classPrefix('Pod0')">
+    <p *ngIf="props.title.isPresent" [class]="classPrefix('Pod0Text0')">{{ $any(props.title.text)  | translate}}</p>
+    <p *ngIf="props.subtitle.isPresent" [class]="classPrefix('Pod0Text0')">{{ $any(props.subtitle.text)  | translate}}</p>
+    <p *ngIf="props.price.isPresent" [class]="classPrefix('Pod0Text0')">{{ $any(props.price.text)  | translate}}</p>
+  </section>
+
+</div>

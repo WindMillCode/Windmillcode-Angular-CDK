@@ -1,0 +1,23 @@
+@import '../../../../styles';
+
+:host {
+
+
+  &.WMLTableZeroPopupOverlayView{
+    display: block;
+    .WMLTableZeroPopupOverlay{
+      &Main{
+        &Pod{
+          position: fixed;
+          inset:0;
+          background-color: rgba(var(--wml-table-black),.8);
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

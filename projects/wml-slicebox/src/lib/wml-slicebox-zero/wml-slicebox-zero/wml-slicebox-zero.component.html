@@ -1,0 +1,12 @@
+<div [class]="classPrefix('MainPod')">
+  <section #targetPerspective [ngStyle]="perspective.style" [class]="classPrefix('Pod1') + ' sb-perspective'">
+    <div    (transitionend)="finishResizing($event,cuboid)" [class]="cuboid.class" [ngStyle]=cuboid.style *ngFor="let cuboid of $any(props._cuboids)">
+      <div   [ngStyle]="cuboid.frontSide.style"  class="sb-side frontSide" ></div>
+      <div   [ngStyle]="cuboid.backSide.style"   class="sb-side backSide" ></div>
+      <div   [ngStyle]="cuboid.rightSide.style"  class="sb-side rightSide" ></div>
+      <div   [ngStyle]="cuboid.leftSide.style"   class="sb-side leftSide" ></div>
+      <div   [ngStyle]="cuboid.topSide.style"    class="sb-side topSide" ></div>
+      <div   [ngStyle]="cuboid.bottomSide.style" class="sb-side bottomSide" ></div>
+    </div>
+  </section>
+</div>

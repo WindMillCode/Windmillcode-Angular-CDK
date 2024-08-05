@@ -1,0 +1,15 @@
+{
+  "copyFiles": [
+    {
+      "from": "schematics/collection.json",
+      "to": "../../dist/templates/"
+    },
+    {
+      "from": "schematics/*/schema.json",
+      "to": "../../dist/templates/"    },
+    {
+      "from": "schematics/*/files/**",
+      "to": "../../dist/templates/"
+    }
+  ]
+}

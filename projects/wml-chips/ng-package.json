@@ -1,0 +1,18 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/wml-chips",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "assets": [
+    "styles.scss",
+    "media_queries.scss",
+    "spacing.scss",
+    "common.scss",
+    "color_pallete.scss",
+    "fontawesome.scss"
+  ],
+  "allowedNonPeerDependencies": [
+    "@ngx-translate/core"
+  ]
+}

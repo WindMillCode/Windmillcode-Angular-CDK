@@ -1,0 +1,17 @@
+{
+  "name": "@windmillcode/angular-<%= dasherize(packageName) %>",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": ">=<%= angularLatestVersion %>",
+    "@angular/core": ">=<%= angularLatestVersion %>",
+    "@windmillcode/angular-wml-components-base": ">=<%= angularLatestVersion %>"
+  },
+  "dependencies": {
+    "tslib": "^<%= tsLibLatestVersion %>",
+    "@ngx-translate/core": ">=15.0.0"
+  },
+  "scripts": {
+    "build": "npx ng build"
+  },
+  "sideEffects": false
+}

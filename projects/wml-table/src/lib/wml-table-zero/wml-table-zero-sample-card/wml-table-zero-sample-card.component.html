@@ -1,0 +1,9 @@
+<div (click)="props.container.click($event)" [class]="classPrefix('MainPod')">
+  <img [class]="classPrefix('MainImg0')" [src]=props.img.src [alt]="props.img.alt | translate" />
+  <div [class]="classPrefix('MainItem0')">
+    <h3 [class]="classPrefix('MainTitle0')">{{ $any(props.title.text)  | translate}}</h3>
+    <h4 [class]="classPrefix('MainTitle1')">{{ $any(props.subtitle.text)  | translate}}</h4>
+    <p [class]="classPrefix('MainText0')">{{ $any(props.price.text)  | translate}}</p>
+  </div>
+
+</div>

@@ -1,0 +1,34 @@
+/**
+ * @file icon.css
+ */
+
+@font-face {
+    font-family: "Font Awesome 6 Free Solid";
+    src: url("Font Awesome 6 Free Solid.eot"); /* IE9 */
+    src: url("Font Awesome 6 Free Solid.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("Font Awesome 6 Free Solid.woff2") format("woff2"), /* chrome、firefox、opera、Safari, Android, iOS */
+    url("Font Awesome 6 Free Solid.woff") format("woff"), /* chrome、firefox */
+    url("Font Awesome 6 Free Solid.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url("Font Awesome 6 Free Solid.svg#uxfonteditor") format("svg"); /* iOS 4.1- */
+}
+
+
+.icon {
+    font-family: "Font Awesome 6 Free Solid" !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-xmark:before {
+  content: "\2715,\2716,\274c,\1f5d9,\d7,\f00d";
+}
+
+
+

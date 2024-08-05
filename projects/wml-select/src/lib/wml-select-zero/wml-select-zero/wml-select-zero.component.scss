@@ -1,0 +1,56 @@
+@import '../../../../styles';
+@import "./wml-select-zero.component.global.scss";
+
+
+@mixin ModernScrollbar0{
+  &::-webkit-scrollbar {
+    max-width: calc(20/10.6 * 1em);
+    @media #{$mobile} {
+      max-width: auto;
+      min-width: calc(15/10.6 * 1em);
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--wml-select-secondary-gradient);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--wml-select-black));
+    border-radius: calc(20/16 * 1em);
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(var(--wml-select-black));
+  }
+}
+
+
+.WMLSelectZeroView{
+  *{
+    @include ModernScrollbar0()
+  }
+  display: block;
+  .WMLSelectZero{
+    &Main{
+      &Pod{
+
+
+      }
+
+      &State {
+        &0 {
+          opacity: .5;
+        }
+      }
+    }
+    &Pod{
+
+      &0{}
+    }
+  }
+}
+
+

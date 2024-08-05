@@ -1,0 +1,30 @@
+
+@import '../../../../styles';
+
+wml-accordion-zero {
+  &.WMLAccordionZeroView{
+    display: block;
+    .WMLAccordionZero{
+      &Main{
+
+        &Item {
+          &0 {
+            display: flex;
+            flex-flow: row wrap;
+          }
+          &1{
+            flex:  1 0 auto;
+            position: relative;
+            max-width: 100%;
+          }
+        }
+
+      }
+      &Pod{
+
+
+      }
+    }
+  }
+
+}

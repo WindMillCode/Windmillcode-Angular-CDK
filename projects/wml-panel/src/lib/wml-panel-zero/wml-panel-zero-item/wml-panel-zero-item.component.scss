@@ -1,0 +1,51 @@
+@import "../../../../styles.scss";
+
+$wmlpanelitemAnimationDuration: 1s;
+$wmlpanelitemAnimationStart:0%;
+$wmlpanelitemAnimationEnd:100%;
+@keyframes wmlpanelitemkeyframe0{
+  0%{right: $wmlpanelitemAnimationStart}
+  100%{right: $wmlpanelitemAnimationEnd}
+}
+
+@keyframes wmlpanelitemkeyframe1{
+  0%{right:$wmlpanelitemAnimationEnd}
+  100%{right:$wmlpanelitemAnimationStart}
+}
+
+
+:host {
+
+
+  &.WMLPanelItemView{
+    display: block;
+    width:100%;
+    height:100%;
+    position: absolute;
+    right:0%;
+
+    &0 {
+      right:100%;
+      animation: wmlpanelitemkeyframe0 $wmlpanelitemAnimationDuration;
+    }
+    &1{
+      right:0%;
+      animation: wmlpanelitemkeyframe1 $wmlpanelitemAnimationDuration;
+    }
+
+    .WMLPanelItem{
+      &Main{
+        &Pod{
+          width:100%;
+          height:100%;
+
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

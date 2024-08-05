@@ -1,0 +1,16 @@
+<div [class]="classPrefix('MainPod')">
+  <div [class]="classPrefix('Pod0')">
+    <div [class]="classPrefix('Pod0Item0')">
+      <div [class]="classPrefix('Pod0Item1')">
+        <h2>{{props.title | translate}}</h2>
+        <p *ngFor="let subtitle of props.subtitles">{{subtitle | translate}}</p>
+        <p [class]="classPrefix('Pod0Text0')">{{props.columnText | translate}}</p>
+        <p [class]="classPrefix('Pod0Text0')" *ngIf="!props.showAvailableColumnsByTranslate">{{props.displayAvailableColumns }}</p>
+        <p [class]="classPrefix('Pod0Text0')" *ngIf="props.showAvailableColumnsByTranslate">{{props.availableColumnsText }}</p>
+      </div>
+      <wml-button-zero [class]="classPrefix('Pod0Btn0')"  [props]="addSortBtn"></wml-button-zero>
+    </div>
+    <wml-form-zero  [class]="classPrefix('Pod0Form0')" [props]="mainForm" ></wml-form-zero>
+  </div>
+  <wml-button-zero [props]="submitBtn"></wml-button-zero>
+</div>

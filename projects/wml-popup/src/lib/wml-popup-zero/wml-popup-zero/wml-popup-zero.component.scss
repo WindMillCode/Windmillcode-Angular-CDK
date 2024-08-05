@@ -1,0 +1,57 @@
+@import "../../../../styles.scss";
+
+$wml-primary: black;
+$spacing0: calc(1/16* 1rem);
+$spacing1: calc(2/16* 1rem);
+$spacing2: calc(4/16* 1rem);
+$spacing3: calc(8/16* 1rem);
+$spacing4: calc(12/16* 1rem);
+$spacing5: calc(16/16* 1rem);
+$spacing6: calc(24/16* 1rem);
+$spacing7: calc(32/16* 1rem);
+$spacing8: calc(48/16* 1rem);
+$spacing9: calc(64/16* 1rem);
+$spacing10: calc(72/16* 1rem);
+$spacing11: calc(96/16* 1rem);
+$spacing12: calc(128/16* 1rem);
+$spacing13: calc(192/16* 1rem);
+$spacing14: calc(256/16* 1rem);
+$spacing15: calc(384/16* 1rem);
+$spacing16: calc(512/16* 1rem);
+:host {
+
+
+
+  &.WMLPopupZeroView{
+    white-space: pre;
+    width: 100%;
+    height: 100%;
+    background-color: transparentize($color: $wml-primary, $amount: 0.5);
+    .WMLPopupZero{
+      &Main{
+        &Pod{
+          width: 100%;
+          height: 90%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow:hidden auto;
+
+        }
+      }
+      &Pod{
+        &0{
+          width: 80%;
+          height: 80%;
+        }
+        &1{
+          position: fixed;
+          inset:0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+}

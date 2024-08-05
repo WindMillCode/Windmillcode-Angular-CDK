@@ -1,0 +1,66 @@
+@import '../../../../styles';
+
+
+wml-infinite-dropdown-zero {
+
+  p{
+    margin:0;
+    padding:0;
+  }
+  &.WMLInfiniteDropdownView{
+    display: block;
+    color:rgba(var(--wml-infinite-dropdown-secondary));
+
+    .WMLInfiniteDropdown{
+      &Main{
+        &Pod{
+          padding:0 ;
+          width: 100%;
+          max-width: none;
+          > *{
+            max-width: none;
+          }
+        }
+
+        &Item {
+          &0 {
+            background-color: transparent;
+            width: 100%;
+
+          }
+
+          &2{
+            position: absolute;
+            width: 100%;
+          }
+
+          &3{
+            position: relative;
+          }
+
+        }
+
+        &States {
+          &0 {
+            display: block;
+            top:0;
+            left:100%;
+          }
+
+          &1{
+            display: block;
+          }
+
+          &2 {
+            display: none;
+          }
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

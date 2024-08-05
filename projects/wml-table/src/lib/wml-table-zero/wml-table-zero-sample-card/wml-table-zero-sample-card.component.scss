@@ -1,0 +1,72 @@
+@import '../../../../styles';
+
+:host {
+
+  &.WMLTableZeroSampleCardView{
+    display: block;
+    height: 100%;
+    .WMLTableZeroSampleCard{
+      &Main{
+        &Pod{
+          overflow:hidden auto;
+
+          background-color: rgba(var(--wml-table-secondary));
+          border-radius: var(--wml-table-border-radius0);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          border-top: calc(8/16 * 1rem) solid rgba(var(--wml-table-primary));
+          border-bottom: calc(16/16 * 1rem) solid rgba(var(--wml-table-primary));
+          padding:var(--wml-table-spacing3);
+          height: 100%;
+          max-height: calc(200/10.6 * 1rem);
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+
+        &Img {
+          &0 {
+            width: calc(150/16 * 1rem);
+            height: auto;
+            align-self: center;
+          }
+        }
+
+        &Title {
+          &0 {
+            margin:var(--wml-table-spacing3) 0 0 0;
+            font-size: calc(22/16 * 1rem);
+            color:rgba(var(--wml-table-black));
+          }
+          &1 {
+            color:var(--wml-secondary);
+            font-size: calc(18/16 * 1rem);
+          }
+        }
+
+        &Text {
+          &0 {
+            align-self: flex-end;
+            color:rgba(var(--wml-table-black));
+          }
+        }
+
+        &Item {
+          &0 {
+            flex:1 0 auto;
+            display: flex;
+            flex-direction:column ;
+            justify-content: flex-end;
+          }
+        }
+      }
+
+
+      &Pod{
+        &0{}
+      }
+    }
+  }
+
+}

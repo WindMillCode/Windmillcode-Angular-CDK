@@ -1,0 +1,5 @@
+<%  if(cpntType !== 'library') %>#root<% %> <%= dasherize(name) %>{
+  @media #{$mobile}{
+
+  }
+}

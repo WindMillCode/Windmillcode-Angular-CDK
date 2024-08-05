@@ -1,0 +1,24 @@
+
+
+:host {
+
+
+  &.WMLFieldView{
+    .WMLField{
+      &Main{
+        &Pod{}
+      }
+      &Pod{
+        &0{}
+        &2{
+          &Label{
+            &0{
+              color:red;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

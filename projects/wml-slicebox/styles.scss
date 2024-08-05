@@ -1,0 +1,68 @@
+@import "spacing";
+@import "media_queries";
+@import "color_pallete";
+@import "common";
+
+
+
+
+
+$bs-primary: black;
+// $bs-primary-gradient:black;
+$bs-primary-gradient:linear-gradient( rgb(0, 0, 0) 0%, rgb(64, 64, 64) 120.2%);
+$bs-secondary: navy;
+$bs-secondary-gradient:radial-gradient(farthest-corner at 100% 0px, $bs-secondary 0%, blue 200%);
+$bs-tertiary:#EF0107;
+$bs-tertiary-gradient:radial-gradient(farthest-corner at 100% 0px, $bs-tertiary 0%,cyan  200%);
+$bs-quaternary: navy;
+$bs-success: #198754;
+$bs-info: #0dcaf0;
+$bs-warning: #ffc107;
+$bs-danger: #dc3545;
+$bs-light: #f8f9fa;
+$bs-dark: #212529;
+$bs-grey:rgb(64, 64, 64);
+$app-background:rgba(0, 0, 0, 0.3);
+$team-card:		rgb(18,18,18);
+
+$spotify-primary-color:#1db954;
+$spotify-primary-gradient-color:linear-gradient(120deg, #1db954, #191414);
+
+$gradient-color-0:linear-gradient(45deg,rgb(0,109,255),rgb(40,249,210));
+
+$spacing0: calc(1/16* 1rem);
+$spacing1: calc(2/16* 1rem);
+$spacing2: calc(4/16* 1rem);
+$spacing3: calc(8/16* 1rem);
+$spacing4: calc(12/16* 1rem);
+$spacing5: calc(16/16* 1rem);
+$spacing6: calc(24/16* 1rem);
+$spacing7: calc(32/16* 1rem);
+$spacing8: calc(48/16* 1rem);
+$spacing9: calc(64/16* 1rem);
+$spacing10: calc(72/16* 1rem);
+$spacing11: calc(96/16* 1rem);
+$spacing12: calc(128/16* 1rem);
+$spacing13: calc(192/16* 1rem);
+$spacing14: calc(256/16* 1rem);
+$spacing15: calc(384/16* 1rem);
+$spacing16: calc(512/16* 1rem);
+
+$fontSize0: calc(12/16* 1rem);
+$fontSize1: calc(16/16* 1rem);
+$fontSize2: calc(24/16* 1rem);
+$fontSize3: calc(32/16* 1rem);
+$fontSize4: calc(48/16* 1rem);
+$fontSize5: calc(72/16* 1rem);
+
+@mixin FlexColumnCenter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+

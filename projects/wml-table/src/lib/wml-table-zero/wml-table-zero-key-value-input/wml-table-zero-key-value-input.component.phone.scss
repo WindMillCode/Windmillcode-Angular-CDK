@@ -1,0 +1,11 @@
+wml-table-zero-key-value-input{
+  @media #{$mobile}{
+    .WMLTableZeroKeyValueInputMainPod{
+      flex-direction: column;
+    }
+    .WMLFormPod0{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<%  if(cpntType !== 'library'){ %>
+  @import "src/assets/styles/global.scss";
+  @import "src/assets/styles/common.scss";
+  @import "src/assets/styles/layouts.scss";
+  @import "src/assets/styles/media-queries.scss";
+<% } %>
+
+
+<%  if(cpntType === 'library'){ %>
+  @import '../../../../styles';
+<% } %>
+
+
+<%  if(cpntType !== 'library'){ %>
+:host {
+<% } %>
+
+  <%  if(cpntType !== 'library') %>&<%  %>.<%= classify(name) %>View{
+    display: block;
+    height:100%;
+    .<%= classify(name) %>{
+      &Main{
+        &Pod{
+          <%  if(styleType === 'type0' && cpntType !== 'library'){ %>@include MainPodCssRule0;<% } %>
+          <%  if(styleType === 'type1' && cpntType !== 'library'){ %>@include MainPodCssRule1;<% } %>
+          height:100%;
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+
+<%  if(cpntType !== 'library'){ %>
+}
+<% } %>

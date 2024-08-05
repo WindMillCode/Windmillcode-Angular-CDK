@@ -1,0 +1,23 @@
+@import '../../../../styles';
+
+:host {
+
+
+  &.WMLTableZeroSelectPageView{
+    display: block;
+    @include WMLTableCtrlBackground;
+    .WMLTableZeroSelectPage{
+      &Main{
+        &Pod{
+
+        }
+      }
+      &Pod{
+        &0{
+
+        }
+      }
+    }
+  }
+
+}

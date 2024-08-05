@@ -1,0 +1,22 @@
+<div [class]="classPrefix('MainPod')">
+  <section [class]="classPrefix('Pod0')">
+    <ng-container *ngFor="let tab of props.tabs">
+      <div
+      (click)=(tab.header.wmlTabHeader?.click(tab))
+      [class]="tab.header.wmlTabHeader?.class ?? classPrefix('Pod0Item0')"
+      *ngIf="tab.header.type === 'wmlTabHeader'">
+        <div *ngIf="tab.header.wmlTabHeader!.icon.isPresent" [class]="classPrefix('Pod0Item1')">
+          <p>{{tab.header.wmlTabHeader!.icon.text ?? "" | translate}}</p>
+        </div>
+        <label>
+          <span *ngFor="let text of tab.header.wmlTabHeader!.text">{{text.text  ??""| translate}} </span>
+        </label>
+      </div>
+    </ng-container>
+  </section>
+  <section [class]="classPrefix('Pod1')">
+    <ng-container  *ngFor="let tab of props.tabs">
+      <wml-tabs-zero-body *ngIf="tab.isChosen" [props] ="tab"></wml-tabs-zero-body>
+    </ng-container>
+  </section>
+</div>

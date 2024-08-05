@@ -1,0 +1,91 @@
+@import "../../../../styles.scss";
+
+
+:host {
+
+  &.WMLButtonZeroView{
+    display: block;
+
+    .WMLButtonZero{
+      &Main{
+        &Pod{
+
+
+        }
+
+        &Button {
+          @for $i from 0 through 2 {
+            &#{$i} {
+              @include WMLButtonMainButton0;
+              @include WMLCursorPointer0;
+              transition:  all $wml-transition-0;
+            }
+          }
+
+          &0 {
+            background: $wml-primary;
+            border:calc(3/16 * 1rem) solid $wml-black;
+            &:hover{
+              background: $wml-secondary;
+              border:calc(3/16 * 1rem) solid $wml-white;
+              .WMLButtonZeroMainButton0Text0 {
+                color:$wml-white
+              }
+            }
+
+            &Text {
+              &0 {
+                color:$wml-black
+              }
+            }
+
+          }
+
+          &1 {
+            background: $wml-gradient-0;
+            border:calc(3/16 * 1rem) solid $wml-white;
+
+            &Text {
+              &0 {
+                color:$wml-white
+              }
+            }
+
+            &:hover{
+              background: $wml-primary;
+              border:calc(3/16 * 1rem) solid $wml-black;
+              .WMLButtonZeroMainButton1Text0 {
+                color:$wml-black;
+              }
+            }
+
+
+          }
+
+          &2 {
+            background-color: $wml-black;
+            border:calc(3/16 * 1rem) solid $wml-primary;
+            &Text {
+              &0 {
+                color:$wml-primary
+              }
+            }
+            &:hover{
+              background: $wml-secondary;
+              border:calc(3/16 * 1rem) solid $wml-primary;
+              .WMLButtonZeroMainButton2Text0 {
+                color:$wml-primary
+              }
+            }
+          }
+        }
+
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

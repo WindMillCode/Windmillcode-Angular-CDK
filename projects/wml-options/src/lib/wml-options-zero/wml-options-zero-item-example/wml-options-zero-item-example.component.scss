@@ -1,0 +1,51 @@
+@import "../../../../styles.scss";
+
+
+.WMLSampleOptionItemView{
+    cursor: pointer;
+    @mixin WMLSampleOptionItemBtn1{
+      background-color: rgba(var(--wml-options-primary));
+      label{
+        color: var(--wml-options-white);
+      }
+    }
+
+    display: block;
+    .WMLSampleOptionItem{
+      &Main{
+        &Pod{
+
+
+        }
+        &Btn {
+          &0 {
+            background-color: rgba(var(--wml-options-secondary));
+            border-radius: calc(80/16 * 1rem);
+            padding:calc(12/16 * 1rem) calc(16/16 * 1rem);
+            margin:0 calc(12/16 * 1rem) calc(12/16 * 1rem) 0 ;
+            cursor: pointer;
+            * {
+              cursor: pointer;
+            }
+
+            label{
+              font-weight: bold;
+            }
+
+            &:hover{
+              @include WMLSampleOptionItemBtn1;
+            }
+          }
+          &1{
+            @include WMLSampleOptionItemBtn1
+          }
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+

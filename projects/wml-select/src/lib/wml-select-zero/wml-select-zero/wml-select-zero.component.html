@@ -1,0 +1,6 @@
+<div
+[attr.id]="props.wmlField.view.id"
+[ngStyle]="props.wmlField.view.style"
+[class]="classPrefix('MainPod') + ' ' + (props.formControl.disabled ? classPrefix('MainState0') : '') ">
+  <wml-infinite-dropdown-zero [props]="props.dropdown"></wml-infinite-dropdown-zero>
+</div>

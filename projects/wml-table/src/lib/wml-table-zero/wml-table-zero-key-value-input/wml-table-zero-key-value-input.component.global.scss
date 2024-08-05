@@ -1,0 +1,9 @@
+wml-table-zero-key-value-input{
+  .WMLFormPod0{
+    justify-content: space-between;
+
+    > *:not(:first-child){
+      flex: 0 0 50%
+    }
+  }
+}

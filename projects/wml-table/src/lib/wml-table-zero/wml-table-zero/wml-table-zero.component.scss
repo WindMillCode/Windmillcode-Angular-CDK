@@ -1,0 +1,74 @@
+@import '../../../../styles';
+@import "wml-table-zero.component.phone.scss";
+@import '../../../../media_queries';
+
+
+wml-table-zero {
+  &.WMLTableZeroView{
+
+    display: block;
+    height: 100%;
+    position: relative;
+    .WMLTableZero{
+      &Main{
+        &Pod{
+          display: flex;
+          height: 100%;
+        }
+      }
+      &Pod{
+        &0{
+          flex:20%;
+          border: calc(4/16 * 1rem) solid rgba(var(--wml-table-black));
+          border-radius:  var(--wml-table-border-radius0) 0 0 var(--wml-table-border-radius0) ;
+          display: flex;
+          position: relative;
+          @media #{$mobile}{
+            flex: 50%;
+          }
+          &Item {
+            &0{
+              width:100%;
+
+            }
+
+          }
+        }
+        &1{
+          overflow:hidden auto;
+          flex:80%;
+          border: calc(4/16 * 1rem) solid rgba(var(--wml-table-black));
+          border-left: none;
+          border-radius: 0 var(--wml-table-border-radius0)  var(--wml-table-border-radius0) 0 ;
+          @media #{$mobile}{
+            flex: 50%;
+          }
+          padding:0 var(--wml-table-spacing5);
+          display: flex;
+          flex-flow: row wrap;
+          align-content: flex-start;
+
+          &Item {
+            &0 {
+              padding:var(--wml-table-spacing3);
+              // width: ;
+              flex: 0 1 25%;
+              @media #{$tablet}{
+                flex: 0 1 50%;
+              }
+              @media #{$mobile}{
+                flex: 0 1 100%;
+              }
+              min-height: calc(320/16 * 1rem);
+            }
+            &1{
+              height: 100%;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+}

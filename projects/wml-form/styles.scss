@@ -1,0 +1,21 @@
+@import "spacing";
+@import "media_queries";
+@import "color_pallete";
+@import "common";
+
+
+
+
+.glassmorphism {
+  border-radius: calc(8/10.6 * 1rem);
+  -webkit-backdrop-filter: blur(calc(4/10.6 * 1rem));
+  backdrop-filter: blur(calc(4/10.6 * 1rem));
+  box-shadow: 0 calc(8/10.6 * 1rem) calc(32/10.6 * 1rem) 0 rgba(0,0,0,0.4);
+  border: calc(1/10.6 * 1rem) solid #ffffff2e;
+}
+
+
+
+
+
+

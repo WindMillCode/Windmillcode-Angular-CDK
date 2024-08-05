@@ -1,0 +1,29 @@
+@import "../../../../styles.scss";
+
+
+:host {
+
+  --container-position:33%;
+  &.WMLPanelView{
+    display: block;
+    position: absolute;
+    right:calc(-1* var(--container-position));
+    // right:0;
+    top:0;
+    height:100%;
+    width: var(--container-position);
+    .WMLPanel{
+      &Main{
+        &Pod{
+
+
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

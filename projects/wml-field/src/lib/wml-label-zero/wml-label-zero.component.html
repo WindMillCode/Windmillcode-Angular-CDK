@@ -1,0 +1,30 @@
+<div [class]="classPrefix('MainPod')" *ngIf="props.isPresent">
+  <label [class]="classPrefix('MainPodLabel0')" *ngIf="props.type === 'label'">
+    <ng-container
+    [ngTemplateOutlet]="templateLabelPart"
+    [ngTemplateOutletContext]="{ $implicit: label }"
+    *ngFor="let label of props.labels[0]">
+
+    </ng-container>
+  </label>
+  <p [class]="classPrefix('MainPodLabel0')" *ngFor=" let labelLine of (  props.type === 'label' ?   props.labels.splice(1) : props.labels );let index = index  ">
+    <ng-container
+    [ngTemplateOutlet]="templateLabelPart"
+    [ngTemplateOutletContext]="{ $implicit: label,index:index }"
+    *ngFor="let label of labelLine">
+
+    </ng-container>
+  </p>
+</div>
+
+
+<ng-template #templateLabelPart let-data let-index="index">
+  <ng-container *ngIf="data.isPresent">
+    <p *ngIf="data.type === 'required'" [class]="classPrefix('MainPodError0')"  >{{data.value | translate}}</p>
+    <p *ngIf="data.type === 'error'     && formControl.errors &&  formControl.dirty && displayErrors[index]  " [class]="classPrefix('MainPodError0')"  >{{displayErrors[index] | translate}}</p>
+    <a *ngIf="data.type === 'errorLink' && formControl.errors &&  formControl.dirty && displayErrors[index] " [class]="classPrefix('MainPodError0')"  >{{displayErrors[index] | translate}}</a>
+    <p *ngIf="data.type === 'default'">{{data.value | translate}}</p>
+    <a *ngIf="data.type === 'defaultLink'">{{data.value | translate}}</a>
+  </ng-container>
+
+</ng-template>

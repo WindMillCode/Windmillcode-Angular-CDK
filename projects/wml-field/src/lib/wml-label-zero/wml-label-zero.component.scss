@@ -1,0 +1,37 @@
+
+$bs-danger: #dc3545;
+$spacing2: calc(4/16* 1rem);
+
+:host {
+
+  * {
+    margin:0;
+  }
+  &.WMLLabelView{
+    .WMLLabel{
+      &Main{
+        &Pod{
+
+          &Label{
+            &0{
+              display: flex;
+              color:black;
+              *:not(:first-child){
+                margin: 0 0 0 $spacing2;
+              }
+            }
+          }
+          &Error {
+            &0 {
+              color:$bs-danger;
+            }
+          }
+        }
+      }
+      &Pod{
+        &0{}
+      }
+    }
+  }
+
+}

@@ -1,0 +1,5 @@
+<div [class]="classPrefix('MainPod')">
+  <ng-container *ngFor="let option of props.options">
+    <wml-options-zero-item [props]="option"> </wml-options-zero-item>
+  </ng-container>
+</div>

@@ -1,0 +1,9 @@
+$wml-table-border-radius0:calc(8/16 * 1rem);
+$wml-table-border-radius1:calc(10/16 * 1rem);
+$wml-table-border-radius2:calc(20/16 * 1rem);
+
+:root{
+  --wml-table-border-radius0:#{$wml-table-border-radius0};
+  --wml-table-border-radius1:#{$wml-table-border-radius1};
+  --wml-table-border-radius2:#{$wml-table-border-radius2};
+}

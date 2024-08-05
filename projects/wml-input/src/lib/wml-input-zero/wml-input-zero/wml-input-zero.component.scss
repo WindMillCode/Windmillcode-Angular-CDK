@@ -1,0 +1,37 @@
+$spacing5: calc(16/16* 1rem);
+$spacing3: calc(8/16* 1rem);
+$spacing12: calc(128/16* 1rem);
+
+:host {
+
+
+  &.WMLInputZeroView{
+    input,textarea{
+      font-family: "Roboto";
+      font-size: calc(18.58/16 * 1rem);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .WMLInputZeri{
+      &Main{
+        &Input{
+          &0{}
+          &1{
+            height: $spacing12;
+            padding:$spacing3;
+          }
+        }
+      }
+      &Pod {
+        &0 {
+          display: flex;
+          justify-content: flex-start;
+          *{
+            margin: 0 $spacing5 0  0;
+          }
+        }
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,33 @@
+<div [class]="classPrefix('MainPod')">
+  <section [class]="classPrefix('Pod0')" wmlDragNDrop (onFileDropped)="chooseFiles($event)" >
+    <p [class]="classPrefix('Pod0Text0')">{{props.dragDropText | translate  }}</p>
+    <button (click)="openFileBrowserToUploadFile()" [class]="classPrefix('Pod0Btn0')">
+      <label>{{props.browseFileText | translate}}</label>
+    </button>
+  </section>
+  <section [class]="classPrefix('Pod1')">
+
+    <ul [class]="classPrefix('Pod1Item0')" *ngIf="props.files.length > 0 " >
+      <li [class]="classPrefix('Pod1Item1')" *ngFor="let item of props.files">
+        <div [class]="classPrefix('Pod1Item2')">
+          <p [class]="classPrefix('Pod1Text0')">{{item.file?.name}}</p>
+        </div>
+        <div [class]="classPrefix('Pod1Item3')">
+          <button (click)="props.uploadFn(item)" *ngIf="item.uploadIsPresent " [class]="classPrefix('Pod1Icon0')">
+            <i [class]="  ' fa-solid fa-arrows-up-to-line'"></i>
+          </button>
+          <button (click)="deleteFile(item)" *ngIf="item.deleteIsPresent " [class]="classPrefix('Pod1Icon1')">
+            <i [class]="  ' fa-solid fa-trash'"></i>
+          </button>
+          <button (click)="retryUpload(item)" *ngIf="item.retryIsPresent " [class]="classPrefix('Pod1Icon2')">
+            <i [class]="  ' fa-solid fa-arrow-rotate-right'"></i>
+          </button>
+          <button (click)="cancelUpload(item)" *ngIf="item.cancelIsPresent " [class]="classPrefix('Pod1Icon3')">
+            <i [class]="  ' fa-solid fa-xmark'"></i>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>
+<input #fileInput [class]="classPrefix('MainInput0')" type="file" multiple/>

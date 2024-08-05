@@ -1,0 +1,16 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { UtilityService } from '@core/utility/utility.service';
+import { ENV } from '@env/environment';
+import { concatMap, iif, map, Observable, of, take, tap } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class <%= classify(name) %>Service {
+
+  constructor(
+    public http:HttpClient,
+    public utilService:UtilityService
+  ) { }
+}

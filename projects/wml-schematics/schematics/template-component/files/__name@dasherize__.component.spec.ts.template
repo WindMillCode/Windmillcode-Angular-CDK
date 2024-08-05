@@ -1,0 +1,96 @@
+// testing
+import { ComponentFixture } from '@angular/core/testing';
+
+<%  if(cpntType !== 'library'){ %>
+import { wmlTestUtils } from '@core/utility/test-utils/test-utils';
+import { resetImports } from '@core/utility/test-utils/mock-imports';
+import { resetProviders } from '@core/utility/test-utils/mock-providers';
+import { resetDeclarations } from '@core/utility/test-utils/mock-declarations';
+<% } %>
+
+<%  if(cpntType === 'library'){ %>
+import { resetImports } from '../test-utils/mock-imports';
+import { resetProviders } from '../test-utils/mock-providers';
+import { wmlTestUtils } from '../test-utils/test-utils';
+import { resetDeclarations } from '../test-utils/mock-declarations';
+<% } %>
+
+// rxjs
+import { Subject } from 'rxjs';
+
+import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
+
+
+describe('<%= classify(name) %>Component', () => {
+  let cpnt: <%= classify(name) %>Component;
+  let fixture: ComponentFixture<<%= classify(name) %>Component>;
+
+  beforeEach(async () => {
+    resetImports()
+    resetProviders()
+    resetDeclarations()
+    <%  if(standalone === true) { %>
+    await wmlTestUtils.configureTestingModuleForStandaloneComponents(<%= classify(name) %>Component);
+    <% } %>
+
+    <%  if(standalone !== true) { %>
+    await wmlTestUtils.configureTestingModuleForComponents(<%= classify(name) %>Component);
+    <% } %>
+
+    ({fixture, cpnt} =  wmlTestUtils.grabComponentInstance(<%= classify(name) %>Component));
+    fixture.detectChanges()
+
+    spyOn(cpnt.cdref,"detectChanges")
+  })
+
+  describe("init", () => {
+
+    it("should create", () => {
+      expect(cpnt).toBeTruthy()
+    })
+
+    it("should have all values initalize properly", () => {
+      expect(cpnt.myClass).toEqual('<%= classify(name) %>View ')
+    })
+
+    it("should have all properties be the correct class instance", () => {
+      expect(cpnt.ngUnsub).toBeInstanceOf(Subject<void>)
+    })
+  })
+
+  <%  if(cpntType === 'library' && isIdIncluded) { %>
+  describe("ngOnInit",()=>{
+    it(` when called |
+    under normal conditions |
+    does the required action `,()=>{
+      // arrange
+      let id
+      cpnt.props.id = id = "id"
+      // act
+      cpnt.ngOnInit()
+      // assert
+      expect(cpnt.myId).toEqual(id)
+
+    })
+  })
+  <% } %>
+
+  describe("ngOnDestroy",()=>{
+
+    beforeEach(()=>{
+      spyOn(cpnt.ngUnsub,'next')
+      spyOn(cpnt.ngUnsub,'complete')
+    })
+
+    it(` when called |
+     as appropriate |
+     does the required action `,()=>{
+        // act
+        cpnt.ngOnDestroy();
+
+        // assert
+        expect(cpnt.ngUnsub.next).toHaveBeenCalled();
+        expect(cpnt.ngUnsub.complete).toHaveBeenCalled();
+    })
+  })
+});

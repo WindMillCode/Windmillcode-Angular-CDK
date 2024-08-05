@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "template",
+  "title": "WindmillCode template Component Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the component.",
+      "type": "string"
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to create the component.",
+      "$default": {
+        "$source": "workingDirectory"
+      }
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "projectName"
+      }
+
+    },
+    "cpntType": {
+      "type": "string",
+      "description": "The type of component.",
+      "enum": ["default", "library","default-zero","library-zero"],
+      "default": "default"
+    },
+    "isIdIncluded":{
+      "type":"boolean",
+      "default":true,
+      "description": "Whether or not the component id gets added"
+    },
+    "isPropsChild":{
+      "type":"boolean",
+      "default":false,
+      "description":"determines wheter the component is present or container if its container it will get a params class as well as a @Input params"
+    },
+    "standalone": {
+      "description": "Whether the generated component is standalone.",
+      "type": "boolean",
+      "default": false,
+      "x-user-analytics": 15
+    },
+    "routing": {
+      "type": "boolean",
+      "description": "(experimental) Create a routing module. or if using the new architect in angular 17, an entry in app-routes",
+      "default": false,
+      "x-user-analytics": "ep.ng_routing"
+    },
+    "routeKey": {
+      "type": "string",
+      "description": "The route that gets added to the innerNav.urls object in the environment.dev.ts file"
+    },
+    "route": {
+      "type": "string",
+      "description": "The route path for a lazy-loaded module. When supplied, creates a component in the new module, and adds the route to that component in the `Routes` array declared in the module provided in the `--module` option."
+    },
+    "routesFilePath":{
+      "type":"string",
+      "default":"none",
+      "description":"If using the new way to handle routes in Angular 17 provide the path to the route file. if module is provided it will try to find that nested module route and add to the children property. if not it will add to the root routes array for beginners its usually src/app/app.routes.ts"
+    },
+    "module": {
+      "type": "string",
+      "description": "The declaring NgModule.",
+      "alias": "m"
+    },
+    "styleType": {
+      "type": "string",
+      "description": "preset scss to choose from.",
+      "enum": ["type0","type1", "none"],
+      "default": "none"
+    },
+    "isPageModule":{
+      "type":"boolean",
+      "description":"whether the component is a page or not (page standalone component if you will)"
+    }
+
+   },
+  "required": [
+    "name"
+  ]
+}

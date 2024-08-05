@@ -1,0 +1,146 @@
+@import "../../../../styles.scss";
+
+
+.WMLFileUploadZeroView{
+  ul,button,li{
+    margin: 0;
+    padding:0
+  }
+    display: block;
+    .WMLFileUploadZero{
+      &Main{
+        &Pod{
+          border:calc(1/16 * 1rem) solid $wml-dark;
+          background-color: lighten($color: $wml-grey, $amount: 40);
+          @include FlexColumnCenter;
+          padding:$spacing5;
+        }
+        &Input {
+          &0 {
+            display: none;
+          }
+        }
+      }
+      &Pod{
+
+        @for $i from 0 through 1 {
+          &#{$i} {
+            width: 90%;
+          }
+        }
+
+        &0{
+          border:calc(1/16 * 1rem) dotted $wml-grey;
+          // @include FlexColumnCenter;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          padding:$spacing5 ;
+          flex-flow:row wrap;
+          * {
+            text-align: center;
+          }
+          &Text {
+            &0 {
+              flex:0 0 40%;
+              white-space:break-spaces;
+            }
+          }
+
+
+          &Btn {
+            &0 {
+              padding:$spacing5 $spacing7;
+              margin: $spacing5 0 0 0;
+
+              &:hover{
+                cursor: pointer;
+                background: $wml-primary-gradient;
+                label{
+                  color:$wml-light;
+                }
+              }
+            }
+          }
+        }
+
+        &1{
+          margin:$spacing5 0 0 0;
+
+          @include FlexColumnCenter;
+
+          &Text {
+            &0 {
+              padding:$spacing3
+            }
+          }
+
+          &Item {
+            &0 {
+              @include FlexColumnCenter;
+              width: 100%;
+              border:calc(2/16 * 1rem) solid $wml-dark;
+              max-height: $spacing14;
+              overflow: auto;
+              &::-webkit-scrollbar {
+                display: none ;
+              }
+            }
+            &1{
+              border:calc(1/16 * 1rem) solid $wml-dark;
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              min-height: $spacing8;
+
+            }
+            &2{
+              flex: 0 0 75%;
+              display: flex;
+              align-items: center;
+            }
+            &3{
+              flex: 0 0 25%;
+              display:flex;
+              flex-flow: row wrap;
+              align-items: stretch;
+              justify-content: space-between;
+            }
+
+          }
+
+          &Icon {
+            @for $i from 0   through 3 {
+              &#{$i} {
+                font-size: $fontSize2;
+                border: none;
+                cursor: pointer;
+                // height: 100%;
+
+                flex: 1 0 25%;
+                // max-width: calc(77/16 * 1rem);
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                background-color: darken($color: rgb(random(255), random(255), random(255)), $amount: 20);
+                i{
+                  color:$wml-light;
+                }
+                &:hover{
+                  background-color: lighten($color: rgb(random(255), random(255), random(255)), $amount: 20);
+                  i{
+                    color:$wml-dark;
+                  }
+                }
+              }
+            }
+            &0 {
+              font-size: $fontSize3;
+            }
+          }
+        }
+      }
+    }
+}
+
+

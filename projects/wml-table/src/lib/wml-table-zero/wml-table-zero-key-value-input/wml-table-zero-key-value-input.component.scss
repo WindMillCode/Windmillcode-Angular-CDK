@@ -1,0 +1,28 @@
+:host {
+
+
+  &.WMLTableZeroKeyValueInputView{
+    display: block;
+    .WMLTableZeroKeyValueInput{
+      &Main{
+        &Pod{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        &Form {
+          &0 {
+            width: 80%;
+
+          }
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

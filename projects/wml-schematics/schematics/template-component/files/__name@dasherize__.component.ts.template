@@ -1,0 +1,114 @@
+// angular
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnInit, <%  if(isPropsChild) { %> Input  <% } %><%  if(cpntType === 'library') { %>, ViewEncapsulation  <% } %> } from '@angular/core';
+
+<%  if(cpntType !== 'library'){ %>
+// services
+import { UtilityService } from '@app/core/utility/utility.service';
+import { BaseService } from '@core/base/base.service';
+
+
+<% } %>
+
+// rxjs
+import { Subject } from 'rxjs';
+import { takeUntil,tap } from 'rxjs/operators';
+
+// wml-components
+import { <%  if(isPropsChild) { %>WMLConstructorDecorator, <% } %>generateClassPrefix, generateIdPrefix } from '@windmillcode/angular-wml-components-base';
+
+
+// misc
+<%  if(cpntType !== 'library') { %>
+import { ENV } from '@env/environment';
+<% } %>
+<%  if(standalone === true){ %>import { SharedModule } from '@shared/shared.module';<% } %>
+
+@Component({
+  selector: '<%= dasherize(name) %>',
+  templateUrl: './<%= dasherize(name) %>.component.html',
+  styleUrls: ['./<%= dasherize(name) %>.component.scss'],
+  changeDetection:ChangeDetectionStrategy.OnPush,
+  <%  if(cpntType === 'library') { %>
+  encapsulation:ViewEncapsulation.None
+  <% } %>
+  <%  if(standalone === true){ %>standalone:true,
+  imports:[
+    SharedModule
+  ],<% } %>
+})
+export class <%= classify(name) %>Component  {
+
+  constructor(
+    public cdref:ChangeDetectorRef,
+    <% if(cpntType !== 'library'){ %>
+    public utilService:UtilityService,
+    public baseService:BaseService
+    <% } %>
+  ) { }
+
+  classPrefix = generateClassPrefix('<%= classify(name) %>')
+  <%  if(cpntType === 'default' && isIdIncluded) { %>
+  idPrefix = generateIdPrefix(ENV.idPrefix.<%= camelize(idPrefix) %>)
+  <% } %>
+  <%  if(isPropsChild) { %>
+  @Input('props') props: <%= classify(name) %>Props = new <%= classify(name) %>Props()
+  <% } %>
+
+  @HostBinding('class') myClass: string = this.classPrefix(`View`);
+  <%  if(cpntType === 'default' && isIdIncluded) { %>
+  @HostBinding('attr.id') myId?:string = this.idPrefix()
+  <% } %>
+  <%  if(cpntType === 'library' && isIdIncluded) { %>
+  @HostBinding('id') myId!:string
+  <% } %>
+  ngUnsub= new Subject<void>()
+
+  <%  if(isPropsChild) { %>
+  listenForUpdate = ()=>{
+    return this.props.setStateSubj
+    .pipe(
+      takeUntil(this.ngUnsub),
+      tap((res?)=>{
+        this.props = new <%= classify(name) %>Props({
+          ...this.props,
+          ...(res ?? this.props)
+        })
+        this.cdref.detectChanges()
+      })
+    )
+  }
+  <% } %>
+
+  ngOnInit(): void {
+    <%  if(cpntType === 'library' && isIdIncluded) { %>
+    if(this.props.id){
+      this.myId = this.props.id
+    }
+    <% } %>
+    <%  if(isPropsChild) { %>
+    this.listenForUpdate().subscribe()
+    <% } %>
+  }
+
+  ngOnDestroy(){
+    this.ngUnsub.next();
+    this.ngUnsub.complete()
+  }
+
+}
+
+
+<%  if(isPropsChild) { %>
+@WMLConstructorDecorator
+export class <%= classify(name) %>Props {
+  constructor(props:Partial<<%= classify(name) %>Props>={}){ }
+  <%  if(cpntType === 'library' && isIdIncluded) { %>
+  id = ""
+  <% } %>
+  setStateSubj = new Subject<<%= classify(name) %>Props>()
+  setState = (value)=>{
+    this.setStateSubj.next(value)
+  }
+}
+<% } %>
+

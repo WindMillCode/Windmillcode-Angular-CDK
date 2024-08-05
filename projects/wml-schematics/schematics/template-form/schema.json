@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "template",
+  "title": "WindmillCode Template Complex Form Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the form.",
+      "type": "string",
+      "default": "mainForm"
+    },
+    "apiCall": {
+      "description": "The api call to make after a user has submitted the form",
+      "type": "string"
+    },
+    "apiCallClass": {
+      "description": "the api request body class that the reuqest body goes into to be transformed to be sent to the api",
+      "type": "string"
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path where the class (component,service,directive) is.",
+      "$default": {
+        "$source": "workingDirectory"
+      }
+    },
+    "fields":{
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "All the fields of a form"
+    },
+    "fieldType": {
+      "type": "string",
+      "description": "Where to get simple fields or complex fields for customzations ",
+      "default": "simple",
+      "enum": ["simple","complex"]
+    }
+  },
+  "required":["fields"]
+}

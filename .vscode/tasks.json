@@ -1,0 +1,1525 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "android: replace all emulators",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\android_replace_all_emulators ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//android_replace_all_emulators ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//android_replace_all_emulators ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "angular frontend: analyze",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\angular_frontend_analyze ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//angular_frontend_analyze ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//angular_frontend_analyze ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "angular frontend: check for angular updates",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\angular_frontend_check_for_angular_updates ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//angular_frontend_check_for_angular_updates ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//angular_frontend_check_for_angular_updates ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "angular frontend: run",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\angular_frontend_run ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//angular_frontend_run ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//angular_frontend_run ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "angular frontend: run compodoc",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\angular_frontend_run_compodoc ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//angular_frontend_run_compodoc ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//angular_frontend_run_compodoc ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "misc: translate json",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\misc_translate_json ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//misc_translate_json ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//misc_translate_json ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "angular frontend: test",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\angular_frontend_test ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//angular_frontend_test ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//angular_frontend_test ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "angular frontend: update angular",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\angular_frontend_update_angular ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//angular_frontend_update_angular ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//angular_frontend_update_angular ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "docker: init container",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\docker_init_container ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//docker_init_container ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//docker_init_container ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 10
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "docker: backup all images",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\docker_backup_all_images ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//docker_backup_all_images ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//docker_backup_all_images ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "docker: restore all images",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\docker_restore_all_images ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//docker_restore_all_images ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//docker_restore_all_images ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "docker: run",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\docker_run ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//docker_run ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//docker_run ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 10
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "docker: ssh into container",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\docker_ssh_into_container ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//docker_ssh_into_container ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//docker_ssh_into_container ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 10
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "flask backend: run",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\flask_backend_run ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//flask_backend_run ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//flask_backend_run ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "flask backend: run with reloader",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\flask_backend_run_with_reloader ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//flask_backend_run_with_reloader ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//flask_backend_run_with_reloader ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "flask backend: test",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\flask_backend_test ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//flask_backend_test ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//flask_backend_test ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "flask backend: create controller",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\flask_backend_create_controller ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//flask_backend_create_controller ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//flask_backend_create_controller ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "flask backend: create manager",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\flask_backend_create_manager ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//flask_backend_create_manager ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//flask_backend_create_manager ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "flutter mobile: create page",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\flutter_mobile_create_page ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_create_page ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_create_page ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "flutter mobile: install specific packages",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\flutter_mobile_install_specific_packages ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_install_specific_packages ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_install_specific_packages ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "flutter mobile: create layout",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\flutter_mobile_create_layout ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_create_layout ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_create_layout ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "flutter mobile: create shared widget",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\flutter_mobile_create_shared_widget ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_create_shared_widget ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_create_shared_widget ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "flutter mobile: create riverpod async notifier provider",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\flutter_mobile_create_riverpod_async_notifier_provider ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_create_riverpod_async_notifier_provider ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_create_riverpod_async_notifier_provider ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "flutter mobile: create riverpod provider",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\flutter_mobile_create_riverpod_provider ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_create_riverpod_provider ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_create_riverpod_provider ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "flutter mobile: build deploy",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\flutter_mobile_build_deploy ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_build_deploy ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_build_deploy ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "flutter mobile: test",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\flutter_mobile_test ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_test ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//flutter_mobile_test ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "firebase cloud: run emulators",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\firebase_cloud_run_emulators ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//firebase_cloud_run_emulators ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//firebase_cloud_run_emulators ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "git: create branch after merged changes",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\git_create_branch_after_merged_changes ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//git_create_branch_after_merged_changes ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//git_create_branch_after_merged_changes ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "git: clone subdirs",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\git_clone_subdirs ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//git_clone_subdirs ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//git_clone_subdirs ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "git: merge changes from current dev branch",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\git_merge_changes_from_current_dev_branch ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//git_merge_changes_from_current_dev_branch ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//git_merge_changes_from_current_dev_branch ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "git: pushing work to git remote",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\git_pushing_work_to_git_remote ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//git_pushing_work_to_git_remote ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//git_pushing_work_to_git_remote ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "git: removing a file from being tracked by git",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\git_removing_a_file_from_being_tracked_by_git ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//git_removing_a_file_from_being_tracked_by_git ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//git_removing_a_file_from_being_tracked_by_git ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "misc: optimize images",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\misc_optimize_images ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//misc_optimize_images ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//misc_optimize_images ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "misc: run proxies",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\misc_run_proxies ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//misc_run_proxies ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//misc_run_proxies ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1000
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "misc: rename files",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\misc_rename_files ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//misc_rename_files ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//misc_rename_files ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "misc: make a new doc item",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\misc_make_a_new_doc_item ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//misc_make_a_new_doc_item ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//misc_make_a_new_doc_item ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "misc: open doc item in vscode",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\misc_open_doc_item_in_vscode ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//misc_open_doc_item_in_vscode ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//misc_open_doc_item_in_vscode ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "misc: copy to keep projects in sync",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\misc_copy_to_keep_projects_in_sync ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//misc_copy_to_keep_projects_in_sync ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//misc_copy_to_keep_projects_in_sync ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "python: install app deps",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\python_install_app_deps ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//python_install_app_deps ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//python_install_app_deps ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 10
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "python: install specific packages",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\python_install_specific_packages ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//python_install_specific_packages ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//python_install_specific_packages ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 10
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "sql: get schema via docker",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\sql_get_schema_via_docker ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//sql_get_schema_via_docker ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//sql_get_schema_via_docker ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "sql: make db schema update entry",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\sql_make_db_schema_update_entry ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//sql_make_db_schema_update_entry ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//sql_make_db_schema_update_entry ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "testng: e2e create testng page",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\testng_e2e_create_testng_page ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//testng_e2e_create_testng_page ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//testng_e2e_create_testng_page ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "testng: e2e run",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\testng_e2e_run ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//testng_e2e_run ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//testng_e2e_run ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "testng: e2e setup vscode extension",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\testng_e2e_setup_vscode_extension ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//testng_e2e_setup_vscode_extension ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//testng_e2e_setup_vscode_extension ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 1
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "npm: install app deps",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\npm_install_app_deps ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//npm_install_app_deps ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//npm_install_app_deps ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 10
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "npm: install specific packages",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\npm_install_specific_packages ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//npm_install_specific_packages ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//npm_install_specific_packages ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 10
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "npm: silence typescript errors",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\npm_silence_typescript_errors ; .\\main.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//npm_silence_typescript_errors ; .//main",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//npm_silence_typescript_errors ; .//main"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 10
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    },
+    {
+      "label": "tasks: update workspace without extension",
+      "type": "shell",
+      "windows": {
+        "command": "cd .windmillcode\\go_scripts\\tasks_update_workspace_without_extension ; go run main.go.exe"
+      },
+      "linux": {
+        "command": "cd .windmillcode//go_scripts//tasks_update_workspace_without_extension ; go run main.go",
+        "options": {
+          "shell": {
+            "executable": "bash",
+            "args": [
+              "-ic"
+            ]
+          }
+        }
+      },
+      "osx": {
+        "command": "cd .windmillcode//go_scripts//tasks_update_workspace_without_extension ; go run main.go"
+      },
+      "runOptions": {
+        "runOn": "",
+        "instanceLimit": 10
+      },
+      "presentation": {
+        "panel": ""
+      },
+      "metadata": {
+        "name": "windmillcode"
+      }
+    }
+  ],
+  "inputs": null
+}

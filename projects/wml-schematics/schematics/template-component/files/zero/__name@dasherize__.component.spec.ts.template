@@ -1,0 +1,62 @@
+// testing
+import { ComponentFixture } from '@angular/core/testing';
+
+<%  if(cpntType !== 'library-zero'){ %>
+import { wmlTestUtils } from '@core/utility/test-utils/test-utils';
+import { resetImports } from '@core/utility/test-utils/mock-imports';
+import { resetProviders } from '@core/utility/test-utils/mock-providers';
+import { resetDeclarations } from '@core/utility/test-utils/mock-declarations';
+<% } %>
+
+<%  if(cpntType === 'library-zero'){ %>
+import { resetImports } from '../test-utils/mock-imports';
+import { resetProviders } from '../test-utils/mock-providers';
+import { wmlTestUtils } from '../test-utils/test-utils';
+import { resetDeclarations } from '../test-utils/mock-declarations';
+<% } %>
+
+// rxjs
+import { Subject } from 'rxjs';
+
+import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
+
+
+describe('<%= classify(name) %>Component', () => {
+  let cpnt: <%= classify(name) %>Component;
+  let fixture: ComponentFixture<<%= classify(name) %>Component>;
+
+  beforeEach(async () => {
+    resetImports()
+    resetProviders()
+    resetDeclarations()
+    <%  if(standalone === true) { %>
+    await wmlTestUtils.configureTestingModuleForStandaloneComponents(<%= classify(name) %>Component);
+    <% } %>
+
+    <%  if(standalone !== true) { %>
+    await wmlTestUtils.configureTestingModuleForComponents(<%= classify(name) %>Component);
+    <% } %>
+
+    ({fixture, cpnt} =  wmlTestUtils.grabComponentInstance(<%= classify(name) %>Component));
+    fixture.detectChanges()
+
+    spyOn(cpnt.cdref,"detectChanges")
+  })
+
+  describe("init", () => {
+
+    it("should create", () => {
+      expect(cpnt).toBeTruthy()
+    })
+
+    it("should have all values initalize properly", () => {
+    })
+
+    it("should have all properties be the correct class instance", () => {
+      <%  if(isPropsChild) { %>
+      expect(cpnt.props).toBeInstanceOf(<%= classify(name) %>Props)
+      <% } %>
+    })
+  })
+
+});

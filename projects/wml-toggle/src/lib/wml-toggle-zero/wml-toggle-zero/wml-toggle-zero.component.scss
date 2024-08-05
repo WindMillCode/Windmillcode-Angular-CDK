@@ -1,0 +1,206 @@
+@import '../../../../styles';
+
+@function em($pixels) {
+  @if not (unit($pixels) == 'px') {
+    @error 'Property #{$pixels} must have `px` unit.';
+  }
+
+  @return calc($pixels / 16px) * 1em;
+}
+
+$thumb-radius:$wml-toggle-spacing6;
+$off_border_radius: em(11px);
+$off_transform: scale(1);
+$off_left:0;
+$on_border_radius: em(calc(1 / (34 / 22)) * 11px) #{'/'} em(calc(1 / (16 / 22)) * 11px);
+$on_transform:scale(calc((34 / 22)), calc((16 / 22)));
+$on_left:calc(100% - $thumb-radius);
+
+@mixin toggle_on_zero($animation-names...){
+  @each $name in $animation-names {
+    animation-name: #{$name}, ;
+  }
+  animation-duration: .2s;
+  animation-timing-function: cubic-bezier(.75, 0, 1, 1), cubic-bezier(0, 0, 0.3, 1.5);
+  animation-delay: 0s, .2s;
+  animation-fill-mode: forwards;
+}
+
+@mixin toggle_off_zero($animation-names...){
+  @each $name in $animation-names {
+    animation-name: #{$name}, ;
+  }
+  animation-duration: .2s;
+  animation-timing-function: cubic-bezier(.75, 0, 1, 1), cubic-bezier(0, 0, 0.3, 1.5);
+  animation-delay: 0s, .2s;
+  animation-fill-mode: forwards;
+}
+
+
+.WMLToggleZeroView{
+  --text-toggle-left-margin:-.6;
+  --toggle-background-on-color:rgba(var(--wml-toggle-primary));
+  --toggle-background-off-color:rgba(var(--wml-toggle-secondary));
+  display:inline-block;
+  @include WMLCursorPointer0;
+
+  height:100%;
+  .WMLToggleZero{
+    &Main{
+      &Pod{
+        position: relative;
+        display:inline-block;
+        height:100%;
+        border-radius: $wml-toggle-border-radius2;
+
+      }
+
+      &Input {
+        &0 {
+          -webkit-appearance: none;
+          appearance: none;
+          position: absolute;
+          z-index: 1;
+          border-radius: inherit;
+          width: auto;
+          height: 100%;
+          opacity: 0;
+          cursor: pointer;
+        }
+      }
+
+      &Item {
+        &0 {
+          display: flex;
+          align-items: center;
+          position: relative;
+          border-radius: inherit;
+          padding: calc(6/16* 1rem);
+          width: auto;
+          height: 100%;
+          box-shadow: inset 0 em(1px) em(2px) rgb(0 0 0 / .2);
+          transition: background-color .4s linear;
+
+          &.UnChecked{
+            background-color: var(--toggle-background-off-color);
+          }
+          &.Checked {
+            background-color: var(--toggle-background-on-color);
+          }
+
+          &Control{
+            inset:0;
+            position: absolute;
+            color:transparent;
+            background-color: transparent;
+            padding:0 calc(6/16* 1rem);
+          }
+        }
+        &1{
+          position: relative;
+          border-radius: em(11px);
+          transform-origin: left;
+          width:  $thumb-radius;
+          height: $thumb-radius;
+          flex: 0 0 auto;
+          background-color: rgba(var(--wml-toggle-white));
+          box-shadow:
+            0 em(4px) em(4px) rgb(0 0 0 / .2),
+            inset 0 em(-2px) em(4px) rgb(0 0 0 / .2),
+          ;
+
+          &.On {
+            @include toggle_on_zero(thumb-grow-in, thumb-bounce-in);
+          }
+
+          &.Off {
+            @include toggle_off_zero(thumb-grow-out, thumb-bounce-out);
+          }
+        }
+
+      }
+
+      &Effect {
+        &0 {
+          opacity: 0;
+        }
+      }
+      &Text {
+        &0 {
+          position: relative;
+          margin: 0 0 0 $wml-toggle-spacing4;
+          color: rgba(var(--wml-toggle-white));
+          &.On {
+            margin-left: calc(var(--text-toggle-left-margin)* $on_left);
+
+          }
+        }
+      }
+
+      &State {
+        &0 {
+          opacity: .5;
+        }
+      }
+    }
+    &Pod{
+
+      &0{}
+    }
+  }
+}
+
+
+@keyframes thumb-grow-in {
+  0% {
+    border-radius: $off_border_radius;
+    transform: $off_transform;
+    left:$off_left
+  }
+  100% {
+    border-radius: $on_border_radius;
+    transform:  $on_transform;
+    left:$on_left
+  }
+}
+
+@keyframes thumb-bounce-in {
+  0% {
+    border-radius: $on_border_radius;
+    transform:  $on_transform;
+    left:$off_left
+  }
+  100% {
+    border-radius: $off_border_radius;
+    transform:  $off_transform;
+    left:$on_left
+  }
+}
+
+@keyframes thumb-grow-out {
+  0% {
+    border-radius: $off_border_radius;
+    transform:  $off_transform;
+    left:$on_left
+  }
+  100% {
+    border-radius: $on_border_radius;
+    transform: $on_transform;
+    left:$off_left
+  }
+}
+
+@keyframes thumb-bounce-out {
+  0% {
+    border-radius: $on_border_radius;
+    transform:  $on_transform;
+    left:$on_left
+  }
+  100% {
+    border-radius: $off_border_radius;
+    transform:  $off_transform;
+    left:$off_left
+  }
+}
+
+

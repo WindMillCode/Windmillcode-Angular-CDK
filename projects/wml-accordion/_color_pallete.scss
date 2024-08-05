@@ -1,0 +1,59 @@
+@use "sass:string";
+
+@function to-number($value) {
+    @if type-of($value) == 'number' {
+      @return $value;
+    } @else if type-of($value) != 'string' {
+      $_: log('Value for `to-number` should be a number or a string.');
+    }
+
+    $result: 0;
+    $digits: 0;
+    $minus: str-slice($value, 1, 1) == '-';
+    $numbers: ('0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9);
+
+    @for $i from if($minus, 2, 1) through str-length($value) {
+      $character: str-slice($value, $i, $i);
+
+      @if not (index(map-keys($numbers), $character) or $character == '.') {
+        @return to-length(if($minus, -$result, $result), str-slice($value, $i))
+      }
+
+      @if $character == '.' {
+        $digits: 1;
+      } @else if $digits == 0 {
+        $result: $result * 10 + map-get($numbers, $character);
+      } @else {
+        $digits: $digits * 10;
+        $result: $result + map-get($numbers, $character) / $digits;
+      }
+    }
+
+    @return if($minus, -$result, $result);;
+  }
+
+@function convert-to-rgb($color) {
+  $channels: string.split($color, ",");
+  @return rgb(to-number(nth($channels, 1)),to-number(nth($channels, 2)),to-number(nth($channels, 3)));
+}
+
+
+$wml-accordion-white: "255,255,255";
+$wml-accordion-black: "0,0,0";
+$wml-accordion-primary: "144,238,144";
+$wml-accordion-secondary:"112,112,112";
+
+$wml-accordion-primary-gradient:   radial-gradient(farthest-corner at 100% 0px,convert-to-rgb($wml-accordion-primary) 0%,convert-to-rgb($wml-accordion-secondary) 150%);
+$wml-accordion-secondary-gradient: radial-gradient(farthest-corner at 100% 0px,grey 0%,convert-to-rgb($wml-accordion-black) 150%);
+
+
+:root{
+  --wml-accordion-white:#{$wml-accordion-white};
+  --wml-accordion-black:#{$wml-accordion-black};
+  --wml-accordion-primary:#{$wml-accordion-primary};
+  --wml-accordion-secondary:#{$wml-accordion-secondary};
+
+  --wml-accordion-primary-gradient: #{$wml-accordion-primary-gradient};
+  --wml-accordion-secondary-gradient: #{$wml-accordion-secondary-gradient};
+
+}

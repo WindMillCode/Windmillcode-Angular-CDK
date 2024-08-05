@@ -1,0 +1,59 @@
+<ng-container [formGroup]="props.wmlField.field.parentForm">
+  <input
+  [attr.id]="props.input.id"
+  [attr.autocomplete]="props.input.autocomplete"
+  [style]="props.input.style"
+  [class]="classPrefix('MainPodInput0') + props.input.class"
+  [type]="props.type"
+  *ngIf="['input','password','number','email'].includes(props.type)"
+  [formControlName]="props.wmlField.field.formControlName"
+  (input)="triggerChange($event)"
+  [placeholder]="props.input.placeholder  | translate"
+  />
+
+  <textarea
+  [attr.id]="props.textarea.id"
+  [attr.autocomplete]="props.textarea.autocomplete"
+  [style]="props.textarea.style"
+  [class]="classPrefix('MainPodInput1') + props.textarea.class"
+  *ngIf="props.type==='textarea' "
+  [formControlName]="props.wmlField.field.formControlName"
+  (input)="triggerChange($event)"
+  [placeholder]="props.textarea.placeholder  | translate"
+  ></textarea>
+
+  <input
+  [attr.id]="props.range.id"
+  type="range"
+  [class]="props.range.class"
+  *ngIf="props.type==='range' "
+  [formControlName]="props.wmlField.field.formControlName"
+  (input)="triggerChange($event)" min="0" max="10"/>
+
+  <div
+  [attr.id]="props.checkbox.id"
+  [class]="classPrefix('Pod0') + props.checkbox.class " *ngIf="props.type ==='checkbox'">
+    <label>
+      <input [type]="props.type" [formControlName]="props.wmlField.field.formControlName" (input)="triggerChange($event)"/>
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+      <span>{{( (props.checkbox.desc ) | translate) ?? "Check as appropriate"}}</span>
+    </label>
+  </div>
+
+  <input
+    [attr.id]="props.datetime.id"
+    [attr.autocomplete]="props.datetime.autocomplete"
+    [min]="props.datetime.htmlMin"
+    [max]="props.datetime.htmlMax"
+    [style]="props.datetime.style"
+    [class]="classPrefix('MainPodInput0') + props.datetime.class"
+    [type]="'datetime-local'"
+    *ngIf="props.type==='datetime'"
+    [formControlName]="props.wmlField.field.formControlName"
+    (input)="triggerChange($event)"
+    [placeholder]="props.datetime.placeholder | translate"
+  />
+</ng-container>

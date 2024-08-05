@@ -1,0 +1,28 @@
+@import "../../../../styles.scss";
+:host {
+
+
+
+
+  &.WMLOptionsView{
+    display: block;
+    margin:calc(8/16 * 1rem) 0 ;
+    .WMLOptions{
+      &Main{
+        &Pod{
+          display: flex;
+          flex-flow: row wrap;
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}
+
+
+
+

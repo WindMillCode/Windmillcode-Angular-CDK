@@ -1,0 +1,21 @@
+@import '../../../../styles';
+
+:host {
+
+  &.WMLTableZeroCardItemView{
+    display: block;
+    .WMLTableZeroCardItem{
+      &Main{
+        &Pod{
+          height: 100%;
+
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

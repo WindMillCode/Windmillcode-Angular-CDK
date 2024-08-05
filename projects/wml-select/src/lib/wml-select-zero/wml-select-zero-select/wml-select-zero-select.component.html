@@ -1,0 +1,14 @@
+<div [class]="classPrefix('MainPod')">
+  <div
+  (pointerenter)="$any(props.select).pointerenter($event)"
+  (click)="$any(props.select).click()"
+  [ngStyle]="$any(props.select).style"
+  *ngIf="$any(props.select).isPresent"
+  [class]="classPrefix('Pod0')">
+    <p [class]="classPrefix('Pod0Text0')">{{$any(props.select).text | translate}}</p>
+    <div [class]="classPrefix('Pod0Item0')">
+      <i [class]="classPrefix('Pod0Icon0') + ' fa-solid fa-caret-down'"></i>
+    </div>
+  </div>
+
+</div>

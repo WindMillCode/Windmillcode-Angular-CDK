@@ -1,0 +1,85 @@
+@import "spacing";
+@import "media_queries";
+@import "color_pallete";
+@import "common";
+@import "src/lib/wml-table-zero/wml-table-zero-filter/wml-table-zero-filter.component.phone.scss";
+@import "src/lib/wml-table-zero/wml-table-zero-sort/wml-table-zero-sort.component.phone.scss";
+@import "src/lib/wml-table-zero/wml-table-zero/wml-table-zero.component.phone.scss";
+@import "src/lib/wml-table-zero/wml-table-zero-key-value-input/wml-table-zero-key-value-input.component.global.scss";
+@import "src/lib/wml-table-zero/wml-table-zero-key-value-input/wml-table-zero-key-value-input.component.phone.scss";
+
+$wml-white: rgba(255,255,255);
+$wml-black: rgba(0,0,0);
+$wml-primary: #90ee90;
+$wml-secondary:#707070;
+$wml-overlay-0:rgba(0,0,0,.7);
+$wml-border-radius0:calc(8/16 * 1rem);
+$wml-border-radius1:calc(10/16 * 1rem);
+$wml-border-radius2:calc(20/16 * 1rem);
+
+
+
+wml-table-zero{
+  @media #{$mobile}{
+    .WMLTableZeroPod1Item0,wml-table-zero-item{
+      flex: 0 1 100%;
+    }
+  }
+
+}
+
+wml-table-zero,
+wml-table-zero-filter,
+wml-table-zero-item,
+wml-table-zero-key-value-input,
+wml-table-zero-page-size,
+wml-table-zero-popup-overlay,
+wml-table-zero-sample-card,
+wml-table-zero-select-page,
+wml-table-zero-sort {
+  overflow: hidden;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      z-index:5;
+      &:not(i.fa-solid){
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+    }
+
+}
+
+
+
+@mixin WMLTableCtrlBackground{
+  height: 100%;
+  [class$="MainPod"]{
+    height: 100%;
+    border-radius: $wml-border-radius1;
+    background-color: $wml-secondary;
+    padding:$wml-table-spacing3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    [class$="MainForm0"]{
+      margin:$wml-table-spacing7 0 0 0;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

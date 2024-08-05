@@ -1,0 +1,9 @@
+$wml-mobile-nav-border-radius0:calc(8/16 * 1rem);
+$wml-mobile-nav-border-radius1:calc(10/16 * 1rem);
+$wml-mobile-nav-border-radius2:calc(20/16 * 1rem);
+
+@mixin WMLCursorPointer0{
+  &:hover{
+    cursor: pointer;
+  }
+}

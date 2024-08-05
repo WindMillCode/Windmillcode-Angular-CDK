@@ -1,0 +1,40 @@
+
+
+
+
+  @import '../../../../styles';
+
+
+
+
+
+
+  wml-accordion-zero-title {
+
+
+
+  &.WMLAccordionZeroTitleView{
+    display: block;
+    height:100%;
+    .WMLAccordionZeroTitle{
+      &Main{
+        &Pod{
+
+
+          height:100%;
+        }
+      }
+      &Pod{
+
+        &0{
+          &Title {
+            &0 {
+              margin: 0 0 0 $wml-accordion-spacing5;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,118 @@
+@import "../../../../styles.scss";
+
+
+.WMLButtonOne{
+  &Main{
+
+
+    &Button,&Link {
+      @for $i from 0 through 2 {
+        &#{$i} {
+
+          @include WMLButtonMainButton0;
+          @include WMLCursorPointer0;
+          transition:  all $wml-transition-0;
+        }
+      }
+    }
+  }
+}
+
+
+
+// :host {
+
+  .WMLButtonOneView{
+    display: block;
+
+    .WMLButtonOne{
+      &Main{
+        &Pod{
+
+        }
+
+        &Link {
+          &0 {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            border: none; /* Ensure there is no border */
+
+            // hope this does not change for some reason
+            span{
+              font-size: calc((10.6/10.6 *(13.3 / 10.6)) * 1em) ;
+            }
+          }
+        }
+
+        &Button {
+
+
+          &0 {
+            background: rgba(var(--wml-button-primary));
+            border:calc(3/16 * 1rem) solid rgba(var(--wml-button-black));
+            &:hover{
+              background: rgba(var(--wml-button-secondary));
+              border:calc(3/16 * 1rem) solid rgba(var(--wml-button-white));
+              .WMLButtonOneMainButton0Text0 {
+                color:rgba(var(--wml-button-white))
+              }
+            }
+
+            &Text {
+              &0 {
+                color:rgba(var(--wml-button-black))
+              }
+            }
+
+          }
+
+          &1 {
+            background: $wml-gradient-0;
+
+            border:calc(3/16 * 1rem) solid rgba(var(--wml-button-white));
+
+            &Text {
+              &0 {
+                color:rgba(var(--wml-button-white))
+              }
+            }
+
+            &:hover{
+              background: rgba(var(--wml-button-primary));
+              border:calc(3/16 * 1rem) solid rgba(var(--wml-button-black));
+              .WMLButtonOneMainButton1Text0 {
+                color:rgba(var(--wml-button-black));
+              }
+            }
+
+
+          }
+
+          &2 {
+            background-color: rgba(var(--wml-button-black));
+            border:calc(3/16 * 1rem) solid rgba(var(--wml-button-primary));
+            &Text {
+              &0 {
+                color:rgba(var(--wml-button-primary))
+              }
+            }
+            &:hover{
+              background: rgba(var(--wml-button-secondary));
+              border:calc(3/16 * 1rem) solid rgba(var(--wml-button-primary));
+              .WMLButtonOneMainButton2Text0 {
+                color:rgba(var(--wml-button-primary))
+              }
+            }
+          }
+        }
+
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+// }

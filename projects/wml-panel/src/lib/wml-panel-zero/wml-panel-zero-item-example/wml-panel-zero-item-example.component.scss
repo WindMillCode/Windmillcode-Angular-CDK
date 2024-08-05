@@ -1,0 +1,29 @@
+@import "../../../../styles.scss";
+
+:host {
+
+
+  &.WMLSamplePanelItemView{
+    display: block;
+    background-color: $wml-primary;
+    border-radius: calc(20/16 * 1rem);
+    width: 100%;
+    height: 100%;
+    padding: calc(32/16 * 1rem);
+    .WMLSamplePanelItem{
+      &Main{
+        &Pod{
+          span{
+            font-size: calc(12/16 * 1rem);
+          }
+
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+}

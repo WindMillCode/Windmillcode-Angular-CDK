@@ -1,0 +1,32 @@
+
+@import '../../../../styles';
+
+wml-infinite-dropdown-zero-item-example {
+
+
+  &.WMLSampleInfiniteDropdownItemView{
+    display: block;
+
+    .WMLSampleInfiniteDropdownItem{
+      &Main{
+        &Pod{
+
+
+        }
+        &Item{
+          &1 {
+            padding:$wml-infinite-dropdown-spacing3 $wml-infinite-dropdown-spacing8;
+            border-bottom: calc(2/16 * 1rem) solid rgba(var(--wml-infinite-dropdown-primary));
+            background-color: rgba(var(--wml-infinite-dropdown-secondary));
+            color:rgba(var(--wml-infinite-dropdown-primary));
+          }
+        }
+
+      }
+      &Pod{
+        &0{}
+      }
+    }
+  }
+
+}

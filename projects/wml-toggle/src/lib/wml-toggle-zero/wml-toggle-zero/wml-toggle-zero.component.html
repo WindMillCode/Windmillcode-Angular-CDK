@@ -1,0 +1,13 @@
+<div (click)="toggle(null,true)" [class]="classPrefix('MainPod') +props.container.class">
+
+  <input [checked]="props.thumb.value"  [class]="classPrefix('MainInput0')" type="checkbox">
+  <div [class]="classPrefix('MainItem0') + props.container.class">
+    <div [class]="classPrefix('MainItem1') +classPrefix('MainEffect0') "></div>
+    <p [class]="classPrefix('MainText0') + classPrefix('MainEffect0')" >{{$any(props.toggleText.text) | translate}}</p>
+  </div>
+  <div [class]="classPrefix('MainItem0') +classPrefix('MainItem0Control')">
+    <div [class]="classPrefix('MainItem1') + props.thumb.class"></div>
+    <p [class]="classPrefix('MainText0')  + props.toggleText.class" [ngStyle]="props.toggleText.style">{{$any(props.toggleText.text) | translate}}</p>
+  </div>
+
+</div>

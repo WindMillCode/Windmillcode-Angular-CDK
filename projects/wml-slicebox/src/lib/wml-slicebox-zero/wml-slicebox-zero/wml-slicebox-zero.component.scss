@@ -1,0 +1,108 @@
+@import "../../../../styles.scss";
+
+
+
+:host {
+
+
+	--vertical-rotate:-1;
+	--horizontal-rotate:0;
+	--time-for-one-cuboid-rotation:4s;
+	--reverse-deg-end:90deg;
+	--disperse-speed:5s;
+	--animation-easing:ease;
+	--side-background-color:#222;
+
+	@keyframes wmlsliceboxkeyframe0{
+		0%  {transform:rotate3d(var(--vertical-rotate),var(--horizontal-rotate),0,0deg)};
+		100%{transform:rotate3d(var(--vertical-rotate),var(--horizontal-rotate),0,var(--reverse-deg-end))}
+	}
+
+	@keyframes wmlsliceboxkeyframe1{
+		0% {top:var(--animate-in-top);left:var(--animate-in-left)}
+		50%  {top:var(--animate-out-top);left:var(--animate-out-left)}
+		100% {top:var(--animate-in-top);left:var(--animate-in-left)}
+	};
+
+
+
+  &.WMLSliceboxZeroView{
+    display: block;
+		height: 100%;
+    .WMLSliceboxZero{
+      &Main{
+        &Pod{
+					display: flex;
+					height: 100%;
+					// justify-content: center;
+        }
+
+      }
+      &Pod{
+
+        &0{
+					&Btn {
+						&0 {
+							justify-self: flex-start;
+							position: absolute;
+							left:-10px;
+						}
+					}
+        }
+        &1{
+          width: 100%;
+          height: 100%;
+
+					&Rotate {
+						&0 {
+							// transition:none;
+
+							transition:  left var(--disperse-speed), top var(--disperse-speed);
+							animation-name:wmlsliceboxkeyframe0;
+							animation-duration:var(--time-for-one-cuboid-rotation);
+							animation-timing-function: var(--animation-easing);
+						}
+					}
+        }
+      }
+    }
+  }
+
+
+
+.sb-perspective {
+
+	position: relative;
+}
+
+.sb-perspective > div {
+	position: absolute;
+	transform-style: preserve-3d;
+
+	backface-visibility : hidden;
+}
+
+.sb-side {
+	margin: 0;
+	display: block;
+	position: absolute;
+	backface-visibility:hidden;
+	background-repeat:no-repeat ;
+	transform-style: preserve-3d;
+	// transition:none;
+	// transition:all 1s;
+	background-color: var(--side-background-color);
+
+}
+
+.frontSide{
+	background-color: transparent;
+	transition:all .5s !important;
+}
+
+
+
+
+}
+
+

@@ -1,0 +1,50 @@
+@import "../../../../styles.scss";
+
+:host {
+
+  &.WMLTableZeroSampleRowView{
+    display: block;
+    height: 100%;
+    .WMLTableZeroSampleRow{
+      &Main{
+        &Pod{
+          height: 100%;
+          width: 100%;
+          background-color:rgba(var(--wml-table-secondary));
+          border-radius: var(--wml-table-border-radius0);
+          display: flex;
+          align-items: center;
+          border-left: calc(16/16 * 1rem) solid rgba(var(--wml-table-primary));
+          border-right: calc(16/16 * 1rem) solid rgba(var(--wml-table-primary));
+          padding:0 var(--wml-table-spacing5) ;
+          * {
+            color:rgba(var(--wml-table-black))
+          }
+        }
+
+        &Img {
+          &0 {
+            width: 10%;
+            height: auto;
+          }
+        }
+      }
+      &Pod{
+
+        &0{
+          flex: 1 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+
+          &Text {
+            &0 {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

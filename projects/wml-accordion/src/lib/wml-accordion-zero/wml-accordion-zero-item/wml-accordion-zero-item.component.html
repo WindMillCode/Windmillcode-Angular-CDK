@@ -1,0 +1,18 @@
+<div [class]="classPrefix('MainPod')">
+
+  <div [class]="classPrefix('Pod0')">
+    <div (click)="toggleAccordion()">
+      <i *ngIf="props.isClosed" [class]="classPrefix('Pod0Icon0') + ' fa-solid fa-chervron-down'"></i>
+      <i *ngIf="!props.isClosed" [class]="classPrefix('Pod0Icon0') + ' fa-solid fa-chervron-up'"></i>
+    </div>
+    <ng-template  #customAccordionTitle ></ng-template>
+
+
+  </div>
+
+  <div  [class]="classPrefix('Pod1') + ' '+ contentPod.class"
+  [ngStyle]="{'display': contentPod.isPresent ? 'block' : 'none'}"
+   (animationend)="triggerCloseAnimation()">
+    <ng-template  #customAccordionBody ></ng-template>
+  </div>
+</div>

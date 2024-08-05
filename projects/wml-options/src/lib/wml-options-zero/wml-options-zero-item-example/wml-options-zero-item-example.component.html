@@ -1,0 +1,8 @@
+<div [class]="classPrefix('MainPod')">
+  <button
+  (click)="props.wmlOptionItem.clickPredicate(
+    $any(props.wmlOptionItem))"
+    [class]="classPrefix('MainBtn0') + ' '+props.wmlOptionItem.class">
+    <label>{{props.wmlOptionItem.text | translate}}</label>
+  </button>
+</div>
