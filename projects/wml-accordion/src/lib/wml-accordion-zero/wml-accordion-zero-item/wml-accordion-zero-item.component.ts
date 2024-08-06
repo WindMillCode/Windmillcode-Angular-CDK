@@ -168,8 +168,8 @@ export class WMLAccordionZeroItemProps extends WMLUIProperty {
         return !key.startsWith('prop');
       });
     Object.assign(this, { ...Object.fromEntries(origProps) });
-    console.log(props)
-    if(props.propTitle){
+    // @ts-ignore
+    if(![null,undefined].includes(props.propTitle)){
       this.accordionTitle.props.title = props.propTitle
     }
   }
