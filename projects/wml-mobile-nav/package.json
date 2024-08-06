@@ -10,13 +10,13 @@
         "@angular/common": "^18.0.0",
         "@angular/core": "^18.0.0",
         "@angular/forms": "^18.0.0",
-        "@windmillcode/angular-wml-components-base": "^18.1.3006",
-        "@windmillcode/angular-wml-infinite-dropdown": "^18.1.3006"
+        "@windmillcode/angular-wml-components-base": "^18.1.3007",
+        "@windmillcode/angular-wml-infinite-dropdown": "^18.1.3007"
     },
     "private": false,
     "schematics": "",
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "18.1.3006"
+    "version": "18.1.3007"
 }
