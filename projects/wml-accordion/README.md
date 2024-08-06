@@ -413,6 +413,14 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.1.3003 [8/5/24]
 
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3004 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3005 [8/5/24]
+
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML Schematics](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)[Next
-WML Button](/Windmillcode-Angular-CDK-Docs/library/wml-button/)
+WML Button](/Windmillcode-Angular-CDK-Docs/components/wml-button/)

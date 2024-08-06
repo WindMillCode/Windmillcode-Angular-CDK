@@ -377,6 +377,14 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.1.3003 [8/5/24]
 
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3004 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3005 [8/5/24]
+
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
-WML Input](/Windmillcode-Angular-CDK-Docs/library/wml-input/)[Next
-WML Notify](/Windmillcode-Angular-CDK-Docs/library/wml-notify/)
+WML Input](/Windmillcode-Angular-CDK-Docs/components/wml-input/)[Next
+WML Notify](/Windmillcode-Angular-CDK-Docs/components/wml-notify/)

@@ -374,6 +374,14 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.1.3003 [8/5/24]
 
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3004 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3005 [8/5/24]
+
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
-WML Table (Beta Unstable Unmaintainable)](/Windmillcode-Angular-CDK-Docs/library/wml-table/)[Next
-WML Toggle](/Windmillcode-Angular-CDK-Docs/library/wml-toggle/)
+WML Table (Beta Unstable Unmaintainable)](/Windmillcode-Angular-CDK-Docs/components/wml-table/)[Next
+WML Toggle](/Windmillcode-Angular-CDK-Docs/components/wml-toggle/)

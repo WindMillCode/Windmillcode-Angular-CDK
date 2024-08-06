@@ -1,6 +1,7 @@
 # WML Panel
 
-The Angular WML Panel library is a sophisticated Angular module designed to offer a robust and versatile panel component system within Angular applications. This library is meticulously engineered to provide developers with a seamless and intuitive interface for creating, managing, and interacting with panels in their web applications. The core objective of the  library is to streamline the process of panel management, offering a suite of features that cater to various panel-related needs, such as dynamic content loading, customization, and responsive layout management.
+t
+The Angular WML Panel library is a sophisticated Angular module designed to offer a robust and versatile panel component system within Angular applications. This library is meticulously engineered to provide developers with a seamless and intuitive interface for creating, managing, and interactingtt with panels in their web applications. The core objective of the  library is to streamline the process of panel management, offering a suite of features that cater to various panel-related needs, such as dynamic content loading, customization, and responsive layout management.
 
 Central to the Angular WML Panel library are its principal components, which include the main panel container and various subcomponents designed for specific functionalities. The main panel component acts as the container, orchestrating the overall behavior and layout of the panel, while the subcomponents provide granular control over the panel’s content and interactive features. Developers can leverage these components to build intricate panel layouts, customize appearance and behavior, and dynamically load content based on application context or user interactions. The library emphasizes modularity and reusability, encouraging developers to utilize these components in a composable manner to construct complex yet maintainable panel structures. Furthermore, the library provides APIs and services that enable extensive customization and interactivity, allowing developers to tailor the panel’s functionality to meet the specific requirements of their applications.
 
@@ -376,6 +377,18 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.1.3003 [8/5/24]
 
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3004 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3004 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3005 [8/5/24]
+
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
-WML Options](/Windmillcode-Angular-CDK-Docs/library/wml-options/)[Next
-WML Popup](/Windmillcode-Angular-CDK-Docs/library/wml-popup/)
+WML Options](/Windmillcode-Angular-CDK-Docs/components/wml-options/)[Next
+WML Popup](/Windmillcode-Angular-CDK-Docs/components/wml-popup/)

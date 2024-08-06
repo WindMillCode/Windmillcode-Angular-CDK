@@ -168,10 +168,12 @@ export class WMLAccordionZeroItemProps extends WMLUIProperty {
         return !key.startsWith('prop');
       });
     Object.assign(this, { ...Object.fromEntries(origProps) });
+    console.log(props)
     if(props.propTitle){
       this.accordionTitle.props.title = props.propTitle
     }
   }
+
 
   isClosed = true
   toggleAccordionEvent = new Subject<boolean>()
@@ -191,7 +193,7 @@ export class WMLAccordionZeroItemProps extends WMLUIProperty {
     props:new WMLAccordionZeroSampleProps()
   })
   updateAccordionBodySubj = new Subject<WMLCustomComponent>()
-  customTitle
+
   startHeight = "calc(0/10.6 * 1rem)"
   endHeight0 = "calc(20000/10.6 * 1rem)"
   endHeight1 = "calc(2000/10.6 * 1rem)"

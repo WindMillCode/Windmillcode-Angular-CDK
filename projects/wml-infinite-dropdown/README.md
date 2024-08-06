@@ -459,6 +459,14 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.1.3003 [8/5/24]
 
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3004 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3005 [8/5/24]
+
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
-WML Form](/Windmillcode-Angular-CDK-Docs/library/wml-form/)[Next
-WML Input](/Windmillcode-Angular-CDK-Docs/library/wml-input/)
+WML Form](/Windmillcode-Angular-CDK-Docs/components/wml-form/)[Next
+WML Input](/Windmillcode-Angular-CDK-Docs/components/wml-input/)

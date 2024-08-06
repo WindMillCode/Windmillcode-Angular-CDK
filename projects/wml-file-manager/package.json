@@ -4,17 +4,17 @@
         "tslib": "^2.3.0"
     },
     "funding": "https://www.gofundme.com/f/strengthen-our-business-to-take-on-bigger-initiati?utm_campaign=p_lico+share-sheet-first-launch&utm_medium=copy_link&utm_source=customer",
-    "homepage": "",
+    "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs//components/wml-file-manager",
     "name": "@windmillcode/angular-wml-file-manager",
     "peerDependencies": {
         "@angular/common": "^18.0.0",
         "@angular/core": "^18.0.0",
-        "@windmillcode/angular-wml-components-base": "^18.1.3005"
+        "@windmillcode/angular-wml-components-base": "^18.1.3006"
     },
     "private": false,
     "schematics": "",
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "18.1.3005"
+    "version": "18.1.3006"
 }

@@ -374,6 +374,14 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.1.3003 [8/5/24]
 
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3004 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3005 [8/5/24]
+
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
-WML Mobile Nav](/Windmillcode-Angular-CDK-Docs/library/wml-mobile-nav/)[Next
-WML Options](/Windmillcode-Angular-CDK-Docs/library/wml-options/)
+WML Mobile Nav](/Windmillcode-Angular-CDK-Docs/components/wml-mobile-nav/)[Next
+WML Options](/Windmillcode-Angular-CDK-Docs/components/wml-options/)
