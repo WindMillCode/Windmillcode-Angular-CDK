@@ -9,13 +9,13 @@
     "peerDependencies": {
         "@angular/common": "^18.0.0",
         "@angular/core": "^18.0.0",
-        "@windmillcode/angular-wml-components-base": "^18.1.4001",
-        "@windmillcode/angular-wml-field": "^18.1.4001"
+        "@windmillcode/angular-wml-components-base": "^18.2.0",
+        "@windmillcode/angular-wml-field": "^18.2.0"
     },
     "private": false,
     "schematics": "",
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "18.1.4001"
+    "version": "18.2.0"
 }
