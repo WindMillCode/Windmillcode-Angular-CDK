@@ -42,7 +42,7 @@
           height: 100%;
           display: flex;
           justify-content: space-between;
-          overflow: hidden auto;
+          // overflow: hidden auto;
         }
         &Close {
           &0 {
@@ -66,13 +66,14 @@
           left:0;
           animation: wml-mobile-nav-zero-keyframe0 $wml-mobile-nav-zero-AnimationDuration;
           background-color: convert-to-rgb($wml-mobile-nav-secondary);
+          overflow:hidden auto;
 
           &::-webkit-scrollbar {
             display: none;
           }
           &Item {
             &0 {
-              height: 10%;
+              height: 100%;
             }
           }
         }

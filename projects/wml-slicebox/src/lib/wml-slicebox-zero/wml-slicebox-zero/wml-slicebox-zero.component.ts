@@ -1,9 +1,9 @@
-
 // angular
 import {
   ChangeDetectionStrategy,ChangeDetectorRef,Component,ElementRef,HostBinding,Input,Renderer2,ViewChild,
 } from '@angular/core';
-import {generateClassPrefix, selectRandomOptionFromArray, WMLButton,WMLImage,WMLUIProperty,} from '@windmillcode/angular-wml-components-base';
+import { WMLButtonOneProps } from '@windmillcode/angular-wml-button';
+import {generateClassPrefix, selectRandomOptionFromArray,WMLImage,WMLUIProperty,} from '@windmillcode/angular-wml-components-base';
 
 // rxjs
 import {combineLatest,debounceTime,filter,fromEvent,of,Subject,takeUntil,tap,timer,} from 'rxjs';
@@ -58,7 +58,7 @@ export class WMLSliceboxZeroComponent {
   ngUnsub = new Subject<void>();
   perspective = new WMLUIProperty();
   // TODO possible development no way to pause transitions, may refactor to use animations
-  togglePauseBtn = new WMLButton({
+  togglePauseBtn = new WMLButtonOneProps({
     // @ts-ignore
     clickPredicate: () => {
       this.props._cuboids?.forEach((cuboid) => {

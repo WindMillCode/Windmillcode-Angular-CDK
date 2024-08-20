@@ -125,6 +125,26 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.1.3005 [8/5/24]
 
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3006 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3007 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.4000 [8/14/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.4001 [8/14/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.0 [8/15/24]
+
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML Components Base](/Windmillcode-Angular-CDK-Docs/intro/wml-components-base/)[Next
 WML Accordion](/Windmillcode-Angular-CDK-Docs/components/wml-accordion/)

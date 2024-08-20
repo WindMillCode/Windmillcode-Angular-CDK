@@ -9,7 +9,6 @@ import { FormArray, FormControl } from '@angular/forms';
 import { WMLOptionZeroItemProps, WMLOptionsZeroProps } from '../models';
 import { generateClassPrefix } from '@windmillcode/angular-wml-components-base';
 
-
 @Component({
   selector: 'wml-options-zero',
   templateUrl: './wml-options-zero.component.html',
@@ -44,7 +43,6 @@ export class WMLOptionsZeroComponent {
   };
 
   populateFields = (init=false) => {
-    console.log(this.props.formArray)
     this.props.options.forEach((btn) => {
       let chosen = this.props.formArray.value.includes(btn) ;
 

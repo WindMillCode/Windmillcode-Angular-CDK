@@ -16,7 +16,7 @@ Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#8
 
 ### Getting Started
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-d2uois?embed=1file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-d2uois?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ## Reference
 
@@ -378,6 +378,26 @@ updated package to conform with @windmillcode/angular-wml-components-base
 updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.1.3005 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3006 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3007 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.4000 [8/14/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.4001 [8/14/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.0 [8/15/24]
 
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML Panel](/Windmillcode-Angular-CDK-Docs/components/wml-panel/)[Next

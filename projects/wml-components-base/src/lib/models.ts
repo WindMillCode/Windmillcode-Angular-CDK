@@ -219,50 +219,6 @@ export class WMLWrapper<V=any,T=any> {
   view:WMLView<V,T> =new WMLView<V,T>()
 }
 
-
-export class WMLButton<V=any,T=any>  extends WMLView<V,T> {
-  constructor(props:Partial<WMLButton> = {}){
-    super()
-    Object.assign(
-      this,
-      {
-        ...props
-      }
-    )
-  }
-
-  get iconClass(){
-    return this._iconClass
-  }
-  set iconClass(val){
-    this.updateIconClassString(val)
-  }
-  private _iconClass:string = ""
-  private _iconClassList:string[] = []
-  updateIconClassString=updateClassString(this,"_iconClass","_iconClassList")
-  textIsPresent:boolean = true
-  iconSrc?:string = ""
-  iconAlt?:string = ""
-  iconIsPresent:boolean = false
-  buttonClass?:string
-
-}
-
-export class WMLButton2 {
-  constructor(props:Partial<WMLButton2>={}){
-    Object.assign(
-      this,
-      {
-        ...props
-      }
-    )
-  }
-
-  button =new WMLUIProperty();
-  text = new WMLUIProperty();
-  icon = [new WMLImage()]
-}
-
 export class WMLCustomComponent<C=any,P=any> {
   constructor(props:Partial<WMLCustomComponent> = {}){
     Object.assign(

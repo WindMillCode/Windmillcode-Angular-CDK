@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  In
 // rxjs
 import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
-import {WMLUIProperty,WMLButton2, WMLImage, generateClassPrefix} from "@windmillcode/angular-wml-components-base"
+import {WMLUIProperty, WMLImage, generateClassPrefix} from "@windmillcode/angular-wml-components-base"
 // misc
 import {WMLButtonIconType, WMLButtonPropsTypeEnum} from '../../models';
 
@@ -47,7 +47,6 @@ export class WMLButtonZeroComponent  {
         this.cdref.detectChanges()
       })
     )
-
   }
 
   checkPropsInstance = ()=>{
@@ -71,10 +70,8 @@ export class WMLButtonZeroComponent  {
 
 
 
-export class WMLButtonZeroProps extends WMLButton2 {
+export class WMLButtonZeroProps {
   constructor(props:Partial<WMLButtonZeroProps >={}){
-    super();
-
     Object.assign(
       this,
       {
@@ -89,6 +86,8 @@ export class WMLButtonZeroProps extends WMLButton2 {
 
 
   }
+
+
   id?:string
   cdref?:ChangeDetectorRef
   updateSubj = new Subject<Partial<WMLButtonZeroProps>>()
@@ -98,7 +97,6 @@ export class WMLButtonZeroProps extends WMLButton2 {
   }
   set type(value:WMLButtonPropsTypeEnum){
     this.updateBtnClasses(value)
-    // @ts-ignore
     this._type = value
   }
   private updateBtnClasses(value:WMLButtonPropsTypeEnum){
@@ -110,16 +108,15 @@ export class WMLButtonZeroProps extends WMLButton2 {
     this.button.class = "WMLButtonZeroMainButton"+val;
     this.text.class = "WMLButtonZeroMainButton" + val +"Text0"
   }
-  override text = new WMLUIProperty({
+  text = new WMLUIProperty({
     text:"Click Me",
   })
-  override button = new WMLUIProperty({
+  button = new WMLUIProperty({
     click:()=>{
       alert("This button was clicked")
     }
   })
-  // @ts-ignore
-  override icons = [new WMLImage<any,WMLButtonIconType>({
+  icons = [new WMLImage<any,WMLButtonIconType>({
     isPresent:false,
     class:'fa-solid'
   })]

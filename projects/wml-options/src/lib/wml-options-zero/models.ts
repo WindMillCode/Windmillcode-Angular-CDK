@@ -1,5 +1,5 @@
 import { FormArray, FormControl } from "@angular/forms"
-import {  WMLButton, WMLCustomComponent } from "@windmillcode/angular-wml-components-base"
+import { updateClassString, WMLCustomComponent, WMLView } from "@windmillcode/angular-wml-components-base"
 import { WMLFieldZeroProps } from "@windmillcode/angular-wml-field"
 import { WMLOptionsZeroItemExampleComponent } from "./wml-options-zero-item-example/wml-options-zero-item-example.component"
 
@@ -52,9 +52,9 @@ export class WMLOptionsZeroProps {
   }
 }
 
-export class WMLOptionZeroItemProps<V=any,T=any> extends WMLButton<V,T> {
+export class WMLOptionZeroItemProps<V=any,T=any> extends WMLView<V,T> {
   constructor(props:Partial<WMLOptionZeroItemProps>={}){
-    super();
+    super()
     Object.assign(
       this,
       {
@@ -63,6 +63,21 @@ export class WMLOptionZeroItemProps<V=any,T=any> extends WMLButton<V,T> {
     )
     this.customCpnt.props.wmlOptionItem = this
   }
+
+  get iconClass(){
+    return this._iconClass
+  }
+  set iconClass(val){
+    this.updateIconClassString(val)
+  }
+  private _iconClass:string = ""
+  private _iconClassList:string[] = []
+  updateIconClassString=updateClassString(this,"_iconClass","_iconClassList")
+  textIsPresent:boolean = true
+  iconSrc?:string = ""
+  iconAlt?:string = ""
+  iconIsPresent:boolean = false
+  buttonClass?:string
   uniqueId!:string
   isChosen: boolean = false
   override text:string = ""

@@ -397,6 +397,26 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.1.3005 [8/5/24]
 
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3006 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3007 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.4000 [8/14/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.4001 [8/14/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.0 [8/15/24]
+
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML Field](/Windmillcode-Angular-CDK-Docs/components/wml-field/)[Next
 WML Form](/Windmillcode-Angular-CDK-Docs/components/wml-form/)

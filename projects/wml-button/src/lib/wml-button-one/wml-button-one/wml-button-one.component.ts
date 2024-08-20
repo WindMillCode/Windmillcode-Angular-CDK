@@ -1,6 +1,6 @@
 // angular
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  Input, ViewEncapsulation   } from '@angular/core';
-import { WMLButton, generateClassPrefix, updateClassString } from '@windmillcode/angular-wml-components-base';
+import {  WMLView, generateClassPrefix, updateClassString } from '@windmillcode/angular-wml-components-base';
 
 // rxjs
 import { Subject } from 'rxjs';
@@ -75,28 +75,50 @@ export class WMLButtonOneComponent  {
 }
 
 
-// @ts-ignore
-export class WMLButtonOneProps extends WMLButton {
+export class WMLButtonOneProps<V=any,T=WMLButtonPropsTypeEnum>  extends WMLView<V,WMLButtonPropsTypeEnum>  {
   constructor(props:Partial<WMLButtonOneProps>={}){
     super()
+    Object.defineProperty(this, 'type', {
+      get: () => {
+        return this._type
+      },
+      set: (value: WMLButtonPropsTypeEnum) => {
+        this.updateBtnClasses(value)
+        this._type = value
+      }
+    });
     Object.assign(
       this,
       {
         ...props
       }
     )
-    // TODO this needs to be here because typescript decided to be a pain
+
     // @ts-ignore
     if([null,undefined].includes( this.type) ){
       this.type = WMLButtonPropsTypeEnum.PRIMARY
     }
-    this.updateBtnClasses(this.type)
-
+    this.updateBtnClasses(this.type!)
   }
 
-  private override  buttonClass =""
+
+  private _iconClass:string = ""
+  private _iconClassList:string[] = []
+  updateIconClassString=updateClassString(this,"_iconClass","_iconClassList")
+  get iconClass(){
+    return this._iconClass
+  }
+  set iconClass(val){
+    this.updateIconClassString(val)
+  }
+  textIsPresent:boolean = true
+  iconSrc?:string = ""
+  iconAlt?:string = ""
+  iconIsPresent:boolean = false
+  private  buttonClass =""
   private _btnClass:string = ""
   private _btnClassList:string[] = []
+  updateBtnClassString=updateClassString(this,"_btnClass","_btnClassList")
   get btnClass (){
     return this._btnClass
   }
@@ -106,19 +128,8 @@ export class WMLButtonOneProps extends WMLButton {
   btnStyle:Partial<CSSStyleDeclaration> = {}
   btnIsPresent = true
   private _type =WMLButtonPropsTypeEnum.PRIMARY
-  // @ts-ignore
-  override get type(){
-    return this._type
-  }
-  override set type(value:WMLButtonPropsTypeEnum){
-    this.updateBtnClasses(value)
-    this._type = value
-  }
   iconType:WMLButtonIconType = "img"
-
   override text = "Click Me"
-
-  updateBtnClassString=updateClassString(this,"_btnClass","_btnClassList")
   private updateBtnClasses(value:WMLButtonPropsTypeEnum){
     let val = {
       [WMLButtonPropsTypeEnum.PRIMARY]:"0",
