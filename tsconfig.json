@@ -64,9 +64,9 @@
       "@windmillcode/angular-wml-popup": [
         "dist/wml-popup"
       ],
-      "@windmillcode/angular-wml-schematics": [
-        "../../../../../My_Notebook/WindMillCode/projects/angular-templates/angular-libraries/dist/wml-schematics"
-      ],
+      // "@windmillcode/angular-wml-schematics": [
+      //   "../../../../../My_Notebook/WindMillCode/projects/angular-templates/angular-libraries/dist/wml-schematics"
+      // ],
       "@windmillcode/angular-wml-select": [
         "dist/wml-select"
       ]

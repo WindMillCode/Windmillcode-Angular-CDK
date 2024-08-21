@@ -121,7 +121,14 @@ export class WMLButtonZeroProps {
     class:'fa-solid'
   })]
 
-
+  attr ={
+    /**
+     * The type of the button.
+     * Possible values: "submit" | "reset" | "button"
+     * @type {"submit" | "reset" | "button"}
+     */
+    type:"button"
+  }
 }
 
 

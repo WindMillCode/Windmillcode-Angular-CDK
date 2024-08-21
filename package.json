@@ -20,6 +20,8 @@
     "@angular/router": "18.2.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "@windmillcode/angular-wml-button": "^18.2.3",
+    "@windmillcode/angular-wml-mobile-nav": "^18.2.2",
     "copy-files-from-to": "^3.11.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

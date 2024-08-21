@@ -66,7 +66,8 @@
           left:0;
           animation: wml-mobile-nav-zero-keyframe0 $wml-mobile-nav-zero-AnimationDuration;
           background-color: convert-to-rgb($wml-mobile-nav-secondary);
-          overflow:hidden auto;
+          // TODO There is complex use case but does not handle base use case find complex case and fix idk what is it you will know when you come across it
+          // overflow:hidden auto;
 
           &::-webkit-scrollbar {
             display: none;

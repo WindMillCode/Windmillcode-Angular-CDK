@@ -1,4 +1,4 @@
-<button [attr.id]="props.button.id"  (click)="props.button.click($event)" [class]="props.button.class" [ngStyle]="props.button.style">
+<button [type]="props.attr.type"  [attr.id]="props.button.id"  (click)="props.button.click($event)" [class]="props.button.class" [ngStyle]="props.button.style">
   <ng-container *ngFor="let icon of props.icons">
     <ng-container *ngIf="icon.isPresent" >
       <img [attr.id]="icon.id" *ngIf="icon.type === 'img'" [src]=icon.src [alt]="icon.alt" [class]="icon.class" [ngStyle]="icon.style"/>

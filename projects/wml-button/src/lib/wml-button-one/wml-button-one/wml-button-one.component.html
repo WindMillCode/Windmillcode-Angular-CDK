@@ -1,4 +1,4 @@
-<button  *ngIf="props.btnIsPresent && !props.link && !props.routerLink"  (click)="props.click($event)" [class]="props.btnClass" [ngStyle]="props.btnStyle">
+<button [type]="props.attr.type"  *ngIf="props.btnIsPresent && !props.link && !props.routerLink"  (click)="props.click($event)" [class]="props.btnClass" [ngStyle]="props.btnStyle">
   <ng-container *ngIf="props.iconIsPresent" >
     <img *ngIf="props.iconType === 'img'" [src]=props.iconSrc [alt]="props.iconAlt" [class]="props.iconClass" />
     <i *ngIf="props.iconType === 'icon'"  [class]="props.iconClass"></i>

@@ -146,6 +146,15 @@ export class WMLButtonOneProps<V=any,T=WMLButtonPropsTypeEnum>  extends WMLView<
 
   link?:string
   routerLink?: string
+
+  attr ={
+  /**
+   * The type of the button.
+   * Possible values: "submit" | "reset" | "button"
+   * @type {"submit" | "reset" | "button"}
+   */
+    type:"button"
+  }
 }
 
 
