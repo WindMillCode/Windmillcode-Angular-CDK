@@ -6,7 +6,7 @@ The Angular WML Form Libary is a versatile and customizable library designed to 
 
 ## Installation
 
-Terminal window<code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-form</span></div></div><div class="ec-line"><div class="code"><span style="--0:#809191;--1:#616671"># to populate the field, submit form</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-field</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-input</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-button</span></div></div></code>
+Terminal window<code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-form</span></div></div><div class="ec-line"><div class="code"><span style="--0:#809191;--1:#616671"># to populate the field, submit form</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-field</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-input</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-button</span></div></div></code>
 
 
 
@@ -20,19 +20,19 @@ Terminal window<code><div class="ec-line"><div class="code"><span style="--0:#82
 
 ### Basic Form Setup
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-fgsk2e?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-fgsk2e?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
-### Form Submission
+### [Form Submission](#form-submission)
 
-the FormGroup is applied at the field level not the form level so essentiallly you do not need wml-form-zero to create your custom form<iframe src="https://stackblitz.com/edit/stackblitz-starters-4zvh8e?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+the FormGroup is applied at the field level not the form level so essentiallly you do not need wml-form-zero to create your custom form<iframe src="https://stackblitz.com/edit/stackblitz-starters-4zvh8e?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ### Dynamic Field Update
 
-it replaces so you need the orginal field in case of adding fields<iframe src="https://stackblitz.com/edit/stackblitz-starters-wgiqyj?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+it replaces so you need the orginal field in case of adding fields<iframe src="https://stackblitz.com/edit/stackblitz-starters-wgiqyj?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ### Field Sections
 
-using field sections helps style the layout of the formAll you have to do is to apply display flex to the target form<iframe src="https://stackblitz.com/edit/stackblitz-starters-24xsgt?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+using field sections helps style the layout of the formAll you have to do is to apply display flex to the target form<iframe src="https://stackblitz.com/edit/stackblitz-starters-24xsgt?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ## Reference
 
@@ -137,6 +137,10 @@ updated package to conform with @windmillcode/angular-wml-components-base
 updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.0 [8/15/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.1 [8/20/24]
 
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML File Manager](/Windmillcode-Angular-CDK-Docs/components/wml-file-manager/)[Next

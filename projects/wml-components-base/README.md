@@ -6,7 +6,7 @@ When working on web applications, there is no standard baseline. The Angular WML
 
 ## Installation
 
-Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-s</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-components-base</span></div></div></code> 
+Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-s</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-components-base</span></div></div></code> 
 
 ## Usage
 
@@ -16,19 +16,19 @@ Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#8
 
 **The Building Blocks Of Web Apps**
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-ypqdk7?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-ypqdk7?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ### WMLAnimateUIProperty
 
 **Using Animations**
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-bvamvi?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-bvamvi?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ### WMLCustomComponent
 
 **Custom Components**
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-kmsw3c?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-kmsw3c?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ## References
 
@@ -730,6 +730,18 @@ updated package to conform with @windmillcode/angular-wml-components-base
 updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.0 [8/15/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.1 [8/20/24]
+
+[BREAKING CHANGE] removed WMLButton and WMLButton2 use WMLButtonOneProps for WMLButton and WMLButtonZeroProps for WMLButton2
+
+### v18.2.1 [8/20/24]
+
+updated package to reflect the version  18.2.0 of @angular/core package
+
+### v18.2.1 [8/20/24]
 
 updated package to conform with @windmillcode/angular-wml-components-base[Next
 WML Schematics](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)

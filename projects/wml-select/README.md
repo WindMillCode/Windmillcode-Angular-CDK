@@ -8,7 +8,7 @@ At the core of the Angular WML Select library are its central components: <code 
 
 ## Installation
 
-Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-s</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-select</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-infinite-dropdown</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-field</span></div></div></code> 
+Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-s</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-select</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-infinite-dropdown</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-field</span></div></div></code> 
 
 ## Usage <code dir="auto">WMLSelectZero</code> 
 
@@ -16,17 +16,17 @@ Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#8
 
 ### Getting Started
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-ks8cj3?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-ks8cj3?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ### Customize Prompt ,Options …
 
 **Remember you can replace the components for select and options with your own custom component refer to the infinite-dropdown docs**
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-uzsmo5?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-uzsmo5?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ### Reactive Forms Integration
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-g28swe?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-g28swe?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ## Reference
 
@@ -375,6 +375,10 @@ updated package to conform with @windmillcode/angular-wml-components-base
 updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.0 [8/15/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.1 [8/20/24]
 
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML Popup](/Windmillcode-Angular-CDK-Docs/components/wml-popup/)[Next

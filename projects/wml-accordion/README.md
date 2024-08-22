@@ -8,7 +8,7 @@ WMLAccordionZeroComponent is the container which is populated with WMLAccordionZ
 
 ## Installation
 
-Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-s</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-accordion</span></div></div></code> 
+Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-s</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-accordion</span></div></div></code> 
 
 ## Usage
 
@@ -21,27 +21,27 @@ Below are some usage examples of the WML Accordion Zero library for various deve
 at its very core this is all you need to get started with the accordion
 as default parameters already exist to show you how to use the accordion
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-cs3awz?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-cs3awz?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ### To configure the amount of sections:
 
 items is a 2D array of WMLAccordionZeroItemProps so  if you want x sections you can add WMLAccordionZeroItemProps in whatever Array 2d configuration you like
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-vqbw42?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-vqbw42?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ### Use Custom Components
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-zg7smf?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-zg7smf?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ### Dynamic Update
 
 This example shows how to dynamically load content into the accordion sections:
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-rrxnns?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-rrxnns?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ### Programmatically Open And Close
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-s1dkef?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-s1dkef?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ### Customization
 
@@ -440,6 +440,14 @@ updated package to conform with @windmillcode/angular-wml-components-base
 updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.0 [8/15/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.1 [8/20/24]
+
+updated package to reflect the version  18.2.0 of @angular/core package
+
+### v18.2.1 [8/20/24]
 
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML Schematics](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)[Next

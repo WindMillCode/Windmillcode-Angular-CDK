@@ -8,7 +8,7 @@ Customizable Appearance: Modify the toggle’s background colors, text, and styl
 
 To install the WML Toggle library, use the following command:
 
-Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-d</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-toggle</span></div></div></code> 
+Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-s</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-toggle</span></div></div></code> 
 
 ## Usage
 
@@ -18,7 +18,7 @@ Here are some possible examples of how to use the <code dir="auto">WMLToggleZero
 
 ### Getting Started
 
-you can sure to use onToggle to “listen for changes” how neat<iframe src="https://stackblitz.com/edit/stackblitz-starters-cmgmdk?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>Programtic Toggle<iframe src="https://stackblitz.com/edit/stackblitz-starters-khfnfw?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>Reactive Forms<iframe src="https://stackblitz.com/edit/stackblitz-starters-fk265u?embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+you can sure to use onToggle to “listen for changes” how neat<iframe src="https://stackblitz.com/edit/stackblitz-starters-cmgmdk?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>Programtic Toggle<iframe src="https://stackblitz.com/edit/stackblitz-starters-khfnfw?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>Reactive Forms<iframe src="https://stackblitz.com/edit/stackblitz-starters-fk265u?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ## Reference
 
@@ -343,6 +343,10 @@ updated package to conform with @windmillcode/angular-wml-components-base
 updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.0 [8/15/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.1 [8/20/24]
 
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML Tabs](/Windmillcode-Angular-CDK-Docs/components/wml-tabs/)
