@@ -122,8 +122,9 @@ export class WMLNotifyOneComponent  {
     this.action.emit(notificationBar)
   }
 
-  onClose(notificationBar: WMLNotifyOneBarModel, index: number) {
-    if(!notificationBar.hideOnHover){
+  onClose(notificationBar: WMLNotifyOneBarModel, index: number,actionType:"click"|"hover"|""="") {
+
+    if(!notificationBar.hideOnHover && actionType === "hover"){
       return
     }
     notificationBar.id = index;
