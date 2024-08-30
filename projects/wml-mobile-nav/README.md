@@ -417,6 +417,10 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.2 [8/21/24]
 
-[FIX] fixed bug with mobile nav child elements[Previous
+[FIX] fixed bug with mobile nav child elements
+
+### v18.2.1000 [8/22/24]
+
+updated package to reflect the version  18.2.1 of @angular/core package[Previous
 WML Input](/Windmillcode-Angular-CDK-Docs/components/wml-input/)[Next
 WML Notify](/Windmillcode-Angular-CDK-Docs/components/wml-notify/)

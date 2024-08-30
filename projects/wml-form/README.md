@@ -142,6 +142,10 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.1 [8/20/24]
 
-updated package to conform with @windmillcode/angular-wml-components-base[Previous
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.1000 [8/22/24]
+
+updated package to reflect the version  18.2.1 of @angular/core package[Previous
 WML File Manager](/Windmillcode-Angular-CDK-Docs/components/wml-file-manager/)[Next
 WML Infinite Dropdown](/Windmillcode-Angular-CDK-Docs/components/wml-infinite-dropdown/)
