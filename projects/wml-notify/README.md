@@ -410,6 +410,14 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.1000 [8/22/24]
 
-updated package to reflect the version  18.2.1 of @angular/core package[Previous
+updated package to reflect the version  18.2.1 of @angular/core package
+
+### v18.2.1010 [8/22/24]
+
+[FIX] fixed a bug with the click action for wml-notify
+
+### v18.2.2000 [8/30/24]
+
+updated package to reflect the version  18.2.2 of @angular/core package[Previous
 WML Mobile Nav](/Windmillcode-Angular-CDK-Docs/components/wml-mobile-nav/)[Next
 WML Options](/Windmillcode-Angular-CDK-Docs/components/wml-options/)

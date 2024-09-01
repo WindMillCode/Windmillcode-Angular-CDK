@@ -18,7 +18,7 @@ Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#8
 
 <iframe src="https://stackblitz.com/edit/stackblitz-starters-ypqdk7?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
-### WMLAnimateUIProperty
+### [WMLAnimateUIProperty](#wml-animate-ui-property)
 
 **Using Animations**
 
@@ -747,5 +747,9 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.1000 [8/22/24]
 
-updated package to reflect the version  18.2.1 of @angular/core package[Next
+updated package to reflect the version  18.2.1 of @angular/core package
+
+### v18.2.2000 [8/30/24]
+
+updated package to reflect the version  18.2.2 of @angular/core package[Next
 WML Schematics](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)

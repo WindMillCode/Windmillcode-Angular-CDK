@@ -153,6 +153,10 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.1000 [8/22/24]
 
-updated package to reflect the version  18.2.1 of @angular/cli package[Previous
+updated package to reflect the version  18.2.1 of @angular/cli package
+
+### v18.2.2000 [8/30/24]
+
+updated package to reflect the version  18.2.2 of @angular/cli package[Previous
 WML Components Base](/Windmillcode-Angular-CDK-Docs/intro/wml-components-base/)[Next
 WML Accordion](/Windmillcode-Angular-CDK-Docs/components/wml-accordion/)
