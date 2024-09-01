@@ -105,6 +105,7 @@ export class WMLRoute<V=any,T=any>  extends WMLView<V,T> {
   routerLink?:string
 }
 
+// TODO rename to WMLMotion
 export type WMLAnimateUIPropertyState  ="open" | "opening" | "closing" | "closed"
 export class WMLAnimateUIProperty<V=any,T=any> extends WMLView<V,T> {
   constructor(props: Partial<WMLAnimateUIProperty> = {}) {
@@ -124,10 +125,9 @@ export class WMLAnimateUIProperty<V=any,T=any> extends WMLView<V,T> {
       props.keyFrameName = defaultName;
     }
     let origProps = Object.entries(props)
-      .filter(([key,val]) => {
-        return !key.startsWith('prop');
-      });
-    console.log(this.keyFrameName)
+    .filter(([key,val]) => {
+      return !key.startsWith('prop');
+    });
     Object.assign(this, { ...Object.fromEntries(origProps) });
     this.injectKeyframes()
 
