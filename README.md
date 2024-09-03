@@ -1,3 +1,18 @@
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/sponsors/WindMillCode?o=esc">
+        <img src="https://raw.githubusercontent.com/WindMillCode/global_media/main/github_sponsor_card.png" alt="Sponsor" style="width: 100%;" />
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.gofundme.com/f/strengthen-our-business-to-take-on-bigger-initiati/widget/medium?sharesheet=CAMPAIGN_PAGE&attribution_id=sl:620bea14-af8a-423b-ab6b-f9d82f490976">
+        <img src="https://raw.githubusercontent.com/WindMillCode/global_media/main/gofund_me_support_our_work.png" alt="Donate" style="width: 100%;" />
+      </a>
+    </td>
+  </tr>
+</table>
+
 # Windmillcode Angular CDK
 
 Welcome to the Windmillcode Angular Library, a comprehensive suite of Angular components designed to help you build engaging, robust, and user-friendly web applications. This library, also known as the Windmillcode Angular Component Development Kit (CDK), provides a collection of reusable UI components, each crafted with attention to detail and performance.
