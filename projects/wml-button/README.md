@@ -495,6 +495,14 @@ updated package to reflect the version  18.2.1 of @angular/core package
 
 ### v18.2.2000 [8/30/24]
 
-updated package to reflect the version  18.2.2 of @angular/core package[Previous
+updated package to reflect the version  18.2.2 of @angular/core package
+
+### v18.2.2100 [9/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.2101 [9/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML Accordion](/Windmillcode-Angular-CDK-Docs/components/wml-accordion/)[Next
 WML Chips](/Windmillcode-Angular-CDK-Docs/components/wml-chips/)

@@ -18,7 +18,7 @@ Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#8
 
 <iframe src="https://stackblitz.com/edit/stackblitz-starters-st7qkj?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
-### Full Example
+### [Full Example](#full-example)
 
 <iframe src="https://stackblitz.com/edit/stackblitz-starters-qkcg3q?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
@@ -384,6 +384,14 @@ updated package to reflect the version  18.2.1 of @angular/core package
 
 ### v18.2.2000 [8/30/24]
 
-updated package to reflect the version  18.2.2 of @angular/core package[Previous
+updated package to reflect the version  18.2.2 of @angular/core package
+
+### v18.2.2100 [9/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.2101 [9/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML Select](/Windmillcode-Angular-CDK-Docs/components/wml-select/)[Next
 WML Table (Beta Unstable Unmaintainable)](/Windmillcode-Angular-CDK-Docs/components/wml-table/)

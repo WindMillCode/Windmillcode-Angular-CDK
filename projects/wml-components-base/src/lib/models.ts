@@ -106,9 +106,9 @@ export class WMLRoute<V=any,T=any>  extends WMLView<V,T> {
 }
 
 // TODO rename to WMLMotion
-export type WMLAnimateUIPropertyState  ="open" | "opening" | "closing" | "closed"
-export class WMLAnimateUIProperty<V=any,T=any> extends WMLView<V,T> {
-  constructor(props: Partial<WMLAnimateUIProperty> = {}) {
+export type WMLMotionUIPropertyState  ="open" | "opening" | "closing" | "closed"
+export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
+  constructor(props: Partial<WMLMotionUIProperty> = {}) {
     super()
     Object.assign(this.style, {
       ...this.helperStyles,
@@ -117,11 +117,11 @@ export class WMLAnimateUIProperty<V=any,T=any> extends WMLView<V,T> {
 
     if (!props.keyFrameName) {
       let defaultName;
-      let length = WMLAnimateUIProperty.keyFrameNames.length;
+      let length = WMLMotionUIProperty.keyFrameNames.length;
       do {
         defaultName = `keyframe-${length}`;
         length++;
-      } while (WMLAnimateUIProperty.keyFrameNames.includes(defaultName));
+      } while (WMLMotionUIProperty.keyFrameNames.includes(defaultName));
       props.keyFrameName = defaultName;
     }
     let origProps = Object.entries(props)
@@ -132,9 +132,9 @@ export class WMLAnimateUIProperty<V=any,T=any> extends WMLView<V,T> {
     this.injectKeyframes()
 
 
-    Object.assign(this.style, this.animationState === "closed" ?this.keyFrameStyles["0%"] : this.keyFrameStyles["100%"])
+    Object.assign(this.style, this.motionState === "closed" ?this.keyFrameStyles["0%"] : this.keyFrameStyles["100%"])
     if(this.autoOpen){
-      this.animationState = "opening"
+      this.motionState = "opening"
       this.style.animationName = this.keyFrameName
     }
 
@@ -160,25 +160,25 @@ export class WMLAnimateUIProperty<V=any,T=any> extends WMLView<V,T> {
   set keyFrameName(name: string | undefined) {
     if (name) {
       if (this._keyFrameName) {
-        WMLAnimateUIProperty.keyFrameNames.filter((name)=>name !=this._keyFrameName)
+        WMLMotionUIProperty.keyFrameNames.filter((name)=>name !=this._keyFrameName)
       }
-      WMLAnimateUIProperty.keyFrameNames.push(name);
+      WMLMotionUIProperty.keyFrameNames.push(name);
       this._keyFrameName = name;
     }
   }
-  animationState:WMLAnimateUIPropertyState = "closed"
-  getGroupAnimationState:()=> WMLAnimateUIPropertyState =()=>{
-    return this.animationState
+  motionState:WMLMotionUIPropertyState = "closed"
+  getGroupMotionState:()=> WMLMotionUIPropertyState =()=>{
+    return this.motionState
   }
-  animationEndEvent = new Subject<WMLAnimateUIPropertyState>()
+  motionEndEvent = new Subject<WMLMotionUIPropertyState>()
   readonly animationEnd:(evt?:AnimationEvent)=> void =(evt)=>{
 
-    let state = this.getGroupAnimationState()
+    let state = this.getGroupMotionState()
     let finalStyles ={
       "opening":this.keyFrameStyles["100%"],
       "closing":this.keyFrameStyles["0%"]
     }[state]
-    this.animationState = {
+    this.motionState = {
       "closing":"closed",
       "opening":"open",
     }[state]
@@ -187,15 +187,15 @@ export class WMLAnimateUIProperty<V=any,T=any> extends WMLView<V,T> {
     .forEach(([key,value])=>{
       this.style[key]=value
     })
-    this.animationEndEvent.next(this.animationState)
+    this.motionEndEvent.next(this.motionState)
     this.cdref?.detectChanges()
 
   }
-  openAnimation =()=>this.toggleAnimation("forward")
-  closeAnimation = ()=>this.toggleAnimation("reverse")
-  private toggleAnimation=(val:'forward'|'reverse')=>{
+  openMotion =()=>this.toggleMotion("forward")
+  closeMotion = ()=>this.toggleMotion("reverse")
+  private toggleMotion=(val:'forward'|'reverse')=>{
 
-    if(!["closed","open"].includes(this.animationState)){
+    if(!["closed","open"].includes(this.motionState)){
       return
     }
     this.style.animationName = ""
@@ -204,14 +204,14 @@ export class WMLAnimateUIProperty<V=any,T=any> extends WMLView<V,T> {
     this.style.animationDirection = val
     this.cdref?.detectChanges()
     // @ts-ignore
-    this.animationState = {
+    this.motionState = {
       "forward":"opening",
       "reverse":"closing"
     }[val]
     let finalStyles ={
       "opening":this.keyFrameStyles["0%"],
       "closing":this.keyFrameStyles["100%"]
-    }[this.animationState]
+    }[this.motionState]
     Object.entries(finalStyles??{})
     .forEach(([key,value])=>{
       this.style[key]=value
@@ -228,12 +228,12 @@ export class WMLAnimateUIProperty<V=any,T=any> extends WMLView<V,T> {
   }
   injectKeyframes=()=> {
     let name  = this.keyFrameName as string
-    let timesKeyFrameOccurs = WMLAnimateUIProperty.keyFrameNames.filter((keyFrame) => name === keyFrame).length
+    let timesKeyFrameOccurs = WMLMotionUIProperty.keyFrameNames.filter((keyFrame) => name === keyFrame).length
     if (timesKeyFrameOccurs >= 2) {
 
       if(timesKeyFrameOccurs ===2){
-        console.warn(`The keyFrameName '${name}' must be unique among all instances of WMLAnimateUIProperty. The keyFrameStyles of this class won't be processed.`);
-        WMLAnimateUIProperty.keyFrameNames.push(name);
+        console.warn(`The keyFrameName '${name}' must be unique among all instances of WMLMotionUIProperty. The keyFrameStyles of this class won't be processed.`);
+        WMLMotionUIProperty.keyFrameNames.push(name);
       }
 
       return;

@@ -22,7 +22,9 @@ Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#8
 
 **Using Animations**
 
-<iframe src="https://stackblitz.com/edit/stackblitz-starters-bvamvi?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-bvamvi?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>**[Decent Example](#wml-animate-ui-property-decent-example)**
+
+if you want a different animation for you animation states simply use a different keyframe mabye suffixing the keyframes with open and close for organization<iframe src="https://stackblitz.com/edit/stackblitz-starters-xkprmk?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ### WMLCustomComponent
 
@@ -54,13 +56,13 @@ Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#8
 
 ### WMLAnimateUIProperty
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">beginOpenStyles</code></td><td><code dir="auto">WMLUIProperty[&#34;style&#34;]</code></td><td>Styles for the beginning of the open animation.</td></tr><tr><td><code dir="auto">beginCloseStyles</code></td><td><code dir="auto">WMLUIProperty[&#34;style&#34;]</code></td><td>Styles for the beginning of the close animation.</td></tr><tr><td><code dir="auto">endOpenStyles</code></td><td><code dir="auto">WMLUIProperty[&#34;style&#34;]</code></td><td>Styles for the end of the open animation.</td></tr><tr><td><code dir="auto">endCloseStyles</code></td><td><code dir="auto">WMLUIProperty[&#34;style&#34;]</code></td><td>Styles for the end of the close animation.</td></tr><tr><td><code dir="auto">helperStyles</code></td><td><code dir="auto">WMLUIProperty[&#34;style&#34;]</code></td><td>Helper styles to prevent animation jank. Can be overwritten with <code dir="auto">{}</code> if it interferes with your work.</td></tr><tr><td><code dir="auto">animationClass</code></td><td><code dir="auto">string</code></td><td>CSS class specifically for animations.</td></tr><tr><td><code dir="auto">animationState</code></td><td><code dir="auto">WMLAnimateUIPropertyState</code></td><td>Current state of the animation.</td></tr><tr><td><code dir="auto">animationEndEvent</code></td><td><code dir="auto">Subject&lt;WMLAnimateUIPropertyState&gt;</code></td><td>Triggers when the animation is finally opened or closed.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">helperStyles</code></td><td><code dir="auto">WMLUIProperty[&#34;style&#34;]</code></td><td>Helper styles to prevent animation jank. Can be overwritten with <code dir="auto">{}</code> if it interferes with your work.</td></tr><tr><td><code dir="auto">keyFrameStyles</code></td><td><code dir="auto">{[k: string]: WMLUIProperty[&#34;style&#34;]}</code></td><td>Object containing keyframe styles for the animation. Keys represent the percentage of the animation (e.g., <code dir="auto">&#34;0%&#34;</code>, <code dir="auto">&#34;100%&#34;</code>).</td></tr><tr><td><code dir="auto">keyFrameName</code></td><td>`string</td><td>undefined`</td></tr><tr><td><code dir="auto">animationState</code></td><td><code dir="auto">WMLAnimateUIPropertyState</code></td><td>Current state of the animation.</td></tr><tr><td><code dir="auto">animationEndEvent</code></td><td><code dir="auto">Subject&lt;WMLAnimateUIPropertyState&gt;</code></td><td>Triggers when the animation is finally opened or closed.</td></tr><tr><td><code dir="auto">autoOpen</code></td><td><code dir="auto">boolean</code></td><td>Automatically start the open animation when the component is initialized. Defaults to <code dir="auto">false</code>.</td></tr></tbody></table>
 
 
 
 ### Methods
 
-<table><thead><tr><th>Method</th><th>Signature</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">getGroupAnimationState</code></td><td><code dir="auto">() =&gt; WMLAnimateUIPropertyState</code></td><td>Returns the current state of the animation.</td></tr><tr><td><code dir="auto">animationEnd</code></td><td><code dir="auto">(evt?: Event) =&gt; void</code></td><td>Handles the animation end event.</td></tr><tr><td><code dir="auto">openAnimation</code></td><td><code dir="auto">() =&gt; void</code></td><td>Triggers the open animation.</td></tr><tr><td><code dir="auto">closeAnimation</code></td><td><code dir="auto">() =&gt; void</code></td><td>Triggers the close animation.</td></tr><tr><td><code dir="auto">toggleAnimation</code></td><td><code dir="auto">(val: &#39;forward&#39; | &#39;reverse&#39;) =&gt; void</code></td><td>Toggles the animation based on the direction.</td></tr></tbody></table>
+<table><thead><tr><th>Method</th><th>Signature</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">getGroupAnimationState</code></td><td><code dir="auto">() =&gt; WMLAnimateUIPropertyState</code></td><td>Returns the current state of the animation.</td></tr><tr><td><code dir="auto">animationEnd</code></td><td><code dir="auto">(evt?: AnimationEvent) =&gt; void</code></td><td>Handles the animation end event. Updates the animation state and applies final styles.</td></tr><tr><td><code dir="auto">openAnimation</code></td><td><code dir="auto">() =&gt; void</code></td><td>Triggers the open animation.</td></tr><tr><td><code dir="auto">closeAnimation</code></td><td><code dir="auto">() =&gt; void</code></td><td>Triggers the close animation.</td></tr><tr><td><code dir="auto">toggleAnimation</code></td><td><code dir="auto">(val: &#39;forward&#39; | &#39;reverse&#39;) =&gt; void</code></td><td>Toggles the animation based on the direction (<code dir="auto">forward</code> for opening, <code dir="auto">reverse</code> for closing).</td></tr><tr><td><code dir="auto">injectKeyframes</code></td><td><code dir="auto">() =&gt; void</code></td><td>Generates and injects keyframes into the document based on <code dir="auto">keyFrameStyles</code> and <code dir="auto">keyFrameName</code>.</td></tr></tbody></table>
 
 
 
@@ -751,5 +753,25 @@ updated package to reflect the version  18.2.1 of @angular/core package
 
 ### v18.2.2000 [8/30/24]
 
-updated package to reflect the version  18.2.2 of @angular/core package[Next
+updated package to reflect the version  18.2.2 of @angular/core package
+
+### v18.2.2100 [9/1/2024]
+
+[BREAKING CHANGE] <code dir="auto">projects/wml-components-base/src/lib/models.ts</code> WMLAnimateUIProperty logic has changed to become more compact. Removed animationClass,beginOpenStyles beginCloseStyles endOpenStyles endCloseStyles animationClass , now using <code dir="auto">keyFrameName</code> and <code dir="auto">keyFrameStyles</code> instead. Your animations might break if you were relying on the class name. Update your code to use <code dir="auto">keyFrameName</code> .
+
+[UPDATE] <code dir="auto">projects/wml-components-base/src/lib/models.ts</code> Added <code dir="auto">keyFrameName</code> to name your keyframe. Every keyframe name must be unique. If you don’t follow this rule, you’ll get an error.
+
+[UPDATE] <code dir="auto">projects/wml-components-base/src/lib/models.ts</code> WMLAnimateUIProperty has <code dir="auto">injectKeyframes</code> method now generates and inserts keyframes based on <code dir="auto">keyFrameName</code> .
+
+
+
+### v18.2.2101 [9/1/2024]
+
+[UPDATE] IF  WMLAnimateUIProperty.keyFrameName is left out an internal one is generated
+
+
+
+### v18.2.2101 [9/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base[Next
 WML Schematics](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)
