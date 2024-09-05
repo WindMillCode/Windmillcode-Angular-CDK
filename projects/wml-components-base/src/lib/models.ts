@@ -131,8 +131,12 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
     Object.assign(this, { ...Object.fromEntries(origProps) });
     this.injectKeyframes()
 
+    if (this.motionState === "closed") {
+      Object.assign(this.style, this.keyFrameStyles["0%"]);
+    } else {
+      Object.assign(this.style, this.keyFrameStyles["100%"]);
+    }
 
-    Object.assign(this.style, this.motionState === "closed" ?this.keyFrameStyles["0%"] : this.keyFrameStyles["100%"])
     if(this.autoOpen){
       this.motionState = "opening"
       this.style.animationName = this.keyFrameName
