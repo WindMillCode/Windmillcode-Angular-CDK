@@ -460,6 +460,10 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.2101 [9/1/24]
 
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.2200 [9/3/24]
+
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML Infinite Dropdown](/Windmillcode-Angular-CDK-Docs/components/wml-infinite-dropdown/)[Next
 WML Mobile Nav](/Windmillcode-Angular-CDK-Docs/components/wml-mobile-nav/)

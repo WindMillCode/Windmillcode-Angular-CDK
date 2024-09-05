@@ -1,6 +1,6 @@
 # WML Schematics
 
-The Angular WML Schematics library serves as a foundational toolkit for Angular web application development, establishing a solid baseline from which developers can construct and expand their projects. Central to this library is the concept of WMLUIProperty, a fundamental element that encapsulates the essence of web application components, down to the finest detail. This library not only streamlines the development process by providing pre-defined subclasses like WMLRoute for routing, WMLView for dynamic components, and WMLAnimateUIProperty for CSS animations but also ensures consistency and scalability across your application. Dive into the documentation to explore how these building blocks can be orchestrated to create robust, maintainable, and dynamic web applications.
+The Angular WML Schematics library serves as a foundational toolkit for Angular web application development, establishing a solid baseline from which developers can construct and expand their projects. Central to this library is the concept of WMLUIProperty, a fundamental element that encapsulates the essence of web application components, down to the finest detail. This library not only streamlines the development process by providing pre-defined subclasses like WMLRoute for routing, WMLView for dynamic components, and WMLMotionUIProperty for CSS animations and transitions but also ensures consistency and scalability across your application. Dive into the documentation to explore how these building blocks can be orchestrated to create robust, maintainable, and dynamic web applications.
 
 
 
@@ -164,6 +164,10 @@ updated package to reflect the version  18.2.2 of @angular/cli package
 updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.2101 [9/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.2200 [9/3/24]
 
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML Components Base](/Windmillcode-Angular-CDK-Docs/intro/wml-components-base/)[Next

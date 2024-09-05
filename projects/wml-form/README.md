@@ -26,7 +26,7 @@ Terminal window<code><div class="ec-line"><div class="code"><span style="--0:#82
 
 the FormGroup is applied at the field level not the form level so essentiallly you do not need wml-form-zero to create your custom formto see how this complex form works if you type in abc in the name field then the email field is required however if the name field is not abc then you can empty the email field and submit the form. WMLForm is very impervious<iframe src="https://stackblitz.com/edit/stackblitz-starters-4zvh8e?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
-### Dynamic Field Update
+### [Dynamic Field Update](#dynamic-field-update)
 
 it replaces so you need the orginal field in case of adding fields<iframe src="https://stackblitz.com/edit/stackblitz-starters-wgiqyj?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
@@ -157,6 +157,10 @@ updated package to reflect the version  18.2.2 of @angular/core package
 updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.2101 [9/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.2200 [9/3/24]
 
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML File Manager](/Windmillcode-Angular-CDK-Docs/components/wml-file-manager/)[Next

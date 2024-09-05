@@ -1,6 +1,6 @@
 # WML Components Base
 
-When working on web applications, there is no standard baseline. The Angular WML Components Base Library establishes a foundation for your application, ensuring consistency and scalability. The core of this library is the <code dir="auto">WMLUIProperty</code> , which represents the basic building block of every element in a web application. This property encapsulates all the essential features, and there are several subclasses like <code dir="auto">WMLRoute</code> for routes, <code dir="auto">WMLView</code> to leverage change detection, <code dir="auto">WMLImage</code> for images  and <code dir="auto">WMLAnimateUIProperty</code> for CSS animations. Each class has properties and methods to optimize your work in those features of  your application. You can use this package and leave out the rest of the library and you will get very far building very robust and scalable applications
+When working on web applications, there is no standard baseline. The Angular WML Components Base Library establishes a foundation for your application, ensuring consistency and scalability. The core of this library is the <code dir="auto">WMLUIProperty</code> , which represents the basic building block of every element in a web application. This property encapsulates all the essential features, and there are several subclasses like <code dir="auto">WMLRoute</code> for routes, <code dir="auto">WMLView</code> to leverage change detection, <code dir="auto">WMLImage</code> for images  and <code dir="auto">WMLMotionUIProperty</code> for CSS animations and transitions. Each class has properties and methods to optimize your work in those features of  your application. You can use this package and leave out the rest of the library and you will get very far building very robust and scalable applications
 
 
 
@@ -12,15 +12,15 @@ Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#8
 
 
 
-### WMLUIProperty
+### [WMLUIProperty](#wml-ui-property)
 
 **The Building Blocks Of Web Apps**
 
 <iframe src="https://stackblitz.com/edit/stackblitz-starters-ypqdk7?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
-### [WMLAnimateUIProperty](#wml-animate-ui-property)
+### [WMLMotionUIProperty](#wml-motion-ui-property)
 
-**Using Animations**
+**Using CSS Animations**
 
 <iframe src="https://stackblitz.com/edit/stackblitz-starters-bvamvi?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>**[Decent Example](#wml-animate-ui-property-decent-example)**
 
@@ -54,15 +54,15 @@ if you want a different animation for you animation states simply use a differen
 
 
 
-### WMLAnimateUIProperty
+### WMLMotionUIProperty
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">helperStyles</code></td><td><code dir="auto">WMLUIProperty[&#34;style&#34;]</code></td><td>Helper styles to prevent animation jank. Can be overwritten with <code dir="auto">{}</code> if it interferes with your work.</td></tr><tr><td><code dir="auto">keyFrameStyles</code></td><td><code dir="auto">{[k: string]: WMLUIProperty[&#34;style&#34;]}</code></td><td>Object containing keyframe styles for the animation. Keys represent the percentage of the animation (e.g., <code dir="auto">&#34;0%&#34;</code>, <code dir="auto">&#34;100%&#34;</code>).</td></tr><tr><td><code dir="auto">keyFrameName</code></td><td>`string</td><td>undefined`</td></tr><tr><td><code dir="auto">animationState</code></td><td><code dir="auto">WMLAnimateUIPropertyState</code></td><td>Current state of the animation.</td></tr><tr><td><code dir="auto">animationEndEvent</code></td><td><code dir="auto">Subject&lt;WMLAnimateUIPropertyState&gt;</code></td><td>Triggers when the animation is finally opened or closed.</td></tr><tr><td><code dir="auto">autoOpen</code></td><td><code dir="auto">boolean</code></td><td>Automatically start the open animation when the component is initialized. Defaults to <code dir="auto">false</code>.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">helperStyles</code></td><td><code dir="auto">WMLUIProperty[&#34;style&#34;]</code></td><td>Helper styles to prevent animation jank. Can be overwritten with <code dir="auto">{}</code> if it interferes with your work.</td></tr><tr><td><code dir="auto">keyFrameStyles</code></td><td><code dir="auto">{[k: string]: WMLUIProperty[&#34;style&#34;]}</code></td><td>Object containing keyframe styles for the motion. Keys represent the percentage of the motion (e.g., <code dir="auto">&#34;0%&#34;</code>, <code dir="auto">&#34;100%&#34;</code>).</td></tr><tr><td><code dir="auto">keyFrameName</code></td><td>`string</td><td>undefined`</td></tr><tr><td><code dir="auto">motionState</code></td><td><code dir="auto">WMLMotionUIPropertyState</code></td><td>Current state of the motion.</td></tr><tr><td><code dir="auto">motionEndEvent</code></td><td><code dir="auto">Subject&lt;WMLMotionUIPropertyState&gt;</code></td><td>Triggers when the motion is finally opened or closed.</td></tr><tr><td><code dir="auto">autoOpen</code></td><td><code dir="auto">boolean</code></td><td>Automatically start the open motion when the component is initialized. Defaults to <code dir="auto">false</code>.</td></tr></tbody></table>
 
 
 
 ### Methods
 
-<table><thead><tr><th>Method</th><th>Signature</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">getGroupAnimationState</code></td><td><code dir="auto">() =&gt; WMLAnimateUIPropertyState</code></td><td>Returns the current state of the animation.</td></tr><tr><td><code dir="auto">animationEnd</code></td><td><code dir="auto">(evt?: AnimationEvent) =&gt; void</code></td><td>Handles the animation end event. Updates the animation state and applies final styles.</td></tr><tr><td><code dir="auto">openAnimation</code></td><td><code dir="auto">() =&gt; void</code></td><td>Triggers the open animation.</td></tr><tr><td><code dir="auto">closeAnimation</code></td><td><code dir="auto">() =&gt; void</code></td><td>Triggers the close animation.</td></tr><tr><td><code dir="auto">toggleAnimation</code></td><td><code dir="auto">(val: &#39;forward&#39; | &#39;reverse&#39;) =&gt; void</code></td><td>Toggles the animation based on the direction (<code dir="auto">forward</code> for opening, <code dir="auto">reverse</code> for closing).</td></tr><tr><td><code dir="auto">injectKeyframes</code></td><td><code dir="auto">() =&gt; void</code></td><td>Generates and injects keyframes into the document based on <code dir="auto">keyFrameStyles</code> and <code dir="auto">keyFrameName</code>.</td></tr></tbody></table>
+<table><thead><tr><th>Method</th><th>Signature</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">getGroupMotionState</code></td><td><code dir="auto">() =&gt; WMLMotionUIPropertyState</code></td><td>Returns the current state of the motion.</td></tr><tr><td><code dir="auto">animationEnd</code></td><td><code dir="auto">(evt?: AnimationEvent) =&gt; void</code></td><td>Handles the animation end event. Updates the motion state and applies final styles.</td></tr><tr><td><code dir="auto">openMotion</code></td><td><code dir="auto">() =&gt; void</code></td><td>Triggers the open motion.</td></tr><tr><td><code dir="auto">closeMotion</code></td><td><code dir="auto">() =&gt; void</code></td><td>Triggers the close motion.</td></tr><tr><td><code dir="auto">toggleMotion</code></td><td><code dir="auto">(val: &#39;forward&#39; | &#39;reverse&#39;) =&gt; void</code></td><td>Toggles the motion based on the direction (<code dir="auto">forward</code> for opening, <code dir="auto">reverse</code> for closing).</td></tr><tr><td><code dir="auto">injectKeyframes</code></td><td><code dir="auto">() =&gt; void</code></td><td>Generates and injects keyframes into the document based on <code dir="auto">keyFrameStyles</code> and <code dir="auto">keyFrameName</code>.</td></tr></tbody></table>
 
 
 
@@ -771,7 +771,11 @@ updated package to reflect the version  18.2.2 of @angular/core package
 
 
 
-### v18.2.2101 [9/1/24]
+### v18.2.2200 [9/3/24]
+
+[BREAKING CHANGE] WMLAnimateUIProperty is now WMLMotionUIProperty and anywhere you see animate on the class (careful not to confuse with css) change to motion
+
+### v18.2.2200 [9/3/24]
 
 updated package to conform with @windmillcode/angular-wml-components-base[Next
 WML Schematics](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)

@@ -396,6 +396,10 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.2101 [9/1/24]
 
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.2200 [9/3/24]
+
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML Popup](/Windmillcode-Angular-CDK-Docs/components/wml-popup/)[Next
 WML Slicebox](/Windmillcode-Angular-CDK-Docs/components/wml-slicebox/)

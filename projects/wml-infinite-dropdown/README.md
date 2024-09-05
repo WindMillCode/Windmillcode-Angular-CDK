@@ -28,7 +28,7 @@ To integrate the <code dir="auto">wml-infinite-dropdown</code> component into yo
 
 <iframe src="https://stackblitz.com/edit/stackblitz-starters-fbsnop?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
-### Adding Options
+### [Adding Options](#adding-options)
 
 open the preview in a browser and view the hierachy for the true infinite dropdown<iframe src="https://stackblitz.com/edit/stackblitz-starters-cpmz6f?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
@@ -506,6 +506,10 @@ updated package to reflect the version  18.2.2 of @angular/core package
 updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.2101 [9/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.2200 [9/3/24]
 
 updated package to conform with @windmillcode/angular-wml-components-base[Previous
 WML Form](/Windmillcode-Angular-CDK-Docs/components/wml-form/)[Next
