@@ -5,7 +5,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Inp
 import { ReplaySubject, Subject, takeUntil, tap } from 'rxjs';
 
 // wml components
-import { generateClassPrefix, WMLUIProperty, WMLView } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix, WMLUIProperty, WMLView } from '@windmillcode/wml-components-base';
 import { WMLFieldZeroProps } from '@windmillcode/angular-wml-field';
 
 @Component({

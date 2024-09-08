@@ -14,7 +14,7 @@ import { WMLFieldZeroProps } from '../wml-field-zero/wml-field-zero.component';
 
 // reactive-forms
 import { AbstractControl } from '@angular/forms';
-import { generateClassPrefix, WMLWrapper } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix, WMLWrapper } from '@windmillcode/wml-components-base';
 
 @Component({
   selector: 'wml-label-zero',

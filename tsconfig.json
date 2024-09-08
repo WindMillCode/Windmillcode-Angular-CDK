@@ -40,8 +40,11 @@
       "@windmillcode/angular-wml-chips": [
         "dist/wml-chips"
       ],
-      "@windmillcode/angular-wml-components-base": [
+      "@windmillcode/wml-components-base": [
         "dist/wml-components-base"
+      ],
+      "@windmillcode/angular-wml-components-base": [
+        "dist/angular-wml-components-base"
       ],
       "@windmillcode/angular-wml-field": [
         "dist/wml-field"

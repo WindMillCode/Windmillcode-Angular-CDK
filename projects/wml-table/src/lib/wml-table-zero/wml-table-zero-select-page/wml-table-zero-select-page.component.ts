@@ -1,7 +1,7 @@
 // angular
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  Input   } from '@angular/core';
 import { AbstractControl, FormArray, FormGroup } from '@angular/forms';
-import { generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix } from '@windmillcode/wml-components-base';
 import { WMLFieldZeroProps } from '@windmillcode/angular-wml-field';
 import {  WMLFormFieldsUpdateSubjProps, WMLFormZeroProps } from '@windmillcode/angular-wml-form';
 import { WMLOptionZeroItemProps, WMLOptionsZeroProps, WMLOptionsZeroComponent } from '@windmillcode/angular-wml-options';

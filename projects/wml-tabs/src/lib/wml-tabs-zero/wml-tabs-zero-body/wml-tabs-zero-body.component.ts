@@ -9,8 +9,9 @@ import { Subject } from 'rxjs';
 
 // misc
 
-import { addCustomComponent, generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 import { WMLTabsZero } from '../models';
+import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 
 @Component({

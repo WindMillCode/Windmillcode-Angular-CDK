@@ -1,7 +1,8 @@
 import { FormArray, FormControl } from "@angular/forms"
-import { updateClassString, WMLCustomComponent, WMLView } from "@windmillcode/angular-wml-components-base"
+import { updateClassString, WMLView } from "@windmillcode/wml-components-base"
 import { WMLFieldZeroProps } from "@windmillcode/angular-wml-field"
 import { WMLOptionsZeroItemExampleComponent } from "./wml-options-zero-item-example/wml-options-zero-item-example.component"
+import { WMLAngularCustomComponent } from "@windmillcode/angular-wml-components-base"
 
 export class WMLOptionsZeroProps {
   constructor(props:Partial<WMLOptionsZeroProps>={}){
@@ -88,7 +89,7 @@ export class WMLOptionZeroItemProps<V=any,T=any> extends WMLView<V,T> {
   */
   wmlOptions!:WMLOptionsZeroProps
   // TODO have it enforced that props must be instance of WMLOptionsZeroItemExampleProps
-  customCpnt= new WMLCustomComponent<any,WMLOptionsZeroItemExampleProps>({
+  customCpnt= new WMLAngularCustomComponent<any,WMLOptionsZeroItemExampleProps>({
     cpnt:WMLOptionsZeroItemExampleComponent,
     props:new WMLOptionsZeroItemExampleProps()
   })

@@ -5,6 +5,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,   I
 import { Subject } from 'rxjs';
 import { addCustomComponent  } from '@windmillcode/angular-wml-components-base';
 import { WMLInfiniteDropdownZeroOption } from '../models';
+import { generateClassPrefix } from '@windmillcode/wml-components-base';
 // misc
 
 @Component({
@@ -23,12 +24,8 @@ export class WMLInfiniteDropdownZeroItemComponent  {
 
   ) { }
 
-  generateClassPrefix(prefix:string) {
-    return (val: string) => {
-      return prefix + val
-    }
-  }
-  classPrefix = this.generateClassPrefix('WMLInfiniteDropdownItem')
+
+  classPrefix = generateClassPrefix('WMLInfiniteDropdownItem')
   @Input('props') props: WMLInfiniteDropdownZeroOption = new WMLInfiniteDropdownZeroOption()
   @HostBinding('class') myClass: string = this.classPrefix(`View`);
   @ViewChild("customItem", {read:ViewContainerRef,static:true}) customItem!:ViewContainerRef;

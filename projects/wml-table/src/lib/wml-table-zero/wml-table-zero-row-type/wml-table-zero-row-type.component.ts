@@ -8,7 +8,7 @@ import {  WMLFormFieldsUpdateSubjProps, WMLFormZeroProps } from '@windmillcode/a
 // rxjs
 import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
-import { generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 // misc
 

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component,  HostBinding,  Input, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
-import { addCustomComponent, generateClassPrefix, WMLCustomComponent, WMLDeepPartial, WMLWrapper } from '@windmillcode/angular-wml-components-base';
-
+import {  generateClassPrefix, WMLCustomComponent, WMLDeepPartial, WMLWrapper } from '@windmillcode/wml-components-base';
+import {addCustomComponent} from '@windmillcode/angular-wml-components-base';
 
 // rxjs
 import { Subject } from 'rxjs';

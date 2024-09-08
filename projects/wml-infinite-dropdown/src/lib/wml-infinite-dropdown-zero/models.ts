@@ -1,4 +1,4 @@
-import { WMLUIProperty, WMLCustomComponent,  WMLRoute } from "@windmillcode/angular-wml-components-base";
+import { WMLUIProperty, WMLCustomComponent,  WMLRoute } from "@windmillcode/wml-components-base";
 import { Subject } from "rxjs";
 import { WMLInfiniteDropdownZeroItemExampleComponent } from "./wml-infinite-dropdown-zero-item-example/wml-infinite-dropdown-zero-item-example.component";
 

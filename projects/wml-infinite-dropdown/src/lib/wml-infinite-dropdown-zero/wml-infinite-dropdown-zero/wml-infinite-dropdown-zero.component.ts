@@ -1,6 +1,6 @@
 // angular
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,   Input, ViewChild, ViewContainerRef, ViewEncapsulation   } from '@angular/core';
-import {  generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import {  generateClassPrefix } from '@windmillcode/wml-components-base';
 
 // rxjs
 import { Subject } from 'rxjs';

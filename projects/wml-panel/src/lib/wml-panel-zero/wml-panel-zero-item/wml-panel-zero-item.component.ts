@@ -1,11 +1,12 @@
 // angular
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  Input, ViewChild, ViewContainerRef   } from '@angular/core';
-import { updateClassString,WMLCustomComponent, addCustomComponent, generateClassPrefix  } from '@windmillcode/angular-wml-components-base';
+import { updateClassString,WMLCustomComponent, generateClassPrefix  } from '@windmillcode/wml-components-base';
 
 // rxjs
 import { BehaviorSubject, Subject } from 'rxjs';
 import { filter, takeUntil,tap } from 'rxjs/operators';
 import { WMLSamplePanelItemComponent, WMLSamplePanelItemProps } from '../wml-panel-zero-item-example/wml-panel-zero-item-example.component';
+import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 
 // misc
 @Component({

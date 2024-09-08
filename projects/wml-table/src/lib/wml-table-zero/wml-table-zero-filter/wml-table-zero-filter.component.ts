@@ -2,7 +2,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  Input   } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { WMLButtonZeroProps, WMLButtonPropsTypeEnum } from '@windmillcode/angular-wml-button';
-import { generateClassPrefix, WMLAPIPaginationRequestModel, WMLUIProperty } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix, WMLAPIPaginationRequestModel, WMLUIProperty } from '@windmillcode/wml-components-base';
 import { WMLFieldZeroProps } from '@windmillcode/angular-wml-field';
 import { WMLFormZeroProps, WMLFormFieldsUpdateSubjProps } from '@windmillcode/angular-wml-form';
 

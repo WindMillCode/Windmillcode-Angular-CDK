@@ -8,7 +8,7 @@ import { WMLAccordionZeroItemComponent, WMLAccordionZeroItemProps } from './wml-
 import { resetImports } from '../test-utils/mock-imports';
 import { resetProviders } from '../test-utils/mock-providers';
 import { wmlTestUtils } from '../test-utils/test-utils';
-import { WMLCustomComponent, WMLUIProperty } from '@windmillcode/angular-wml-components-base';
+import { WMLCustomComponent, WMLUIProperty } from '@windmillcode/wml-components-base';
 
 
 

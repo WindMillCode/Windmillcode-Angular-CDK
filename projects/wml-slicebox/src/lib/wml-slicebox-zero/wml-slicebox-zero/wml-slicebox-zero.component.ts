@@ -3,7 +3,7 @@ import {
   ChangeDetectionStrategy,ChangeDetectorRef,Component,ElementRef,HostBinding,Input,Renderer2,ViewChild,
 } from '@angular/core';
 import { WMLButtonOneProps } from '@windmillcode/angular-wml-button';
-import {generateClassPrefix, selectRandomOptionFromArray,WMLImage,WMLUIProperty,} from '@windmillcode/angular-wml-components-base';
+import {generateClassPrefix, selectRandomOptionFromArray,WMLImage,WMLUIProperty,} from '@windmillcode/wml-components-base';
 
 // rxjs
 import {combineLatest,debounceTime,filter,fromEvent,of,Subject,takeUntil,tap,timer,} from 'rxjs';

@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular
 
 // reactive forms
 import { AbstractControl } from '@angular/forms';
-import { generateClassPrefix, WMLUIProperty } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix, WMLUIProperty } from '@windmillcode/wml-components-base';
 import { WMLFieldZeroProps } from '@windmillcode/angular-wml-field';
 import { Subject } from 'rxjs';
 

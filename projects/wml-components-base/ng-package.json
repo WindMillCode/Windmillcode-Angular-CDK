@@ -10,8 +10,5 @@
     "spacing.scss",
     "common.scss",
     "color_pallete.scss"
-  ],
-  "allowedNonPeerDependencies": [
-    "@ngx-translate/core"
   ]
 }

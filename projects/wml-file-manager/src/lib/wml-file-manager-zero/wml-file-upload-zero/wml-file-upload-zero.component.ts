@@ -1,7 +1,7 @@
 // angular
 import { ChangeDetectorRef, Component, ElementRef, HostBinding, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import { AbstractControl, FormArray, FormControl } from '@angular/forms';
-import { generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix } from '@windmillcode/wml-components-base';
 import { WMLFieldZeroProps } from '@windmillcode/angular-wml-field';
 
 // rxjs

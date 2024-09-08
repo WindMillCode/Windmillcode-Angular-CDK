@@ -1,6 +1,4 @@
 
-// i18n
-
 
 import { WMLTestUtils } from "@windmillcode/angular-wml-components-base";
 

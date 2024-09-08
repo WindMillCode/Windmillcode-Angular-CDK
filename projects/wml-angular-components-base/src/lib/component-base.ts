@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Directive, HostBinding, Input } from "@angular/core"
-import { generateClassPrefix, generateIdPrefix } from "./functions";
+import { generateClassPrefix, generateIdPrefix } from "@windmillcode/wml-components-base";
 import { ReplaySubject, Subject, takeUntil, tap } from "rxjs"
 
 

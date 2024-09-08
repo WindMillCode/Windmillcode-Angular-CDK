@@ -1,5 +1,52 @@
-import { Type, VERSION, ViewContainerRef } from "@angular/core";
-import { WMLUIProperty } from "./models";
+import { WMLUIProperty,WMLUIFramework } from "./models";
+
+
+export function detectFramework(): WMLUIFramework {
+  let myWindow: any = window ?? {};
+  let detectedFramework: WMLUIFramework = 'VanillaJS';
+
+  const isReact = !!document.querySelector('[data-reactroot], [data-reactid]');
+  const isAngular = !!myWindow.ng || !!document.querySelector('[ng-version]');
+  const isVue = !!myWindow.Vue;
+  const isSvelte = !!document.querySelector('[class*="svelte-"]');
+  const isEmber = !!myWindow.Ember || !!document.querySelector('[id*="ember"]');
+  const isBackbone = !!myWindow.Backbone;
+  const isPreact = !!myWindow.preact || !!document.querySelector('[data-preactroot]');
+  const isNext = !!document.querySelector('#__next') || !!myWindow.__NEXT_DATA__;
+  const isNuxt = !!myWindow.__NUXT__;
+  const isGatsby = !!myWindow.___gatsby;
+  const isRemix = typeof myWindow.__remixManifest !== 'undefined';
+  const isNest = !!document.querySelector('[ng-version]') && !!myWindow.NestFactory;
+  const isLit = !!myWindow.litHtml || !!document.querySelector('template[shadowroot]');
+  const isAlpine = !!myWindow.Alpine;
+  const isMithril = !!myWindow.m || !!document.querySelector('[data-mithril]');
+  const isAurelia = !!myWindow.Aurelia;
+  const isRiot = !!myWindow.riot;
+  const isInferno = !!myWindow.Inferno;
+  const isStencil = !!document.querySelector('script[data-stencil-namespace]');
+
+  if (isReact) detectedFramework = 'React';
+  else if (isAngular) detectedFramework = 'Angular';
+  else if (isVue) detectedFramework = 'Vue.js';
+  else if (isSvelte) detectedFramework = 'Svelte';
+  else if (isEmber) detectedFramework = 'Ember.js';
+  else if (isBackbone) detectedFramework = 'Backbone.js';
+  else if (isPreact) detectedFramework = 'Preact';
+  else if (isNext) detectedFramework = 'Next.js';
+  else if (isNuxt) detectedFramework = 'Nuxt.js';
+  else if (isGatsby) detectedFramework = 'Gatsby';
+  else if (isRemix) detectedFramework = 'Remix';
+  else if (isNest) detectedFramework = 'NestJS';
+  else if (isLit) detectedFramework = 'Lit';
+  else if (isAlpine) detectedFramework = 'Alpine.js';
+  else if (isMithril) detectedFramework = 'Mithril.js';
+  else if (isAurelia) detectedFramework = 'Aurelia';
+  else if (isRiot) detectedFramework = 'Riot.js';
+  else if (isInferno) detectedFramework = 'Inferno';
+  else if (isStencil) detectedFramework = 'Stencil';
+
+  return detectedFramework;
+}
 
 
 export function generateUUID(prefix="") {
@@ -27,22 +74,7 @@ export let generateIdPrefix= (prefix:string="")=> {
     return prefix + val
   }
 }
-export let addCustomComponent =(vcf:ViewContainerRef,cpnt:Type<any>,props:any)=>{
 
-  let ref =  vcf.createComponent(cpnt )
-
-  if ((parseInt(VERSION.major) === 14 && parseInt(VERSION.minor) >= 1 && parseInt(VERSION.patch) >= 0) ||
-  (parseInt(VERSION.major) >= 15)) {
-    ref.setInput('props', props);
-  }
-
-  else{
-    ref.instance.props =props
-    ref.instance.ngOnInit?.()
-  }
-
-  return ref
-}
 
 export function fillMissingProperties(source, target) {
   for (let key in source) {

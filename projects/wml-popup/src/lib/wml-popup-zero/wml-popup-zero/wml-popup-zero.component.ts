@@ -7,7 +7,8 @@ import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
 
 // misc
-import { addCustomComponent, generateClassPrefix, WMLCustomComponent, WMLUIProperty, WMLView } from '@windmillcode/angular-wml-components-base';
+import {  generateClassPrefix, WMLCustomComponent, WMLUIProperty, WMLView } from '@windmillcode/wml-components-base';
+import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 
 @Component({
   selector: 'wml-popup-zero',

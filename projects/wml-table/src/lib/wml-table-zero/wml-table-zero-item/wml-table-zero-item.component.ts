@@ -2,7 +2,7 @@
 import {
   ChangeDetectionStrategy,ChangeDetectorRef,Component,HostBinding,Input,ViewChild,ViewContainerRef,
 } from '@angular/core';
-import { addCustomComponent,generateClassPrefix,WMLCustomComponent, WMLUIProperty } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix,WMLCustomComponent, WMLUIProperty } from '@windmillcode/wml-components-base';
 
 import { WMLTableZeroSampleCardProps,WMLTableZeroSampleCardComponent, WMLTableZeroSampleCardPriceProps } from '../wml-table-zero-sample-card/wml-table-zero-sample-card.component';
 
@@ -10,6 +10,7 @@ import { WMLTableZeroSampleCardProps,WMLTableZeroSampleCardComponent, WMLTableZe
 import { Subject, takeUntil, tap } from 'rxjs';
 import { getRandomProductTitle, getRandomProductSubTitle, getRandomProductPrice } from '../functions';
 import { WMLTableZeroSampleRowComponent, WMLTableZeroSampleRowProps } from '../wml-table-zero-sample-row/wml-table-zero-sample-row.component';
+import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 
 
 

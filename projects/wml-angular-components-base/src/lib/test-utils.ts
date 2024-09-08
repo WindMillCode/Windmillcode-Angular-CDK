@@ -4,7 +4,7 @@ import { NO_ERRORS_SCHEMA, Type } from "@angular/core";
 import { TestBed } from "@angular/core/testing";
 import { Route } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
-import { SingletonError } from "./error-utils";
+import { SingletonError } from "@windmillcode/wml-components-base";
 import { throwError, Observable, of } from "rxjs";
 
 // i18n

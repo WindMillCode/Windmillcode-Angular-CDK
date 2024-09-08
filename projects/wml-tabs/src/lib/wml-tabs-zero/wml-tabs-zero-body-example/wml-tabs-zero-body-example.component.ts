@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Inp
 // rxjs
 import { Subject } from 'rxjs';
 import { WMLSampleTabBodyComponentProps } from '../models';
-import { generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 // misc
 

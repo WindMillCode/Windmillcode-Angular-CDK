@@ -5,7 +5,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  In
 // rxjs
 import { Observable, Subject, fromEvent, of } from 'rxjs';
 import { distinctUntilChanged, map, startWith, takeUntil,tap } from 'rxjs/operators';
-import { WMLAPIPaginationRequestModel, WMLAPIPaginationResponseModel, WMLCustomComponent,  WMLUIProperty,addCustomComponent,fillMissingProperties,WMLDeepPartial, generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { WMLAPIPaginationRequestModel, WMLAPIPaginationResponseModel,   WMLUIProperty,fillMissingProperties,WMLDeepPartial, generateClassPrefix } from '@windmillcode/wml-components-base';
 import { WMLTableZeroItemProps } from '../wml-table-zero-item/wml-table-zero-item.component';
 import { WMLInfiniteDropdownZeroOption, WMLInfiniteDropdownZeroProps } from '@windmillcode/angular-wml-infinite-dropdown';
 import { WMLPopupZeroProps } from '@windmillcode/angular-wml-popup';
@@ -18,6 +18,7 @@ import {  WMLTableZeroTablePredicateReturnValue } from '../models';
 import { WMLTableZeroDropdownItemComponent, WMLTableZeroDropdownItemProps } from '../wml-table-zero-dropdown-item/wml-table-zero-dropdown-item.component';
 import { WMLTableZeroRowTypeComponent, WMLTableZeroRowTypeProps } from '../wml-table-zero-row-type/wml-table-zero-row-type.component';
 import { getCSSVARS } from '../private-utils/common-utils';
+import { addCustomComponent, WMLAngularCustomComponent } from '@windmillcode/angular-wml-components-base';
 
 // misc
 @Component({
@@ -57,7 +58,7 @@ export class WMLTableZeroComponent  {
     this.renderer2.removeChild(document.querySelector("body"),this.overlayRef!.location.nativeElement)
     this.overlayRef = null
   }
-  openPopup(cpntInfo:WMLCustomComponent) {
+  openPopup(cpntInfo:WMLAngularCustomComponent) {
     let popupProps = new WMLPopupZeroProps({
       cpnt : cpntInfo.cpnt,
       props : cpntInfo.props ?? {}
@@ -152,7 +153,7 @@ export class WMLTableZeroComponent  {
             break;
 
           case WMLTableZeroControlEnums.SELECT_PAGE:
-            this.openPopup(new WMLCustomComponent({
+            this.openPopup(new WMLAngularCustomComponent({
               cpnt:WMLTableZeroSelectPageComponent,
               props:new WMLTableZeroSelectPageProps({
                 title:this.props.textContent.selectPage.title,
@@ -163,7 +164,7 @@ export class WMLTableZeroComponent  {
             break;
 
           case WMLTableZeroControlEnums.PAGE_SIZE:
-            this.openPopup(new WMLCustomComponent({
+            this.openPopup(new WMLAngularCustomComponent({
               cpnt:WMLTableZeroPageSizeComponent,
               props:new WMLTableZeroPageSizeProps({
                 title:this.props.textContent.pageSize.title,
@@ -175,7 +176,7 @@ export class WMLTableZeroComponent  {
             break;
 
           case WMLTableZeroControlEnums.FILTER:
-            this.openPopup(new WMLCustomComponent({
+            this.openPopup(new WMLAngularCustomComponent({
               cpnt:WMLTableZeroFilterComponent,
               props:new WMLTableZeroFilterProps({
                 ...this.props.textContent.filter,
@@ -187,7 +188,7 @@ export class WMLTableZeroComponent  {
             break;
 
             case WMLTableZeroControlEnums.SORT:
-              this.openPopup(new WMLCustomComponent({
+              this.openPopup(new WMLAngularCustomComponent({
                 cpnt:WMLTableZeroSortComponent,
                 props:new WMLTableZeroSortProps({
                   ...this.props.textContent.sort,
@@ -199,7 +200,7 @@ export class WMLTableZeroComponent  {
               break;
 
             case WMLTableZeroControlEnums.ROW_TYPE:
-              this.openPopup(new WMLCustomComponent({
+              this.openPopup(new WMLAngularCustomComponent({
                 cpnt:WMLTableZeroRowTypeComponent,
                 props:new WMLTableZeroRowTypeProps({
                   ...this.props.textContent.rowType,
@@ -383,7 +384,7 @@ export class WMLTableZeroProps {
 
   private currentPageOption = new WMLInfiniteDropdownZeroOption({
 
-    custom:new WMLCustomComponent<WMLTableZeroDropdownItemComponent,WMLTableZeroDropdownItemProps>({
+    custom:new WMLAngularCustomComponent<WMLTableZeroDropdownItemComponent,WMLTableZeroDropdownItemProps>({
       cpnt:WMLTableZeroDropdownItemComponent,
       props:new WMLTableZeroDropdownItemProps({
         propTexts:[this.textContent.controlItems.page,""]
@@ -392,7 +393,7 @@ export class WMLTableZeroProps {
   })
   private currentPageSizeOption = new WMLInfiniteDropdownZeroOption({
 
-    custom:new WMLCustomComponent<WMLTableZeroDropdownItemComponent,WMLTableZeroDropdownItemProps>({
+    custom:new WMLAngularCustomComponent<WMLTableZeroDropdownItemComponent,WMLTableZeroDropdownItemProps>({
       cpnt:WMLTableZeroDropdownItemComponent,
       props:new WMLTableZeroDropdownItemProps({
         propTexts:[this.textContent.controlItems.pageSize,""]

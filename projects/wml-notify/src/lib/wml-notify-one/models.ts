@@ -1,4 +1,4 @@
-import { WMLCustomComponent } from "@windmillcode/angular-wml-components-base";
+import { WMLAngularCustomComponent } from "@windmillcode/angular-wml-components-base";
 
 export class WMLNotifyOneBarMsgConfig {
   [when: string]: string;
@@ -44,7 +44,7 @@ export class WMLNotifyOneBarModel {
   id: number = 0
   style:Partial<CSSStyleDeclaration> = {}
   msgtype:"default" | "custom" = "default"
-  custom!:WMLCustomComponent
+  custom!:WMLAngularCustomComponent
   message: string = "My message";
   type: WMLNotifyOneBarType = WMLNotifyOneBarType.Info ;
   typeValue?: string ='';

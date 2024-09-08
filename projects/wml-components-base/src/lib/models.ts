@@ -1,8 +1,8 @@
-import { ChangeDetectorRef, Type } from "@angular/core";
-import { updateClassString } from "./functions";
-import { TranslateLoader } from "@ngx-translate/core";
-import { Subject, of } from "rxjs";
 
+import { detectFramework, updateClassString } from "./functions";
+
+
+export type WMLUIFramework='React' | 'Angular' | 'Vue.js' | 'Svelte' | 'Ember.js' | 'Backbone.js' | 'Preact' | 'Next.js' | 'Nuxt.js' | 'Gatsby' | 'Remix' | 'NestJS' | 'VanillaJS'| 'Lit' | 'Alpine.js' | 'Mithril.js' | 'Aurelia' | 'Riot.js' | 'Inferno' | 'Stencil'
 export class WMLUIProperty<V=any,T=any>{
   constructor(props:Partial<WMLUIProperty<V,T>> = {}){
     Object.assign(
@@ -11,7 +11,14 @@ export class WMLUIProperty<V=any,T=any>{
         ...props
       }
     )
+
+    if(!WMLUIProperty.framework){
+      WMLUIProperty.framework = detectFramework()
+    }
   }
+
+  static framework:WMLUIFramework
+
   isPresent:boolean = true
   // @ts-ignore
   value:V = ""
@@ -86,8 +93,20 @@ export class WMLView<V=any,T=any> extends WMLUIProperty<V,T>{
     )
   }
 
-  cdref?:ChangeDetectorRef
-
+  /**
+   * @deprecated use angular.cdref instead
+  */
+  cdref?:any
+  angular = {
+    // ChangeDetectorRef
+    get cdref(){
+      return this.cdref
+    },
+    // ChangeDetectorRef
+    set cdref(val){
+      this.cdref = val
+    }
+  }
 }
 
 export class WMLRoute<V=any,T=any>  extends WMLView<V,T> {
@@ -105,7 +124,7 @@ export class WMLRoute<V=any,T=any>  extends WMLView<V,T> {
   routerLink?:string
 }
 
-// TODO rename to WMLMotion
+
 export type WMLMotionUIPropertyState  ="open" | "opening" | "closing" | "closed"
 export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
   constructor(props: Partial<WMLMotionUIProperty> = {}) {
@@ -174,7 +193,8 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
   getGroupMotionState:()=> WMLMotionUIPropertyState =()=>{
     return this.motionState
   }
-  motionEndEvent = new Subject<WMLMotionUIPropertyState>()
+  motionEndEvent:any = (WMLMotionUIPropertyState)=>{
+  }
   readonly animationEnd:(evt?:AnimationEvent)=> void =(evt)=>{
 
     let state = this.getGroupMotionState()
@@ -191,8 +211,16 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
     .forEach(([key,value])=>{
       this.style[key]=value
     })
-    this.motionEndEvent.next(this.motionState)
-    this.cdref?.detectChanges()
+    if(["Angular"].includes(WMLMotionUIProperty.framework )){
+      // @ts-ignore
+      this.motionEndEvent?.next(this.motionState)
+    }
+    else{
+      this.motionEndEvent(this.motionState)
+    }
+    if(["Angular"].includes(WMLMotionUIProperty.framework )){
+      this.cdref?.detectChanges()
+    }
 
   }
   openMotion =()=>this.toggleMotion("forward")
@@ -204,9 +232,13 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
     }
     this.style.animationName = ""
     this.style.animationDirection = "normal"
-    this.cdref?.detectChanges()
+    if(["Angular"].includes(WMLMotionUIProperty.framework )){
+      this.cdref?.detectChanges()
+    }
     this.style.animationDirection = val
-    this.cdref?.detectChanges()
+    if(["Angular"].includes(WMLMotionUIProperty.framework )){
+      this.cdref?.detectChanges()
+    }
     // @ts-ignore
     this.motionState = {
       "forward":"opening",
@@ -221,12 +253,16 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
       this.style[key]=value
     })
 
-    this.cdref?.detectChanges()
+    if(["Angular"].includes(WMLMotionUIProperty.framework )){
+      this.cdref?.detectChanges()
+    }
 
 
     setTimeout(() => {
       this.style.animationName = this.keyFrameName
-      this.cdref?.detectChanges()
+      if(["Angular"].includes(WMLMotionUIProperty.framework )){
+        this.cdref?.detectChanges()
+      }
     }, 100);
 
   }
@@ -270,6 +306,7 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
 
 }
 
+
 export class WMLWrapper<V=any,T=any> {
   constructor(props:Partial<WMLWrapper> = {}){
     Object.assign(
@@ -291,9 +328,8 @@ export class WMLCustomComponent<C=any,P=any> {
       }
     )
   }
-  cpnt!:Type<C>
+  cpnt!:C
   props!:P
-
 }
 
 export class WMLImage<V=any,T=any> extends WMLRoute<V,T> {
@@ -358,28 +394,6 @@ export class WMLQueue<T> {
   }
 }
 
-export class WMLNGXTranslateLoader implements TranslateLoader {
-  constructor(
-    private i18nLocation:(lang:string)=>any = (lang="en")=> undefined
-  ) {}
-
-  getTranslation(lang: string) {
-    return of(this.i18nLocation(lang))
-  }
-}
-
-export class WMLModuleForRootProps {
-  constructor(props:Partial<WMLModuleForRootProps>={}){
-    Object.assign(
-      this,
-      {
-        ...props
-      }
-    )
-  }
-
-  ngxTranslateLoaderFactory = ()=> new WMLNGXTranslateLoader()
-}
 
 export type WMLDeepPartial<T> = {
   [K in keyof T]?: T[K] extends Function ? T[K] : T[K] extends object ? WMLDeepPartial<T[K]> : T[K];

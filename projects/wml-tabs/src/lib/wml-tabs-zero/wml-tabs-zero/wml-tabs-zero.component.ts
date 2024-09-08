@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Inp
 import { Subject, takeUntil, tap } from 'rxjs';
 
 // misc
-import {generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import {generateClassPrefix } from '@windmillcode/wml-components-base';
 import { WMLTabsZero, WMLTabsZeroProps, WMLTabsZeroPropsUpdateTabsSubjProps } from '../models';
 
 

@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  In
 import { Subject } from 'rxjs';
 
 // wml-components
-import { generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix } from '@windmillcode/wml-components-base';
 import { WMLSelectZeroProps } from '../wml-select-zero/wml-select-zero.component';
 
 

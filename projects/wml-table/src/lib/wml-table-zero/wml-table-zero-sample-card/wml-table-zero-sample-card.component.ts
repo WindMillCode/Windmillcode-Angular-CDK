@@ -1,6 +1,6 @@
 // angular
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Input } from '@angular/core';
-import { generateClassPrefix, WMLImage, WMLUIProperty } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix, WMLImage, WMLUIProperty } from '@windmillcode/wml-components-base';
 
 
 

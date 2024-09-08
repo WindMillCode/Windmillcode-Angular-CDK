@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  In
 // rxjs
 import { Subject } from 'rxjs';
 import { WMLTableZeroSampleCardProps } from '../wml-table-zero-sample-card/wml-table-zero-sample-card.component';
-import { generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 // misc
 @Component({

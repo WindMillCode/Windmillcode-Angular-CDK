@@ -1,4 +1,4 @@
-import { WMLCustomComponent, WMLUIProperty } from "@windmillcode/angular-wml-components-base"
+import { WMLCustomComponent, WMLUIProperty } from "@windmillcode/wml-components-base"
 import { WMLSampleTabBodyComponent } from "./wml-tabs-zero-body-example/wml-tabs-zero-body-example.component"
 import { Subject } from "rxjs"
 

@@ -5,7 +5,7 @@ import { ChangeDetectorRef, Component, HostBinding,  Input   } from '@angular/co
 import { Subject } from 'rxjs';
 import { WMLPanelZeroItemProps } from '../wml-panel-zero-item/wml-panel-zero-item.component';
 
-import { generateClassPrefix, updateClassString,WMLUIProperty } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix, updateClassString,WMLUIProperty } from '@windmillcode/wml-components-base';
 
 // misc
 

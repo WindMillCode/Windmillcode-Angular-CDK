@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 import { distinctUntilChanged, takeUntil,tap } from 'rxjs/operators';
 
 // wml-components
-import { WMLUIProperty, generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { WMLUIProperty, generateClassPrefix } from '@windmillcode/wml-components-base';
 import { WMLFieldZeroProps } from '@windmillcode/angular-wml-field';
 import { AbstractControl } from '@angular/forms';
 // misc

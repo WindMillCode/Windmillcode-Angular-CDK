@@ -3,7 +3,7 @@ import { ChangeDetectorRef, Component, HostBinding, Input, ViewEncapsulation } f
 // rxjs
 import { Subject } from 'rxjs';
 import { WMLOptionsZeroItemExampleProps } from '../models';
-import { generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 // misc
 @Component({

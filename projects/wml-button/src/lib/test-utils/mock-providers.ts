@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Renderer2, ChangeDetectorRef, Component, NO_ERRORS_SCHEMA, ViewContainerRef } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
-import { WMLNotifyOneZeroService } from "@windmillcode/angular-wml-notify";
+import { WMLNotifyOneService } from "@windmillcode/angular-wml-notify";
 import { Subject } from "rxjs";
 // @ts-ignore
 import { wmlTestUtils } from "./test-utils";
@@ -104,7 +104,7 @@ let createMockProviders = ()=> {
     {provide:Renderer2,useValue: wmlTestUtils.mock.mockRenderer2},
     {provide:ViewContainerRef,useValue:wmlTestUtils.mock.mockViewContainerRef},
     {provide:HttpClient,useValue:wmlTestUtils.mock.mockHttpClient},
-    {provide:WMLNotifyOneZeroService,useValue:wmlTestUtils.mock.mockWMLNotifyOneZeroService},
+    {provide:WMLNotifyOneService,useValue:wmlTestUtils.mock.mockWMLNotifyOneService},
     {provide:ChangeDetectorRef,useValue:wmlTestUtils.mock.mockCdref},
     {provide:ActivatedRoute,useValue:wmlTestUtils.mock.mockActivatedRoute},
   ]

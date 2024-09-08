@@ -1,10 +1,11 @@
 // angular
 import { ChangeDetectorRef, Component, HostBinding, Input, ViewContainerRef, ViewChild } from '@angular/core';
-import { addCustomComponent, generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 
 // rxjs
 import { Subject } from 'rxjs';
 import { WMLOptionZeroItemProps } from '../models';
+import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 // misc
 

@@ -1,6 +1,6 @@
 // angular
 import { ChangeDetectorRef, Component, HostBinding,  Input   } from '@angular/core';
-import { WMLUIProperty, generateClassPrefix, updateClassString } from '@windmillcode/angular-wml-components-base';
+import { WMLUIProperty, generateClassPrefix, updateClassString } from '@windmillcode/wml-components-base';
 import { WMLInfiniteDropdownZeroProps } from '@windmillcode/angular-wml-infinite-dropdown';
 
 // rxjs

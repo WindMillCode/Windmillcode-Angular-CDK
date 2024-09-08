@@ -4,8 +4,6 @@
 
 export * from './lib/functions';
 export * from './lib/models';
-export * from './lib/pipes';
-export * from './lib/test-utils';
+
 export * from './lib/error-utils';
 export * from './lib/data-source-utils';
-export * from './lib/component-base';

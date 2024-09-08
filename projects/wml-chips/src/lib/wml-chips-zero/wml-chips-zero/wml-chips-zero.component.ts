@@ -2,7 +2,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,   Input, ElementRef, ViewChild, ViewEncapsulation   } from '@angular/core';
 import { FormArray, FormControl, Validators } from '@angular/forms';
 import { WMLButtonOneProps, WMLButtonPropsTypeEnum } from '@windmillcode/angular-wml-button';
-import { generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix } from '@windmillcode/wml-components-base';
 import { WMLFieldZeroProps } from '@windmillcode/angular-wml-field';
 
 // rxjs

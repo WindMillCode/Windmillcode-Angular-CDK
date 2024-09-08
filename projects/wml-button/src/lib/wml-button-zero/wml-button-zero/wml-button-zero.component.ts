@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  In
 // rxjs
 import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
-import {WMLUIProperty, WMLImage, generateClassPrefix} from "@windmillcode/angular-wml-components-base"
+import {WMLUIProperty, WMLImage, generateClassPrefix} from "@windmillcode/wml-components-base"
 // misc
 import {WMLButtonIconType, WMLButtonPropsTypeEnum} from '../../models';
 

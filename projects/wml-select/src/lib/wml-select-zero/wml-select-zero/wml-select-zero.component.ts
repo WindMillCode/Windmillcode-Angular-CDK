@@ -8,11 +8,12 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
 
 // wml-components
-import { WMLCustomComponent, generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { WMLAngularCustomComponent } from '@windmillcode/angular-wml-components-base';
 import { WMLInfiniteDropdownZeroInputOptions, WMLInfiniteDropdownZeroOption, WMLInfiniteDropdownZeroProps } from '@windmillcode/angular-wml-infinite-dropdown';
 import {WMLSelectZeroSelectComponent} from "../wml-select-zero-select/wml-select-zero-select.component";
 import { FormControl } from '@angular/forms';
 import { WMLFieldZeroProps } from '@windmillcode/angular-wml-field';
+import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 // misc
 
@@ -123,7 +124,7 @@ export class WMLSelectZeroProps {
   readonly selectText ="Please Select"
   select  =  new WMLInfiniteDropdownZeroOption({
     text:this.selectText,
-    custom:new WMLCustomComponent({
+    custom:new WMLAngularCustomComponent({
       cpnt:WMLSelectZeroSelectComponent,
       props:this
     })
@@ -182,7 +183,7 @@ export class WMLSelectZeroProps {
     if (typeof props.select === "string") {
       this.select = new WMLInfiniteDropdownZeroOption({
         text: props.select,
-        custom: new WMLCustomComponent({
+        custom: new WMLAngularCustomComponent({
           cpnt: WMLSelectZeroSelectComponent,
           props: this
         })

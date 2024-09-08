@@ -7,7 +7,7 @@ import { Subject, takeUntil, tap } from 'rxjs';
 // misc
 import { FormArray, FormControl } from '@angular/forms';
 import { WMLOptionZeroItemProps, WMLOptionsZeroProps } from '../models';
-import { generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 @Component({
   selector: 'wml-options-zero',

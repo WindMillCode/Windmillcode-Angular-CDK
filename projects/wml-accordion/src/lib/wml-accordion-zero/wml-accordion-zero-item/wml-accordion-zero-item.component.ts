@@ -6,7 +6,8 @@ import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
 
 // wml-components
-import { WMLCustomComponent, WMLUIProperty, addCustomComponent, generateClassPrefix } from '@windmillcode/angular-wml-components-base';
+import { WMLCustomComponent, WMLUIProperty, generateClassPrefix } from '@windmillcode/wml-components-base';
+import {addCustomComponent} from '@windmillcode/angular-wml-components-base';
 import { WMLAccordionZeroSampleComponent, WMLAccordionZeroSampleProps } from '../wml-accordion-zero-sample/wml-accordion-zero-sample.component';
 import { WMLAccordionZeroTitleComponent, WMLAccordionZeroTitleProps } from '../wml-accordion-zero-title/wml-accordion-zero-title.component';
 // misc
