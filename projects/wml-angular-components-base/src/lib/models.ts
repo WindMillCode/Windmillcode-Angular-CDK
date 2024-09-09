@@ -1,7 +1,7 @@
 import {  Type } from "@angular/core";
 import { TranslateLoader } from "@ngx-translate/core";
 import { Subject, of } from "rxjs";
-import {WMLMotionUIProperty,WMLMotionUIPropertyState,WMLConstructorDecorator} from "@windmillcode/wml-components-base";
+import {WMLMotionUIProperty,WMLMotionUIPropertyState} from "@windmillcode/wml-components-base";
 
 
 export class WMLAngularMotionUIProperty<V=any,T=any> extends WMLMotionUIProperty<V,T>{
@@ -9,10 +9,15 @@ export class WMLAngularMotionUIProperty<V=any,T=any> extends WMLMotionUIProperty
 }
 
 
-@WMLConstructorDecorator
 export class WMLAngularCustomComponent<C=any,P=any> {
-  constructor(props:Partial<WMLAngularCustomComponent> = {}){
+  constructor(params: Partial<WMLAngularCustomComponent> = {}) {
+    let origParams = Object.entries(params)
+      .filter(([key,val]) => {
+        return !key.startsWith('param');
+      });
+    Object.assign(this, { ...Object.fromEntries(origParams) });
   }
+
   cpnt!:Type<C>
   props!:P
 }

@@ -1,22 +1,18 @@
 // angular
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  Input  , ViewEncapsulation   } from '@angular/core';
 
-
-
 // rxjs
 import { BehaviorSubject, Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
 
 // wml-components
-import { WMLAngularCustomComponent } from '@windmillcode/angular-wml-components-base';
 import { WMLInfiniteDropdownZeroInputOptions, WMLInfiniteDropdownZeroOption, WMLInfiniteDropdownZeroProps } from '@windmillcode/angular-wml-infinite-dropdown';
 import {WMLSelectZeroSelectComponent} from "../wml-select-zero-select/wml-select-zero-select.component";
 import { FormControl } from '@angular/forms';
 import { WMLFieldZeroProps } from '@windmillcode/angular-wml-field';
-import { generateClassPrefix } from '@windmillcode/wml-components-base';
+import { generateClassPrefix,WMLCustomComponent } from '@windmillcode/wml-components-base';
 
 // misc
-
 
 
 @Component({
@@ -100,6 +96,7 @@ export class WMLSelectZeroComponent  {
 
 
 type WMLSelectZeroConstructorProps = Partial<Omit<WMLSelectZeroProps,"select"> & {select:string | WMLInfiniteDropdownZeroOption;resetDropdown:boolean }>
+
 export class WMLSelectZeroProps {
   constructor(props:WMLSelectZeroConstructorProps={}){
     Object.assign(
@@ -122,13 +119,15 @@ export class WMLSelectZeroProps {
     return this.formControl.value.text
   }
   readonly selectText ="Please Select"
-  select  =  new WMLInfiniteDropdownZeroOption({
-    text:this.selectText,
-    custom:new WMLAngularCustomComponent({
-      cpnt:WMLSelectZeroSelectComponent,
-      props:this
+  select  = (()=>{
+    return  new WMLInfiniteDropdownZeroOption({
+      text:this.selectText,
+      custom:new WMLCustomComponent({
+        cpnt:WMLSelectZeroSelectComponent,
+        props:this
+      })
     })
-  })
+  })()
   // @ts-ignore
   options :WMLInfiniteDropdownZeroInputOptions[]=["Please","Provide","Options","To","The","Options","Array"]
   .map((text,i)=>{
@@ -183,7 +182,7 @@ export class WMLSelectZeroProps {
     if (typeof props.select === "string") {
       this.select = new WMLInfiniteDropdownZeroOption({
         text: props.select,
-        custom: new WMLAngularCustomComponent({
+        custom: new WMLCustomComponent({
           cpnt: WMLSelectZeroSelectComponent,
           props: this
         })

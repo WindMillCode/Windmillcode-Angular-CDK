@@ -44,7 +44,7 @@
         "dist/wml-components-base"
       ],
       "@windmillcode/angular-wml-components-base": [
-        "dist/angular-wml-components-base"
+        "dist/wml-angular-components-base"
       ],
       "@windmillcode/angular-wml-field": [
         "dist/wml-field"
@@ -67,9 +67,6 @@
       "@windmillcode/angular-wml-popup": [
         "dist/wml-popup"
       ],
-      // "@windmillcode/angular-wml-schematics": [
-      //   "../../../../../My_Notebook/WindMillCode/projects/angular-templates/angular-libraries/dist/wml-schematics"
-      // ],
       "@windmillcode/angular-wml-select": [
         "dist/wml-select"
       ]

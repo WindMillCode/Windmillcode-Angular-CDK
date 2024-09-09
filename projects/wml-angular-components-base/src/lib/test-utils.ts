@@ -10,8 +10,8 @@ import { throwError, Observable, of } from "rxjs";
 // i18n
 
 
-export class WMLTestUtils {
-  constructor(props: Partial<WMLTestUtils> = {}) {
+export class WMLAngularTestUtils {
+  constructor(props: Partial<WMLAngularTestUtils> = {}) {
     this.checkForSingleton();
     let origProps = Object.entries(props)
       .filter(([key,val]) => {
@@ -27,11 +27,11 @@ export class WMLTestUtils {
   mockDeclarations:any[] = []
 
   private checkForSingleton() {
-    if (WMLTestUtils.isInit) {
+    if (WMLAngularTestUtils.isInit) {
       throw new SingletonError();
     }
     else {
-      WMLTestUtils.isInit = true;
+      WMLAngularTestUtils.isInit = true;
     }
   }
 
@@ -167,8 +167,8 @@ export let createBasicObservableError = (err= new Error())=>{
 }
 
 
-export class WMLTestHttpHandler extends HttpHandler {
-  constructor(props: Partial<WMLTestHttpHandler> = {}) {
+export class WMLAngularTestHttpHandler extends HttpHandler {
+  constructor(props: Partial<WMLAngularTestHttpHandler> = {}) {
     super()
     let origProps = Object.entries(props)
       .filter(([key,val]) => {

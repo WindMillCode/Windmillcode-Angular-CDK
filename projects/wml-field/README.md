@@ -476,6 +476,10 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.2200 [9/3/24]
 
-updated package to conform with @windmillcode/angular-wml-components-base[Previous
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3000 [9/4/24]
+
+updated package to reflect the version  18.2.3 of @angular/core package[Previous
 WML Chips](/Windmillcode-Angular-CDK-Docs/components/wml-chips/)[Next
 WML File Manager](/Windmillcode-Angular-CDK-Docs/components/wml-file-manager/)

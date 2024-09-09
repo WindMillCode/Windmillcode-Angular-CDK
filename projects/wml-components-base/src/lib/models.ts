@@ -3,6 +3,27 @@ import { detectFramework, updateClassString } from "./functions";
 
 
 export type WMLUIFramework='React' | 'Angular' | 'Vue.js' | 'Svelte' | 'Ember.js' | 'Backbone.js' | 'Preact' | 'Next.js' | 'Nuxt.js' | 'Gatsby' | 'Remix' | 'NestJS' | 'VanillaJS'| 'Lit' | 'Alpine.js' | 'Mithril.js' | 'Aurelia' | 'Riot.js' | 'Inferno' | 'Stencil'
+export function WMLConstructorDecorator<T extends { new(...args: any[]): { } }>(ReversedBase: T) {
+
+  return class extends ReversedBase {
+      constructor(...args: any[]) {
+        const props: Partial<T> = args[0] || {};
+        super(props);
+        Object.entries(props).forEach(([key, value]) => {
+          if (!key.startsWith('prop')) {
+            this[key] = value;
+          }
+        });
+        // @ts-ignore
+        this.wmlInit?.(props)
+
+      }
+
+      // wmlInit?:Function
+  } ;
+}
+
+
 export class WMLUIProperty<V=any,T=any>{
   constructor(props:Partial<WMLUIProperty<V,T>> = {}){
     Object.assign(
@@ -49,26 +70,6 @@ export class WMLUIProperty<V=any,T=any>{
 
 }
 
-export function WMLConstructorDecorator<T extends { new(...args: any[]): { } }>(ReversedBase: T) {
-
-  return class extends ReversedBase {
-      constructor(...args: any[]) {
-        const props: Partial<T> = args[0] || {};
-        super(props);
-        Object.entries(props).forEach(([key, value]) => {
-          if (!key.startsWith('prop')) {
-            this[key] = value;
-          }
-        });
-        // @ts-ignore
-        this.wmlInit?.(props)
-
-      }
-
-      // wmlInit?:Function
-  } ;
-}
-
 export class WMLEndpoint {
   constructor(props:Partial<WMLEndpoint>={}){
     Object.assign(
@@ -96,16 +97,18 @@ export class WMLView<V=any,T=any> extends WMLUIProperty<V,T>{
   /**
    * @deprecated use angular.cdref instead
   */
-  cdref?:any
-  angular = {
+  get cdref(){
+    return this.angular.cdref
+  }
+  /**
+   * @deprecated use angular.cdref instead
+  */
+  set cdref(val){
+    this.angular.cdref = val
+  }
+  angular:any = {
     // ChangeDetectorRef
-    get cdref(){
-      return this.cdref
-    },
-    // ChangeDetectorRef
-    set cdref(val){
-      this.cdref = val
-    }
+    cdref:null
   }
 }
 
@@ -193,7 +196,7 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
   getGroupMotionState:()=> WMLMotionUIPropertyState =()=>{
     return this.motionState
   }
-  motionEndEvent:any = (WMLMotionUIPropertyState)=>{
+  motionEndEvent:any = (state:WMLMotionUIPropertyState)=>{
   }
   readonly animationEnd:(evt?:AnimationEvent)=> void =(evt)=>{
 
@@ -213,13 +216,13 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
     })
     if(["Angular"].includes(WMLMotionUIProperty.framework )){
       // @ts-ignore
-      this.motionEndEvent?.next(this.motionState)
+      this.motionEndEvent.next?.(this.motionState)
     }
     else{
       this.motionEndEvent(this.motionState)
     }
     if(["Angular"].includes(WMLMotionUIProperty.framework )){
-      this.cdref?.detectChanges()
+      this.angular.cdref?.detectChanges()
     }
 
   }

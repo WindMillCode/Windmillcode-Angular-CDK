@@ -132,7 +132,6 @@ export function addRouteDeclarationToModuleOrRoutesFileOnChildrenProperty(
               if(correctEntry.length>0){
                 return true;
               }
-              debugger
 
               return false;
             }

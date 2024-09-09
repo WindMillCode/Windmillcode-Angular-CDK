@@ -1,8 +1,6 @@
 // angular
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  Input  , ViewEncapsulation   } from '@angular/core';
 
-
-
 // rxjs
 import { Subject } from 'rxjs';
 
@@ -10,9 +8,7 @@ import { Subject } from 'rxjs';
 import { generateClassPrefix } from '@windmillcode/wml-components-base';
 import { WMLSelectZeroProps } from '../wml-select-zero/wml-select-zero.component';
 
-
 // misc
-
 
 
 @Component({
@@ -43,18 +39,4 @@ export class WMLSelectZeroSelectComponent  {
   }
 
 }
-
-
-
-export class WMLSelectZeroSelectProps {
-  constructor(props:Partial<WMLSelectZeroSelectProps>={}){
-    Object.assign(
-      this,
-      {
-        ...props
-      }
-    )
-  }
-}
-
 
