@@ -68,6 +68,4 @@ WMLAngularCustomComponent from their orginal respective part which exlude “Ang
 
 ### v18.2.3100 [9/8/24]
 
-updated package to reflect the version  18.2.3 of @angular/core package[Previous
-WML Components Base](/Windmillcode-Angular-CDK-Docs/intro/wml-components-base)[Next
-WML Schematics](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)
+updated package to reflect the version  18.2.3 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/intro/wml-components-base)[](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)

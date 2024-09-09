@@ -404,6 +404,4 @@ updated package to reflect the version  18.2.3 of @angular/core package
 
 ### v18.2.3100 [9/8/24]
 
-updated package to reflect the version  18.2.3 of @angular/core package[Previous
-WML Select](/Windmillcode-Angular-CDK-Docs/components/wml-select/)[Next
-WML Table (Beta Unstable Unmaintainable)](/Windmillcode-Angular-CDK-Docs/components/wml-table/)
+updated package to reflect the version  18.2.3 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/components/wml-select/)[](/Windmillcode-Angular-CDK-Docs/components/wml-table/)

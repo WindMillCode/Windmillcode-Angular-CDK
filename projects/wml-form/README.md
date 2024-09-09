@@ -170,6 +170,4 @@ updated package to reflect the version  18.2.3 of @angular/core package
 
 ### v18.2.3100 [9/8/24]
 
-updated package to reflect the version  18.2.3 of @angular/core package[Previous
-WML File Manager](/Windmillcode-Angular-CDK-Docs/components/wml-file-manager/)[Next
-WML Infinite Dropdown](/Windmillcode-Angular-CDK-Docs/components/wml-infinite-dropdown/)
+updated package to reflect the version  18.2.3 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/components/wml-file-manager/)[](/Windmillcode-Angular-CDK-Docs/components/wml-infinite-dropdown/)

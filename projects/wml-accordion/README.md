@@ -477,6 +477,4 @@ updated package to reflect the version  18.2.3 of @angular/core package
 
 ### v18.2.3100 [9/8/24]
 
-updated package to reflect the version  18.2.3 of @angular/core package[Previous
-WML Schematics](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)[Next
-WML Button](/Windmillcode-Angular-CDK-Docs/components/wml-button/)
+updated package to reflect the version  18.2.3 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)[](/Windmillcode-Angular-CDK-Docs/components/wml-button/)

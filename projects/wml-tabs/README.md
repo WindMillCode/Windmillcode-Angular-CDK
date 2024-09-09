@@ -434,6 +434,4 @@ updated package to reflect the version  18.2.3 of @angular/core package
 
 ### v18.2.3100 [9/8/24]
 
-updated package to reflect the version  18.2.3 of @angular/core package[Previous
-WML Table (Beta Unstable Unmaintainable)](/Windmillcode-Angular-CDK-Docs/components/wml-table/)[Next
-WML Toggle](/Windmillcode-Angular-CDK-Docs/components/wml-toggle/)
+updated package to reflect the version  18.2.3 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/components/wml-table/)[](/Windmillcode-Angular-CDK-Docs/components/wml-toggle/)
