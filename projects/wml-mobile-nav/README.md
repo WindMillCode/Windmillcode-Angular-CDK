@@ -441,6 +441,10 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3000 [9/4/24]
 
+updated package to reflect the version  18.2.3 of @angular/core package
+
+### v18.2.3100 [9/8/24]
+
 updated package to reflect the version  18.2.3 of @angular/core package[Previous
 WML Input](/Windmillcode-Angular-CDK-Docs/components/wml-input/)[Next
 WML Notify](/Windmillcode-Angular-CDK-Docs/components/wml-notify/)

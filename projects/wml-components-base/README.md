@@ -1,12 +1,12 @@
 # WML Components Base
 
-When working on web applications, there is no standard baseline. The Angular WML Components Base Library establishes a foundation for your application, ensuring consistency and scalability. The core of this library is the <code dir="auto">WMLUIProperty</code> , which represents the basic building block of every element in a web application. This property encapsulates all the essential features, and there are several subclasses like <code dir="auto">WMLRoute</code> for routes, <code dir="auto">WMLView</code> to leverage change detection, <code dir="auto">WMLImage</code> for images  and <code dir="auto">WMLMotionUIProperty</code> for CSS animations and transitions. Each class has properties and methods to optimize your work in those features of  your application. You can use this package and leave out the rest of the library and you will get very far building very robust and scalable applications
+When working on web applications, there is no standard baseline. The  WML Components Base Library establishes a foundation for your application, ensuring consistency and scalability. The core of this library is the <code dir="auto">WMLUIProperty</code> , which represents the basic building block of every element in a web application. This property encapsulates all the essential features, and there are several subclasses like <code dir="auto">WMLRoute</code> for routes, <code dir="auto">WMLView</code> to leverage change detection, <code dir="auto">WMLImage</code> for images  and <code dir="auto">WMLMotionUIProperty</code> for CSS animations and transitions. Each class has properties and methods to optimize your work in those features of  your application. You can use this package and leave out the rest of the library and you will get very far building very robust and scalable applications
 
 
 
 ## Installation
 
-Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-s</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-components-base</span></div></div></code> 
+Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-s</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/wml-components-base</span></div></div></code> 
 
 ## Usage
 
@@ -26,7 +26,7 @@ Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#8
 
 if you want a different animation for you animation states simply use a different keyframe mabye suffixing the keyframes with open and close for organization<iframe src="https://stackblitz.com/edit/stackblitz-starters-xkprmk?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
-### WMLCustomComponent
+### [WMLCustomComponent](#wml-custom-component)
 
 **Custom Components**
 
@@ -38,43 +38,129 @@ if you want a different animation for you animation states simply use a differen
 
 ### WMLUIProperty
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">isPresent</code></td><td><code dir="auto">boolean</code></td><td>Indicates whether the target HTMLElement is present. Default is <code dir="auto">true</code>.</td></tr><tr><td><code dir="auto">value</code></td><td><code dir="auto">V</code></td><td>The value property. Default is an empty string (<code dir="auto">&#34;&#34;</code>).</td></tr><tr><td><code dir="auto">text</code></td><td><code dir="auto">string</code></td><td>Optional text.</td></tr><tr><td><code dir="auto">class</code></td><td><code dir="auto">string</code></td><td>Gets or sets the CSS class of the target HTMLElement.</td></tr><tr><td><code dir="auto">style</code></td><td><code dir="auto">Partial&lt;CSSStyleDeclaration&gt;</code></td><td>Partial CSS styles for the target HTMLElement.</td></tr><tr><td><code dir="auto">type</code></td><td><code dir="auto">T</code></td><td>Type property for when an entity can have more than one type.</td></tr><tr><td><code dir="auto">click</code></td><td><code dir="auto">(evt?: Event) =&gt; void</code></td><td>Click event handler for the target HTMLElement.</td></tr><tr><td><code dir="auto">id</code></td><td><code dir="auto">string</code></td><td>Identifier for the target HTMLElement. Default is an empty string (<code dir="auto">&#34;&#34;</code>).</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">isPresent</code></td><td><code dir="auto">boolean</code></td><td>Indicates if the UI property is currently present.</td></tr><tr><td><code dir="auto">value</code></td><td><code dir="auto">any</code></td><td>The value associated with this UI property.</td></tr><tr><td><code dir="auto">text</code></td><td><code dir="auto">string</code></td><td>The text associated with this property.</td></tr><tr><td><code dir="auto">class</code></td><td><code dir="auto">string</code></td><td>CSS class string for the property.</td></tr><tr><td><code dir="auto">style</code></td><td><code dir="auto">Partial&lt;CSSStyleDeclaration&gt;</code></td><td>Inline styles for the property.</td></tr><tr><td><code dir="auto">type</code></td><td><code dir="auto">any</code></td><td>The type of UI element (optional).</td></tr><tr><td><code dir="auto">click</code></td><td><code dir="auto">(evt?: Event) =&gt; void</code></td><td>Function to handle click events.</td></tr><tr><td><code dir="auto">id</code></td><td><code dir="auto">string</code></td><td>Unique identifier for the UI property.</td></tr></tbody></table>
+
+Methods<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">updateClassString</code></td><td>Updates the class string based on the current state.</td></tr><tr><td><code dir="auto">toggleClassString</code></td><td>Toggles a class string on or off.</td></tr></tbody></table>
+
+
+
+### WMLEndpoint
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">url</code></td><td><code dir="auto">Function</code></td><td>Function that defines the endpoint’s URL.</td></tr><tr><td><code dir="auto">automate</code></td><td><code dir="auto">boolean</code></td><td>Indicates whether to automate API requests for the endpoint.</td></tr></tbody></table>
 
 
 
 ### WMLView
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">cdref</code></td><td><code dir="auto">ChangeDetectorRef</code></td><td>Angular <code dir="auto">ChangeDetectorRef</code> associated with the component.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">angular</code></td><td><code dir="auto">any</code></td><td>Object containing Angular-specific properties like <code dir="auto">cdref</code>.</td></tr><tr><td><code dir="auto">cdref</code></td><td><code dir="auto">any</code></td><td>Angular’s ChangeDetectorRef, used for detecting changes in Angular applications (deprecated).</td></tr></tbody></table>
+
+Methods<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">get cdref</code></td><td>Retrieves the ChangeDetectorRef from the Angular-specific properties (deprecated).</td></tr><tr><td><code dir="auto">set cdref</code></td><td>Sets the ChangeDetectorRef in the Angular-specific properties (deprecated).</td></tr></tbody></table>
+
+
+
+### angular (Sub-Object of WMLView)
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">cdref</code></td><td><code dir="auto">any</code></td><td>Angular’s ChangeDetectorRef used for change detection in Angular applications.</td></tr></tbody></table>
 
 
 
 ### WMLRoute
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">route</code></td><td><code dir="auto">string</code></td><td>Route property specific to <code dir="auto">WMLRoute</code>. Default is <code dir="auto">&#34;/&#34;</code>.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">route</code></td><td><code dir="auto">string</code></td><td>Defines the route for the application, default is ”/“.</td></tr><tr><td><code dir="auto">link</code></td><td><code dir="auto">string</code></td><td>Optional link associated with the route.</td></tr><tr><td><code dir="auto">routerLink</code></td><td><code dir="auto">string</code></td><td>Optional router link for navigation.</td></tr></tbody></table>
 
 
 
 ### WMLMotionUIProperty
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">helperStyles</code></td><td><code dir="auto">WMLUIProperty[&#34;style&#34;]</code></td><td>Helper styles to prevent animation jank. Can be overwritten with <code dir="auto">{}</code> if it interferes with your work.</td></tr><tr><td><code dir="auto">keyFrameStyles</code></td><td><code dir="auto">{[k: string]: WMLUIProperty[&#34;style&#34;]}</code></td><td>Object containing keyframe styles for the motion. Keys represent the percentage of the motion (e.g., <code dir="auto">&#34;0%&#34;</code>, <code dir="auto">&#34;100%&#34;</code>).</td></tr><tr><td><code dir="auto">keyFrameName</code></td><td>`string</td><td>undefined`</td></tr><tr><td><code dir="auto">motionState</code></td><td><code dir="auto">WMLMotionUIPropertyState</code></td><td>Current state of the motion.</td></tr><tr><td><code dir="auto">motionEndEvent</code></td><td><code dir="auto">Subject&lt;WMLMotionUIPropertyState&gt;</code></td><td>Triggers when the motion is finally opened or closed.</td></tr><tr><td><code dir="auto">autoOpen</code></td><td><code dir="auto">boolean</code></td><td>Automatically start the open motion when the component is initialized. Defaults to <code dir="auto">false</code>.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">autoOpen</code></td><td><code dir="auto">boolean</code></td><td>Automatically opens the UI element when true.</td></tr><tr><td><code dir="auto">helperStyles</code></td><td><code dir="auto">Partial&lt;CSSStyleDeclaration&gt;</code></td><td>Necessary for animations to work properly.  Modify only if you know what you are doing.</td></tr><tr><td><code dir="auto">keyFrameStyles</code></td><td><code dir="auto">{ [k: string]: Partial&lt;CSSStyleDeclaration&gt; }</code></td><td>Object defining keyframe styles for animation. use 0% 10% 11% … 100% according to typicall css keyframes for the key values</td></tr><tr><td><code dir="auto">keyFrameName</code></td><td><code dir="auto">string</code></td><td>Name of the animation keyframe.</td></tr><tr><td><code dir="auto">motionState</code></td><td><code dir="auto">&#34;open&#34; | &#34;opening&#34; | &#34;closing&#34; | &#34;closed&#34;</code></td><td>Current state of the motion animation.</td></tr><tr><td><code dir="auto">style</code></td><td><code dir="auto">Partial&lt;CSSStyleDeclaration&gt;</code></td><td>Style applied to the motion property.</td></tr></tbody></table>
+
+Methods<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">get keyFrameName</code></td><td>Retrieves the current keyframe name used for the animation.</td></tr><tr><td><code dir="auto">set keyFrameName</code></td><td>Sets a unique keyframe name for the motion animation.</td></tr><tr><td><code dir="auto">getGroupMotionState</code></td><td>Returns the current motion state of the animation group.</td></tr><tr><td><code dir="auto">animationEnd</code></td><td>Handles the animation end event and updates the motion state accordingly.</td></tr><tr><td><code dir="auto">openMotion</code></td><td>Triggers the opening animation.</td></tr><tr><td><code dir="auto">closeMotion</code></td><td>Triggers the closing animation.</td></tr><tr><td><code dir="auto">toggleMotion</code></td><td>Toggles the animation direction (forward or reverse).</td></tr><tr><td><code dir="auto">injectKeyframes</code></td><td>Injects custom keyframes for the motion animation into the document’s styles.</td></tr><tr><td><code dir="auto">motionEndEvent</code></td><td>Function called at the end of an animation state.</td></tr></tbody></table>
+
+WMLMotionUIPropertyState<table><thead><tr><th>Value</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">open</code></td><td>The UI element is fully open.</td></tr><tr><td><code dir="auto">opening</code></td><td>The UI element is in the process of opening.</td></tr><tr><td><code dir="auto">closing</code></td><td>The UI element is in the process of closing.</td></tr><tr><td><code dir="auto">closed</code></td><td>The UI element is fully closed.</td></tr></tbody></table>
 
 
 
-### Methods
+### WMLCustomComponent
 
-<table><thead><tr><th>Method</th><th>Signature</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">getGroupMotionState</code></td><td><code dir="auto">() =&gt; WMLMotionUIPropertyState</code></td><td>Returns the current state of the motion.</td></tr><tr><td><code dir="auto">animationEnd</code></td><td><code dir="auto">(evt?: AnimationEvent) =&gt; void</code></td><td>Handles the animation end event. Updates the motion state and applies final styles.</td></tr><tr><td><code dir="auto">openMotion</code></td><td><code dir="auto">() =&gt; void</code></td><td>Triggers the open motion.</td></tr><tr><td><code dir="auto">closeMotion</code></td><td><code dir="auto">() =&gt; void</code></td><td>Triggers the close motion.</td></tr><tr><td><code dir="auto">toggleMotion</code></td><td><code dir="auto">(val: &#39;forward&#39; | &#39;reverse&#39;) =&gt; void</code></td><td>Toggles the motion based on the direction (<code dir="auto">forward</code> for opening, <code dir="auto">reverse</code> for closing).</td></tr><tr><td><code dir="auto">injectKeyframes</code></td><td><code dir="auto">() =&gt; void</code></td><td>Generates and injects keyframes into the document based on <code dir="auto">keyFrameStyles</code> and <code dir="auto">keyFrameName</code>.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">cpnt</code></td><td><code dir="auto">C</code></td><td>The custom component being wrapped.</td></tr><tr><td><code dir="auto">props</code></td><td><code dir="auto">P</code></td><td>Properties associated with the custom component.</td></tr></tbody></table>
 
 
 
 ### WMLImage
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">src</code></td><td><code dir="auto">string</code></td><td>Source URL for the image.</td></tr><tr><td><code dir="auto">alt</code></td><td><code dir="auto">string</code></td><td>Alternative text for the image.</td></tr><tr><td><code dir="auto">ariaLabel</code></td><td><code dir="auto">string</code></td><td>ARIA label for accessibility.</td></tr><tr><td><code dir="auto">ariaExpanded</code></td><td><code dir="auto">boolean</code></td><td>ARIA expanded state for accessibility. Default is <code dir="auto">false</code>.</td></tr><tr><td><code dir="auto">onError</code></td><td><code dir="auto">Function</code></td><td>Error handler for the image.</td></tr><tr><td><code dir="auto">route</code></td><td><code dir="auto">string</code></td><td>Route property specific to <code dir="auto">WMLRoute</code>. Default is <code dir="auto">&#34;/&#34;</code>.</td></tr><tr><td><code dir="auto">link</code></td><td><code dir="auto">string</code></td><td>Optional link URL.</td></tr><tr><td><code dir="auto">routerLink</code></td><td><code dir="auto">string</code></td><td>Optional Angular router link.</td></tr><tr><td><code dir="auto">cdref</code></td><td><code dir="auto">ChangeDetectorRef</code></td><td>Angular <code dir="auto">ChangeDetectorRef</code> associated with the component.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">src</code></td><td><code dir="auto">string</code></td><td>Source URL for the image.</td></tr><tr><td><code dir="auto">alt</code></td><td><code dir="auto">string</code></td><td>Alt text for accessibility purposes.</td></tr><tr><td><code dir="auto">ariaLabel</code></td><td><code dir="auto">string</code></td><td>ARIA label for screen readers.</td></tr><tr><td><code dir="auto">ariaExpanded</code></td><td><code dir="auto">boolean</code></td><td>Indicates whether the image is in an expanded state.</td></tr><tr><td><code dir="auto">onError</code></td><td><code dir="auto">Function</code></td><td>Function to handle errors when loading the image.</td></tr></tbody></table>
+
+
+
+### WMLE2ETarget
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">runningONE2E</code></td><td><code dir="auto">boolean</code></td><td>Indicates if an E2E (end-to-end) test is currently running.</td></tr><tr><td><code dir="auto">data</code></td><td><code dir="auto">any</code></td><td>Data associated with the E2E test.</td></tr></tbody></table>
+
+
+
+### WMLQueue
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">queue</code></td><td><code dir="auto">T[]</code></td><td>Internal array representing the queue of items.</td></tr></tbody></table>
+
+Methods<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">enqueue(item: T)</code></td><td>Adds an item to the queue.</td></tr><tr><td><code dir="auto">dequeue()</code></td><td>Removes and returns the first item in the queue.</td></tr><tr><td><code dir="auto">isEmpty()</code></td><td>Checks if the queue is empty.</td></tr><tr><td><code dir="auto">size()</code></td><td>Returns the number of items in the queue.</td></tr><tr><td><code dir="auto">getElementAt(index: number)</code></td><td>Retrieves the element at a specific index in the queue.</td></tr></tbody></table>
+
+
+
+### WMLAPIPageRequestModelFilterPredicateEnum
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">EQUALS</code></td><td><code dir="auto">string</code></td><td>Filter predicate to check if a value is equal.</td></tr><tr><td><code dir="auto">STARTSWITH</code></td><td><code dir="auto">string</code></td><td>Filter predicate to check if a value starts with a string.</td></tr><tr><td><code dir="auto">ENDSWITH</code></td><td><code dir="auto">string</code></td><td>Filter predicate to check if a value ends with a string.</td></tr><tr><td><code dir="auto">CONTAINS</code></td><td><code dir="auto">string</code></td><td>Filter predicate to check if a value contains a string.</td></tr></tbody></table>
+
+
+
+### WMLAPIPaginationRequestModel
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">fields</code></td><td><code dir="auto">Array&lt;{ value: any }&gt;</code></td><td>Array of fields included in the request.</td></tr><tr><td><code dir="auto">filter</code></td><td><code dir="auto">Array&lt;{ key: string, value: any, predicate?: WMLAPIPageRequestModelFilterPredicateEnum }&gt;</code></td><td>Filter criteria with optional predicates.</td></tr><tr><td><code dir="auto">sort</code></td><td><code dir="auto">Array&lt;{ key: string, direction: &#34;ASC&#34; | &#34;DESC&#34; | &#34;&#34; }&gt;</code></td><td>Sorting criteria for the request.</td></tr><tr><td><code dir="auto">cursor</code></td><td><code dir="auto">{ value?: string, order?: number }</code></td><td>Cursor-based pagination options.</td></tr><tr><td><code dir="auto">pageNum</code></td><td><code dir="auto">number</code></td><td>Current page number in the pagination request.</td></tr><tr><td><code dir="auto">pageSize</code></td><td><code dir="auto">number</code></td><td>Number of items per page.</td></tr><tr><td><code dir="auto">errorOccuredIsPresent</code></td><td><code dir="auto">boolean</code></td><td>Indicates if an error occurred during the request.</td></tr></tbody></table>
+
+Methods<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">getIndexInfo()</code></td><td>Returns start and end index information for the current page.</td></tr></tbody></table>
+
+
+
+### WMLAPIPaginationResponseModel
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">columns</code></td><td><code dir="auto">Array&lt;{ value: string, type?: string }&gt;</code></td><td>Array of columns in the response data.</td></tr><tr><td><code dir="auto">data</code></td><td><code dir="auto">Array&lt;any&gt;</code></td><td>Array of data returned by the API.</td></tr><tr><td><code dir="auto">metadata</code></td><td><code dir="auto">{ startOrderValue?: number }</code></td><td>Metadata about the response, including start order values.</td></tr><tr><td><code dir="auto">pageNum</code></td><td><code dir="auto">number</code></td><td>Current page number in the response.</td></tr><tr><td><code dir="auto">pageSize</code></td><td><code dir="auto">number</code></td><td>Number of items per page in the response.</td></tr><tr><td><code dir="auto">totalPages</code></td><td><code dir="auto">number</code></td><td>Total number of pages in the response.</td></tr><tr><td><code dir="auto">totalItems</code></td><td><code dir="auto">number</code></td><td>Total number of items in the response.</td></tr></tbody></table>
+
+Methods<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">getIndexInfo()</code></td><td>Returns start and end index information for the current page.</td></tr><tr><td><code dir="auto">calculateCurrentState()</code></td><td>Calculates pagination state based on total items and pages.</td></tr><tr><td><code dir="auto">calcSectionBasedOnPageDetails()</code></td><td>Slices data into sections based on page details.</td></tr></tbody></table>
+
+
+
+### Types
+
+WMLDeepPartial<table><thead><tr><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">WMLDeepPartial&lt;T&gt;</code> is a type that makes all properties of a type <code dir="auto">T</code> optional, and if a property is an object, it recursively makes all of its properties optional as well. Functions are left unchanged.</td></tr></tbody></table>
+
+Type Behavior<table><thead><tr><th>Condition</th><th>Behavior</th></tr></thead><tbody><tr><td><code dir="auto">T[K]</code> is a function</td><td>Keeps the function type intact.</td></tr><tr><td><code dir="auto">T[K]</code> is an object</td><td>Recursively makes all properties of the object optional using <code dir="auto">WMLDeepPartial</code>.</td></tr><tr><td><code dir="auto">T[K]</code> is neither a function nor object</td><td>The property becomes optional.</td></tr></tbody></table>
 
 
 
 ### Functions
 
-addCustomComponent<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">vcf</code></td><td><code dir="auto">ViewContainerRef</code></td><td>Angular ViewContainerRef for creating the component.</td></tr><tr><td><code dir="auto">cpnt</code></td><td><code dir="auto">Type&lt;any&gt;</code></td><td>Component type to be created.</td></tr><tr><td><code dir="auto">props</code></td><td><code dir="auto">any</code></td><td>Properties to be passed to the component.</td></tr><tr><td><code dir="auto">return</code></td><td><code dir="auto">ComponentRef&lt;any&gt;</code></td><td>Returns a reference to the created component.</td></tr><tr><td>,</td><td></td><td></td></tr></tbody></table>
+ <code dir="auto">detectFramework()</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Detects the current frontend framework being used (e.g., React, Angular, Vue.js, etc.). Returns the framework as a string. Not guaranteed to be accurate</td></tr></tbody></table>
+
+ <code dir="auto">generateUUID(prefix: string)</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Generates a UUID with an optional prefix and returns it as a string.</td></tr></tbody></table>
+
+ <code dir="auto">generateClassPrefix(prefix: string)</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Returns a function that generates class names based on the provided prefix. If the value is empty, it returns the first part of the prefix.</td></tr></tbody></table>
+
+ <code dir="auto">generateIdPrefix(prefix: string)</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Returns a function that generates ID names based on the provided prefix. If the value is empty, it returns the first part of the prefix.</td></tr></tbody></table>
+
+ <code dir="auto">fillMissingProperties(source: object, target: object)</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Recursively fills missing properties in the <code dir="auto">target</code> object from the <code dir="auto">source</code> object. If a property exists in both, the target keeps its value.</td></tr></tbody></table>
+
+ <code dir="auto">updateClassString(obj: any, myClassDefault: string, classListDefault: string)</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Returns a function to manage the class list of an object. Can add, remove, toggle, or clear class names based on the current state of the object.</td></tr></tbody></table>
+
+ <code dir="auto">toggleClassString(targetClass: string, classList: Array&lt;string&gt;, predicate: Function)</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Toggles a class string on or off within the provided class list. The <code dir="auto">predicate</code> function determines the action.</td></tr></tbody></table>
+
+ <code dir="auto">generateRandomNumber(range: number, additional: number)</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Generates a random number within the specified range and adds the additional value.</td></tr></tbody></table>
+
+ <code dir="auto">generateRandomColor()</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Generates a random hex color code.</td></tr></tbody></table>
+
+ <code dir="auto">selectRandomOptionFromArray(myArray: Array&lt;any&gt;, index?: number)</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Selects a random element from an array. Optionally, an index can be provided to limit the range.</td></tr></tbody></table>
+
+ <code dir="auto">replaceValuesWithPaths&lt;T&gt;(obj: any, path: string, predicate: Function): T</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Recursively replaces values in an object with their corresponding path. The <code dir="auto">predicate</code> function is used to modify the path value.</td></tr></tbody></table>
+
+ <code dir="auto">WMLUIPropertyDecorator(target: any, key: any)</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Obsolete decorator for handling UI properties.</td></tr></tbody></table>
 
 
 
@@ -781,5 +867,17 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3000 [9/4/24]
 
+updated package to reflect the version  18.2.3 of @angular/core package
+
+### v18.2.3100 [9/8/24]
+
+[BREAKING CHANGE] seperated angular features from core librarly to angular-wml-components-base
+moving WMLComponentBaseZeroPropsMixin, WMLComponentBaseZeroProps, WMLComponentBaseZero,addCustomComponent, WMLNGXTranslateLoader,WMLTestUtils to the angular base library
+deleting WMLModuleForRootProps
+
+
+
+### v18.2.3100 [9/8/24]
+
 updated package to reflect the version  18.2.3 of @angular/core package[Next
-WML Schematics](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)
+WML Angular Components Base](/Windmillcode-Angular-CDK-Docs/intro/wml-angular-components-base)
