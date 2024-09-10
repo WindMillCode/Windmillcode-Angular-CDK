@@ -1,6 +1,6 @@
 import { transformObjectKeys } from "@core/utility/common-utils"
 import { RecursiveSnakeCaseType, transformFromCamelCaseToSnakeCase, transformFromSnakeCaseToCamelCase } from "@core/utility/string-utils"
-import { WMLConstructorDecorator } from "@windmillcode/angular-wml-components-base"
+import { WMLConstructorDecorator } from "@windmillcode/wml-components-base"
 import { Observable, of, take } from "rxjs"
 
 export let <%= name %>Load = (uiBody:<%= capitalize(name)%>UIRequestBody): Observable<<%= capitalize(name)%>APIRequestBody>=>{

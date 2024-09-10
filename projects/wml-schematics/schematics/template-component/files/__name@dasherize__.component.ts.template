@@ -14,7 +14,7 @@ import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
 
 // wml-components
-import { <%  if(isPropsChild) { %>WMLConstructorDecorator, <% } %>generateClassPrefix, generateIdPrefix } from '@windmillcode/angular-wml-components-base';
+import { <%  if(isPropsChild) { %>WMLConstructorDecorator, <% } %>generateClassPrefix, generateIdPrefix } from '@windmillcode/wml-components-base';
 
 
 // misc

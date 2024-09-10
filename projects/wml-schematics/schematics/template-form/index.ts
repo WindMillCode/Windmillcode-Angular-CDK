@@ -18,8 +18,8 @@ let importsToAdd = [
     importMembers: ["WMLButtonOneProps", "WMLButtonPropsTypeEnum"]
   },
   {
-    packageName: "@windmillcode/angular-wml-components-base",
-    importStatement: "import { WMLUIProperty, generateClassPrefix } from '@windmillcode/angular-wml-components-base';\n",
+    packageName: "@windmillcode/wml-components-base",
+    importStatement: "import { WMLUIProperty, generateClassPrefix } from '@windmillcode/wml-components-base';\n",
     importMembers: ["WMLUIProperty", "generateClassPrefix"]
   },
   {
