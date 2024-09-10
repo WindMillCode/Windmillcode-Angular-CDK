@@ -1,8 +1,12 @@
 
-import { detectFramework, updateClassString } from "./functions";
+import { detectFramework, getGlobalObject, updateClassString } from "./functions";
 
 
-export type WMLUIFramework='React' | 'Angular' | 'Vue.js' | 'Svelte' | 'Ember.js' | 'Backbone.js' | 'Preact' | 'Next.js' | 'Nuxt.js' | 'Gatsby' | 'Remix' | 'NestJS' | 'VanillaJS'| 'Lit' | 'Alpine.js' | 'Mithril.js' | 'Aurelia' | 'Riot.js' | 'Inferno' | 'Stencil'
+export type WMLUIFrameworkType='React' | 'Angular' | 'Vue.js' | 'Svelte' | 'Ember.js' | 'Backbone.js' | 'Preact' | 'Next.js' | 'Nuxt.js' | 'Gatsby' | 'Remix' | 'NestJS' | 'VanillaJS'| 'Lit' | 'Alpine.js' | 'Mithril.js' | 'Aurelia' | 'Riot.js' | 'Inferno' | 'Stencil'
+
+
+
+
 export function WMLConstructorDecorator<T extends { new(...args: any[]): { } }>(ReversedBase: T) {
 
   return class extends ReversedBase {
@@ -23,6 +27,17 @@ export function WMLConstructorDecorator<T extends { new(...args: any[]): { } }>(
   } ;
 }
 
+@WMLConstructorDecorator
+export class WMLUIGlobal {
+  constructor(params: Partial<WMLUIGlobal> = {}) { }
+
+  framework={
+    name: detectFramework(),
+  }
+}
+
+getGlobalObject().WINDMILLCODE = new WMLUIGlobal()
+
 
 export class WMLUIProperty<V=any,T=any>{
   constructor(props:Partial<WMLUIProperty<V,T>> = {}){
@@ -33,12 +48,9 @@ export class WMLUIProperty<V=any,T=any>{
       }
     )
 
-    if(!WMLUIProperty.framework){
-      WMLUIProperty.framework = detectFramework()
-    }
+
   }
 
-  static framework:WMLUIFramework
 
   isPresent:boolean = true
   // @ts-ignore
@@ -214,14 +226,15 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
     .forEach(([key,value])=>{
       this.style[key]=value
     })
-    if(["Angular"].includes(WMLMotionUIProperty.framework )){
+
+    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
       // @ts-ignore
       this.motionEndEvent.next?.(this.motionState)
     }
     else{
       this.motionEndEvent(this.motionState)
     }
-    if(["Angular"].includes(WMLMotionUIProperty.framework )){
+    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
       this.angular.cdref?.detectChanges()
     }
 
@@ -229,17 +242,16 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
   openMotion =()=>this.toggleMotion("forward")
   closeMotion = ()=>this.toggleMotion("reverse")
   private toggleMotion=(val:'forward'|'reverse')=>{
-
     if(!["closed","open"].includes(this.motionState)){
       return
     }
     this.style.animationName = ""
     this.style.animationDirection = "normal"
-    if(["Angular"].includes(WMLMotionUIProperty.framework )){
+    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
       this.cdref?.detectChanges()
     }
     this.style.animationDirection = val
-    if(["Angular"].includes(WMLMotionUIProperty.framework )){
+    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
       this.cdref?.detectChanges()
     }
     // @ts-ignore
@@ -256,14 +268,14 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
       this.style[key]=value
     })
 
-    if(["Angular"].includes(WMLMotionUIProperty.framework )){
+    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
       this.cdref?.detectChanges()
     }
 
 
     setTimeout(() => {
       this.style.animationName = this.keyFrameName
-      if(["Angular"].includes(WMLMotionUIProperty.framework )){
+      if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
         this.cdref?.detectChanges()
       }
     }, 100);

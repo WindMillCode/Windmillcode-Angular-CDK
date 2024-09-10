@@ -1,9 +1,9 @@
-import { WMLUIProperty,WMLUIFramework } from "./models";
+import { WMLUIProperty,WMLUIFrameworkType, WMLUIGlobal, WMLDeepPartial } from "./models";
 
 
-export function detectFramework(): WMLUIFramework {
+export function detectFramework(): WMLUIFrameworkType {
   let myWindow: any = window ?? {};
-  let detectedFramework: WMLUIFramework = 'VanillaJS';
+  let detectedFramework: WMLUIFrameworkType = 'VanillaJS';
 
   const isReact = !!document.querySelector('[data-reactroot], [data-reactid]');
   const isAngular = !!myWindow.ng || !!document.querySelector('[ng-version]');
@@ -48,6 +48,39 @@ export function detectFramework(): WMLUIFramework {
   return detectedFramework;
 }
 
+export function updateGlobal(props:WMLDeepPartial< WMLUIGlobal & {
+  propFrameworkName?:string}>) {
+
+  let origProps = Object.entries(props)
+  .filter(([key,val]) => {
+    return !key.startsWith('prop');
+  });
+
+  Object.assign(getGlobalObject().WINDMILLCODE, { ...Object.fromEntries(origProps) })
+  if (props.propFrameworkName){
+    getGlobalObject().WINDMILLCODE.framework.name = props.propFrameworkName
+  }
+
+}
+
+
+export function  getGlobalObject  ():any   {
+  if (typeof globalThis !== 'undefined') {
+    return globalThis; // ECMAScript standard global object
+  }
+  if (typeof window !== 'undefined') {
+    return window; // Browser environment
+  }
+  // @ts-ignore
+  if (typeof global !== 'undefined') {
+    // @ts-ignore
+    return global; // Node.js environment
+  }
+  if (typeof self !== 'undefined') {
+    return self; // Web Workers
+  }
+  return {}
+}
 
 export function generateUUID(prefix="") {
   // @ts-ignore
