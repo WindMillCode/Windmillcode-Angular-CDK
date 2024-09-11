@@ -177,16 +177,11 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
 
     setTimeout(() => {
 
-      if (this.motionState === "closed") {
-        Object.assign(this.style, this.keyFrameStyles["0%"]);
-        if(this.type ==="transition"){
-          this.currentTransitionInfo.keyframe = "0%"
-        }
-      } else {
-        Object.assign(this.style, this.keyFrameStyles["100%"]);
-        if(this.type ==="transition"){
-          this.currentTransitionInfo.keyframe = "100%"
-        }
+      let keyframe = this.motionState === "closed" ? "0%" : "100%";
+      Object.assign(this.style, this.keyFrameStyles[keyframe]);
+
+      if (this.type === "transition") {
+        this.currentTransitionInfo.keyframe = keyframe;
       }
 
       if(this.autoOpen){
@@ -285,20 +280,92 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
     this.currentTransitionInfo.transitionEndStyles.push(evt?.propertyName.replace(/-./g, (match) => match.charAt(1).toUpperCase()))
     let keyFramePropertyKeys =Object.keys(this.keyFrameStyles[this.currentTransitionInfo.keyframe])
 
+
     if(this.motionState === "closing"){
       let keyFrameStyleKeys = Object.keys(this.keyFrameStyles)
       let previousKeyFrameIndex = keyFrameStyleKeys.findIndex((key)=>key === this.currentTransitionInfo.keyframe)+1
-      keyFramePropertyKeys = Object.keys(this.keyFrameStyles[keyFrameStyleKeys[previousKeyFrameIndex]])
+      let previousKeyFramePropertyKeys = Object.keys(this.keyFrameStyles[keyFrameStyleKeys[previousKeyFrameIndex]])
+      keyFramePropertyKeys =keyFramePropertyKeys
+      .filter((key)=>{
+        return previousKeyFramePropertyKeys.includes(key)
+      })
     }
-    let frameCompleted = keyFramePropertyKeys
+
+    keyFramePropertyKeys = keyFramePropertyKeys
     .filter((key)=>!key.includes("transition"))
+
+    if(keyFramePropertyKeys.includes("borderRadius")){
+      let index = keyFramePropertyKeys.findIndex(key => key === "borderRadius");
+      keyFramePropertyKeys.splice(index, 1, ...["borderTopLeftRadius", "borderTopRightRadius", "borderBottomLeftRadius", "borderBottomRightRadius"]);
+    }
+
+    if(keyFramePropertyKeys.includes("margin")){
+      let index = keyFramePropertyKeys.findIndex(key => key === "margin");
+      keyFramePropertyKeys.splice(index, 1, ...["marginTop", "marginRight", "marginBottom", "marginLeft"]);
+    }
+
+    if(keyFramePropertyKeys.includes("padding")){
+      let index = keyFramePropertyKeys.findIndex(key => key === "padding");
+      keyFramePropertyKeys.splice(index, 1, ...["paddingTop", "paddingRight", "paddingBottom", "paddingLeft"]);
+    }
+
+    if(keyFramePropertyKeys.includes("border")){
+      let index = keyFramePropertyKeys.findIndex(key => key === "border");
+      keyFramePropertyKeys.splice(index, 1, ...["borderTop", "borderRight", "borderBottom", "borderLeft"]);
+    }
+
+    if(keyFramePropertyKeys.includes("borderColor")){
+      let index = keyFramePropertyKeys.findIndex(key => key === "borderColor");
+      keyFramePropertyKeys.splice(index, 1, ...["borderTopColor", "borderRightColor", "borderBottomColor", "borderLeftColor"]);
+    }
+
+    if(keyFramePropertyKeys.includes("borderWidth")){
+      let index = keyFramePropertyKeys.findIndex(key => key === "borderWidth");
+      keyFramePropertyKeys.splice(index, 1, ...["borderTopWidth", "borderRightWidth", "borderBottomWidth", "borderLeftWidth"]);
+    }
+
+    if(keyFramePropertyKeys.includes("borderStyle")){
+      let index = keyFramePropertyKeys.findIndex(key => key === "borderStyle");
+      keyFramePropertyKeys.splice(index, 1, ...["borderTopStyle", "borderRightStyle", "borderBottomStyle", "borderLeftStyle"]);
+    }
+
+    if(keyFramePropertyKeys.includes("background")){
+      let index = keyFramePropertyKeys.findIndex(key => key === "background");
+      keyFramePropertyKeys.splice(index, 1, ...["backgroundImage", "backgroundPosition", "backgroundSize", "backgroundRepeat", "backgroundAttachment", "backgroundOrigin", "backgroundClip", "backgroundColor"]);
+    }
+
+    if(keyFramePropertyKeys.includes("font")){
+      let index = keyFramePropertyKeys.findIndex(key => key === "font");
+      keyFramePropertyKeys.splice(index, 1, ...["fontStyle", "fontVariant", "fontWeight", "fontSize", "lineHeight", "fontFamily"]);
+    }
+
+    if(keyFramePropertyKeys.includes("animation")){
+      let index = keyFramePropertyKeys.findIndex(key => key === "animation");
+      keyFramePropertyKeys.splice(index, 1, ...["animationName", "animationDuration", "animationTimingFunction", "animationDelay", "animationIterationCount", "animationDirection", "animationFillMode", "animationPlayState"]);
+    }
+
+
+    if(keyFramePropertyKeys.includes("flex")){
+      let index = keyFramePropertyKeys.findIndex(key => key === "flex");
+      keyFramePropertyKeys.splice(index, 1, ...["flexGrow", "flexShrink", "flexBasis"]);
+    }
+
+    if(keyFramePropertyKeys.includes("grid")){
+      let index = keyFramePropertyKeys.findIndex(key => key === "grid");
+      keyFramePropertyKeys.splice(index, 1, ...["gridTemplateRows", "gridTemplateColumns", "gridTemplateAreas", "gridAutoRows", "gridAutoColumns", "gridAutoFlow"]);
+    }
+
+
+
+    let frameCompleted = keyFramePropertyKeys
     .every((key)=>{
+
       return this.currentTransitionInfo.transitionEndStyles.includes(key)
     })
-
     if(!frameCompleted){
       return
     }
+
     this.currentTransitionInfo.transitionEndStyles= []
     if(["0%","100%"].includes(this.currentTransitionInfo.keyframe)){
       this.motionState = {
@@ -323,31 +390,40 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
       this.style.animationPlayState ="paused"
     }
     else if(this.type ==="transition"){
-      let allStyles = getComputedStyle(this.getElement())
-      let currentStyles = Object.fromEntries(Object.entries(this.style)
-      .map(([k,v])=>{
-        return [k,allStyles[k]]
-      }))
-      this.currentTransitionInfo.currentStyles = {
-        ...currentStyles,
-        transition:allStyles["transition"]
+      if(this.currentTransitionInfo.playState !== "paused"){
+        this.currentTransitionInfo.playState = "paused"
+        let allStyles = getComputedStyle(this.getElement())
+        let currentStyles = Object.fromEntries(Object.entries(this.style)
+        .map(([k,v])=>{
+          return [k,allStyles[k]]
+        }))
+        this.currentTransitionInfo.currentStyles = {
+          ...currentStyles,
+          transition:allStyles["transition"]
+        }
+        Object.assign(this.style,{
+          ...currentStyles,
+          transition:"none"
+        })
       }
-      Object.assign(this.style,{
-        ...currentStyles,
-        transition:"none"
-      })
+
 
     }
   }
   resumeMotion =()=>{
+
     if(this.type ==="animation"){
       this.style.animationPlayState ="running"
     }
     else if(this.type ==="transition"){
-      Object.assign(this.style,{
-        ...this.currentTransitionInfo.currentStyles,
-        ...this.keyFrameStyles[this.currentTransitionInfo.keyframe]
-      })
+      if(this.currentTransitionInfo.playState !== "running"){
+        this.currentTransitionInfo.playState = "running"
+        Object.assign(this.style,{
+          ...this.currentTransitionInfo.currentStyles,
+          ...this.keyFrameStyles[this.currentTransitionInfo.keyframe]
+        })
+      }
+
 
     }
   }
@@ -456,7 +532,8 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
   currentTransitionInfo:any ={
     keyframe:"0%",
     currentStyles:{},
-    transitionEndStyles:[]
+    transitionEndStyles:[],
+    playState:""
   }
 
   setupTransitions =()=>{
@@ -479,13 +556,13 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
       return parseFloat(a) - parseFloat(b);
     })
     let currentTransitionIndex = sortedStyles.findIndex(([key])=>key == this.currentTransitionInfo.keyframe)
-    
+
     let nextTransitionIndex = {
       "opening": currentTransitionIndex + 1,
       "closing": currentTransitionIndex - 1
     }[this.motionState];
     this.currentTransitionInfo.keyframe = sortedStyles[nextTransitionIndex][0]
-    console.log((JSON.stringify(this.style,null,2)))
+
 
     Object.assign(this.style, {
       ...sortedStyles[nextTransitionIndex][1]
