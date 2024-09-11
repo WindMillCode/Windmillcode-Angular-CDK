@@ -459,4 +459,8 @@ updated package to reflect the version  18.2.3 of @angular/core package
 
 ### v18.2.3100 [9/8/24]
 
-updated package to reflect the version  18.2.3 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/components/wml-button/)[](/Windmillcode-Angular-CDK-Docs/components/wml-field/)
+updated package to reflect the version  18.2.3 of @angular/core package
+
+### v18.2.3110 [9/10/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/components/wml-button/)[](/Windmillcode-Angular-CDK-Docs/components/wml-field/)
