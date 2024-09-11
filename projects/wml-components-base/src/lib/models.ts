@@ -479,13 +479,14 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
       return parseFloat(a) - parseFloat(b);
     })
     let currentTransitionIndex = sortedStyles.findIndex(([key])=>key == this.currentTransitionInfo.keyframe)
+    
     let nextTransitionIndex = {
       "opening": currentTransitionIndex + 1,
       "closing": currentTransitionIndex - 1
     }[this.motionState];
     this.currentTransitionInfo.keyframe = sortedStyles[nextTransitionIndex][0]
     console.log((JSON.stringify(this.style,null,2)))
-    
+
     Object.assign(this.style, {
       ...sortedStyles[nextTransitionIndex][1]
     })
