@@ -1,0 +1,30 @@
+
+
+
+
+  @import '../../../../styles';
+
+
+
+
+
+  .WMLCarouselOneSlideExampleView{
+    display: block;
+    height:100%;
+    .WMLCarouselOneSlideExample{
+      &Main{
+        &Pod{
+          
+          
+          height:100%;
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+
+

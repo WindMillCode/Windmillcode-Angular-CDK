@@ -37,6 +37,12 @@
       "@windmillcode/angular-wml-button": [
         "dist/wml-button"
       ],
+      "@windmillcode/angular-wml-carousel": [
+        "dist/wml-carousel"
+      ],
+      "@windmillcode/angular-wml-carousel-one": [
+        "dist/wml-carousel-one"
+      ],
       "@windmillcode/angular-wml-chips": [
         "dist/wml-chips"
       ],

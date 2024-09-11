@@ -6,6 +6,7 @@ import {WMLMotionUIProperty,WMLMotionUIPropertyState} from "@windmillcode/wml-co
 
 export class WMLAngularMotionUIProperty<V=any,T=any> extends WMLMotionUIProperty<V,T>{
   override motionEndEvent =  new Subject<WMLMotionUIPropertyState>();
+  override motionKeyFrameEvent = new Subject<string>()
 }
 
 

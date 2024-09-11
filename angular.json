@@ -923,6 +923,72 @@
           }
         }
       }
+    },
+    "wml-carousel-one": {
+      "projectType": "library",
+      "root": "projects/wml-carousel-one",
+      "sourceRoot": "projects/wml-carousel-one/src",
+      "prefix": "wml",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/wml-carousel-one/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/wml-carousel-one/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/wml-carousel-one/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/wml-carousel-one/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "wml-carousel": {
+      "projectType": "library",
+      "root": "projects/wml-carousel",
+      "sourceRoot": "projects/wml-carousel/src",
+      "prefix": "wml",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/wml-carousel/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/wml-carousel/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/wml-carousel/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/wml-carousel/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }

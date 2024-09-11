@@ -1,0 +1,30 @@
+
+
+
+
+  @import '../../../../styles';
+
+
+
+
+
+  .WMLCarouselOneSlideView{
+    display: block;
+    height:100%;
+    .WMLCarouselOneSlide{
+      &Main{
+        &Pod{
+          
+          
+          height:100%;
+        }
+      }
+      &Pod{
+
+        &0{}
+      }
+    }
+  }
+
+
+

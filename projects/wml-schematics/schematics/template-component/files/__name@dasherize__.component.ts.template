@@ -59,7 +59,7 @@ export class <%= classify(name) %>Component  {
   @HostBinding('attr.id') myId?:string = this.idPrefix()
   <% } %>
   <%  if(cpntType === 'library' && isIdIncluded) { %>
-  @HostBinding('id') myId!:string
+  @HostBinding('attr.id') myId?:string
   <% } %>
   ngUnsub= new Subject<void>()
 

@@ -124,6 +124,7 @@ export class WMLView<V=any,T=any> extends WMLUIProperty<V,T>{
   }
 }
 
+
 export class WMLRoute<V=any,T=any>  extends WMLView<V,T> {
   constructor(props:Partial<WMLRoute>={}){
     super()
@@ -141,45 +142,67 @@ export class WMLRoute<V=any,T=any>  extends WMLView<V,T> {
 
 
 export type WMLMotionUIPropertyState  ="open" | "opening" | "closing" | "closed"
-export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
-  constructor(props: Partial<WMLMotionUIProperty> = {}) {
+export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WMLView<V,T> {
+  constructor(props: Partial<WMLMotionUIProperty<V,T>> = {}) {
     super()
+
     Object.assign(this.style, {
       ...this.helperStyles,
       ...this.style,
     })
 
+
     if (!props.keyFrameName) {
-      let defaultName;
-      let length = WMLMotionUIProperty.keyFrameNames.length;
-      do {
-        defaultName = `keyframe-${length}`;
-        length++;
-      } while (WMLMotionUIProperty.keyFrameNames.includes(defaultName));
-      props.keyFrameName = defaultName;
+      this.createKeyFrameName();
     }
+
     let origProps = Object.entries(props)
     .filter(([key,val]) => {
       return !key.startsWith('prop');
     });
-    Object.assign(this, { ...Object.fromEntries(origProps) });
-    this.injectKeyframes()
+    Object.assign(
+      this,
+      {
+        type:"animation",
+        ...Object.fromEntries(origProps)
+      }
+    );
 
-    if (this.motionState === "closed") {
-      Object.assign(this.style, this.keyFrameStyles["0%"]);
-    } else {
-      Object.assign(this.style, this.keyFrameStyles["100%"]);
+    if(this.type === "animation"){
+      this.injectKeyframes()
+    }
+    else if(this.type === "transition"){
+      this.setupTransitions()
     }
 
-    if(this.autoOpen){
-      this.motionState = "opening"
-      this.style.animationName = this.keyFrameName
-    }
+    setTimeout(() => {
+
+      if (this.motionState === "closed") {
+        Object.assign(this.style, this.keyFrameStyles["0%"]);
+        if(this.type ==="transition"){
+          this.currentTransitionInfo.keyframe = "0%"
+        }
+      } else {
+        Object.assign(this.style, this.keyFrameStyles["100%"]);
+        if(this.type ==="transition"){
+          this.currentTransitionInfo.keyframe = "100%"
+        }
+      }
+
+      if(this.autoOpen){
+        if(this.type === "animation"){
+          this.motionState = "opening"
+          this.style.animationName = this.keyFrameName
+        }
+        else {
+          this.openMotion()
+        }
+      }
+    }, 0);
 
   }
 
   autoOpen = false
-
  /**
  * Necessary for animations to work properly.
  * Modify only if you know what you are doing.
@@ -192,10 +215,11 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
   }
   private static keyFrameNames:Array<string> = [];
   private _keyFrameName!:string;
-  get keyFrameName(): string | undefined {
+
+  get keyFrameName(): string  {
     return this._keyFrameName;
   }
-  set keyFrameName(name: string | undefined) {
+  set keyFrameName(name: string ) {
     if (name) {
       if (this._keyFrameName) {
         WMLMotionUIProperty.keyFrameNames.filter((name)=>name !=this._keyFrameName)
@@ -209,6 +233,28 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
     return this.motionState
   }
   motionEndEvent:any = (state:WMLMotionUIPropertyState)=>{
+  }
+  triggerMotionEndEvent=(motionState?:WMLMotionUIPropertyState)=>{
+    motionState ??= this.motionState
+    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
+      // @ts-ignore
+      this.motionEndEvent.next?.(motionState)
+    }
+    else{
+      this.motionEndEvent(motionState)
+    }
+  }
+  motionKeyFrameEvent:any =(keyFrame:string)=>{
+  }
+  triggerMotionKeyFrameEvent=(keyFrame?:string)=>{
+    keyFrame ??= this.currentTransitionInfo.keyframe
+    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
+      // @ts-ignore
+      this.motionKeyFrameEvent.next?.(keyFrame)
+    }
+    else{
+      this.motionKeyFrameEvent(keyFrame)
+    }
   }
   readonly animationEnd:(evt?:AnimationEvent)=> void =(evt)=>{
 
@@ -227,21 +273,93 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
       this.style[key]=value
     })
 
-    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
-      // @ts-ignore
-      this.motionEndEvent.next?.(this.motionState)
-    }
-    else{
-      this.motionEndEvent(this.motionState)
-    }
+    this.triggerMotionEndEvent()
     if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
       this.angular.cdref?.detectChanges()
     }
 
   }
+
+  readonly transitionEnd:(evt?:TransitionEvent)=> void =(evt)=>{
+    let state = this.getGroupMotionState()
+    this.currentTransitionInfo.transitionEndStyles.push(evt?.propertyName.replace(/-./g, (match) => match.charAt(1).toUpperCase()))
+    let keyFramePropertyKeys =Object.keys(this.keyFrameStyles[this.currentTransitionInfo.keyframe])
+
+    if(this.motionState === "closing"){
+      let keyFrameStyleKeys = Object.keys(this.keyFrameStyles)
+      let previousKeyFrameIndex = keyFrameStyleKeys.findIndex((key)=>key === this.currentTransitionInfo.keyframe)+1
+      keyFramePropertyKeys = Object.keys(this.keyFrameStyles[keyFrameStyleKeys[previousKeyFrameIndex]])
+    }
+    let frameCompleted = keyFramePropertyKeys
+    .filter((key)=>!key.includes("transition"))
+    .every((key)=>{
+      return this.currentTransitionInfo.transitionEndStyles.includes(key)
+    })
+
+    if(!frameCompleted){
+      return
+    }
+    this.currentTransitionInfo.transitionEndStyles= []
+    if(["0%","100%"].includes(this.currentTransitionInfo.keyframe)){
+      this.motionState = {
+        "closing":"closed",
+        "opening":"open",
+      }[state]
+      this.triggerMotionEndEvent()
+    }
+    else{
+      let val = {
+        "closing":"reverse",
+        "opening":"forward"
+      }[state]
+      this.triggerMotionKeyFrameEvent()
+      this.toggleMotionViaTransition({val,override:true})
+    }
+  }
   openMotion =()=>this.toggleMotion("forward")
   closeMotion = ()=>this.toggleMotion("reverse")
+  pauseMotion =()=>{
+    if(this.type ==="animation"){
+      this.style.animationPlayState ="paused"
+    }
+    else if(this.type ==="transition"){
+      let allStyles = getComputedStyle(this.getElement())
+      let currentStyles = Object.fromEntries(Object.entries(this.style)
+      .map(([k,v])=>{
+        return [k,allStyles[k]]
+      }))
+      this.currentTransitionInfo.currentStyles = {
+        ...currentStyles,
+        transition:allStyles["transition"]
+      }
+      Object.assign(this.style,{
+        ...currentStyles,
+        transition:"none"
+      })
+
+    }
+  }
+  resumeMotion =()=>{
+    if(this.type ==="animation"){
+      this.style.animationPlayState ="running"
+    }
+    else if(this.type ==="transition"){
+      Object.assign(this.style,{
+        ...this.currentTransitionInfo.currentStyles,
+        ...this.keyFrameStyles[this.currentTransitionInfo.keyframe]
+      })
+
+    }
+  }
   private toggleMotion=(val:'forward'|'reverse')=>{
+    if(this.type ==="animation"){
+      this.toggleMotionViaAnimation(val)
+    }
+    else if(this.type ==="transition"){
+      this.toggleMotionViaTransition({val})
+    }
+  }
+  private toggleMotionViaAnimation=(val:'forward'|'reverse')=>{
     if(!["closed","open"].includes(this.motionState)){
       return
     }
@@ -269,19 +387,19 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
     })
 
     if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
-      this.cdref?.detectChanges()
+      this.angular.cdref?.detectChanges()
     }
 
 
     setTimeout(() => {
       this.style.animationName = this.keyFrameName
       if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
-        this.cdref?.detectChanges()
+        this.angular.cdref?.detectChanges()
       }
     }, 100);
 
   }
-  injectKeyframes=()=> {
+  checkForDuplicateKeyFrameNames=()=>{
     let name  = this.keyFrameName as string
     let timesKeyFrameOccurs = WMLMotionUIProperty.keyFrameNames.filter((keyFrame) => name === keyFrame).length
     if (timesKeyFrameOccurs >= 2) {
@@ -291,9 +409,15 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
         WMLMotionUIProperty.keyFrameNames.push(name);
       }
 
-      return;
+      return true;
     }
-
+    return false
+  }
+  injectKeyframes=()=> {
+    let shouldReturn =this.checkForDuplicateKeyFrameNames()
+    if(shouldReturn){
+      return
+    }
     // Create a new style element
     const styleElement = document.createElement('style');
     document.head.appendChild(styleElement);
@@ -318,7 +442,69 @@ export class WMLMotionUIProperty<V=any,T=any> extends WMLView<V,T> {
     styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
 
   }
+  createKeyFrameName = ()=> {
+    let defaultName;
+    let length = WMLMotionUIProperty.keyFrameNames.length;
+    do {
+      defaultName = `keyframe-${length}`;
+      length++;
+    } while (WMLMotionUIProperty.keyFrameNames.includes(defaultName));
+    this.keyFrameName = defaultName;
+  }
 
+
+  currentTransitionInfo:any ={
+    keyframe:"0%",
+    currentStyles:{},
+    transitionEndStyles:[]
+  }
+
+  setupTransitions =()=>{
+    this.updateClassString(this.keyFrameName)
+  }
+  private toggleMotionViaTransition=(props:{val:'forward'|'reverse',override?:boolean})=>{
+    let {val,override} = props
+    if(!["closed","open"].includes(this.motionState) && override !==true){
+      return
+    }
+
+    // @ts-ignore
+    this.motionState = {
+      "forward":"opening",
+      "reverse":"closing"
+    }[val]
+
+    let sortedStyles = Object.entries(this.keyFrameStyles)
+    .sort(([a], [b])=>{
+      return parseFloat(a) - parseFloat(b);
+    })
+    let currentTransitionIndex = sortedStyles.findIndex(([key])=>key == this.currentTransitionInfo.keyframe)
+    let nextTransitionIndex = {
+      "opening": currentTransitionIndex + 1,
+      "closing": currentTransitionIndex - 1
+    }[this.motionState];
+    this.currentTransitionInfo.keyframe = sortedStyles[nextTransitionIndex][0]
+    console.log((JSON.stringify(this.style,null,2)))
+    
+    Object.assign(this.style, {
+      ...sortedStyles[nextTransitionIndex][1]
+    })
+    let currentTransitionDuration = sortedStyles[currentTransitionIndex][1].transitionDuration
+    if(this.motionState ==="closing" && currentTransitionDuration ){
+      this.style.transitionDuration = currentTransitionDuration
+    }
+  }
+  getElement = ()=> {
+    return document.getElementsByClassName(this.keyFrameName)[0];
+  }
+  getTransitionProperties = ()=> {
+    let htmlElement = this.getElement();
+    let transitionProperties = Object.entries(getComputedStyle(htmlElement))
+      .filter((item) => {
+        return item[0].includes("transition");
+      });
+    return Object.fromEntries(transitionProperties);
+  }
 }
 
 

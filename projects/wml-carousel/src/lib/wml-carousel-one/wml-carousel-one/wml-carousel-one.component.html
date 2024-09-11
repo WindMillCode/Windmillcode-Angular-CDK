@@ -1,0 +1,17 @@
+<div [class]="classPrefix('MainPod')">
+  <section [class]="classPrefix('Pod0')">
+
+  </section>
+  <section [class]="classPrefix('Pod1')">
+    <div
+    [ngStyle]="props.controller"
+    (animationend)="props.controller.animationEnd($event)"
+    [class]="classPrefix('Pod1Item0')">
+      <wml-carousel-one-slide
+        [class]="classPrefix('Pod1Item1')"
+        [props]="slide"
+        *ngFor="let slide of props.slides"
+      ></wml-carousel-one-slide>
+    </div>
+  </section>
+</div>
