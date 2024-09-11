@@ -44,6 +44,14 @@ Methods<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody>
 
 
 
+###  <code dir="auto">WMLUIGlobal</code> 
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>framework</td><td><code dir="auto">Framework</code></td><td>Holds the detected framework information.</td></tr></tbody></table>
+
+ <code dir="auto">framework</code> <table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td><code dir="auto">WMLUIFrameworkType</code></td><td>The name of the detected UI framework.</td></tr></tbody></table>
+
+
+
 ### WMLEndpoint
 
 <table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">url</code></td><td><code dir="auto">Function</code></td><td>Function that defines the endpoint’s URL.</td></tr><tr><td><code dir="auto">automate</code></td><td><code dir="auto">boolean</code></td><td>Indicates whether to automate API requests for the endpoint.</td></tr></tbody></table>
@@ -138,7 +146,17 @@ Type Behavior<table><thead><tr><th>Condition</th><th>Behavior</th></tr></thead><
 
 ### Functions
 
- <code dir="auto">detectFramework()</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Detects the current frontend framework being used (e.g., React, Angular, Vue.js, etc.). Returns the framework as a string. Not guaranteed to be accurate</td></tr></tbody></table>
+ <code dir="auto">updateGlobal</code> <table><thead><tr><th>Signature</th><th>Return Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">updateGlobal(props: WMLDeepPartial&lt;WMLUIGlobal &amp; { propFrameworkName?: string }&gt;)</code></td><td><code dir="auto">void</code></td><td>Updates the global <code dir="auto">WINDMILLCODE</code> object with provided properties and optionally changes framework name. useful if detectframework gets the framework name wrong</td></tr></tbody></table>
+
+ <code dir="auto">props</code> <table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>propFrameworkName</td><td><code dir="auto">string</code> (optional)</td><td>Optionally updates the framework name in the global object.</td></tr><tr><td>…rest</td><td><code dir="auto">WMLDeepPartial&lt;WMLUIGlobal&gt;</code></td><td>All other properties of <code dir="auto">WMLUIGlobal</code> to be applied globally.</td></tr></tbody></table>
+
+ <code dir="auto">getGlobalObject</code> <table><thead><tr><th>Signature</th><th>Return Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">getGlobalObject(): any</code></td><td><code dir="auto">any</code></td><td>Returns the appropriate global object based on the environment: <code dir="auto">globalThis</code>, <code dir="auto">window</code>, <code dir="auto">global</code>, or <code dir="auto">self</code>.</td></tr></tbody></table>
+
+ <code dir="auto">Return Object</code> <table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>globalThis</td><td><code dir="auto">any</code></td><td>Standard ECMAScript global object.</td></tr><tr><td>window</td><td><code dir="auto">any</code></td><td>Global object for browser environments.</td></tr><tr><td>global</td><td><code dir="auto">any</code></td><td>Global object for Node.js environments.</td></tr><tr><td>self</td><td><code dir="auto">any</code></td><td>Global object for Web Workers.</td></tr><tr><td></td><td><code dir="auto">Object</code></td><td>Fallback empty object if none of the above globals are available.</td></tr></tbody></table>
+
+ <code dir="auto">detectFramework</code> <table><thead><tr><th>Signature</th><th>Return Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">detectFramework(): WMLUIFrameworkType</code></td><td><code dir="auto">WMLUIFrameworkType</code></td><td>Detects the framework used in the environment (React, Angular, Vue.js, etc.).</td></tr></tbody></table>
+
+ <code dir="auto">myWindow</code> <table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>myWindow</td><td><code dir="auto">any</code></td><td>Represents the global <code dir="auto">window</code> object or an empty object if <code dir="auto">window</code> is undefined.</td></tr></tbody></table>
 
  <code dir="auto">generateUUID(prefix: string)</code> <table><thead><tr><th>Description</th></tr></thead><tbody><tr><td>Generates a UUID with an optional prefix and returns it as a string.</td></tr></tbody></table>
 
@@ -871,12 +889,24 @@ updated package to reflect the version  18.2.3 of @angular/core package
 
 ### v18.2.3100 [9/8/24]
 
-[BREAKING CHANGE] seperated angular features from core librarly to angular-wml-components-base
+[BREAKING CHANGE] seperated angular features from core library to angular-wml-components-base
 moving WMLComponentBaseZeroPropsMixin, WMLComponentBaseZeroProps, WMLComponentBaseZero,addCustomComponent, WMLNGXTranslateLoader,WMLTestUtils to the angular base library
 deleting WMLModuleForRootProps
 
+### v18.2.3110 [9/10/2024 1:45:22 PM EST]
+
+[UPDATE] Added new global object management functions <code dir="auto">updateGlobal</code> and <code dir="auto">getGlobalObject</code> in <code dir="auto">functions.ts</code> . This gives developers access to globally update and retrieve the framework’s global object easily.
+
+[UPDATE] Added a new <code dir="auto">WMLUIGlobal</code> class in <code dir="auto">models.ts</code> to represent the global configuration options for the library
+
+[FIX] All references to <code dir="auto">WMLUIProperty.framework</code> have been replaced with <code dir="auto">getGlobalObject().WINDMILLCODE.framework.name</code> . Developers should now use the global framework object instead of relying on the static <code dir="auto">WMLUIProperty.framework</code> .
 
 
-### v18.2.3100 [9/8/24]
 
-updated package to reflect the version  18.2.3 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/intro/wml-angular-components-base)
+### v18.2.3110 [9/10/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3110 [9/10/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/intro/wml-angular-components-base)

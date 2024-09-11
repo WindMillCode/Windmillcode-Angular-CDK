@@ -1,6 +1,8 @@
 # WML Angular Components Base
 
-When working on web applications, there is no standard baseline. The Angular WML Components Base Library establishes a foundation for your application, ensuring consistency and scalability. The core of this library is the <code dir="auto">WMLUIProperty</code> , which represents the basic building block of every element in a web application. This property encapsulates all the essential features, and there are several subclasses like <code dir="auto">WMLRoute</code> for routes, <code dir="auto">WMLView</code> to leverage change detection, <code dir="auto">WMLImage</code> for images  and <code dir="auto">WMLAngularMotionUIProperty</code> for CSS animations and transitions. Each class has properties and methods to optimize your work in those features of  your application. You can use this package and leave out the rest of the library and you will get very far building very robust and scalable applications
+WML Angular Components Base extends the WML Components Base by integrating it with Angular-specific features and functionality. It builds on the foundation provided by the core library and adds seamless integration with Angular’s framework, making it easier to work with Angular modules, change detection, and Angular-based services like ngx-translate.
+
+While WML Components Base provides the essential UI building blocks, WML Angular Components Base enhances these components to work natively with Angular. This includes adding support for Angular’s dependency injection, change detection, routing, and lifecycle hooks.
 
 
 
@@ -68,4 +70,16 @@ WMLAngularCustomComponent from their orginal respective part which exlude “Ang
 
 ### v18.2.3100 [9/8/24]
 
-updated package to reflect the version  18.2.3 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/intro/wml-components-base)[](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)
+updated package to reflect the version  18.2.3 of @angular/core package
+
+### v18.2.3100 [9/8/24]
+
+updated package to reflect the version  18.2.3 of @angular/core package
+
+### v18.2.3100 [9/8/24]
+
+updated package to reflect the version  18.2.3 of @angular/core package
+
+### v18.2.3110 [9/10/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/intro/wml-components-base)[](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)
