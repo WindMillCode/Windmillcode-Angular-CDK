@@ -80,6 +80,7 @@ export class WMLCarouselOneProps {
   slideWidth  = "23%"
   slideHeight = "33%"
   distanceFromCenter= "300px"
+  distanceFromTop='63px'
   classPrefix = generateClassPrefix('WMLCarouselOne')
 
   slideContainer = new WMLUIProperty({
@@ -136,12 +137,11 @@ export class WMLCarouselOneProps {
         console.log(parentWidth)
         console.log(parentHeight)
         this.slideWidth = `${(parentWidth * 0.3)}px`;
-        this.slideHeight = `${( parentHeight * 0.3)}px`;
+        this.slideHeight = `${( parentHeight * 0.35)}px`;
         this.distanceFromCenter = `${parentWidth * .42}px`;
 
         this.slideContainer.style.perspective = `${parentWidth}px`;
         this.slideContainer.style.perspectiveOrigin = `50% ${-25}%`;
-        console.log(this.slideContainer.style)
         this.updateSlides();
       }),
       tap(()=>{
@@ -158,7 +158,7 @@ export class WMLCarouselOneProps {
   updateSlides = ()=> {
     this.slides = this.slides.map((slide, index0) => {
       let angle = this.getAngle();
-      slide.view.style.transform = `rotateY(${index0 * angle}deg) translateZ(${this.distanceFromCenter }) translateY(-75px)`;
+      slide.view.style.transform = `rotateY(${index0 * angle}deg) translateZ(${this.distanceFromCenter }) translateY(-${this.distanceFromTop})`;
       slide.view.style.height = this.slideHeight;
       slide.view.style.width = this.slideWidth;
       return slide;
