@@ -1,14 +1,12 @@
 // angular
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnInit,  Input  , ViewEncapsulation   } from '@angular/core';
 
-
-
 // rxjs
 import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
 
 // wml-components
-import { WMLConstructorDecorator, generateClassPrefix, generateIdPrefix } from '@windmillcode/wml-components-base';
+import { WMLConstructorDecorator, generateClassPrefix } from '@windmillcode/wml-components-base';
 
 
 // misc
@@ -20,29 +18,18 @@ import { WMLConstructorDecorator, generateClassPrefix, generateIdPrefix } from '
   templateUrl: './wml-carousel-one-slide-example.component.html',
   styleUrls: ['./wml-carousel-one-slide-example.component.scss'],
   changeDetection:ChangeDetectionStrategy.OnPush,
-
   encapsulation:ViewEncapsulation.None
-
-
 })
 export class WMLCarouselOneSlideExampleComponent  {
 
   constructor(
-    public cdref:ChangeDetectorRef,
-
+    public cdref:ChangeDetectorRef
   ) { }
 
   classPrefix = generateClassPrefix('WMLCarouselOneSlideExample')
-
-
   @Input('props') props: WMLCarouselOneSlideExampleProps = new WMLCarouselOneSlideExampleProps()
-
-
   @HostBinding('class') myClass: string = this.classPrefix(`View`);
-
-
   @HostBinding('attr.id') myId?:string
-
   ngUnsub= new Subject<void>()
 
 

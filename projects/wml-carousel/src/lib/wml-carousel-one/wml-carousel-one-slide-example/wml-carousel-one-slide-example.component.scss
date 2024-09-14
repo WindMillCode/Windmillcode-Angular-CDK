@@ -1,9 +1,5 @@
 
-
-
-
-  @import '../../../../styles';
-
+ @import '../../../../styles';
 
 
 
@@ -11,11 +7,12 @@
   .WMLCarouselOneSlideExampleView{
     display: block;
     height:100%;
+    border:calc(1/10.6 * 1em) solid green;
     .WMLCarouselOneSlideExample{
       &Main{
         &Pod{
-          
-          
+
+
           height:100%;
         }
       }

@@ -1,42 +1,42 @@
+@import '../../../../styles';
 
-
-
-
-  @import '../../../../styles';
-
-
-
-
-
-  .WMLCarouselOneView{
-    display: block;
-    height:100%;
-    .WMLCarouselOne{
-      &Main{
-        &Pod{
-
-
-          height:100%;
-        }
-      }
+.WMLCarouselOneView{
+  display: block;
+  height:100%;
+  .WMLCarouselOne{
+    &Main{
       &Pod{
 
-        &0{}
-        &1{
-          &Item {
-            &0 {
-              border:calc(1/10.6 * 1em) solid red;
-              
-            }
-            &1{
-              border:calc(1/10.6 * 1em) solid green;
-              width: 50%;
-            }
+
+        height:100%;
+      }
+    }
+    &Pod{
+
+      &0{}
+      &1{
+        &Item {
+          &0 {
+            border:calc(1/10.6 * 1em) solid red;
+            height: calc(200/10.6 * 1em);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+          }
+          &1{
+
+
+
+            position: absolute;
+
           }
         }
       }
     }
   }
+}
 
 
 

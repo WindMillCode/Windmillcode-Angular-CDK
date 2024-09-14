@@ -2,13 +2,18 @@
   <section [class]="classPrefix('Pod0')">
 
   </section>
-  <section [class]="classPrefix('Pod1')">
+  <section
+
+  [style]="props.slideContainer.style"
+  [class]="classPrefix('Pod1')">
     <div
-    [ngStyle]="props.controller"
-    (animationend)="props.controller.animationEnd($event)"
+    #slideContainer
+    [ngStyle]="props.controller.style"
+    (transitionend)="props.controller.transitionEnd($event)"
     [class]="classPrefix('Pod1Item0')">
       <wml-carousel-one-slide
-        [class]="classPrefix('Pod1Item1')"
+        [ngStyle]="slide.view.style"
+        [class]="classPrefix('Pod1Item1') + slide.view.class"
         [props]="slide"
         *ngFor="let slide of props.slides"
       ></wml-carousel-one-slide>

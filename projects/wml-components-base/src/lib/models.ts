@@ -151,7 +151,6 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
       ...this.style,
     })
 
-
     if (!props.keyFrameName) {
       this.createKeyFrameName();
     }
@@ -175,10 +174,10 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
       this.setupTransitions()
     }
 
-    setTimeout(() => {
 
-      let keyframe = this.motionState === "closed" ? "0%" : "100%";
-      Object.assign(this.style, this.keyFrameStyles[keyframe]);
+    let keyframe = this.motionState === "closed" ? "0%" : "100%";
+    Object.assign(this.style, this.keyFrameStyles[keyframe]);
+    setTimeout(() => {
 
       if (this.type === "transition") {
         this.currentTransitionInfo.keyframe = keyframe;
@@ -406,8 +405,6 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
           transition:"none"
         })
       }
-
-
     }
   }
   resumeMotion =()=>{

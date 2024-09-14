@@ -1,12 +1,14 @@
 // angular
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnInit,  Input  , ViewEncapsulation   } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnInit,  Input  , ViewEncapsulation, ViewChild, ViewContainerRef   } from '@angular/core';
 
 // rxjs
 import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
 
 // wml-components
-import { WMLConstructorDecorator, generateClassPrefix, generateIdPrefix } from '@windmillcode/wml-components-base';
+import { WMLConstructorDecorator, WMLCustomComponent, WMLUIProperty, generateClassPrefix, generateIdPrefix } from '@windmillcode/wml-components-base';
+import { WMLCarouselOneSlideExampleComponent, WMLCarouselOneSlideExampleProps } from '../wml-carousel-one-slide-example/wml-carousel-one-slide-example.component';
+import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 
 
 // misc
@@ -32,6 +34,7 @@ export class WMLCarouselOneSlideComponent  {
   @HostBinding('class') myClass: string = this.classPrefix(`View`);
   @HostBinding('attr.id') myId?:string
   ngUnsub= new Subject<void>()
+  @ViewChild("customSlide",{read:ViewContainerRef}) customSlide;
 
 
   listenForUpdate = ()=>{
@@ -56,8 +59,13 @@ export class WMLCarouselOneSlideComponent  {
     }
 
     this.listenForUpdate().subscribe()
-
   }
+
+  ngAfterViewInit(){
+    this.props.slideViewContainerRef = this.customSlide
+    this.props.init()
+  }
+
 
   ngOnDestroy(){
     this.ngUnsub.next();
@@ -73,10 +81,28 @@ export class WMLCarouselOneSlideProps {
   constructor(props:Partial<WMLCarouselOneSlideProps>={}){ }
 
   id = ""
-
+  custom = new WMLCustomComponent({
+    cpnt:WMLCarouselOneSlideExampleComponent,
+    props:new WMLCarouselOneSlideExampleProps()
+  })
   setStateSubj = new Subject<WMLCarouselOneSlideProps>()
   setState = (value)=>{
     this.setStateSubj.next(value)
+  }
+  view = new WMLUIProperty({
+    
+  })
+
+  // component properties
+  slideViewContainerRef!:ViewContainerRef
+  //
+
+  init=()=>{
+    addCustomComponent(
+      this.slideViewContainerRef,
+      this.custom.cpnt,
+      this.custom.props
+    )
   }
 }
 

@@ -1,7 +1,7 @@
 import {  Type } from "@angular/core";
 import { TranslateLoader } from "@ngx-translate/core";
 import { Subject, of } from "rxjs";
-import {WMLMotionUIProperty,WMLMotionUIPropertyState} from "@windmillcode/wml-components-base";
+import { WMLMotionUIProperty,WMLMotionUIPropertyState } from "@windmillcode/wml-components-base";
 
 
 export class WMLAngularMotionUIProperty<V=any,T=any> extends WMLMotionUIProperty<V,T>{
