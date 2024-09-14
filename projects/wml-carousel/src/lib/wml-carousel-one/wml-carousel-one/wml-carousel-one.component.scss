@@ -15,17 +15,13 @@
 
       &0{}
       &1{
-
         &Item {
           &0 {
-            border:calc(1/10.6 * 1em) solid red;
-            height: calc(200/10.6 * 1em);
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             transform-style: preserve-3d;
-            transform:"rotate3D(60deg)";
           }
           &1{
 

@@ -7,7 +7,7 @@
   [ngStyle]="props.slideContainer.style"
   [class]="props.slideContainer.class">
     <div
-    #slideContainer
+    #controller
     [ngStyle]="props.controller.style"
     (transitionend)="props.controller.transitionEnd($event)"
     [class]="props.controller.class">
