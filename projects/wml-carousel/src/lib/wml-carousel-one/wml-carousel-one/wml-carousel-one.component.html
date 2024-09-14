@@ -4,16 +4,16 @@
   </section>
   <section
 
-  [style]="props.slideContainer.style"
-  [class]="classPrefix('Pod1')">
+  [ngStyle]="props.slideContainer.style"
+  [class]="props.slideContainer.class">
     <div
     #slideContainer
     [ngStyle]="props.controller.style"
     (transitionend)="props.controller.transitionEnd($event)"
-    [class]="classPrefix('Pod1Item0')">
+    [class]="props.controller.class">
       <wml-carousel-one-slide
         [ngStyle]="slide.view.style"
-        [class]="classPrefix('Pod1Item1') + slide.view.class"
+        [class]=" slide.view.class"
         [props]="slide"
         *ngFor="let slide of props.slides"
       ></wml-carousel-one-slide>

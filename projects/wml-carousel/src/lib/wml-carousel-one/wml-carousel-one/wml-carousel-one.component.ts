@@ -49,7 +49,7 @@ export class WMLCarouselOneComponent {
     }
     this.props.slideContainerVCF = this.slideContainer
     this.props.ngUnsub = this.ngUnsub
-    this.cdref = this.cdref
+    this.props.cdref = this.cdref
     this.listenForUpdate().subscribe()
     this.props.init()
   }
@@ -80,15 +80,18 @@ export class WMLCarouselOneProps {
   slideWidth  = "23%"
   slideHeight = "33%"
   distanceFromCenter= "300px"
+  classPrefix = generateClassPrefix('WMLCarouselOne')
 
   slideContainer = new WMLUIProperty({
     style:{
-      perspective:"1000px",
-      perspectiveOrigin:"50% -95%"
-    }
+      // perspective:"1000px",
+      // perspectiveOrigin:"50% -95%"
+    },
+    class:this.classPrefix('Pod1')
   })
   controller  = new WMLAngularMotionUIProperty({
     type:"transition",
+    class:this.classPrefix('Pod1Item0'),
     style:{
       height:"300px",
       border:"calc(1/10.6 * 1em) solid red"
@@ -109,7 +112,7 @@ export class WMLCarouselOneProps {
   .map((nullVal,index0)=>{
     return new WMLCarouselOneSlideProps({
       view:new WMLUIProperty({
-
+        class:this.classPrefix('Pod1Item1'),
       })
     })
   })
@@ -132,13 +135,13 @@ export class WMLCarouselOneProps {
 
         console.log(parentWidth)
         console.log(parentHeight)
-        // this.slideWidth = `${Math.min(parentWidth * 0.2, parentHeight * 0.2)}px`;
-        // this.slideHeight = `${Math.min(parentWidth * 0.3, parentHeight * 0.3)}px`;
-        // this.distanceFromCenter = `${parentWidth / 3}px`;
+        this.slideWidth = `${(parentWidth * 0.3)}px`;
+        this.slideHeight = `${( parentHeight * 0.3)}px`;
+        this.distanceFromCenter = `${parentWidth * .42}px`;
 
-        // this.slideContainer.style.perspective = `${parentWidth}px`;
-        // this.slideContainer.style.perspectiveOrigin = `50% ${-90}px`;
-
+        this.slideContainer.style.perspective = `${parentWidth}px`;
+        this.slideContainer.style.perspectiveOrigin = `50% ${-25}%`;
+        console.log(this.slideContainer.style)
         this.updateSlides();
       }),
       tap(()=>{
@@ -155,7 +158,7 @@ export class WMLCarouselOneProps {
   updateSlides = ()=> {
     this.slides = this.slides.map((slide, index0) => {
       let angle = this.getAngle();
-      slide.view.style.transform = `rotateY(${index0 * angle}deg) translateZ(${this.distanceFromCenter})`;
+      slide.view.style.transform = `rotateY(${index0 * angle}deg) translateZ(${this.distanceFromCenter }) translateY(-75px)`;
       slide.view.style.height = this.slideHeight;
       slide.view.style.width = this.slideWidth;
       return slide;

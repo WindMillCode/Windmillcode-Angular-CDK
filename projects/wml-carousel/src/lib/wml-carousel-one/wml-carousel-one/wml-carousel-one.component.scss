@@ -15,6 +15,7 @@
 
       &0{}
       &1{
+
         &Item {
           &0 {
             border:calc(1/10.6 * 1em) solid red;
@@ -24,6 +25,7 @@
             justify-content: center;
             align-items: center;
             transform-style: preserve-3d;
+            transform:"rotate3D(60deg)";
           }
           &1{
 
