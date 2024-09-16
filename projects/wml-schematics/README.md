@@ -177,4 +177,10 @@ updated package to reflect the version  18.2.3 of @angular/cli package
 
 ### v18.2.3100 [9/8/24]
 
-updated package to reflect the version  18.2.3 of @angular/cli package[](/Windmillcode-Angular-CDK-Docs/intro/wml-angular-components-base)[](/Windmillcode-Angular-CDK-Docs/components/wml-accordion/)
+updated package to reflect the version  18.2.3 of @angular/cli package
+
+### v18.2.3112 [9/10/24]
+
+[FIX] ensure new imports match to conform with @windmillcode/angular-wml-components-base@18.2.3110
+
+[](/Windmillcode-Angular-CDK-Docs/intro/wml-angular-components-base)[](/Windmillcode-Angular-CDK-Docs/components/wml-accordion/)

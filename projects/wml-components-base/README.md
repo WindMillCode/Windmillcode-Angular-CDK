@@ -64,11 +64,7 @@ Methods<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody>
 
 Methods<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">get cdref</code></td><td>Retrieves the ChangeDetectorRef from the Angular-specific properties (deprecated).</td></tr><tr><td><code dir="auto">set cdref</code></td><td>Sets the ChangeDetectorRef in the Angular-specific properties (deprecated).</td></tr></tbody></table>
 
-
-
-### angular (Sub-Object of WMLView)
-
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">cdref</code></td><td><code dir="auto">any</code></td><td>Angular’s ChangeDetectorRef used for change detection in Angular applications.</td></tr></tbody></table>
+angular<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">cdref</code></td><td><code dir="auto">any</code></td><td>Angular’s ChangeDetectorRef used for change detection in Angular applications.</td></tr></tbody></table>
 
 
 
@@ -908,5 +904,13 @@ deleting WMLModuleForRootProps
 updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3110 [9/10/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3111 [9/10/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3112 [9/10/24]
 
 updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/intro/wml-angular-components-base)

@@ -1,5 +1,5 @@
 // angular
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  Input, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Input, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 // rxjs
 
 import { fromEvent, Subject } from 'rxjs';
@@ -25,22 +25,22 @@ export class WMLCarouselOneComponent {
   classPrefix = generateClassPrefix('WMLCarouselOne')
   @Input('props') props: WMLCarouselOneProps = new WMLCarouselOneProps()
   @HostBinding('class') myClass: string = this.classPrefix(`View`);
-  @HostBinding('attr.id') myId?:string
-  @ViewChild("controller",{read:ViewContainerRef,static:true}) controller! :ViewContainerRef
+  @HostBinding('attr.id') myId?: string
+  @ViewChild("controller", { read: ViewContainerRef, static: true }) controller!: ViewContainerRef
   ngUnsub = new Subject<void>()
 
   listenForUpdate = () => {
     return this.props.setStateSubj
-    .pipe(
-      takeUntil(this.ngUnsub),
-      tap((res?) => {
-        this.props = new WMLCarouselOneProps({
-          ...this.props,
-          ...(res ?? this.props)
+      .pipe(
+        takeUntil(this.ngUnsub),
+        tap((res?) => {
+          this.props = new WMLCarouselOneProps({
+            ...this.props,
+            ...(res ?? this.props)
+          })
+          this.cdref.detectChanges()
         })
-        this.cdref.detectChanges()
-      })
-    )
+      )
   }
 
   ngAfterViewInit(): void {
@@ -66,9 +66,9 @@ export class WMLCarouselOneProps {
   constructor(props: Partial<WMLCarouselOneProps> = {}) { }
 
   // component proeprties
-  controllerVCF!:ViewContainerRef
+  controllerVCF!: ViewContainerRef
   ngUnsub = new Subject<void>();
-  cdref!:ChangeDetectorRef
+  cdref!: ChangeDetectorRef
   //
 
   id = ""
@@ -77,25 +77,25 @@ export class WMLCarouselOneProps {
     this.setStateSubj.next(value)
   }
 
-  slideWidth  = "23%"
-  slideHeight = "33%"
-  slideDistanceFromCenter= "300px"
-  slideDistanceFromTop='-53px'
-  classPrefix = generateClassPrefix('WMLCarouselOne')
+  private slideWidth = ""
+  private slideHeight = ""
+  slideDistanceFromCenter = ""
+  slideDistanceFromTop = ''
+  private classPrefix = generateClassPrefix('WMLCarouselOne')
 
   slideContainer = new WMLUIProperty({
-    style:{
+    style: {
       // perspective:"1000px",
       // perspectiveOrigin:"50% -95%"
     },
-    class:this.classPrefix('Pod1')
+    class: this.classPrefix('Pod1')
   })
-  controller  = new WMLAngularMotionUIProperty({
-    type:"transition",
-    class:this.classPrefix('Pod1Item0'),
-    style:{
-      height:"250px",
-      border:"calc(1/10.6 * 1em) solid red"
+  controller = new WMLAngularMotionUIProperty({
+    type: "transition",
+    class: this.classPrefix('Pod1Item0'),
+    style: {
+      height: "100%",
+      border: "calc(1/10.6 * 1em) solid red"
     },
     keyFrameStyles: {
       '0%': {
@@ -108,103 +108,127 @@ export class WMLCarouselOneProps {
   })
 
 
-  slides:Array<WMLCarouselOneSlideProps> =Array(8)
-  .fill(null)
-  .map((nullVal,index0)=>{
-    return new WMLCarouselOneSlideProps({
-      view:new WMLUIProperty({
-        class:this.classPrefix('Pod1Item1'),
+  slides: Array<WMLCarouselOneSlideProps> = Array(8)
+    .fill(null)
+    .map((nullVal, index0) => {
+      return new WMLCarouselOneSlideProps({
+        view: new WMLUIProperty({
+          class: this.classPrefix('Pod1Item1'),
+        })
       })
     })
-  })
 
-  init= ()=>{
+  init = () => {
 
-    window.resizeTo(1520,364)
+    window.resizeTo(1520, 364)
     this.listenForSlideContainerResize().subscribe()
   }
 
-  listenForSlideContainerResize = ()=>{
-    return fromEvent(window,"resize")
-    .pipe(
-      takeUntil(this.ngUnsub),
-      startWith(null),
-      tap(()=>{
-        const parentElement = this.controllerVCF.element.nativeElement;
-        const parentWidth =  parseFloat(getComputedStyle(parentElement).width.split("px")[0]);
-        const parentHeight = parseFloat(getComputedStyle(parentElement).height.split("px")[0]);
+  listenForSlideContainerResize = () => {
+    return fromEvent(window, "resize")
+      .pipe(
+        takeUntil(this.ngUnsub),
+        startWith(null),
+        tap(() => {
+          const parentElement = this.controllerVCF.element.nativeElement;
+          const parentWidth = parseFloat(getComputedStyle(parentElement).width.split("px")[0]);
+          const parentHeight = parseFloat(getComputedStyle(parentElement).height.split("px")[0]);
 
 
-        this.slideWidth = `${parentWidth * 0.315}px`;
-        this.slideHeight = `${ parentHeight * 0.52}px`;
-        this.slideDistanceFromCenter = `${parentWidth * .42}px`;
 
 
-        this.slideContainer.style.perspectiveOrigin = `50% ${-5}%`;
-        // this.controller.style.transform =`rotateY(60deg)`
+          this.slideContainer.style.perspectiveOrigin = `50% ${-5}%`;
+          // this.controller.style.transform =`rotateY(60deg)`
 
-        this.slideHeight =this.calculateSlideHeight(parentWidth, parentHeight)+"px"
-        this.slideDistanceFromCenter = this.calculateSlideDistanceFromCenter(parentWidth, parentHeight)+"px"
-        this.slideDistanceFromTop = this.calculateSlideDistanceFromTop(parentWidth, parentHeight)+"px"
+          this.slideHeight = this.calculateSlideHeight(parentWidth, parentHeight) + "px"
+          this.slideWidth = this.calculateSlideWidth(parentWidth, parentHeight) + "px"
+          this.slideDistanceFromCenter = this.calculateSlideDistanceFromCenter(parentWidth, parentHeight) + "px"
+          this.slideDistanceFromTop = this.calculateSlideDistanceFromTop(parentWidth, parentHeight) + "px"
+          this.slideDistanceFromCenter = this.calculateSlideDistanceFromCenter(parentWidth, parentHeight) + "px"
+          this.slideContainer.style.perspective = this.calculatePerspective(parentWidth, parentHeight) + "px"
 
-        // this.slideHeight ="204px"
-        // this.slideDistanceFromCenter ="153.82446px"
-        // this.slideDistanceFromTop ='-20.226021999999997px'
-        // TODO pass 1536px you must increase the perspective to preserve the shape
-        this.slideContainer.style.perspective = `1000px`;
+          // this.slideHeight = "1420.18214293px"
+          // this.slideWidth = "650.078010500000001px"
+          // this.slideDistanceFromCenter = "905.48578629000001px"
+          // this.slideDistanceFromTop = '-258.70568163px'
+          // // TODO pass 1536px you must increase the perspective to preserve the shape
+          // this.slideContainer.style.perspective = `3500px`;
 
-        console.log(`Slide Height ${this.slideHeight}`)
-        // console.log(`Slide Width ${this.slideWidth}`)
-        console.log(`Slide Distance from Center ${this.slideDistanceFromCenter}`)
-        console.log(`Distance from top ${this.slideDistanceFromTop}`)
-        console.warn(`Parent Width ${parentWidth}`)
-        console.warn(`Parent Height ${parentHeight}`)
+          const slideInfo = {
+            slideHeight: this.slideHeight,
+            slideWidth: this.slideWidth,
+            slideDistanceFromCenter: this.slideDistanceFromCenter,
+            slideDistanceFromTop: this.slideDistanceFromTop,
+            perspective: this.slideContainer.style.perspective,
+            parentWidth: parentWidth,
+            parentHeight: parentHeight
+          };
+
+          console.log(slideInfo);
 
 
-        this.updateSlides();
-      }),
-      tap(()=>{
-        this.cdref.detectChanges()
-      })
-    )
+
+          this.updateSlides();
+        }),
+        tap(() => {
+          this.cdref.detectChanges()
+        })
+      )
 
   }
 
-  getAngle =()=> {
+  getAngle = () => {
     return 360 / this.slides.length;
   }
 
-  calculateSlideHeight = (parentWidth, parentHeight)=> {
-    // Slope and intercept calculated based on the provided data points
-    const slope = -0.1121;
-    const intercept = 241.548;
-
-    // Calculate result based on the linear relationship
-    const result = (parentWidth * slope) + intercept;
-
-    return result;
+  calculateSlideHeight = (parentWidth, parentHeight) => {
+    const x = parentWidth / parentHeight;
+    const y = 0.97 - 0.075 * Math.log(1 + x);
+    const slideHeight = parentHeight * y;
+    return slideHeight;
   }
 
-  calculateSlideDistanceFromCenter = (parentWidth, parentHeight)=> {
-    const slope = 0.3887;      // Updated slope based on linear regression
-    const intercept = 32.88;   // Updated intercept based on linear regression
-    const result = (parentWidth * slope) + intercept;
-    return result;
-  }
-
-  calculateSlideDistanceFromTop = (parentWidth, parentHeight)=> {
-    const slopeWidth = -0.0489;      // Coefficient for parentWidth
-    const slopeHeight = -0.0173;     // Coefficient for parentHeight
-    const result = (parentWidth * slopeWidth) + (parentHeight * slopeHeight);
-    return result;
+  calculateSlideWidth(parentWidth, parentHeight) {
+    var slideWidth = 0.33 * parentWidth + 0.02 * parentHeight - 15;
+    // Ensure slideWidth is not less than the minimum observed value
+    if (slideWidth < 15.078) {
+      slideWidth = 15.078;
+    }
+    return slideWidth;
   }
 
 
+  calculateSlideDistanceFromCenter(parentWidth, parentHeight) {
+    const slideDistanceFromCenter = (0.4646 * parentWidth) + (0.0001 * parentHeight) + 4.0;
+    return slideDistanceFromCenter;
+  }
 
-  updateSlides = ()=> {
+  calculateSlideDistanceFromTop(parentWidth, parentHeight) {
+    const a = -0.005; // Coefficient for parentWidth
+    const b = -0.06;  // Coefficient for parentHeight
+    const c = 5;      // Intercept
+
+    return a * parentWidth + b * parentHeight + c;
+  }
+
+  calculatePerspective(parentWidth, parentHeight) {
+    // Modify // Adjust the interpolation factors based on the given data.
+    const widthFactor = parentWidth / 1000;
+    const heightFactor = parentHeight / 1000;
+
+    // Calculate perspective based on width and height factors
+    let perspective = 1000 * Math.max(widthFactor, heightFactor);
+
+    // Return the calculated perspective, rounding to the nearest integer
+    return Math.round(perspective);
+  }
+
+
+
+  updateSlides = () => {
     this.slides = this.slides.map((slide, index0) => {
       let angle = this.getAngle();
-      slide.view.style.transform = `rotateY(${index0 * angle}deg) translateZ(${this.slideDistanceFromCenter }) translateY(${this.slideDistanceFromTop})`;
+      slide.view.style.transform = `rotateY(${index0 * angle}deg) translateZ(${this.slideDistanceFromCenter}) translateY(${this.slideDistanceFromTop})`;
       slide.view.style.height = this.slideHeight;
       slide.view.style.width = this.slideWidth;
       return slide;
