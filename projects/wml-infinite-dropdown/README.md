@@ -1,5 +1,7 @@
 # WML Infinite Dropdown
 
+This content is for the 18.2.3100 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/components/wml-infinite-dropdown/)for up-to-date documentation.
+
 The Angular WML Infinite Dropdown library library provides a flexible and dynamic dropdown component for Angular applications, aiming to enhance user interfaces with nested and infinitely cascading options. It addresses the need for a versatile dropdown menu in Angular projects, offering a solution that supports multiple levels of navigation and interaction. This library is particularly useful for developers looking to implement complex menu structures without the hassle of managing intricate state logic or nested structures manually.
 
 Central to this library is the <code dir="auto">WmlInfiniteDropdownComponent</code> , which serves as the main container for the dropdown items. This component can be dynamically populated with a variety of options and sub-options, allowing for deep nesting and a hierarchical menu structure. Alongside it, the <code dir="auto">WmlInfiniteDropdownItemComponent</code> represents individual items within the dropdown, which can be further customized using the <code dir="auto">WmlSampleInfiniteDropdownItemComponent</code> . These components work in tandem to render the dropdown menu, manage its state, and handle user interactions. Developers can customize the appearance and behavior of the dropdown through parameters like <code dir="auto">WmlInfiniteDropdownProps</code> and <code dir="auto">WmlInfiniteDropdownOption</code> , which offer control over the items’ content, styling, and interaction handlers. This level of interactivity and customization enables the creation of complex menu systems that are both functional and visually appealing. The library’s design encourages a modular approach, where the main dropdown component acts as a container that can be filled with various configurable options, promoting reusability and maintainability in Angular applications.
@@ -527,4 +529,8 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3112 [9/10/24]
 
-updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/components/wml-form/)[](/Windmillcode-Angular-CDK-Docs/components/wml-input/)
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-form/)[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-input/)

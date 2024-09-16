@@ -1,5 +1,7 @@
 # WML Angular Components Base
 
+This content is for the 18.2.3100 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/intro/wml-angular-components-base/)for up-to-date documentation.
+
 WML Angular Components Base extends the WML Components Base by integrating it with Angular-specific features and functionality. It builds on the foundation provided by the core library and adds seamless integration with Angular’s framework, making it easier to work with Angular modules, change detection, and Angular-based services like ngx-translate.
 
 While WML Components Base provides the essential UI building blocks, WML Angular Components Base enhances these components to work natively with Angular. This includes adding support for Angular’s dependency injection, change detection, routing, and lifecycle hooks.
@@ -24,7 +26,7 @@ if you want a different animation for you animation states simply use a differen
 
 **Custom Components**
 
-nearly as same as WMLCustomComponent. Refer to[WMLCustomComponent](/Windmillcode-Angular-CDK-Docs/intro/wml-components-base/#wml-custom-component)
+nearly as same as WMLCustomComponent. Refer to[WMLCustomComponent](/18.2.3100/Windmillcode-Angular-CDK-Docs/intro/wml-components-base/#wml-custom-component)
 
 
 
@@ -32,9 +34,9 @@ nearly as same as WMLCustomComponent. Refer to[WMLCustomComponent](/Windmillcode
 
 
 
-### WMLAngularMotionUIProperty extends[WMLMotionUIProperty](/Windmillcode-Angular-CDK-Docs/intro/wml-components-base/#wml-motion-ui-property-reference)
+### WMLAngularMotionUIProperty
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>motionEndEvent</td><td><code dir="auto">Subject&lt;WMLMotionUIPropertyState&gt;</code></td><td>Subject triggered when a motion animation ends.</td></tr></tbody></table>
+Extends[WMLMotionUIProperty](/18.2.3100/Windmillcode-Angular-CDK-Docs/intro/wml-components-base/#wml-motion-ui-property-reference)<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">motionEndEvent</code></td><td><code dir="auto">Subject&lt;WMLMotionUIPropertyState&gt;</code></td><td>Subject triggered when a motion  ends.</td></tr><tr><td><code dir="auto">motionKeyFrameEvent</code></td><td><code dir="auto">Subject&lt;string&gt;</code></td><td>Subject triggered at specific keyframes during css transitions.</td></tr></tbody></table>
 
 
 
@@ -90,4 +92,16 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3112 [9/10/24]
 
-updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/intro/wml-components-base)[](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3200 [9/16/24]
+
+[UPDATE] added motionKeyFrameEvent for css transitions WMLAngularMotionUIProperty
+
+### v18.2.3200 [9/16/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/intro/wml-components-base)[](/Windmillcode-Angular-CDK-Docs/18.2.3100/schematics/wml-schematics/)

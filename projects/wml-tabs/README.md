@@ -1,5 +1,7 @@
 # WML Tabs
 
+This content is for the 18.2.3100 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/components/wml-tabs/)for up-to-date documentation.
+
 The WML Tabs Zero component is a customizable tab component for Angular applications. It offers the following features:
 
 Customizable Headers: Each tab can have a custom header or a predefined WML tab header.Dynamic Tab Content: The body of each tab can be customized to include any component.Event Handling: The component provides events for tab changes and updates.Responsive Design: The component is designed to be responsive and adapts to various screen sizes.Custom Styling: Supports custom styles through SCSS variables and mixins.
@@ -442,4 +444,12 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3112 [9/10/24]
 
-updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/components/wml-table/)[](/Windmillcode-Angular-CDK-Docs/components/wml-toggle/)
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3200 [9/16/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-table/)[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-toggle/)

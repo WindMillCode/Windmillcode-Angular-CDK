@@ -1,5 +1,7 @@
 # WML Field
 
+This content is for the 18.2.3100 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/components/wml-field/)for up-to-date documentation.
+
 The Angular WML Field library is an Angular-based framework designed to enhance the functionality and management of form fields within web applications. It provides a robust set of components and services that simplify the creation, validation, and handling of form fields, addressing common challenges faced by developers in form management. The library integrates seamlessly with Angular’s reactive forms module, offering additional utilities for field state management, validation messaging, and dynamic content loading, thereby streamlining the form development process and improving user interaction.
 
 At the core of the <code dir="auto">angular-wml-field</code> library are several central components, including <code dir="auto">WMLFieldZero</code> and <code dir="auto">WMLLabelZero</code> , each serving a distinct purpose within the form management ecosystem. <code dir="auto">WMLFieldZero</code> acts as a container for individual form fields, encapsulating the logic for field rendering, validation, and interaction. It allows for the integration of custom components, enhancing flexibility and extensibility. <code dir="auto">WMLLabelZero</code> , on the other hand, is dedicated to managing field labels and validation messages, supporting dynamic content capabilities. These components are designed to work in unison, with <code dir="auto">WMLFieldZero</code> typically serving as a parent container that orchestrates the behavior of nested label and input components. Developers can customize these components through various input parameters and methods, enabling the creation of tailored form experiences that cater to specific application needs.
@@ -492,4 +494,12 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3112 [9/10/24]
 
-updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/components/wml-chips/)[](/Windmillcode-Angular-CDK-Docs/components/wml-file-manager/)
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3200 [9/16/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-chips/)[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-file-manager/)

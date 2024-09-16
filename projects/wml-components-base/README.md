@@ -1,5 +1,7 @@
 # WML Components Base
 
+This content is for the 18.2.3100 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/intro/wml-components-base/)for up-to-date documentation.
+
 When working on web applications, there is no standard baseline. The  WML Components Base Library establishes a foundation for your application, ensuring consistency and scalability. The core of this library is the <code dir="auto">WMLUIProperty</code> , which represents the basic building block of every element in a web application. This property encapsulates all the essential features, and there are several subclasses like <code dir="auto">WMLRoute</code> for routes, <code dir="auto">WMLView</code> to leverage change detection, <code dir="auto">WMLImage</code> for images  and <code dir="auto">WMLMotionUIProperty</code> for CSS animations and transitions. Each class has properties and methods to optimize your work in those features of  your application. You can use this package and leave out the rest of the library and you will get very far building very robust and scalable applications
 
 
@@ -913,4 +915,8 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3112 [9/10/24]
 
-updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/intro/wml-angular-components-base)
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/intro/wml-angular-components-base)

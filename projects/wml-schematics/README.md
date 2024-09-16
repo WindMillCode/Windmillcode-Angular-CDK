@@ -1,5 +1,7 @@
 # WML Schematics
 
+This content is for the 18.2.3100 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)for up-to-date documentation.
+
 The Angular WML Schematics library serves as a foundational toolkit for Angular web application development, establishing a solid baseline from which developers can construct and expand their projects. Central to this library is the concept of WMLUIProperty, a fundamental element that encapsulates the essence of web application components, down to the finest detail. This library not only streamlines the development process by providing pre-defined subclasses like WMLRoute for routing, WMLView for dynamic components, and WMLMotionUIProperty for CSS animations and transitions but also ensures consistency and scalability across your application. Dive into the documentation to explore how these building blocks can be orchestrated to create robust, maintainable, and dynamic web applications.
 
 
@@ -183,4 +185,10 @@ updated package to reflect the version  18.2.3 of @angular/cli package
 
 [FIX] ensure new imports match to conform with @windmillcode/angular-wml-components-base@18.2.3110
 
-[](/Windmillcode-Angular-CDK-Docs/intro/wml-angular-components-base)[](/Windmillcode-Angular-CDK-Docs/components/wml-accordion/)
+### v18.2.3200 [9/16/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/cli package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/intro/wml-angular-components-base)[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-accordion/)

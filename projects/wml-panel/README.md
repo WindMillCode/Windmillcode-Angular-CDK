@@ -1,5 +1,7 @@
 # WML Panel
 
+This content is for the 18.2.3100 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/components/wml-panel/)for up-to-date documentation.
+
 t
 The Angular WML Panel library is a sophisticated Angular module designed to offer a robust and versatile panel component system within Angular applications. This library is meticulously engineered to provide developers with a seamless and intuitive interface for creating, managing, and interactingtt with panels in their web applications. The core objective of the  library is to streamline the process of panel management, offering a suite of features that cater to various panel-related needs, such as dynamic content loading, customization, and responsive layout management.
 
@@ -449,4 +451,12 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3112 [9/10/24]
 
-updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/components/wml-options/)[](/Windmillcode-Angular-CDK-Docs/components/wml-popup/)
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3200 [9/16/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-options/)[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-popup/)

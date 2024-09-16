@@ -1,5 +1,7 @@
 # WML Input
 
+This content is for the 18.2.3100 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/components/wml-input/)for up-to-date documentation.
+
 The Angular WML Input library is a specialized Angular component designed to enhance the form input experience in Angular applications. It provides a robust set of features that simplify the process of creating, validating, and managing form inputs, particularly focusing on user interaction and data binding. The library aims to solve common problems associated with form handling in Angular, such as maintaining sync between the UI and the model, providing instant feedback to users, and integrating seamlessly with Angular’s form validation mechanisms. By offering a comprehensive suite of input-related functionalities helps developers build more interactive, user-friendly forms with less boilerplate code.
 
 
@@ -30,7 +32,7 @@ Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#8
 
 ### WMLInputZeroProps
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>input</td><td>WMLInputZeroAreaProps</td><td>Input area parameters</td></tr><tr><td>textarea</td><td>WMLInputZeroAreaProps</td><td>Textarea parameters</td></tr><tr><td>range</td><td>WMLInputZeroAreaProps</td><td>Range input parameters</td></tr><tr><td>checkbox</td><td>WMLInputZeroCheckboxProps</td><td>Checkbox input parameters</td></tr><tr><td>datetime</td><td>WMLInputZeroDatetimeProps</td><td>Datetime input parameters</td></tr><tr><td>type</td><td>”datetime” |  “range” | “input” | “number” | “password” | “email” | “tel” | “textarea” | “checkbox”</td><td>Input type</td></tr><tr><td>wmlField</td><td>WMLField</td><td>WMLField instance for customization</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>input</td><td>WMLInputZeroAreaProps</td><td>Input area parameters</td></tr><tr><td>textarea</td><td>WMLInputZeroAreaProps</td><td>Textarea parameters</td></tr><tr><td>range</td><td>WMLInputZeroAreaProps</td><td>Range input parameters</td></tr><tr><td>checkbox</td><td>WMLInputZeroCheckboxProps</td><td>Checkbox input parameters</td></tr><tr><td>datetime</td><td>WMLInputZeroDatetimeProps</td><td>Datetime input parameters</td></tr><tr><td>type</td><td>”datetime&#34;</td><td>&#34;range&#34;</td></tr><tr><td>wmlField</td><td>WMLField</td><td>WMLField instance for customization</td></tr></tbody></table>
 
 
 
@@ -480,4 +482,8 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3112 [9/10/24]
 
-updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/components/wml-infinite-dropdown/)[](/Windmillcode-Angular-CDK-Docs/components/wml-mobile-nav/)
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-infinite-dropdown/)[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-mobile-nav/)

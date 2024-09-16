@@ -1,5 +1,7 @@
 # WML Options
 
+This content is for the 18.2.3100 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/components/wml-options/)for up-to-date documentation.
+
 The <code dir="auto">wml-options</code> library is an Angular-based toolkit designed to enhance the selection and management of options within applications. Its primary objective is to provide a streamlined and efficient way for developers to integrate and manage multiple choice selections, toggles, and option-related actions in their Angular projects. The library offers a set of components and services that enable the display and interaction with various types of options, supporting both default and custom components for dynamic and interactive content.
 
 Key features of the <code dir="auto">wml-options</code> library include:
@@ -168,4 +170,8 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3112 [9/10/24]
 
-updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/components/wml-notify/)[](/Windmillcode-Angular-CDK-Docs/components/wml-panel/)
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-notify/)[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-panel/)

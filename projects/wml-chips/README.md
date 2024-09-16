@@ -1,5 +1,7 @@
 # WML Chips
 
+This content is for the 18.2.3100 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/components/wml-chips/)for up-to-date documentation.
+
 The Angular WML Chips library provides a highly customizable chips component for Angular applications. It offers a variety of features to enhance user interaction and improve the overall user experience.
 
 
@@ -467,4 +469,12 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3112 [9/10/24]
 
-updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/components/wml-button/)[](/Windmillcode-Angular-CDK-Docs/components/wml-field/)
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3200 [9/16/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-button/)[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-field/)

@@ -1,5 +1,7 @@
 # WML Select
 
+This content is for the 18.2.3100 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/components/wml-select/)for up-to-date documentation.
+
 The Angular WML Select library is a specialized Angular component library designed to enhance form inputs by providing a robust and flexible select component. Its primary objective is to offer a more dynamic and feature-rich alternative to the native HTML select element, catering to the diverse needs of modern web applications. With its advanced functionalities, the library addresses common challenges faced in creating user-friendly, interactive forms, such as handling dynamic data sets, enabling search and filtering capabilities, and offering better control over the styling and behavior of select menus.
 
 At the core of the Angular WML Select library are its central components: <code dir="auto">WMLSelectZeroComponent</code> and <code dir="auto">WMLSelectZeroOptionComponent</code> . The <code dir="auto">WMLSelectZeroComponent</code> acts as the main container for the select functionality, encapsulating the logic for opening and closing the dropdown, managing selections, and triggering custom events. The <code dir="auto">WMLSelectZeroOptionComponent</code> represents individual selectable items within the dropdown, providing a flexible structure for displaying options and handling user interactions. Developers can leverage these components to create highly interactive and customizable select menus, with support for single or multiple selections, search and filtering, and even asynchronous data loading. The library’s design encourages a modular approach, where the <code dir="auto">WMLSelectZeroComponent</code> can be dynamically populated with <code dir="auto">WMLSelectZeroOptionComponent</code> instances, allowing for a high degree of customization and adaptability in different usage scenarios.
@@ -416,4 +418,12 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3112 [9/10/24]
 
-updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/components/wml-popup/)[](/Windmillcode-Angular-CDK-Docs/components/wml-slicebox/)
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3200 [9/16/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-popup/)[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-slicebox/)

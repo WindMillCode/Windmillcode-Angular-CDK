@@ -1,5 +1,7 @@
 # WML Accordion
 
+This content is for the 18.2.3100 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/components/wml-accordion/)for up-to-date documentation.
+
 The Windmillcode Angular WML Accordion  library provides a set of components and services to create accordion functionalities in Angular applications.  This library facilitates the development of accordions with customizable sections, and animation controls, using WMLUIProperty  to ensure consistency in development practices. Developers can construct accordions that are responsive and adaptable to various content types and user interactions, enhancing the informational architecture of Angular-based web applications.
 
 WMLAccordionZeroComponent is the container which is populated with WMLAccordionZeroItemComponent to populate the accordion. WMLAccordionZeroItemComponent is a dynamic component and by defuault is uses WMLAccordionZeroSampleComponent as the accordion body and WMLAccordionZeroTitleComponent as the title of the accordion. you will want to replace
@@ -485,4 +487,12 @@ updated package to conform with @windmillcode/angular-wml-components-base
 
 ### v18.2.3112 [9/10/24]
 
-updated package to conform with @windmillcode/angular-wml-components-base[](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)[](/Windmillcode-Angular-CDK-Docs/components/wml-button/)
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3200 [9/16/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/schematics/wml-schematics/)[](/Windmillcode-Angular-CDK-Docs/18.2.3100/components/wml-button/)
