@@ -24,9 +24,15 @@
     "@windmillcode/angular-wml-mobile-nav": "^18.2.2",
     "@windmillcode/angular-wml-notify": "^18.2.1010",
     "@windmillcode/angular-wml-schematics": "^18.2.3112",
+    "cannon-es": "^0.20.0",
     "copy-files-from-to": "^3.11.0",
+    "dat.gui": "^0.7.9",
+    "gsap": "^3.12.5",
+    "lil-gui": "^0.19.2",
     "rxjs": "~7.8.0",
+    "three": "^0.168.0",
     "tslib": "^2.3.0",
+    "yuka": "^0.7.8",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
@@ -38,6 +44,7 @@
     "@angular/cli": "18.2.4",
     "@angular/compiler-cli": "18.2.4",
     "@types/jasmine": "~5.1.0",
+    "@types/three": "^0.168.0",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@windmillcode/angular-templates": "^18.1.2301",

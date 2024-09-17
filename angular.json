@@ -210,6 +210,48 @@
         }
       }
     },
+    "wml-three": {
+      "projectType": "library",
+      "root": "projects/wml-three",
+      "sourceRoot": "projects/wml-three/src",
+      "prefix": "wml",
+      "architect": {
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+
+            "lintFilePatterns": [
+              "projects/wml-three/src/**/*.ts"
+            ]
+          }
+        },
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/wml-three/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/wml-three/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/wml-three/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/wml-three/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
     "wml-angular-components-base": {
       "projectType": "library",
       "root": "projects/wml-angular-components-base",

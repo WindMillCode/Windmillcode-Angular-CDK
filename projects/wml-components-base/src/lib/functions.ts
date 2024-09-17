@@ -1,6 +1,5 @@
 import { WMLUIProperty,WMLUIFrameworkType, WMLUIGlobal, WMLDeepPartial } from "./models";
 
-
 export function detectFramework(): WMLUIFrameworkType {
   let myWindow: any = window ?? {};
   let detectedFramework: WMLUIFrameworkType = 'VanillaJS';

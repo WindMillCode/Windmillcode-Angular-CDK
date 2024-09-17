@@ -40,7 +40,6 @@ export class WMLChipsZeroComponent  {
   textAreaStyle:Partial<CSSStyleDeclaration>={}
 
   populateFields =()=>{
-    console.log(this.props.formArray.value)
     this.props.formArray.value
     .forEach((userInput:string)=>{
       this.itemCtrl.setValue(userInput)
