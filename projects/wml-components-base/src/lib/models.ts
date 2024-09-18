@@ -277,11 +277,16 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
   readonly transitionEnd:(evt?:TransitionEvent)=> void =(evt)=>{
     let state = this.getGroupMotionState()
     this.currentTransitionInfo.transitionEndStyles.push(evt?.propertyName.replace(/-./g, (match) => match.charAt(1).toUpperCase()))
+
     let keyFramePropertyKeys =Object.keys(this.keyFrameStyles[this.currentTransitionInfo.keyframe])
 
 
     if(this.motionState === "closing"){
       let keyFrameStyleKeys = Object.keys(this.keyFrameStyles)
+      .sort((a, b)=>{
+        return parseFloat(a) - parseFloat(b);
+      })
+
       let previousKeyFrameIndex = keyFrameStyleKeys.findIndex((key)=>key === this.currentTransitionInfo.keyframe)+1
       let previousKeyFramePropertyKeys = Object.keys(this.keyFrameStyles[keyFrameStyleKeys[previousKeyFrameIndex]])
       keyFramePropertyKeys =keyFramePropertyKeys
@@ -493,6 +498,7 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
     }
     // Create a new style element
     const styleElement = document.createElement('style');
+
     document.head.appendChild(styleElement);
 
     // Generate the keyframes string from the keyFrameStyles property
@@ -523,6 +529,19 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
       length++;
     } while (WMLMotionUIProperty.keyFrameNames.includes(defaultName));
     this.keyFrameName = defaultName;
+  }
+  updateKeyFrames =(props:WMLMotionUIProperty["keyFrameStyles"])=>{
+    this.keyFrameStyles = props
+    if(this.type ==="transition"){
+      this.updateClassString(this.keyFrameName,"remove")
+    }
+    this.createKeyFrameName()
+    if(this.type === "transiton"){
+      this.updateClassString(this.keyFrameName)
+    }
+    if(this.type === "animation"){
+      this.injectKeyframes()
+    }
   }
 
 

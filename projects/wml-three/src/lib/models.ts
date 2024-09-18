@@ -1,14 +1,16 @@
 import { getGlobalObject, WMLConstructorDecorator } from "@windmillcode/wml-components-base";
-import { AmbientLight, BufferGeometry, Camera, CameraHelper, Clock, Controls, DirectionalLight, DirectionalLightHelper, HemisphereLight, HemisphereLightHelper, Light, Material, Mesh,  Object3D, OrthographicCamera, PerspectiveCamera, PointLight, PointLightHelper, Raycaster, Renderer, Scene, SpotLight, SpotLightHelper, Vector3, WebGLRenderer } from "three";
+import { AmbientLight, BufferGeometry, Camera, CameraHelper, Clock, Controls, DirectionalLight, DirectionalLightHelper, HemisphereLight, HemisphereLightHelper, Light, Loader, LoadingManager, Material, Mesh,  Object3D, OrthographicCamera, PerspectiveCamera, PointLight, PointLightHelper, Raycaster, Renderer, Scene, SpotLight, SpotLightHelper,  Texture,  TextureLoader, Vector3, WebGLRenderer } from "three";
 import { GUI as DatGUI } from "dat.gui";
 import { GUI as LilGUI } from "lil-gui";
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 @WMLConstructorDecorator
 export class WMLThreeProps<R = Renderer> {
   constructor(params: Partial<WMLThreeProps> = {}) { }
   renderers: Array<any| Renderer > = [new WebGLRenderer({ antialias: true })];
   rendererParentElement = getGlobalObject().document.body;
-  scenes: Array<Object3D> = [new Scene()]
+  // TODO Array<Object3D> was there for a reason why
+  scenes: Array<Scene> = [new Scene()]
   cameras: Array<Camera> = [];
   controls: Array<Controls<any>> = [];
   inspectors: Array<{
@@ -31,31 +33,33 @@ export class WMLThreeProps<R = Renderer> {
       addHelper: true
     })
   ];
-  rayCasters: Array<any> = [];
+  rayCasters: Array<any> = [new Raycaster()];
   objects:Array<WMLThreeObjectProps> = []
+  clock = new Clock()
+  animateFunctions:Array<(props:{clock:Clock})=>void> = []
 
   // init methods
-  init = (props?:Partial<{
-    preCheck :boolean
-    addRendererToDOM:boolean
-    initCameras:boolean
-    initControls:boolean
-    initInspectors:boolean
-    initLights:boolean
-    initRayCasters:boolean
-    initObjects:boolean
-    animate:boolean
-    listenForWindowResize:boolean
+  init = async (props?:Partial<{
+    preCheck :any
+    addRendererToDOM:any
+    initCameras:any
+    initControls:any
+    initLights:any
+    initRayCasters:any
+    initObjects:any
+    initInspectors:any
+    animate:any
+    listenForWindowResize:any
   }>) => {
     let { preCheck,addRendererToDOM, initCameras, initControls, initInspectors, initLights, initRayCasters, initObjects,animate,listenForWindowResize } = props || {}
     if(preCheck !== false) this.preCheck()
     if(addRendererToDOM !== false) this.addRendererToDOM();
-    if(initCameras !== false) this.initCameras()
+    if(initCameras !== false) this.initCameras(initCameras)
     if(initControls !== false) this.initControls()
-    if(initInspectors !== false) this.initInspectors()
     if(initLights !== false) this.initLights()
     if(initRayCasters !== false) this.initRayCasters()
-    if(initObjects !== false) this.initObjects()
+    if(initObjects !== false) await this.initObjects().then(console.log)
+    if(initInspectors !== false) this.initInspectors()
     if(animate !== false) this.getCurrentRenderer().setAnimationLoop(this.animate);
     if(listenForWindowResize !== false) this.listenForWindowResize()
   }
@@ -66,9 +70,6 @@ export class WMLThreeProps<R = Renderer> {
       throw new Error('Three.js cannot work in your program, because it requires the "document" global.Browser environments usually hold this in the global window variable')
     }
   }
-
-  clock = new Clock()
-  animateFunctions:Array<(props:{clock:Clock})=>void> = []
   animate = () => {
     this.animateFunctions.forEach(fn => fn({clock:this.clock}))
     this.getCurrentRenderer().render(this.getCurentScene(), this.getCurentCamera());
@@ -103,6 +104,83 @@ export class WMLThreeProps<R = Renderer> {
       new OrbitControls(this.getCurentCamera(), this.getCurrentRenderer().domElement)
     )
   }
+  initLights = () => {
+    this.lights.forEach((lightInfo) => {
+
+      let {light,addHelper,helper,addShadowHelper,shadowHelper} = lightInfo
+      // helps with pixelated shadows
+      if(light.shadow){
+        light.shadow.mapSize.width = light.shadow.mapSize.height = 1024
+      }
+      //
+      this.getCurentScene().add(light)
+      if(addHelper){
+        if(light instanceof DirectionalLight){
+          lightInfo.helper =helper = new DirectionalLightHelper(light,5)
+        }
+        else if (light instanceof PointLight){
+          lightInfo.helper =helper = new PointLightHelper(light,5)
+        }
+        else if (light instanceof SpotLight){
+          lightInfo.helper =helper = new SpotLightHelper(light,5)
+        }
+        else if (light instanceof HemisphereLight){
+          lightInfo.helper =helper = new HemisphereLightHelper(light,5)
+        }
+        else{
+          console.warn(`no helper for ${light.type}`)
+        }
+      }
+      if(helper){
+        this.getCurentScene().add(helper)
+      }
+      if(addShadowHelper && light.castShadow && light.shadow){
+        lightInfo.shadowHelper =shadowHelper =new CameraHelper(light.shadow.camera)
+
+      }
+      if(shadowHelper){
+        this.getCurentScene().add(shadowHelper)
+      }
+
+
+
+    })
+  }
+  initObjects = () => {
+    this.objects.forEach((object: WMLThreeObjectProps) => {
+
+      object.regularMeshes.forEach((mesh) => {
+        this.getCurentScene().add(mesh)
+
+      })
+    })
+
+    return Promise.all(this.objects.map((object: WMLThreeObjectProps) => {
+      return Promise.all(object.textures.map((texture) => {
+        return Promise.all(texture.group.map((item,index0) => {
+
+          item.loader.manager = texture.manager
+          return new Promise((res,rej)=>{
+            item.loader.load(
+              item.url,
+              (data:any) =>{
+                object.meshes[index0] = data
+                item.onLoad?.(data)
+                res(data)
+              },
+              item.onProgress,
+              (err:any) =>{
+                item.onError?.(err)
+                rej(err)
+              }
+            )
+          })
+
+
+        }))
+      }))
+    }))
+  }
   initInspectors = () => {
     this.inspectors.forEach((inspector) => {
       if(inspector.gui instanceof DatGUI){
@@ -129,54 +207,8 @@ export class WMLThreeProps<R = Renderer> {
       }
     })
   }
-  initLights = () => {
-    this.lights.forEach((lightInfo) => {
-      if(lightInfo instanceof Light){
-        this.getCurentScene().add(lightInfo)
-      }
-      else{
-        let {light,addHelper,helper,addShadowHelper,shadowHelper} = lightInfo
-        if(light){
-          this.getCurentScene().add(light)
-          if(addHelper){
-            if(light instanceof DirectionalLight){
-              lightInfo.helper =helper = new DirectionalLightHelper(light,5)
-            }
-            else if (light instanceof PointLight){
-              lightInfo.helper =helper = new PointLightHelper(light,5)
-            }
-            else if (light instanceof SpotLight){
-              lightInfo.helper =helper = new SpotLightHelper(light,5)
-            }
-            else if (light instanceof HemisphereLight){
-              lightInfo.helper =helper = new HemisphereLightHelper(light,5)
-            }
-            else{
-              console.warn(`no helper for ${light.type}`)
-            }
-          }
-          if(helper){
-            this.getCurentScene().add(helper)
-          }
-          if(addShadowHelper && light.castShadow && light.shadow){
-            lightInfo.shadowHelper =shadowHelper =new CameraHelper(light.shadow.camera)
-
-          }
-          if(shadowHelper){
-            this.getCurentScene().add(shadowHelper)
-          }
-        }
-      }
-
-    })
-  }
-  initObjects = () => {
-    this.objects.forEach((object: WMLThreeObjectProps) => {
-      this.getCurentScene().add(object.meshes[0])
-    })
-  }
   initRayCasters = () => {
-    this.rayCasters.push(new Raycaster())
+    this.rayCasters.push()
   }
   listenForWindowResize =()=>{
     getGlobalObject().onresize =()=>{
@@ -195,7 +227,7 @@ export class WMLThreeProps<R = Renderer> {
     }
   }
   //
-  private getRendererParentDetails = () => {
+  getRendererParentDetails = () => {
     if (this.rendererParentElement === document.body) {
       return {
         width: window.innerWidth,
@@ -228,7 +260,7 @@ export class WMLCommonThreeProps extends WMLThreeProps<WebGLRenderer> {
 
 
   get scene() { return this.getCurentScene() }
-  set scene(scene: Object3D) { this.scenes[0] = scene }
+  set scene(scene: Scene) { this.scenes[0] = scene }
 
   get camera() { return this.getCurentCamera() }
   set camera(camera: Camera) { this.cameras[0] = camera }
@@ -259,9 +291,12 @@ export class WMLThreeObjectProps {
   constructor(params: Partial<WMLThreeObjectProps> = {}) { }
 
   geometries: Array<BufferGeometry> = []
-  materials: Array<Material> = []
-  meshes: Array<Object3D> = []
+  materials: Array<Material | Array<Material>> = []
+  meshes: Array<Object3D | GLTF> = []
+  textures : Array<WMLThreeTexturesProps> = []
 
+  get regularMeshes() { return this.meshes as Array<Object3D> }
+  get gltfMeshes() { return this.meshes as Array<GLTF> }
 
 }
 
@@ -270,7 +305,7 @@ export class WMLCommonThreeObjectProps extends WMLThreeObjectProps {
   constructor(props: Partial<WMLCommonThreeObjectProps> = {}) {super(props)}
   wmlInit() {
 
-    if (!this.mesh) {
+    if (!this.mesh && this.textures.length === 0) {
       this.mesh =  new Mesh(this.geometry, this.material)
     }
   }
@@ -281,23 +316,30 @@ export class WMLCommonThreeObjectProps extends WMLThreeObjectProps {
   }
 
   get material() { return this.materials[0] }
-  set material(material: Material) { this.materials[0] = material }
+  set material(material: Material | Array<Material>) { this.materials[0] = material }
 
   get mesh() { return this.meshes[0] }
-  set mesh(mesh: Object3D) { this.meshes[0] = mesh }
+  set mesh(mesh: Object3D|GLTF) { this.meshes[0] = mesh }
 
-  toggleCastShadow = (val?:boolean) => {
-    this.mesh.castShadow = val ?? !this.mesh.castShadow
+  get regularMesh () { return this.meshes[0] as Object3D }
+  set regularMesh(mesh: Object3D) { this.meshes[0] = mesh }
+
+  get gltfMesh() { return this.meshes[0] as GLTF }
+  set gltfMesh(mesh: GLTF) { this.meshes[0] = mesh }
+
+  get texture() { return this.textures[0] }
+  set texture(texture: WMLThreeTexturesProps) { this.textures[0] = texture }
+
+
+  toggleShadow = (props: {cast?:boolean, receive?:boolean}) => {
+
+      this.regularMesh.castShadow = props.cast ?? !this.regularMesh.castShadow
+      this.regularMesh.receiveShadow = props.receive ?? !this.regularMesh.receiveShadow
+
   }
 
-  toggleReceiveShadow = (val?:boolean) => {
-    this.mesh.receiveShadow = val ?? !this.mesh.receiveShadow
-  }
+  loadTexture = (url:string) => {}
 
-  toggleShadow = (val?:boolean) => {
-    this.mesh.castShadow = val ?? !this.mesh.castShadow
-    this.mesh.receiveShadow = val ?? !this.mesh.receiveShadow
-  }
 }
 
 
@@ -305,29 +347,38 @@ export class WMLCommonThreeObjectProps extends WMLThreeObjectProps {
 export class WMLTHREELightProps {
   constructor(params: Partial<WMLTHREELightProps> = {}) { }
 
-
   light!: Light
   addHelper =false
   helper!:Object3D
   addShadowHelper=false
   shadowHelper!:CameraHelper
-  toggleCastShadow = (val?:boolean) => {
-    this.light.castShadow = val ?? !this.light.castShadow
-  }
 
-  toggleReceiveShadow = (val?:boolean) => {
-    this.light.receiveShadow = val ?? !this.light.receiveShadow
-  }
 
-  toggleShadow = (val?:boolean) => {
-    this.light.castShadow = val ?? !this.light.castShadow
-    this.light.receiveShadow = val ?? !this.light.receiveShadow
-  }
 
+  toggleShadow = (props: {cast?:boolean, receive?:boolean}) => {
+    this.light.castShadow =    props.cast ?? !this.light.castShadow
+    this.light.receiveShadow = props.receive ?? !this.light.receiveShadow
+  }
 
   updateCamera = () => {
     // @ts-ignore
     this.light.shadow?.camera?.updateProjectionMatrix();
     this.shadowHelper?.update()
   }
+}
+
+@WMLConstructorDecorator
+export class WMLThreeTexturesProps {
+  constructor(params: Partial<WMLThreeTexturesProps> = {}) { }
+
+
+  manager= new LoadingManager()
+  group:Array<{
+    url: string;
+    loader: Loader;
+    // TODO change to (Texture | GLTF)=>void
+    onLoad?: (data: any) => void;
+    onProgress?: (event: ProgressEvent) => void;
+    onError?: (err: unknown) => void;
+  }> = []
 }
