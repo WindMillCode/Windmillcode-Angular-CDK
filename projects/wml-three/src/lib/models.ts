@@ -58,7 +58,7 @@ export class WMLThreeProps<R = Renderer> {
     if(initControls !== false) this.initControls()
     if(initLights !== false) this.initLights()
     if(initRayCasters !== false) this.initRayCasters()
-    if(initObjects !== false) await this.initObjects().then(console.log)
+    if(initObjects !== false) await this.initObjects()
     if(initInspectors !== false) this.initInspectors()
     if(animate !== false) this.getCurrentRenderer().setAnimationLoop(this.animate);
     if(listenForWindowResize !== false) this.listenForWindowResize()
