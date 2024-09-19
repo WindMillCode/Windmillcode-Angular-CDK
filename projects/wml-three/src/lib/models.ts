@@ -1,5 +1,5 @@
 import { getGlobalObject, WMLConstructorDecorator } from "@windmillcode/wml-components-base";
-import { AmbientLight, BufferGeometry, Camera, CameraHelper, Clock, Controls, DirectionalLight, DirectionalLightHelper, HemisphereLight, HemisphereLightHelper, Light, Loader, LoadingManager, Material, Mesh,  Object3D, OrthographicCamera, PerspectiveCamera, PointLight, PointLightHelper, Raycaster, Renderer, Scene, SpotLight, SpotLightHelper,  Texture,  TextureLoader, Vector3, WebGLRenderer } from "three";
+import { AmbientLight, BufferGeometry, Camera, CameraHelper, Clock, Controls, DirectionalLight, DirectionalLightHelper, HemisphereLight, HemisphereLightHelper, Intersection, Light, Loader, LoadingManager, Material, Mesh,  Object3D, Object3DEventMap, OrthographicCamera, PerspectiveCamera, PointLight, PointLightHelper, Raycaster, Renderer, Scene, SpotLight, SpotLightHelper,  Texture,  TextureLoader, Vector2, Vector3, WebGLRenderer } from "three";
 import { GUI as DatGUI } from "dat.gui";
 import { GUI as LilGUI } from "lil-gui";
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -33,7 +33,7 @@ export class WMLThreeProps<R = Renderer> {
       addHelper: true
     })
   ];
-  rayCasters: Array<any> = [new Raycaster()];
+  rayCasters: Array<WMLThreeRayCasterProps> = [new WMLThreeRayCasterProps()];
   objects:Array<WMLThreeObjectProps> = []
   clock = new Clock()
   animateFunctions:Array<(props:{clock:Clock})=>void> = []
@@ -57,8 +57,8 @@ export class WMLThreeProps<R = Renderer> {
     if(initCameras !== false) this.initCameras(initCameras)
     if(initControls !== false) this.initControls()
     if(initLights !== false) this.initLights()
-    if(initRayCasters !== false) this.initRayCasters()
     if(initObjects !== false) await this.initObjects()
+    if(initRayCasters !== false) this.initRayCasters()
     if(initInspectors !== false) this.initInspectors()
     if(animate !== false) this.getCurrentRenderer().setAnimationLoop(this.animate);
     if(listenForWindowResize !== false) this.listenForWindowResize()
@@ -208,7 +208,20 @@ export class WMLThreeProps<R = Renderer> {
     })
   }
   initRayCasters = () => {
-    this.rayCasters.push()
+    this.rayCasters.forEach((item) => {
+      let {raycaster,mousePosition,intersectHandler} = item
+      getGlobalObject().addEventListener('pointermove', (e) => {
+        item.hasMouseEnteredRenderer = true
+        mousePosition.x = (e.clientX / window.innerWidth) * 2 - 1;
+        mousePosition.y = -(e.clientY / window.innerHeight) * 2 + 1;
+      })
+      this.animateFunctions.push(()=>{
+        if(!item.hasMouseEnteredRenderer ) return
+        raycaster.setFromCamera(mousePosition, this.getCurentCamera())
+        let intersects = raycaster.intersectObjects(this.getCurentScene().children)
+        intersectHandler(intersects)
+      })
+    })
   }
   listenForWindowResize =()=>{
     getGlobalObject().onresize =()=>{
@@ -246,6 +259,7 @@ export class WMLThreeProps<R = Renderer> {
   getCurentCamera = () => this.cameras[0]
   getCurrentRenderer = () => this.renderers[0]
   getCurrentControls = () => this.controls[0]
+  getCurrentRayCaster = () => this.rayCasters[0]
 
 }
 
@@ -295,7 +309,7 @@ export class WMLThreeObjectProps {
   meshes: Array<Object3D | GLTF> = []
   textures : Array<WMLThreeTexturesProps> = []
 
-  get regularMeshes() { return this.meshes as Array<Object3D> }
+  get regularMeshes() { return this.meshes as Array<Mesh> }
   get gltfMeshes() { return this.meshes as Array<GLTF> }
 
 }
@@ -321,8 +335,8 @@ export class WMLCommonThreeObjectProps extends WMLThreeObjectProps {
   get mesh() { return this.meshes[0] }
   set mesh(mesh: Object3D|GLTF) { this.meshes[0] = mesh }
 
-  get regularMesh () { return this.meshes[0] as Object3D }
-  set regularMesh(mesh: Object3D) { this.meshes[0] = mesh }
+  get regularMesh () { return this.meshes[0] as Mesh }
+  set regularMesh(mesh: Mesh) { this.meshes[0] = mesh }
 
   get gltfMesh() { return this.meshes[0] as GLTF }
   set gltfMesh(mesh: GLTF) { this.meshes[0] = mesh }
@@ -381,4 +395,18 @@ export class WMLThreeTexturesProps {
     onProgress?: (event: ProgressEvent) => void;
     onError?: (err: unknown) => void;
   }> = []
+}
+
+@WMLConstructorDecorator
+export class WMLThreeRayCasterProps {
+  constructor(params: Partial<WMLThreeRayCasterProps> = {}) { }
+
+
+  raycaster = new Raycaster()
+  mousePosition = new Vector2()
+  intersectHandler = (intersects:Intersection<Object3D<Object3DEventMap>>[])=>{
+
+  }
+  hasMouseEnteredRenderer= false
+
 }

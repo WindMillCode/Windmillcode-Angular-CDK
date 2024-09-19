@@ -3,24 +3,24 @@
         "tslib": "^2.3.0"
     },
     "funding": "https://www.gofundme.com/f/strengthen-our-business-to-take-on-bigger-initiati?utm_campaign=p_lico+share-sheet-first-launch&utm_medium=copy_link&utm_source=customer",
-    "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/three/three",
+    "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs//components/wml-three",
     "name": "@windmillcode/three",
+    "peerDependencies": {
+        "@types/three": "^0.168.0",
+        "@windmillcode/wml-components-base": "^18.2.4001",
+        "cannon-es": "^0.20.0",
+        "dat.gui": "^0.7.9",
+        "gsap": "^3.12.5",
+        "lil-gui": "^0.19.2",
+        "rxjs": "~7.8.0",
+        "three": "^0.168.0",
+        "tslib": "^2.3.0",
+        "yuka": "^0.7.8"
+    },
     "private": false,
     "schematics": "",
     "scripts": {
         "build": "npx ng build"
-    },
-    "peerDependencies":{
-        "cannon-es": "^0.20.0",
-        "dat.gui": "^0.7.9",
-        "gsap": "^3.12.5",
-        "rxjs": "~7.8.0",
-        "three": "^0.168.0",
-        "tslib": "^2.3.0",
-        "lil-gui": "^0.19.2",
-        "yuka": "^0.7.8",
-        "@types/three": "^0.168.0",
-        "@windmillcode/wml-components-base":"^18.2.4000"
     },
     "version": "18.2.4000"
 }
