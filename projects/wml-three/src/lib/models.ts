@@ -43,7 +43,7 @@ export class WMLThreeProps<R = Renderer> {
   // init methods
   init = async (props?:Partial<{
     preCheck :any
-    addRendererToDOM:any
+    initRenderers:any
     initCameras:any
     initControls:any
     initLights:any
@@ -53,9 +53,9 @@ export class WMLThreeProps<R = Renderer> {
     animate:any
     listenForWindowResize:any
   }>) => {
-    let { preCheck,addRendererToDOM, initCameras, initControls, initInspectors, initLights, initRayCasters, initObjects,animate,listenForWindowResize } = props || {}
+    let { preCheck, initRenderers, initCameras, initControls, initInspectors, initLights, initRayCasters, initObjects,animate,listenForWindowResize } = props || {}
     if(preCheck !== false) this.preCheck()
-    if(addRendererToDOM !== false) this.addRendererToDOM();
+    if(initRenderers !== false) this.initRenderers();
     if(initCameras !== false) this.initCameras(initCameras)
     if(initControls !== false) this.initControls()
     if(initLights !== false) this.initLights()
@@ -74,9 +74,12 @@ export class WMLThreeProps<R = Renderer> {
   }
   animate = () => {
     this.animateFunctions.forEach(fn => fn({clock:this.clock}))
-    this.getCurrentRenderer().render(this.getCurentScene(), this.getCurentCamera());
+    this.renderers.forEach((renderer)=>{
+
+      renderer.render(this.getCurentScene(), this.getCurentCamera());
+    })
   }
-  addRendererToDOM = () => {
+  initRenderers = () => {
     this.renderers.forEach((renderer) => {
       let rect = this.getRendererParentDetails();
       renderer.setSize(rect.width, rect.height);
@@ -89,6 +92,7 @@ export class WMLThreeProps<R = Renderer> {
         renderer.domElement.style.position = 'absolute';
         renderer.domElement.style.top = '0px';
         renderer.domElement.style.pointerEvents = 'none'
+
       }
       this.rendererParentElement.appendChild(renderer.domElement);
     })
@@ -287,8 +291,8 @@ export class WMLThreeProps<R = Renderer> {
 
 
 @WMLConstructorDecorator
-export class WMLCommonThreeProps extends WMLThreeProps<WebGLRenderer> {
-  constructor(params: Partial<WMLCommonThreeProps> = {}) { super() }
+export class WMLThreeCommonProps extends WMLThreeProps<WebGLRenderer> {
+  constructor(params: Partial<WMLThreeCommonProps> = {}) { super() }
 
   static warnings ={
     usingCameraLookAtWithOrbitControls: false
@@ -312,9 +316,9 @@ export class WMLCommonThreeProps extends WMLThreeProps<WebGLRenderer> {
     let {position,lookAt,updateControls} = props
     this.camera.position.set(position.x, position.y, position.z)
     if(lookAt){
-      if(this.control instanceof OrbitControls && !WMLCommonThreeProps.warnings.usingCameraLookAtWithOrbitControls){
+      if(this.control instanceof OrbitControls && !WMLThreeCommonProps.warnings.usingCameraLookAtWithOrbitControls){
         console.warn("cant use lookAt with OrbitControls")
-        WMLCommonThreeProps.warnings.usingCameraLookAtWithOrbitControls = true
+        WMLThreeCommonProps.warnings.usingCameraLookAtWithOrbitControls = true
       }
       this.camera.lookAt(lookAt.x,lookAt.y,lookAt.z)
     }
@@ -331,17 +335,18 @@ export class WMLThreeObjectProps {
 
   geometries: Array<BufferGeometry> = []
   materials: Array<Material | Array<Material>> = []
-  meshes: Array<Object3D | GLTF> = []
+  meshes: Array<Object3D | GLTF | CSS2DObject> = []
   textures : Array<WMLThreeTexturesProps> = []
 
   get regularMeshes() { return this.meshes as Array<Mesh> }
   get gltfMeshes() { return this.meshes as Array<GLTF> }
+  get css2dMeshes() { return this.meshes as Array<CSS2DObject>}
 
 }
 
 @WMLConstructorDecorator
-export class WMLCommonThreeObjectProps extends WMLThreeObjectProps {
-  constructor(props: Partial<WMLCommonThreeObjectProps> = {}) {super(props)}
+export class WMLThreeCommonObjectProps extends WMLThreeObjectProps {
+  constructor(props: Partial<WMLThreeCommonObjectProps> = {}) {super(props)}
   wmlInit() {
 
     if (!this.mesh && this.textures.length === 0) {
@@ -358,7 +363,7 @@ export class WMLCommonThreeObjectProps extends WMLThreeObjectProps {
   set material(material: Material | Array<Material>) { this.materials[0] = material }
 
   get mesh() { return this.meshes[0] }
-  set mesh(mesh: Object3D|GLTF) { this.meshes[0] = mesh }
+  set mesh(mesh: Object3D|GLTF|CSS2DObject) { this.meshes[0] = mesh }
 
   get regularMesh () { return this.meshes[0] as Mesh }
   set regularMesh(mesh: Mesh) { this.meshes[0] = mesh }
@@ -366,18 +371,18 @@ export class WMLCommonThreeObjectProps extends WMLThreeObjectProps {
   get gltfMesh() { return this.meshes[0] as GLTF }
   set gltfMesh(mesh: GLTF) { this.meshes[0] = mesh }
 
+  get css2dMesh() { return this.meshes[0] as CSS2DObject }
+  set css2dMesh(mesh: CSS2DObject) { this.meshes[0] = mesh }
+
   get texture() { return this.textures[0] }
   set texture(texture: WMLThreeTexturesProps) { this.textures[0] = texture }
 
-
   toggleShadow = (props: {cast?:boolean, receive?:boolean}) => {
 
-      this.regularMesh.castShadow = props.cast ?? !this.regularMesh.castShadow
-      this.regularMesh.receiveShadow = props.receive ?? !this.regularMesh.receiveShadow
+    this.regularMesh.castShadow = props.cast ?? !this.regularMesh.castShadow
+    this.regularMesh.receiveShadow = props.receive ?? !this.regularMesh.receiveShadow
 
   }
-
-
 
 }
 

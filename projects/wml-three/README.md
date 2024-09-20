@@ -8,6 +8,20 @@ The WML Three.js library provides a streamlined way to integrate Three.js into y
 
 Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-s</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/wml-three</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/wml-components-base</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">three</span></div></div></code> 
 
+## Roadmap
+
+[ ] multiple renderers need to be able to accurately choose the correct object from the mouse
+[ ] examples with the effect composers
+[ ] any unifed and comphesive progress loader for all features in a threejs prop
+
+
+
+### Caveats
+
+must set     in tsconfig.json compilerOptions<code><div class="ec-line"><div class="code"><span style="--0:#D9F5DD;--1:#111111">&#34;</span><span style="--0:#ECC48D;--1:#9B504E">noImplicitAny</span><span style="--0:#D9F5DD;--1:#111111">&#34;</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#82AAFF;--1:#3C63B3">false</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D9F5DD;--1:#111111">&#34;</span><span style="--0:#ECC48D;--1:#9B504E">skipLibCheck</span><span style="--0:#D9F5DD;--1:#111111">&#34;</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#82AAFF;--1:#3C63B3">true</span></div></div></code>
+
+also when you know a property exists on an object you must use @ts-ignore and debug the property to make sure until we can have more advanced typescript types, for our classes we provide getters for different types of the same property but for threejs objects thats harder if not impossible to do
+
 ## Usage
 
 
@@ -36,6 +50,18 @@ Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#8
 
 <iframe src="https://stackblitz.com/edit/stackblitz-starters-ytjej6?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
+### Loading Various Types of Models
+
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-wcn5sj?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+
+### Disable Features
+
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-uu793c?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+
+### Full Example
+
+<iframe src="https://stackblitz.com/edit/stackblitz-starters-3vagtl?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+
 ## References
 
 
@@ -50,7 +76,7 @@ Methods<table><thead><tr><th>Method</th><th>Return Type</th><th>Description</th>
 
  <code dir="auto">InspectorOption</code> <table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">value</code></td><td><code dir="auto">any</code></td><td>The initial value of the option to be controlled via the inspector.</td></tr><tr><td><code dir="auto">onChange</code></td><td><code dir="auto">(value: any, init: boolean) =&gt; void</code></td><td>Optional function to be called when the value changes.</td></tr><tr><td><code dir="auto">min</code></td><td><code dir="auto">number</code></td><td>Optional minimum value for numerical controls.</td></tr><tr><td><code dir="auto">max</code></td><td><code dir="auto">number</code></td><td>Optional maximum value for numerical controls.</td></tr></tbody></table>
 
- <code dir="auto">WMLCommonThreeProps</code> <table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">scene</code></td><td><code dir="auto">Scene</code></td><td>Getter and setter for the current scene.</td></tr><tr><td><code dir="auto">camera</code></td><td><code dir="auto">Camera</code></td><td>Getter and setter for the current camera.</td></tr><tr><td><code dir="auto">renderer</code></td><td><code dir="auto">WebGLRenderer</code></td><td>Getter and setter for the current renderer.</td></tr><tr><td><code dir="auto">control</code></td><td><code dir="auto">OrbitControls</code></td><td>Getter and setter for the current control mechanism, specifically <code dir="auto">OrbitControls</code>.</td></tr></tbody></table>
+ <code dir="auto">WMLThreeCommonProps</code> <table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">scene</code></td><td><code dir="auto">Scene</code></td><td>Getter and setter for the current scene.</td></tr><tr><td><code dir="auto">camera</code></td><td><code dir="auto">Camera</code></td><td>Getter and setter for the current camera.</td></tr><tr><td><code dir="auto">renderer</code></td><td><code dir="auto">WebGLRenderer</code></td><td>Getter and setter for the current renderer.</td></tr><tr><td><code dir="auto">control</code></td><td><code dir="auto">OrbitControls</code></td><td>Getter and setter for the current control mechanism, specifically <code dir="auto">OrbitControls</code>.</td></tr></tbody></table>
 
 <table><thead><tr><th>Method</th><th>Return Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">updateCameraPosition(props?)</code></td><td><code dir="auto">void</code></td><td>Updates the camera’s position and optionally its orientation using <code dir="auto">lookAt</code>. Also updates controls if applicable.</td></tr></tbody></table>
 
@@ -94,30 +120,6 @@ Methods<table><thead><tr><th>Method</th><th>Return Type</th><th>Description</th>
 
 
 
-### v18.2.4001 [9/18/24]
+### v18.2.4100 [9/16/24]
 
-updated package to reflect the version  18.2.4 of @angular/core package
-
-### v18.2.4001 [9/19/24]
-
-updated package to reflect the version  18.2.4 of @angular/core package
-
-### v18.2.4002 [9/19/24]
-
-updated package to reflect the version  18.2.4 of @angular/core package
-
-### v18.2.4003 [9/19/24]
-
-updated package to reflect the version  18.2.4 of @angular/core package
-
-### v18.2.4003 [9/19/24]
-
-updated package to reflect the version  18.2.4 of @angular/core package
-
-### v18.2.4004 [9/19/24]
-
-updated package to reflect the version  18.2.4 of @angular/core package
-
-### v18.2.4005 [9/19/24]
-
-updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/intro/wml-angular-components-base)[](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)
+first version of library[](/Windmillcode-Angular-CDK-Docs/intro/wml-angular-components-base)[](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)

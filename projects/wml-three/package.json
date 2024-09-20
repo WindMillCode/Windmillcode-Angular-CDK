@@ -17,5 +17,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "18.2.4007"
+    "version": "18.2.4200"
 }
