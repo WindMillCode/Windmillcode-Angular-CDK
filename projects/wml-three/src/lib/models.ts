@@ -5,6 +5,7 @@ import { GUI as LilGUI } from "lil-gui";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
+import { CSS2DRenderer, CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
 
 @WMLConstructorDecorator
 export class WMLThreeProps<R = Renderer> {
@@ -76,13 +77,21 @@ export class WMLThreeProps<R = Renderer> {
     this.getCurrentRenderer().render(this.getCurentScene(), this.getCurentCamera());
   }
   addRendererToDOM = () => {
-    let rect = this.getRendererParentDetails();
-    let renderer: WebGLRenderer = this.getCurrentRenderer()
-    renderer.setSize(rect.width, rect.height);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setClearColor(0x333333)
-    renderer.shadowMap.enabled = true
-    this.rendererParentElement.appendChild(this.getCurrentRenderer().domElement);
+    this.renderers.forEach((renderer) => {
+      let rect = this.getRendererParentDetails();
+      renderer.setSize(rect.width, rect.height);
+      if(renderer instanceof WebGLRenderer) {
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setClearColor(0x333333)
+        renderer.shadowMap.enabled = true
+      }
+      if(renderer instanceof CSS2DRenderer){
+        renderer.domElement.style.position = 'absolute';
+        renderer.domElement.style.top = '0px';
+        renderer.domElement.style.pointerEvents = 'none'
+      }
+      this.rendererParentElement.appendChild(renderer.domElement);
+    })
   }
   initCameras = (props = {
     fieldOfViewAngle: 75,
