@@ -4,9 +4,6 @@ import { detectFramework, getGlobalObject, updateClassString } from "./functions
 
 export type WMLUIFrameworkType='React' | 'Angular' | 'Vue.js' | 'Svelte' | 'Ember.js' | 'Backbone.js' | 'Preact' | 'Next.js' | 'Nuxt.js' | 'Gatsby' | 'Remix' | 'NestJS' | 'VanillaJS'| 'Lit' | 'Alpine.js' | 'Mithril.js' | 'Aurelia' | 'Riot.js' | 'Inferno' | 'Stencil'
 
-
-
-
 export function WMLConstructorDecorator<T extends { new(...args: any[]): { } }>(ReversedBase: T) {
 
   return class extends ReversedBase {

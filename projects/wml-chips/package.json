@@ -3,17 +3,17 @@
         "@ngx-translate/core": ">=15.0.0",
         "tslib": "^2.3.0"
     },
-    "funding": "https://www.gofundme.com/f/strengthen-our-business-to-take-on-bigger-initiati?utm_campaign=p_lico+share-sheet-first-launch&utm_medium=copy_link&utm_source=customer",
-    "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs//components/wml-chips",
+    "funding": "https://github.com/sponsors/WindMillCode",
+    "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-chips",
     "name": "@windmillcode/angular-wml-chips",
     "peerDependencies": {
         "@angular/animations": "^18.0.0",
         "@angular/cdk": "^18.0.0",
         "@angular/common": "^18.0.0",
         "@angular/core": "^18.0.0",
-        "@windmillcode/angular-wml-button": "^18.2.4000",
-        "@windmillcode/angular-wml-components-base": "^18.2.4000",
-        "@windmillcode/wml-components-base": "^18.2.4000"
+        "@windmillcode/angular-wml-button": "^18.2.4100",
+        "@windmillcode/angular-wml-components-base": "^18.2.4100",
+        "@windmillcode/wml-components-base": "^18.2.4100"
     },
     "private": false,
     "schematics": "",
@@ -21,5 +21,5 @@
         "build": "npx ng build",
         "test": "npx ng test wml-chips --code-coverage"
     },
-    "version": "18.2.4000"
+    "version": "18.2.4100"
 }

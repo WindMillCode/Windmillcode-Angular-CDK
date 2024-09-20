@@ -72,7 +72,7 @@ angular<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr>
 
 ### WMLRoute
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">route</code></td><td><code dir="auto">string</code></td><td>Defines the route for the application, default is ”/“.</td></tr><tr><td><code dir="auto">link</code></td><td><code dir="auto">string</code></td><td>Optional link associated with the route.</td></tr><tr><td><code dir="auto">routerLink</code></td><td><code dir="auto">string</code></td><td>Optional router link for navigation.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">route</code></td><td><code dir="auto">string</code></td><td>Defines the route for the application, default is ”/”.</td></tr><tr><td><code dir="auto">link</code></td><td><code dir="auto">string</code></td><td>Optional link associated with the route.</td></tr><tr><td><code dir="auto">routerLink</code></td><td><code dir="auto">string</code></td><td>Optional router link for navigation.</td></tr></tbody></table>
 
 
 

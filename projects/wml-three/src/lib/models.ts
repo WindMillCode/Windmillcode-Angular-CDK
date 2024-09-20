@@ -1,9 +1,11 @@
 import { getGlobalObject, WMLConstructorDecorator } from "@windmillcode/wml-components-base";
-import { AmbientLight, BufferGeometry, Camera, CameraHelper, Clock, Controls, DirectionalLight, DirectionalLightHelper, HemisphereLight, HemisphereLightHelper, Intersection, Light, Loader, LoadingManager, Material, Mesh,  Object3D, Object3DEventMap, OrthographicCamera, PerspectiveCamera, PointLight, PointLightHelper, Raycaster, Renderer, Scene, SpotLight, SpotLightHelper,  Texture,  TextureLoader, Vector2, Vector3, WebGLRenderer } from "three";
+import { AmbientLight, BufferGeometry, Camera, CameraHelper, Clock, Controls, DirectionalLight, DirectionalLightHelper, HemisphereLight, HemisphereLightHelper, Intersection, Light, Loader, LoadingManager, Material, Mesh,  Object3D, Object3DEventMap, OrthographicCamera, PerspectiveCamera, PointLight, PointLightHelper, Raycaster, Renderer, Scene, SpotLight, SpotLightHelper, Vector2, Vector3, WebGLRenderer } from "three";
 import { GUI as DatGUI } from "dat.gui";
 import { GUI as LilGUI } from "lil-gui";
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
+
 @WMLConstructorDecorator
 export class WMLThreeProps<R = Renderer> {
   constructor(params: Partial<WMLThreeProps> = {}) { }
@@ -15,7 +17,7 @@ export class WMLThreeProps<R = Renderer> {
   controls: Array<Controls<any>> = [];
   inspectors: Array<{
     gui?: DatGUI | LilGUI,
-    options: {
+    values: {
       [key: string]: {
         value:any,
         onChange?:(value:any,init:boolean) => void
@@ -23,14 +25,13 @@ export class WMLThreeProps<R = Renderer> {
         max?:number
       }
     },
-    internalOptions?:{
+    options?:{
       [key: string]: any
     }
   }> = [];
-  lights: Array<WMLTHREELightProps> = [
-    new WMLTHREELightProps({
-      light:new AmbientLight(0xFFFFFF, 1),
-      addHelper: true
+  lights: Array<WMLThreeLightProps> = [
+    new WMLThreeLightProps({
+      light:new AmbientLight(0xFFFFFF, 1)
     })
   ];
   rayCasters: Array<WMLThreeRayCasterProps> = [new WMLThreeRayCasterProps()];
@@ -106,7 +107,6 @@ export class WMLThreeProps<R = Renderer> {
   }
   initLights = () => {
     this.lights.forEach((lightInfo) => {
-
       let {light,addHelper,helper,addShadowHelper,shadowHelper} = lightInfo
       // helps with pixelated shadows
       if(light.shadow){
@@ -127,6 +127,7 @@ export class WMLThreeProps<R = Renderer> {
         else if (light instanceof HemisphereLight){
           lightInfo.helper =helper = new HemisphereLightHelper(light,5)
         }
+
         else{
           console.warn(`no helper for ${light.type}`)
         }
@@ -159,18 +160,27 @@ export class WMLThreeProps<R = Renderer> {
       return Promise.all(object.textures.map((texture) => {
         return Promise.all(texture.group.map((item,index0) => {
 
-          item.loader.manager = texture.manager
+          let {loader,url,onLoad,onProgress,onError} = item
+          loader.manager = texture.manager
           return new Promise((res,rej)=>{
-            item.loader.load(
-              item.url,
+            if(loader instanceof DRACOLoader){
+
+              loader.setDecoderPath("https://www.gstatic.com/draco/versioned/decoders/1.5.7/");
+              loader.setDecoderConfig({ type: 'js' });
+              let gtlfLoader = new GLTFLoader()
+              gtlfLoader.setDRACOLoader(loader)
+              item.loader = loader =gtlfLoader
+            }
+            loader.load(
+              url,
               (data:any) =>{
                 object.meshes[index0] = data
-                item.onLoad?.(data)
+                onLoad?.(data)
                 res(data)
               },
-              item.onProgress,
+              onProgress,
               (err:any) =>{
-                item.onError?.(err)
+                onError?.(err)
                 rej(err)
               }
             )
@@ -184,20 +194,20 @@ export class WMLThreeProps<R = Renderer> {
   initInspectors = () => {
     this.inspectors.forEach((inspector) => {
       if(inspector.gui instanceof DatGUI){
-        Object.entries(inspector.options).forEach(([key,val]:any) => {
-          inspector.internalOptions = inspector.internalOptions ?? {}
-          inspector.internalOptions[key] = val.value
+        Object.entries(inspector.values).forEach(([key,val]:any) => {
+          inspector.options = inspector.options ?? {}
+          inspector.options[key] = val.value
         })
-        Object.entries(inspector.options).forEach(([key,val]:any) => {
+        Object.entries(inspector.values).forEach(([key,val]:any) => {
           let control
           if(['boolean'].includes(typeof val.value) ){
-            control =inspector.gui.add(inspector.internalOptions, key)
+            control =inspector.gui.add(inspector.options, key)
           }
           if(['string'].includes(typeof val.value) ){
-            control =inspector.gui.addColor(inspector.internalOptions, key)
+            control =inspector.gui.addColor(inspector.options, key)
           }
           else if(typeof val.value === 'number'){
-            control = inspector.gui.add(inspector.internalOptions, key, val?.min,val?.max)
+            control = inspector.gui.add(inspector.options, key, val?.min,val?.max)
           }
           if(val?.onChange){
             val?.onChange(val.value,true)
@@ -209,23 +219,25 @@ export class WMLThreeProps<R = Renderer> {
   }
   initRayCasters = () => {
     this.rayCasters.forEach((item) => {
-      let {raycaster,mousePosition,intersectHandler} = item
+      let {raycaster,mousePosition,intersectCallback} = item
       getGlobalObject().addEventListener('pointermove', (e) => {
         item.hasMouseEnteredRenderer = true
-        mousePosition.x = (e.clientX / window.innerWidth) * 2 - 1;
-        mousePosition.y = -(e.clientY / window.innerHeight) * 2 + 1;
+        let {width,height} = this.getRendererParentDetails()
+        mousePosition.x = (e.clientX / width) * 2 - 1;
+        mousePosition.y = -(e.clientY / height) * 2 + 1;
       })
       this.animateFunctions.push(()=>{
         if(!item.hasMouseEnteredRenderer ) return
         raycaster.setFromCamera(mousePosition, this.getCurentCamera())
         let intersects = raycaster.intersectObjects(this.getCurentScene().children)
-        intersectHandler(intersects)
+        intersectCallback(intersects)
       })
     })
   }
   listenForWindowResize =()=>{
-    getGlobalObject().onresize =()=>{
+    getGlobalObject().addEventListener("resize",(e)=>{
       const {height,width} = this.getRendererParentDetails()
+
       this.cameras.forEach((camera:any)=>{
         if([PerspectiveCamera].some((cameraType)=>camera instanceof cameraType)){
           camera.aspect = width / height;
@@ -237,7 +249,8 @@ export class WMLThreeProps<R = Renderer> {
       this.renderers.forEach((renderer:Renderer)=>{
         renderer.setSize(width,height)
       })
-    }
+    })
+
   }
   //
   getRendererParentDetails = () => {
@@ -281,6 +294,9 @@ export class WMLCommonThreeProps extends WMLThreeProps<WebGLRenderer> {
 
   get control() { return this.getCurrentControls() as OrbitControls }
   set control(control: OrbitControls) { this.controls[0] = control }
+
+  get renderer() { return this.getCurrentRenderer() }
+  set renderer(renderer: WebGLRenderer) { this.renderers[0] = renderer }
 
 
   updateCameraPosition = (props :{position:Vector3,lookAt?:Vector3,updateControls?:boolean} ={position: new Vector3(),updateControls:true}) => {
@@ -352,22 +368,20 @@ export class WMLCommonThreeObjectProps extends WMLThreeObjectProps {
 
   }
 
-  loadTexture = (url:string) => {}
+
 
 }
 
 
 @WMLConstructorDecorator
-export class WMLTHREELightProps {
-  constructor(params: Partial<WMLTHREELightProps> = {}) { }
+export class WMLThreeLightProps {
+  constructor(params: Partial<WMLThreeLightProps> = {}) { }
 
   light!: Light
   addHelper =false
   helper!:Object3D
   addShadowHelper=false
   shadowHelper!:CameraHelper
-
-
 
   toggleShadow = (props: {cast?:boolean, receive?:boolean}) => {
     this.light.castShadow =    props.cast ?? !this.light.castShadow
@@ -404,9 +418,10 @@ export class WMLThreeRayCasterProps {
 
   raycaster = new Raycaster()
   mousePosition = new Vector2()
-  intersectHandler = (intersects:Intersection<Object3D<Object3DEventMap>>[])=>{
+  hasMouseEnteredRenderer= false
+
+  intersectCallback = (intersects:Intersection<Object3D<Object3DEventMap>>[])=>{
 
   }
-  hasMouseEnteredRenderer= false
 
 }

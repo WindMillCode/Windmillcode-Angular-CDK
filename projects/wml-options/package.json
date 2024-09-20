@@ -3,18 +3,18 @@
         "@ngx-translate/core": ">=15.0.0",
         "tslib": "^2.3.0"
     },
-    "funding": "https://www.gofundme.com/f/strengthen-our-business-to-take-on-bigger-initiati?utm_campaign=p_lico+share-sheet-first-launch&utm_medium=copy_link&utm_source=customer",
-    "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs//components/wml-options",
+    "funding": "https://github.com/sponsors/WindMillCode",
+    "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-options",
     "name": "@windmillcode/angular-wml-options",
     "peerDependencies": {
         "@angular/common": "^18.0.0",
         "@angular/core": "^18.0.0",
-        "@windmillcode/angular-wml-button": "^18.2.4000"
+        "@windmillcode/angular-wml-button": "^18.2.4100"
     },
     "private": false,
     "schematics": "",
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "18.2.4000"
+    "version": "18.2.4100"
 }
