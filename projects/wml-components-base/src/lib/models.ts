@@ -165,7 +165,7 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
     );
 
     if(this.type === "animation"){
-      this.injectKeyframes()
+      this.injectKeyFrames()
     }
     else if(this.type === "transition"){
       this.setupTransitions()
@@ -488,7 +488,7 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
     }
     return false
   }
-  injectKeyframes=()=> {
+  injectKeyFrames=()=> {
     let shouldReturn =this.checkForDuplicateKeyFrameNames()
     if(shouldReturn){
       return
@@ -537,7 +537,10 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
       this.updateClassString(this.keyFrameName)
     }
     if(this.type === "animation"){
-      this.injectKeyframes()
+      this.injectKeyFrames()
+    }
+    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
+      this.angular.cdref?.detectChanges()
     }
   }
 

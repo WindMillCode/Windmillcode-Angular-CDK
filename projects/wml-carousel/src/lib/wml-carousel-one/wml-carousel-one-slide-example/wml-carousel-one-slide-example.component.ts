@@ -78,6 +78,7 @@ export class WMLCarouselOneSlideExampleProps {
   setState = (value)=>{
     this.setStateSubj.next(value)
   }
+  value:any =0
 }
 
 

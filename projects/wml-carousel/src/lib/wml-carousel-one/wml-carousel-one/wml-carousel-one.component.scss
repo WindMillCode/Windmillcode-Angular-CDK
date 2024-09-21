@@ -6,14 +6,13 @@
   .WMLCarouselOne{
     &Main{
       &Pod{
-
-
         height:100%;
       }
     }
     &Pod{
 
       &0{}
+
       &1{
         height: 100%;
         &Item {
@@ -24,13 +23,18 @@
             justify-content: center;
             align-items: center;
             transform-style: preserve-3d;
+            border: 1px solid red;
+            // pointer-events: none;
+
           }
+
           &1{
-
-
-
             position: absolute;
-
+            cursor: pointer;
+            border: 1px solid green;
+            &:hover{
+              background-color: green;
+            }
           }
         }
       }

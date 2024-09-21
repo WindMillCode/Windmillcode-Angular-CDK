@@ -49,7 +49,8 @@ export class WMLCarouselOneComponent {
     }
     this.props.controllerVCF = this.controller
     this.props.ngUnsub = this.ngUnsub
-    this.props.cdref = this.cdref
+    this.props.controller.angular.cdref =this.props.cdref = this.cdref
+
     this.listenForUpdate().subscribe()
     this.props.init()
   }
@@ -81,21 +82,18 @@ export class WMLCarouselOneProps {
   private slideHeight = ""
   slideDistanceFromCenter = ""
   slideDistanceFromTop = ''
-  private classPrefix = generateClassPrefix('WMLCarouselOne')
 
   slideContainer = new WMLUIProperty({
     style: {
-      // perspective:"1000px",
-      // perspectiveOrigin:"50% -95%"
+
     },
-    class: this.classPrefix('Pod1')
   })
   controller = new WMLAngularMotionUIProperty({
-    type: "transition",
-    class: this.classPrefix('Pod1Item0'),
+    // type: "transition",
     style: {
       height: "100%",
-      border: "calc(1/10.6 * 1em) solid red"
+
+      animationDuration:".3s"
     },
     keyFrameStyles: {
       '0%': {
@@ -111,11 +109,12 @@ export class WMLCarouselOneProps {
   slides: Array<WMLCarouselOneSlideProps> = Array(8)
     .fill(null)
     .map((nullVal, index0) => {
-      return new WMLCarouselOneSlideProps({
+      let prop = new WMLCarouselOneSlideProps({
         view: new WMLUIProperty({
-          class: this.classPrefix('Pod1Item1'),
         })
       })
+      prop.custom.props.value = index0
+      return prop
     })
 
   init = () => {
@@ -137,7 +136,7 @@ export class WMLCarouselOneProps {
 
 
 
-          this.slideContainer.style.perspectiveOrigin = `50% ${-5}%`;
+          this.slideContainer.style.perspectiveOrigin = `50% ${-25}%`;
           // this.controller.style.transform =`rotateY(60deg)`
 
           this.slideHeight = this.calculateSlideHeight(parentWidth, parentHeight) + "px"
@@ -164,7 +163,7 @@ export class WMLCarouselOneProps {
             parentHeight: parentHeight
           };
 
-          console.log(slideInfo);
+          // console.log(slideInfo);
 
 
 
@@ -223,8 +222,6 @@ export class WMLCarouselOneProps {
     return Math.round(perspective);
   }
 
-
-
   updateSlides = () => {
     this.slides = this.slides.map((slide, index0) => {
       let angle = this.getAngle();
@@ -233,5 +230,48 @@ export class WMLCarouselOneProps {
       slide.view.style.width = this.slideWidth;
       return slide;
     });
+  }
+
+
+  prevSlideNumber = 0
+  slideDifference
+  rotateToSlide = (slideNumber:number)=>{
+    if(this.prevSlideNumber === slideNumber){
+      return
+    }
+    let angle = this.getAngle();
+    let diff = slideNumber - this.prevSlideNumber
+  // Handle the wrap-around case in both directions
+  console.log("diff is " + diff)
+  let totalSlides = this.slides.length;
+  if (diff > 0) {
+    diff = diff > totalSlides / 2 ? diff - totalSlides : diff;
+  } else {
+    diff = -diff > totalSlides / 2 ? totalSlides + diff : diff;
+  }
+  diff = -diff
+
+    let prevAngle = parseFloat(this.controller.keyFrameStyles["100%"].transform?.split("rotateY(")[1]?.split("deg)")[0]??"0")
+    let newAngle = prevAngle + diff * angle
+
+
+
+    this.controller.updateKeyFrames({
+      "0%":{
+        transform: this.controller.keyFrameStyles["100%"].transform ?? `rotateY(0deg)`
+      },
+      "100%":{
+        transform:`rotateY(${newAngle}deg)`
+      }
+    })
+    // console.log(leftRotationAngle)
+    // console.log(rightRotationAngle)
+    console.log(this.controller.keyFrameStyles)
+    this.prevSlideNumber = slideNumber
+
+
+    // this.controller.motionState ="closed"
+    this.controller.openMotion()
+
   }
 }

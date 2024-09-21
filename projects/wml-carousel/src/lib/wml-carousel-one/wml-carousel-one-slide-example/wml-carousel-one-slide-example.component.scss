@@ -7,18 +7,24 @@
   .WMLCarouselOneSlideExampleView{
     display: block;
     height:100%;
-    border:calc(1/10.6 * 1em) solid green;
     .WMLCarouselOneSlideExample{
       &Main{
         &Pod{
-
-
           height:100%;
         }
       }
       &Pod{
 
-        &0{}
+        &0{
+          height:100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          p{
+            font-size:36px
+          }
+        }
       }
     }
   }

@@ -4,17 +4,18 @@
   </section>
   <section
   [ngStyle]="props.slideContainer.style"
-  [class]="props.slideContainer.class">
+  [class]="classPrefix('Pod1')+props.slideContainer.class">
     <div
     #controller
     [ngStyle]="props.controller.style"
-    (transitionend)="props.controller.transitionEnd($event)"
-    [class]="props.controller.class">
+    (animationend)="props.controller.animationEnd($event)"
+    [class]="classPrefix('Pod1Item0')+props.controller.class">
       <wml-carousel-one-slide
+        (click)="props.rotateToSlide(i)"
         [ngStyle]="slide.view.style"
-        [class]=" slide.view.class"
+        [class]=" classPrefix('Pod1Item1') + slide.view.class"
         [props]="slide"
-        *ngFor="let slide of props.slides"
+        *ngFor="let slide of props.slides;let i = index;"
       ></wml-carousel-one-slide>
     </div>
   </section>
