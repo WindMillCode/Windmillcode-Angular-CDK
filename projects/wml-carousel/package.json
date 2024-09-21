@@ -4,7 +4,7 @@
   "peerDependencies": {
     "@angular/common": ">=18.2.0",
     "@angular/core": ">=18.2.0",
-    "@windmillcode/angular-wml-components-base": ">=18.2.0"
+    "@windmillcode/angular-wml-components-base": ">=18.2.4200"
   },
   "dependencies": {
     "tslib": "^2.3.0",
