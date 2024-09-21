@@ -234,27 +234,22 @@ export class WMLCarouselOneProps {
 
 
   prevSlideNumber = 0
-  slideDifference
   rotateToSlide = (slideNumber:number)=>{
     if(this.prevSlideNumber === slideNumber){
       return
     }
     let angle = this.getAngle();
     let diff = slideNumber - this.prevSlideNumber
-  // Handle the wrap-around case in both directions
-  console.log("diff is " + diff)
-  let totalSlides = this.slides.length;
-  if (diff > 0) {
-    diff = diff > totalSlides / 2 ? diff - totalSlides : diff;
-  } else {
-    diff = -diff > totalSlides / 2 ? totalSlides + diff : diff;
-  }
-  diff = -diff
+    // Handle the wrap-around case in both directions
+    let totalSlides = this.slides.length;
+    if (diff > 0) {
+      diff = diff > totalSlides / 2 ? diff - totalSlides : diff;
+    } else {
+      diff = -diff > totalSlides / 2 ? totalSlides + diff : diff;
+    }
 
     let prevAngle = parseFloat(this.controller.keyFrameStyles["100%"].transform?.split("rotateY(")[1]?.split("deg)")[0]??"0")
-    let newAngle = prevAngle + diff * angle
-
-
+    let newAngle = prevAngle - diff * angle
 
     this.controller.updateKeyFrames({
       "0%":{
@@ -264,9 +259,7 @@ export class WMLCarouselOneProps {
         transform:`rotateY(${newAngle}deg)`
       }
     })
-    // console.log(leftRotationAngle)
-    // console.log(rightRotationAngle)
-    console.log(this.controller.keyFrameStyles)
+
     this.prevSlideNumber = slideNumber
 
 

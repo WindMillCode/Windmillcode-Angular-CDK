@@ -488,15 +488,15 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
     }
     return false
   }
+  currentStyleElement?: HTMLStyleElement
   injectKeyFrames=()=> {
     let shouldReturn =this.checkForDuplicateKeyFrameNames()
     if(shouldReturn){
       return
     }
     // Create a new style element
-    const styleElement = document.createElement('style');
-
-    document.head.appendChild(styleElement);
+    this.currentStyleElement = document.createElement('style');
+    document.head.appendChild(this.currentStyleElement);
 
     // Generate the keyframes string from the keyFrameStyles property
     let keyframes = `@keyframes ${this.keyFrameName} {`;
@@ -514,7 +514,7 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
     }`;
 
     // Insert the keyframes rule into the style element
-    let styleSheet = styleElement.sheet!
+    let styleSheet = this.currentStyleElement.sheet!
     styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
 
   }
@@ -529,6 +529,10 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
   }
   updateKeyFrames =(props:WMLMotionUIProperty["keyFrameStyles"])=>{
     this.keyFrameStyles = props
+
+    if(this.type ==="animation"){
+      this.currentStyleElement?.remove()
+    }
     if(this.type ==="transition"){
       this.updateClassString(this.keyFrameName,"remove")
     }
