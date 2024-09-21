@@ -7,36 +7,55 @@
     &Main{
       &Pod{
         height:100%;
+        display: flex;
+        flex-direction: column;
+
       }
     }
     &Pod{
 
-      &0{}
+      &0{
+        align-self: center;
+        display: flex;
+        // flex-flow:row wrap;
+
+        justify-content: space-evenly;
+        // width: 100%;
+        &Item {
+          &0 {
+            cursor: pointer;
+            margin: 0 $wml-carousel-spacing3;
+          }
+        }
+      }
 
       &1{
         height: 100%;
+
         &Item {
           &0 {
+            margin-top: $wml-carousel-spacing7;
             height: 100%;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             transform-style: preserve-3d;
-            border: 1px solid red;
-            // pointer-events: none;
+
 
           }
 
           &1{
             position: absolute;
             cursor: pointer;
-            border: 1px solid green;
-            &:hover{
-              background-color: green;
-            }
+
           }
         }
+      }
+
+      &2{
+        display: none;
+
       }
     }
   }

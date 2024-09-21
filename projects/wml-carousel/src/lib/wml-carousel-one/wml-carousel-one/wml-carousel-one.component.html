@@ -1,6 +1,12 @@
 <div [class]="classPrefix('MainPod')">
   <section [class]="classPrefix('Pod0')">
+    <wml-carousel-one-control
+    (click)="props.rotateToSlide(i)"
+    [ngStyle]="control.view.style"
+    [class]="classPrefix('Pod0Item0') + control.view.class"
+    [props]="control" *ngFor="let control of props.controls;let i = index">
 
+    </wml-carousel-one-control>
   </section>
   <section
   [ngStyle]="props.slideContainer.style"
@@ -18,5 +24,12 @@
         *ngFor="let slide of props.slides;let i = index;"
       ></wml-carousel-one-slide>
     </div>
+  </section>
+  <section [class]="classPrefix('Pod2')">
+    <wml-carousel-one-slide
+    [ngStyle]="props.slides[props.prevSlideNumber].view.style"
+    [class]=" classPrefix('Pod1Item1') + props.slides[props.prevSlideNumber].view.class"
+    [props]="props.slides[props.prevSlideNumber]"
+  ></wml-carousel-one-slide>
   </section>
 </div>

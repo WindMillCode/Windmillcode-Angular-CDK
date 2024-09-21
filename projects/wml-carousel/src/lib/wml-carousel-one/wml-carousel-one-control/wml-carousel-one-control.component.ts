@@ -1,5 +1,5 @@
 // angular
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnInit,  Input  , ViewEncapsulation   } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnInit,  Input  , ViewEncapsulation, ViewContainerRef, ViewChild   } from '@angular/core';
 
 
 
@@ -8,7 +8,9 @@ import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
 
 // wml-components
-import { WMLConstructorDecorator, generateClassPrefix, generateIdPrefix } from '@windmillcode/wml-components-base';
+import { WMLConstructorDecorator, WMLCustomComponent, WMLMotionUIProperty, WMLUIProperty, generateClassPrefix, generateIdPrefix } from '@windmillcode/wml-components-base';
+import { WMLCarouselOneControlExampleComponent, WMLCarouselOneControlExampleProps } from '../wml-carousel-one-control-example/wml-carousel-one-control-example.component';
+import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 
 
 // misc
@@ -33,17 +35,11 @@ export class WMLCarouselOneControlComponent  {
   ) { }
 
   classPrefix = generateClassPrefix('WMLCarouselOneControl')
-
-
   @Input('props') props: WMLCarouselOneControlProps = new WMLCarouselOneControlProps()
-
-
   @HostBinding('class') myClass: string = this.classPrefix(`View`);
-
-
   @HostBinding('attr.id') myId?:string
-
   ngUnsub= new Subject<void>()
+  @ViewChild("customControl",{read:ViewContainerRef}) customControl;
 
 
   listenForUpdate = ()=>{
@@ -72,14 +68,17 @@ export class WMLCarouselOneControlComponent  {
 
   }
 
+  ngAfterViewInit(){
+    this.props.controlViewContainerRef = this.customControl
+    this.props.init()
+  }
+
   ngOnDestroy(){
     this.ngUnsub.next();
     this.ngUnsub.complete()
   }
 
 }
-
-
 
 @WMLConstructorDecorator
 export class WMLCarouselOneControlProps {
@@ -90,6 +89,27 @@ export class WMLCarouselOneControlProps {
   setStateSubj = new Subject<WMLCarouselOneControlProps>()
   setState = (value)=>{
     this.setStateSubj.next(value)
+  }
+
+  custom = new WMLCustomComponent({
+    cpnt:WMLCarouselOneControlExampleComponent,
+    props:new WMLCarouselOneControlExampleProps()
+  })
+
+  view = new WMLMotionUIProperty({
+
+  })
+
+  // component properties
+  controlViewContainerRef!:ViewContainerRef
+  //
+
+  init=()=>{
+    addCustomComponent(
+      this.controlViewContainerRef,
+      this.custom.cpnt,
+      this.custom.props
+    )
   }
 }
 

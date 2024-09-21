@@ -9,6 +9,7 @@ import { startWith, takeUntil, tap } from 'rxjs/operators';
 import { WMLConstructorDecorator, WMLUIProperty, generateClassPrefix } from '@windmillcode/wml-components-base';
 import { WMLAngularMotionUIProperty } from '@windmillcode/angular-wml-components-base';
 import { WMLCarouselOneSlideProps } from '../wml-carousel-one-slide/wml-carousel-one-slide.component';
+import { WMLCarouselOneControlProps } from '../wml-carousel-one-control/wml-carousel-one-control.component';
 
 @Component({
   selector: 'wml-carousel-one',
@@ -105,20 +106,26 @@ export class WMLCarouselOneProps {
     }
   })
 
+  controls!:Array<WMLCarouselOneControlProps>
+
 
   slides: Array<WMLCarouselOneSlideProps> = Array(8)
     .fill(null)
     .map((nullVal, index0) => {
-      let prop = new WMLCarouselOneSlideProps({
-        view: new WMLUIProperty({
-        })
-      })
+      let prop = new WMLCarouselOneSlideProps({})
       prop.custom.props.value = index0
       return prop
     })
 
   init = () => {
 
+    this.controls ??= this.slides.map((slide, index) => {
+      let prop = new WMLCarouselOneControlProps({
+
+      })
+      prop.custom.props.value = index+1
+      return prop
+    })
     window.resizeTo(1520, 364)
     this.listenForSlideContainerResize().subscribe()
   }
@@ -136,7 +143,7 @@ export class WMLCarouselOneProps {
 
 
 
-          this.slideContainer.style.perspectiveOrigin = `50% ${-25}%`;
+          this.slideContainer.style.perspectiveOrigin = `50% ${-5}%`;
           // this.controller.style.transform =`rotateY(60deg)`
 
           this.slideHeight = this.calculateSlideHeight(parentWidth, parentHeight) + "px"

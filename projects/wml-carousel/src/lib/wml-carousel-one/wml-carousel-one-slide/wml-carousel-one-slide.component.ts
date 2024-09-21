@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
 
 // wml-components
-import { WMLConstructorDecorator, WMLCustomComponent, WMLUIProperty, generateClassPrefix, generateIdPrefix } from '@windmillcode/wml-components-base';
+import { WMLConstructorDecorator, WMLCustomComponent, WMLMotionUIProperty, WMLUIProperty, generateClassPrefix, generateIdPrefix } from '@windmillcode/wml-components-base';
 import { WMLCarouselOneSlideExampleComponent, WMLCarouselOneSlideExampleProps } from '../wml-carousel-one-slide-example/wml-carousel-one-slide-example.component';
 import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 
@@ -89,8 +89,8 @@ export class WMLCarouselOneSlideProps {
   setState = (value)=>{
     this.setStateSubj.next(value)
   }
-  view = new WMLUIProperty({
-    
+  view = new WMLMotionUIProperty({
+
   })
 
   // component properties

@@ -11,21 +11,27 @@
       &Main{
         &Pod{
           height:100%;
-        }
-      }
-      &Pod{
-
-        &0{
-          height:100%;
+          border: 1px solid rgba(var(--wml-carousel-primary));
           display: flex;
           justify-content: center;
           align-items: center;
-
           p{
             font-size:36px
           }
+          &:hover{
+            background-color: rgba(var(--wml-carousel-secondary));
+          }
         }
       }
+      // &Pod{
+
+      //   &0{
+      //     height:100%;
+
+
+
+      //   }
+      // }
     }
   }
 

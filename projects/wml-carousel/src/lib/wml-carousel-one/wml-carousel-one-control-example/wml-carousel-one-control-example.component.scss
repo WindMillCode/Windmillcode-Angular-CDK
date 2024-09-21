@@ -1,11 +1,4 @@
-
-
-
-
-  @import '../../../../styles';
-
-
-
+@import '../../../../styles';
 
 
   .WMLCarouselOneControlExampleView{
@@ -14,9 +7,14 @@
     .WMLCarouselOneControlExample{
       &Main{
         &Pod{
-          
-          
+
+          border : 1px solid rgba(var(--wml-carousel-primary));
+          padding:$wml-carousel-spacing3;
+          border-radius: $wml-carousel-border-radius0;
           height:100%;
+          &:hover{
+            background-color:rgba(var(--wml-carousel-secondary));
+          }
         }
       }
       &Pod{
