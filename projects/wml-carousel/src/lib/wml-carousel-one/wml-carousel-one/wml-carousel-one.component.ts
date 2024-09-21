@@ -240,13 +240,13 @@ export class WMLCarouselOneProps {
   }
 
 
-  prevSlideNumber = 0
+  currentSlideNumber = 0
   rotateToSlide = (slideNumber:number)=>{
-    if(this.prevSlideNumber === slideNumber){
+    if(this.currentSlideNumber === slideNumber){
       return
     }
     let angle = this.getAngle();
-    let diff = slideNumber - this.prevSlideNumber
+    let diff = slideNumber - this.currentSlideNumber
     // Handle the wrap-around case in both directions
     let totalSlides = this.slides.length;
     if (diff > 0) {
@@ -267,7 +267,7 @@ export class WMLCarouselOneProps {
       }
     })
 
-    this.prevSlideNumber = slideNumber
+    this.currentSlideNumber = slideNumber
 
 
     // this.controller.motionState ="closed"
