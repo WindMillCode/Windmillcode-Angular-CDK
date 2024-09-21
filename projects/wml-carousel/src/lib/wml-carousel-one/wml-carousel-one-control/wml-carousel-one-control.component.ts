@@ -1,5 +1,5 @@
 // angular
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnInit,  Input  , ViewEncapsulation, ViewContainerRef, ViewChild   } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  Input  , ViewEncapsulation, ViewContainerRef, ViewChild   } from '@angular/core';
 
 
 
@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
 
 // wml-components
-import { WMLConstructorDecorator, WMLCustomComponent, WMLMotionUIProperty, WMLUIProperty, generateClassPrefix, generateIdPrefix } from '@windmillcode/wml-components-base';
+import { WMLConstructorDecorator, WMLCustomComponent, WMLMotionUIProperty, generateClassPrefix } from '@windmillcode/wml-components-base';
 import { WMLCarouselOneControlExampleComponent, WMLCarouselOneControlExampleProps } from '../wml-carousel-one-control-example/wml-carousel-one-control-example.component';
 import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 

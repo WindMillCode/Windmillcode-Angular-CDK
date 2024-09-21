@@ -1,17 +1,20 @@
 {
-  "name": "@windmillcode/angular-wml-carousel",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": ">=18.2.0",
-    "@angular/core": ">=18.2.0",
-    "@windmillcode/angular-wml-components-base": ">=18.2.4200"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0",
-    "@ngx-translate/core": ">=15.0.0"
-  },
-  "scripts": {
-    "build": "npx ng build"
-  },
-  "sideEffects": false
+    "dependencies": {
+        "@ngx-translate/core": ">=15.0.0",
+        "tslib": "^2.3.0"
+    },
+    "funding": "https://github.com/sponsors/WindMillCode",
+    "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-carousel",
+    "name": "@windmillcode/angular-wml-carousel",
+    "peerDependencies": {
+        "@angular/common": "^18.0.0",
+        "@angular/core": "^18.0.0",
+        "@windmillcode/angular-wml-components-base": ">=18.2.4200"
+    },
+    "private": false,
+    "schematics": "",
+    "scripts": {
+        "build": "npx ng build"
+    },
+    "version": "18.2.4003"
 }

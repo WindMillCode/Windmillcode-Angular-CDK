@@ -1,12 +1,12 @@
 // angular
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnInit,  Input  , ViewEncapsulation, ViewChild, ViewContainerRef   } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding,  Input  , ViewEncapsulation, ViewChild, ViewContainerRef   } from '@angular/core';
 
 // rxjs
 import { Subject } from 'rxjs';
 import { takeUntil,tap } from 'rxjs/operators';
 
 // wml-components
-import { WMLConstructorDecorator, WMLCustomComponent, WMLMotionUIProperty, WMLUIProperty, generateClassPrefix, generateIdPrefix } from '@windmillcode/wml-components-base';
+import { WMLConstructorDecorator, WMLCustomComponent, WMLMotionUIProperty, generateClassPrefix } from '@windmillcode/wml-components-base';
 import { WMLCarouselOneSlideExampleComponent, WMLCarouselOneSlideExampleProps } from '../wml-carousel-one-slide-example/wml-carousel-one-slide-example.component';
 import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 

@@ -113,7 +113,7 @@ export class WMLCarouselOneProps {
     .fill(null)
     .map((nullVal, index0) => {
       let prop = new WMLCarouselOneSlideProps({})
-      prop.custom.props.value = index0
+      prop.custom.props.value = index0+1
       return prop
     })
 
@@ -126,7 +126,6 @@ export class WMLCarouselOneProps {
       prop.custom.props.value = index+1
       return prop
     })
-    window.resizeTo(1520, 364)
     this.listenForSlideContainerResize().subscribe()
   }
 
@@ -195,7 +194,7 @@ export class WMLCarouselOneProps {
   }
 
   calculateSlideWidth(parentWidth, parentHeight) {
-    var slideWidth = 0.33 * parentWidth + 0.02 * parentHeight - 15;
+    let slideWidth = 0.33 * parentWidth + 0.02 * parentHeight - 15;
     // Ensure slideWidth is not less than the minimum observed value
     if (slideWidth < 15.078) {
       slideWidth = 15.078;

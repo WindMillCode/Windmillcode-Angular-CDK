@@ -2,11 +2,10 @@
 
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { WMLCarouselOneComponent } from './wml-carousel-one/wml-carousel-one.component';
 import { CommonModule } from '@angular/common';
-import { WMLNGXTranslateLoader, WMLNGXTranslateMockPipe, WMLNGXTranslatePipe } from '@windmillcode/angular-wml-components-base';
+import { WMLNGXTranslateLoader, WMLNGXTranslatePipe } from '@windmillcode/angular-wml-components-base';
 import { WMLCarouselOneSlideExampleComponent } from './wml-carousel-one-slide-example/wml-carousel-one-slide-example.component';
 import { WMLCarouselOneControlExampleComponent } from './wml-carousel-one-control-example/wml-carousel-one-control-example.component';
 import { WMLCarouselOneControlComponent } from './wml-carousel-one-control/wml-carousel-one-control.component';

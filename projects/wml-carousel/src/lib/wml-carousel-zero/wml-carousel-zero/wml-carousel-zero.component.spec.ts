@@ -24,11 +24,11 @@ describe('WMLCarouselZeroComponent', () => {
     resetImports()
     resetProviders()
     resetDeclarations()
-    
 
-    
+
+
     await wmlTestUtils.configureTestingModuleForComponents(WMLCarouselZeroComponent);
-    
+
 
     ({fixture, cpnt} =  wmlTestUtils.grabComponentInstance(WMLCarouselZeroComponent));
     fixture.detectChanges()
@@ -51,7 +51,7 @@ describe('WMLCarouselZeroComponent', () => {
     })
   })
 
-  
+
   describe("ngOnInit",()=>{
     it(` when called |
     under normal conditions |
@@ -66,7 +66,7 @@ describe('WMLCarouselZeroComponent', () => {
 
     })
   })
-  
+
 
   describe("ngOnDestroy",()=>{
 

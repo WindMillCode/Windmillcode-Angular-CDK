@@ -24,11 +24,11 @@ describe('WMLCarouselOneSlideComponent', () => {
     resetImports()
     resetProviders()
     resetDeclarations()
-    
 
-    
+
+
     await wmlTestUtils.configureTestingModuleForComponents(WMLCarouselOneSlideComponent);
-    
+
 
     ({fixture, cpnt} =  wmlTestUtils.grabComponentInstance(WMLCarouselOneSlideComponent));
     fixture.detectChanges()
@@ -51,7 +51,7 @@ describe('WMLCarouselOneSlideComponent', () => {
     })
   })
 
-  
+
   describe("ngOnInit",()=>{
     it(` when called |
     under normal conditions |
@@ -66,7 +66,7 @@ describe('WMLCarouselOneSlideComponent', () => {
 
     })
   })
-  
+
 
   describe("ngOnDestroy",()=>{
 
