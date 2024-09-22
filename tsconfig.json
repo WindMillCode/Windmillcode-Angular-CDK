@@ -31,9 +31,6 @@
       "@angular/*": [
         "node_modules/@angular/*"
       ],
-      "@windmillcode/angular-dummy": [
-        "dist/dummy"
-      ],
       "@windmillcode/angular-wml-accordion": [
         "dist/wml-accordion"
       ],
