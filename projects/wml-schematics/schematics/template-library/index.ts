@@ -78,6 +78,15 @@ function addLibToWorkspaceFile(
       projectType: ProjectType.Library,
       prefix: options.prefix,
       targets: {
+        lint: {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+
+            "lintFilePatterns": [
+              "${projectRoot}/src/**/*.ts"
+            ]
+          }
+        },
         build: {
           builder: Builders.NgPackagr,
           defaultConfiguration: 'production',
