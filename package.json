@@ -23,7 +23,7 @@
     "@windmillcode/angular-wml-button": "^18.2.3",
     "@windmillcode/angular-wml-mobile-nav": "^18.2.2",
     "@windmillcode/angular-wml-notify": "^18.2.1010",
-    "@windmillcode/angular-wml-schematics": "^18.2.3112",
+    "@windmillcode/angular-wml-schematics": "^18.2.4100",
     "cannon-es": "^0.20.0",
     "copy-files-from-to": "^3.11.0",
     "dat.gui": "^0.7.9",
