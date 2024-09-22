@@ -79,11 +79,11 @@ function addLibToWorkspaceFile(
       prefix: options.prefix,
       targets: {
         lint: {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
+          builder: "@angular-eslint/builder:lint",
+          options: {
 
-            "lintFilePatterns": [
-              "${projectRoot}/src/**/*.ts"
+            lintFilePatterns: [
+              `${projectRoot}/src/**/*.ts`
             ]
           }
         },
