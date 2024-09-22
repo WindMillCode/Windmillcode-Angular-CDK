@@ -177,27 +177,23 @@ export default function (options:any): Rule {
         export: true,
         project: packageName,
       }),
+      (tree: Tree, _context: SchematicContext) => {
+        const addtlDir = 'addtl'; // Adjust this path to your 'addtl' folder
+        const targetDir = ''; // Adjust this path to your main folder
 
+        tree.getDir(addtlDir).visit((filePath) => {
+          const newFilePath = filePath.replace(addtlDir, targetDir);
+          tree.rename(filePath, newFilePath);
+        });
+        return tree;
+      },
       (_tree: Tree, context: SchematicContext) => {
         if (!options.skipPackageJson && !options.skipInstall) {
           context.addTask(new NodePackageInstallTask());
         }
       },
-      moveFilesFromAddtl()
     ]);
   };
 }
 
 
-function moveFilesFromAddtl(): Rule {
-  return (tree: Tree, _context: SchematicContext) => {
-    const addtlDir = 'addtl'; // Adjust this path to your 'addtl' folder
-    const targetDir = ''; // Adjust this path to your main folder
-
-    tree.getDir(addtlDir).visit((filePath) => {
-      const newFilePath = filePath.replace(addtlDir, targetDir);
-      tree.rename(filePath, newFilePath);
-    });
-    return tree;
-  };
-}
