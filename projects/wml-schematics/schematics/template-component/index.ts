@@ -10,8 +10,7 @@ import * as ts from '@schematics/angular/third_party/github.com/Microsoft/TypeSc
 import { InsertChange, Change } from '@schematics/angular/utility/change';
 import { wmlUpdateFile } from '../utils/updateFile';
 import { DevEnvFile, addRouteDeclarationToNgModule, getRoutingModuleOrRoutesPath, wmlCreateSourceFile } from '../utils/utils';
-import * as fs from 'fs';
-import * as path from 'path';
+
 
 let needsIdUpdate= true
 export type TemplateComponentSchema = {

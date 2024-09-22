@@ -61,13 +61,6 @@ function addImportToNgModule(options: TemplateModuleSchema): Rule {
   };
 }
 
-
-
-
-
-
-
-
 export default function (options: TemplateModuleSchema): Rule {
   return async (host: Tree) => {
     if (options.path === undefined) {

@@ -177,15 +177,6 @@ export default function (options:any): Rule {
         project: packageName,
         fromLibrary:true,
       }),
-      schematic('component', {
-        name: componentName,
-        selector: `${prefix}-${componentName}`,
-        cpntType:"library",
-        isPropsChild:true,
-        path: sourceDir,
-        export: true,
-        project: packageName,
-      }),
       (tree: Tree, _context: SchematicContext) => {
         const addtlDir = 'addtl'; // Adjust this path to your 'addtl' folder
         const targetDir = ''; // Adjust this path to your main folder
@@ -196,6 +187,16 @@ export default function (options:any): Rule {
         });
         return tree;
       },
+      schematic('component', {
+        name: componentName,
+        selector: `${prefix}-${componentName}`,
+        cpntType:"library",
+        isPropsChild:true,
+        path: sourceDir,
+        export: true,
+        project: packageName,
+      }),
+
       (_tree: Tree, context: SchematicContext) => {
         if (!options.skipPackageJson && !options.skipInstall) {
           context.addTask(new NodePackageInstallTask());
