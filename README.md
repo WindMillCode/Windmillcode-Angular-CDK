@@ -103,111 +103,112 @@ Extends WML Components Based to be custoized for angular developers. Useful to k
 
 Three js is rather wieldy and not everything you need to create a scene is there for you this changes with our three.js library. Our classes handle the mathematics and physics implementations so you can focus on adding and placing objects in the scene
 
-* [**WML Schematics**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics):
+* [**WML Schematics**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-schematics):
 
 
 Our own angular schematics to generate Angular classes according to our angular project template
 
-* [**WML Accordion**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-accordion):
+* [**WML Accordion**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-accordion):
 
 
 An accordion component that allows you to display content in a collapsible format. It's useful for FAQs, lists, or any content that benefits from a compact presentation.
 
-* [**WML Button**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-button):
+* [**WML Button**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-button):
 
 
 A customizable button component that can be used across your application, ensuring consistency and themability.
 
-* [**WML Carousel**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-carousel):
+* [**WML Carousel**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-carousel):
 
 
 A carousel component that enables the display of multiple items in a sliding or rotating fashion, perfect for galleries or showcasing multiple products.
 
-* [**WML Chips**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-chips):
+* [**WML Chips**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-chips):
 
 
 A component that represents input, attributes, or actions as compact elements, commonly used for tags, contact information, or interactive elements.
 
-* [**WML Field**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-field):
+* [**WML Field**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-field):
 
 
 A field component, potentially for forms, providing a standardized way to input data.
 
-* [**WML File Manager**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-file-manager  ):
+* [**WML File Manager**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-file-manager  ):
 
 
 A comprehensive component for handling file interactions, including uploading, downloading(in backlog), and displaying file information.
 
-* [**WML Form**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-form):
+* [**WML Form**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-form):
 
 
 A component or set of components designed to create consistent and functional forms, including various form controls.
 
-* [**WML Infinite Dropdown**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-infinite-dropdown):
+* [**WML Infinite Dropdown**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-infinite-dropdown):
 
 
 A dropdown component that expands infinitely. Great for menus with a large amount of navigation content
 
-* [**WML Input**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-input):
+* [**WML Input**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-input):
 
 
 A versatile input component for forms, providing a uniform way to collect user input.
 
-* [**WML Mobile Nav**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-mobile-nav):
+* [**WML Mobile Nav**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-mobile-nav):
 
 
 A navigation component designed specifically for mobile user interfaces, providing an optimized menu for smaller screens.
 
-* [**WML Notify**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-notify):
+* [**WML Notify**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-notify):
 
 
 A notification component, allowing you to display alerts, messages, or other important information to users.
 
-* [**WML Options**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-options):
+* [**WML Options**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-options):
 
 
 A component that  provides a set of selectable options, possibly as a more advanced dropdown or select component.
 
-* [**WML Panel**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-panel):
+* [**WML Panel**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-panel):
 
 
 A flyout component component used to provide auxillary content, information or controls, often used in dashboards or as part of complex interfaces.
 
-* [**WML Penrose**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-penrose):
+* [**WML Penrose**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-penrose):
 
 
 A custom loading component
 
-* [**WML Popup**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-popup):
+* [**WML Popup**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-popup):
 
 
 A component for displaying pop-up content, such as modals, dialogues, or tooltips.
 
-* [**WML Select**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-select):
+* [**WML Select**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-select):
 
 
 A select component that provides a dropdown list of options for users to choose from.
 
-* [**WML Slicebox**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-slicebox):
+* [**WML Slicebox**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-slicebox):
 
 
 based on [jquery slicebox](https://tympanus.net/Development/Slicebox/)
 more fluid way of implementing a carousel
 
-* [**WML Table**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-table):
+* [**WML Table**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-table):
 
 
 A table component designed for displaying tabular data, with features  including sorting, filtering, and pagination.
 
-* [**WML Tabs**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-tabs):
+* [**WML Tabs**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-tabs):
 
 
 A component for creating tabbed interfaces, allowing users to switch between different views or content sections within the same context.
 
-* [**WML Toggle**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-toggle):
+* [**WML Toggle**](https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-toggle):
 
 
  A toggle switch component, providing an intuitive way for users to make binary choices, such as enabling/disabling settings.
+
 
 ---
 
