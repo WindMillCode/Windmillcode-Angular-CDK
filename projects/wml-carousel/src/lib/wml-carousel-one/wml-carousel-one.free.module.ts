@@ -22,6 +22,9 @@ let cpnts = [
 
 
 @NgModule({
+  declarations: [
+    ...cpnts
+  ],
   imports: [
     TranslateModule.forRoot({
       defaultLanguage: 'en',
