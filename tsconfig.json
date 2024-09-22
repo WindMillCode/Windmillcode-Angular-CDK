@@ -46,9 +46,6 @@
       "@windmillcode/angular-wml-chips": [
         "dist/wml-chips"
       ],
-      "@windmillcode/wml-components-base": [
-        "dist/wml-components-base"
-      ],
       "@windmillcode/angular-wml-components-base": [
         "dist/wml-angular-components-base"
       ],
@@ -73,8 +70,14 @@
       "@windmillcode/angular-wml-popup": [
         "dist/wml-popup"
       ],
+      "@windmillcode/angular-wml-schematics": [
+        "dist/wml-schematics"
+      ],
       "@windmillcode/angular-wml-select": [
         "dist/wml-select"
+      ],
+      "@windmillcode/wml-components-base": [
+        "dist/wml-components-base"
       ]
     },
     "types": null,

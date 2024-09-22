@@ -1,10 +1,8 @@
-
-
 import { Path, normalize } from '@angular-devkit/core';
 import {Rule,Tree,apply,applyTemplates,chain,filter,mergeWith,move,noop,schematic,strings,url} from '@angular-devkit/schematics';
 import * as ts from '@schematics/angular/third_party/github.com/Microsoft/TypeScript/lib/typescript';
 
-import { addImportToModule, addRouteDeclarationToModule } from '@schematics/angular/utility/ast-utils';
+import { addImportToModule } from '@schematics/angular/utility/ast-utils';
 import { InsertChange } from '@schematics/angular/utility/change';
 import {
 
@@ -14,7 +12,7 @@ import { parseName } from '@schematics/angular/utility/parse-name';
 import { validateClassName } from '@schematics/angular/utility/validation';
 import { createDefaultPath } from '@schematics/angular/utility/workspace';
 
-import { addRouteDeclarationToNgModule, buildRelativeModulePath, buildRoute, getRoutingModuleOrRoutesPath } from '../utils/utils';
+import { addRouteDeclarationToNgModule, buildRelativeModulePath,  getRoutingModuleOrRoutesPath } from '../utils/utils';
 
 export type TemplateModuleSchema=  {
   name:string
@@ -30,8 +28,6 @@ export type TemplateModuleSchema=  {
   module:string
   fromLibrary:boolean
 }
-
-
 
 
 function addImportToNgModule(options: TemplateModuleSchema): Rule {

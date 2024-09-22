@@ -1,0 +1,53 @@
+<% if (fromLibrary) { %>
+
+
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { <%= classify(name) %>Component } from './<%= dasherize(name) %>/<%= dasherize(name) %>.component';
+import { CommonModule } from '@angular/common';
+import { WMLNGXTranslateLoader, WMLNGXTranslateMockPipe, WMLNGXTranslatePipe } from '@windmillcode/angular-wml-components-base';
+
+let cpnts= [
+
+]
+
+@NgModule({
+  declarations: [
+    ...cpnts,
+  ],
+  imports: [
+    WMLNGXTranslatePipe,
+    CommonModule,
+    ReactiveFormsModule,
+  ],
+  exports:[
+    ...cpnts
+  ],
+  providers:[
+    {provide: WMLNGXTranslatePipe,useValue: WMLNGXTranslateMockPipe}
+  ],
+})
+export class <%= classify(name) %>NGXTranslateModule {
+
+}
+
+@NgModule({
+  imports: [
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+
+        provide: TranslateLoader,
+        useFactory: ()=> new WMLNGXTranslateLoader(),
+      }
+    }),
+  ],
+  exports:[
+    <%= classify(name) %>NGXTranslateModule
+  ]
+})
+export class <%= classify(name) %>Module {
+
+}
+<% } %>
