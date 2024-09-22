@@ -1008,6 +1008,39 @@
           }
         }
       }
+    },
+    "dummy": {
+      "projectType": "library",
+      "root": "projects/dummy",
+      "sourceRoot": "projects/dummy/src",
+      "prefix": "wml",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/dummy/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/dummy/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/dummy/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/dummy/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
