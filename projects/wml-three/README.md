@@ -1,5 +1,7 @@
 # WML Three
 
+This content is for the 18.2.4100 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/intro/wml-three/)for up-to-date documentation.
+
 The WML Three.js library provides a streamlined way to integrate Three.js into your Angular applications. It offers a set of classes and utilities that simplify the creation and management of 3D scenes, renderers, cameras, controls, lights, objects, and animations. This library is designed to help developers quickly set up interactive 3D graphics without dealing with the boilerplate code typically associated with Three.js.
 
 
@@ -86,7 +88,7 @@ Methods<table><thead><tr><th>Method</th><th>Return Type</th><th>Description</th>
 
 <table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">geometries</code></td><td><code dir="auto">Array&lt;BufferGeometry&gt;</code></td><td>List of geometries to be used in creating meshes.</td></tr><tr><td><code dir="auto">materials</code></td><td><code dir="auto">Array&lt;Material | Material[]&gt;</code></td><td>List of materials or arrays of materials for the meshes.</td></tr><tr><td><code dir="auto">meshes</code></td><td><code dir="auto">Array&lt;Object3D | GLTF&gt;</code></td><td>List of meshes or loaded models to be added to the scene.</td></tr><tr><td><code dir="auto">textures</code></td><td><code dir="auto">Array&lt;WMLThreeTexturesProps&gt;</code></td><td>List of texture configurations to be loaded and applied to materials or meshes.</td></tr></tbody></table>
 
- <code dir="auto">WMLCommonThreeObjectProps</code> <table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">geometry</code></td><td><code dir="auto">BufferGeometry</code></td><td>Getter and setter for the primary geometry.</td></tr><tr><td><code dir="auto">material</code></td><td><code dir="auto">Material | Material[]</code></td><td>Getter and setter for the primary material(s).</td></tr><tr><td><code dir="auto">mesh</code></td><td><code dir="auto">Object3D | GLTF</code></td><td>Getter and setter for the primary mesh or model.</td></tr><tr><td><code dir="auto">texture</code></td><td><code dir="auto">WMLThreeTexturesProps</code></td><td>Getter and setter for the primary texture configuration.</td></tr></tbody></table>
+ <code dir="auto">WMLThreeCommonObjectProps</code> <table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">geometry</code></td><td><code dir="auto">BufferGeometry</code></td><td>Getter and setter for the primary geometry.</td></tr><tr><td><code dir="auto">material</code></td><td><code dir="auto">Material | Material[]</code></td><td>Getter and setter for the primary material(s).</td></tr><tr><td><code dir="auto">mesh</code></td><td><code dir="auto">Object3D | GLTF</code></td><td>Getter and setter for the primary mesh or model.</td></tr><tr><td><code dir="auto">texture</code></td><td><code dir="auto">WMLThreeTexturesProps</code></td><td>Getter and setter for the primary texture configuration.</td></tr></tbody></table>
 
 <table><thead><tr><th>Method</th><th>Return Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">toggleShadow(props?)</code></td><td><code dir="auto">void</code></td><td>Toggles the shadow casting and receiving properties of the mesh.</td></tr></tbody></table>
 
@@ -120,6 +122,6 @@ Methods<table><thead><tr><th>Method</th><th>Return Type</th><th>Description</th>
 
 
 
-### v18.2.4100 [9/16/24]
+### v18.2.4100 [9/18/24]
 
-first version of library[](/Windmillcode-Angular-CDK-Docs/intro/wml-angular-components-base)[](/Windmillcode-Angular-CDK-Docs/schematics/wml-schematics/)
+first version of library[](/Windmillcode-Angular-CDK-Docs/18.2.4100/intro/wml-angular-components-base)[](/Windmillcode-Angular-CDK-Docs/18.2.4100/schematics/wml-schematics/)

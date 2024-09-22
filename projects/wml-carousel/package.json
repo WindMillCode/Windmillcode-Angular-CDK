@@ -4,7 +4,7 @@
         "tslib": "^2.3.0"
     },
     "funding": "https://github.com/sponsors/WindMillCode",
-    "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-carousel",
+    "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-carousel",
     "name": "@windmillcode/angular-wml-carousel",
     "peerDependencies": {
         "@angular/common": "^18.0.0",
@@ -17,5 +17,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "18.2.4006"
+    "version": "18.2.4200"
 }

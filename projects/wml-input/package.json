@@ -4,18 +4,18 @@
         "tslib": "^2.3.0"
     },
     "funding": "https://github.com/sponsors/WindMillCode",
-    "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/components/wml-input",
+    "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-input",
     "name": "@windmillcode/angular-wml-input",
     "peerDependencies": {
         "@angular/common": "^18.0.0",
         "@angular/core": "^18.0.0",
-        "@windmillcode/angular-wml-components-base": "^18.2.4100",
-        "@windmillcode/wml-components-base": "^18.2.4100"
+        "@windmillcode/angular-wml-components-base": "^18.2.4200",
+        "@windmillcode/wml-components-base": "^18.2.4200"
     },
     "private": false,
     "schematics": "",
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "18.2.4100"
+    "version": "18.2.4200"
 }
