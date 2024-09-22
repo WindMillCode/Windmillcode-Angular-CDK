@@ -183,6 +183,21 @@ export default function (options:any): Rule {
           context.addTask(new NodePackageInstallTask());
         }
       },
+      moveFilesFromAddtl()
     ]);
+  };
+}
+
+
+function moveFilesFromAddtl(): Rule {
+  return (tree: Tree, _context: SchematicContext) => {
+    const addtlDir = 'addtl'; // Adjust this path to your 'addtl' folder
+    const targetDir = ''; // Adjust this path to your main folder
+
+    tree.getDir(addtlDir).visit((filePath) => {
+      const newFilePath = filePath.replace(addtlDir, targetDir);
+      tree.rename(filePath, newFilePath);
+    });
+    return tree;
   };
 }
