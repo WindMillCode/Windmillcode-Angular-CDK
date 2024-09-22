@@ -1,5 +1,7 @@
 # WML Carousel (3D)
 
+This content is for the 18.2.4200 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/angular-components/wml-carousel/)for up-to-date documentation.
+
 The library is for carousels of all different types
 
 The <code dir="auto">WMLCarouselOneComponent</code> is an Angular component that provides a customizable 3D carousel experience. It allows developers to create interactive and dynamic carousels with customizable slides and controls. The functionality of the component is in the prop class passed to the component so if you have your own 3d carousel you would like to design all you need to worry about is styling.It is designed to be flexible and extendable, enabling developers to tailor the carousel to their specific needs.
@@ -70,4 +72,8 @@ Properties<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></
 
 ### v18.2.4200 [9/21/24]
 
-first version of library[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-button/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-chips/)
+first version of library
+
+### v18.2.4200 [9/21/24]
+
+updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/18.2.4200/angular-components/wml-button/)[](/Windmillcode-Angular-CDK-Docs/18.2.4200/angular-components/wml-chips/)
