@@ -244,6 +244,9 @@ export class WMLCarouselOneProps {
     if(this.currentSlideNumber === slideNumber){
       return
     }
+    if(!["closed","open"].includes(this.controller.motionState)){
+      return
+    }
     let angle = this.getAngle();
     let diff = slideNumber - this.currentSlideNumber
     // Handle the wrap-around case in both directions

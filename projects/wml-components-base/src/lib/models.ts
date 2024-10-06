@@ -645,7 +645,7 @@ export class WMLImage<V=any,T=any> extends WMLRoute<V,T> {
   alt!:string
   ariaLabel!:string
   ariaExpanded= false
-  onError?:Function
+  onError = (event?)=>{}
 
 }
 
