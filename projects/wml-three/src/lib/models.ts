@@ -1,5 +1,5 @@
 import { getGlobalObject, WMLConstructorDecorator } from "@windmillcode/wml-components-base";
-import { AmbientLight, BufferGeometry, Camera, CameraHelper, Clock, Controls, DirectionalLight, DirectionalLightHelper, HemisphereLight, HemisphereLightHelper, Intersection, Light, Loader, LoadingManager, Material, Mesh,  Object3D, Object3DEventMap, OrthographicCamera, PerspectiveCamera, PointLight, PointLightHelper, Raycaster, Renderer, Scene, SpotLight, SpotLightHelper, Vector2, Vector3, WebGLRenderer } from "three";
+import { AmbientLight, BufferGeometry, Camera, CameraHelper, Clock, Controls, DirectionalLight, DirectionalLightHelper, HemisphereLight, HemisphereLightHelper, Intersection, Light, Loader, LoadingManager, Material, Mesh,  Object3D, Object3DEventMap, OrthographicCamera, PerspectiveCamera, PointLight, PointLightHelper, Raycaster, Renderer, Scene, SpotLight, SpotLightHelper, Vector2, Vector3, WebGLRenderer,InstancedMesh } from "three";
 import { GUI as DatGUI } from "dat.gui";
 import { GUI as LilGUI } from "lil-gui";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
@@ -341,16 +341,17 @@ export class WMLThreeObjectProps {
   get regularMeshes() { return this.meshes as Array<Mesh> }
   get gltfMeshes() { return this.meshes as Array<GLTF> }
   get css2dMeshes() { return this.meshes as Array<CSS2DObject>}
+  get instancedMeshes() { return this.meshes as Array<InstancedMesh> }
 
 }
 
 @WMLConstructorDecorator
 export class WMLThreeCommonObjectProps extends WMLThreeObjectProps {
   constructor(props: Partial<WMLThreeCommonObjectProps> = {}) {super(props)}
-  wmlInit() {
+  wmlInit =() =>{
 
     if (!this.mesh && this.textures.length === 0) {
-      this.mesh =  new Mesh(this.geometry, this.material)
+      this.mesh = this.createMesh(this.geometry, this.material)
     }
   }
 
@@ -374,14 +375,28 @@ export class WMLThreeCommonObjectProps extends WMLThreeObjectProps {
   get css2dMesh() { return this.meshes[0] as CSS2DObject }
   set css2dMesh(mesh: CSS2DObject) { this.meshes[0] = mesh }
 
+  get instancedMesh() { return this.meshes[0] as InstancedMesh }
+  set instancedMesh(meshes: InstancedMesh) { this.meshes[0] = meshes }
+
   get texture() { return this.textures[0] }
   set texture(texture: WMLThreeTexturesProps) { this.textures[0] = texture }
 
-  toggleShadow = (props: {cast?:boolean, receive?:boolean}) => {
 
+
+  toggleShadow = (props: {cast?:boolean, receive?:boolean}) => {
     this.regularMesh.castShadow = props.cast ?? !this.regularMesh.castShadow
     this.regularMesh.receiveShadow = props.receive ?? !this.regularMesh.receiveShadow
+  }
 
+  /**
+   * @description Meant for planes but you can still use for your convenience
+  */
+  makeModelLieFlat = ()=>{
+    this.regularMesh.rotation.x = -0.5 * Math.PI;
+  }
+
+  createMesh =(geometry,material)=>{
+    return new Mesh(geometry, material)
   }
 
 }

@@ -305,7 +305,7 @@ function updateEnvFile(
         return v.name?.getText() === 'DevEnv';
       }) as ts.ClassDeclaration;
     let methodString = `${options.name}:new WMLEndpoint({
-        url:()=> this.backendDomain0 + "${options.apiRoute}",
+        url:()=> this.backendURI0.fqdn + "${options.apiRoute}",
       })`;
     let envClassProp = devEnv.members.find((prop) => {
       return prop.name?.getText() === serviceString.camelCase(false);

@@ -6,11 +6,11 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/intro/wml-three",
     "name": "@windmillcode/wml-three",
     "peerDependencies": {
-        "@types/three": "^0.168.0",
+        "@types/three": "^0.169.0",
         "@windmillcode/wml-components-base": "^18.2.7001",
         "dat.gui": "^0.7.9",
         "lil-gui": "^0.19.2",
-        "three": "^0.168.0"
+        "three": "^0.169.0"
     },
     "private": false,
     "schematics": "",

@@ -79,6 +79,34 @@ export class WMLUIProperty<V=any,T=any>{
 
 }
 
+export class WMLUri {
+
+  url: URL;
+  constructor(props:{
+    scheme?:string, host:string, port?:number, path?:string, query?:string, fragment ?:string
+  }) {
+    let { scheme, host, port, path, query, fragment } = props;
+    scheme ??= "https"
+    
+    this.url = new URL(`${scheme}://${host}${port ? `:${port}` : ''}`);
+    if (path) this.url.pathname = path;
+    if (query) this.url.search = query;
+    if (fragment) this.url.hash = fragment;
+  }
+
+  get domain() {
+    return this.url.port === '' ? this.url.hostname : `${this.url.hostname}:${this.url.port}`;
+  }
+
+  get fqdn() {
+    return `${this.url.protocol}//${this.url.hostname}${this.url.port ? `:${this.url.port}` : ''}`;
+  }
+
+  toString() {
+    return this.url.toString();
+  }
+}
+
 export class WMLEndpoint {
   constructor(props:Partial<WMLEndpoint>={}){
     Object.assign(

@@ -30,7 +30,7 @@
     "gsap": "^3.12.5",
     "lil-gui": "^0.19.2",
     "rxjs": "~7.8.0",
-    "three": "^0.168.0",
+    "three": "^0.169.0",
     "tslib": "^2.3.0",
     "yuka": "^0.7.8",
     "zone.js": "~0.14.3"
@@ -44,7 +44,7 @@
     "@angular/cli": "18.2.7",
     "@angular/compiler-cli": "18.2.7",
     "@types/jasmine": "~5.1.0",
-    "@types/three": "^0.168.0",
+    "@types/three": "^0.169.0",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@windmillcode/angular-templates": "^18.1.2301",
