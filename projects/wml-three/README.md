@@ -120,8 +120,4 @@ Methods<table><thead><tr><th>Method</th><th>Return Type</th><th>Description</th>
 
 ## Changelog
 
-
-
-### v18.2.4100 [9/18/24]
-
-first version of library[](/Windmillcode-Angular-CDK-Docs/18.2.4100/intro/wml-angular-components-base)[](/Windmillcode-Angular-CDK-Docs/18.2.4100/schematics/wml-schematics/)
+v18.2.4100 [9/18/24]first version of library[](/Windmillcode-Angular-CDK-Docs/18.2.4100/intro/wml-angular-components-base)[](/Windmillcode-Angular-CDK-Docs/18.2.4100/schematics/wml-schematics/)

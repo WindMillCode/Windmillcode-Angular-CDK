@@ -68,12 +68,4 @@ Properties<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></
 
 ## Changelog
 
-
-
-### v18.2.4200 [9/21/24]
-
-first version of library
-
-### v18.2.4200 [9/21/24]
-
-updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/18.2.4200/angular-components/wml-button/)[](/Windmillcode-Angular-CDK-Docs/18.2.4200/angular-components/wml-chips/)
+v18.2.4200 [9/21/24]first version of libraryv18.2.4200 [9/21/24]updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/18.2.4200/angular-components/wml-button/)[](/Windmillcode-Angular-CDK-Docs/18.2.4200/angular-components/wml-chips/)

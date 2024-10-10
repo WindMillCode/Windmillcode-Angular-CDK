@@ -62,46 +62,6 @@ addCustomComponent<table><thead><tr><th>Parameter</th><th>Type</th><th>Descripti
 
 ## Changelog
 
-
-
-### v18.2.3100 [9/8/24]
-
-pulled features from  seperated angular features from core library to angular-wml-components-base
+v18.2.3100 [9/8/24]pulled features from  seperated angular features from core library to angular-wml-components-base
 creating WMLAngularTestUtils,WMLAngularTestHttpHandler,WMLAngularModuleForRootProps,WMLAngularMotionUIProperty
-WMLAngularCustomComponent from their orginal respective part which exlude “Angular in their name”
-
-### v18.2.3100 [9/8/24]
-
-updated package to reflect the version  18.2.3 of @angular/core package
-
-### v18.2.3100 [9/8/24]
-
-updated package to reflect the version  18.2.3 of @angular/core package
-
-### v18.2.3100 [9/8/24]
-
-updated package to reflect the version  18.2.3 of @angular/core package
-
-### v18.2.3110 [9/10/24]
-
-updated package to conform with @windmillcode/angular-wml-components-base
-
-### v18.2.3111 [9/10/24]
-
-updated package to conform with @windmillcode/angular-wml-components-base
-
-### v18.2.3112 [9/10/24]
-
-updated package to conform with @windmillcode/angular-wml-components-base
-
-### v18.2.3200 [9/16/24]
-
-[UPDATE] added motionKeyFrameEvent for css transitions WMLAngularMotionUIProperty
-
-### v18.2.3200 [9/16/24]
-
-updated package to conform with @windmillcode/wml-components-base
-
-### v18.2.4000 [9/16/24]
-
-updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/intro/wml-components-base)[](/Windmillcode-Angular-CDK-Docs/18.2.3100/schematics/wml-schematics/)
+WMLAngularCustomComponent from their orginal respective part which exlude “Angular in their name”v18.2.3100 [9/8/24]updated package to reflect the version  18.2.3 of @angular/core packagev18.2.3100 [9/8/24]updated package to reflect the version  18.2.3 of @angular/core packagev18.2.3100 [9/8/24]updated package to reflect the version  18.2.3 of @angular/core packagev18.2.3110 [9/10/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.3111 [9/10/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.3112 [9/10/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.3200 [9/16/24][UPDATE] added motionKeyFrameEvent for css transitions WMLAngularMotionUIPropertyv18.2.3200 [9/16/24]updated package to conform with @windmillcode/wml-components-basev18.2.4000 [9/16/24]updated package to reflect the version  18.2.4 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/18.2.3100/intro/wml-components-base)[](/Windmillcode-Angular-CDK-Docs/18.2.3100/schematics/wml-schematics/)
