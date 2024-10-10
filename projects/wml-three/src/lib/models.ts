@@ -327,6 +327,8 @@ export class WMLThreeCommonProps extends WMLThreeProps<WebGLRenderer> {
     }
 
   }
+
+
 }
 
 @WMLConstructorDecorator

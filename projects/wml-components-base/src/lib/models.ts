@@ -87,7 +87,7 @@ export class WMLUri {
   }) {
     let { scheme, host, port, path, query, fragment } = props;
     scheme ??= "https"
-    
+
     this.url = new URL(`${scheme}://${host}${port ? `:${port}` : ''}`);
     if (path) this.url.pathname = path;
     if (query) this.url.search = query;
@@ -179,7 +179,6 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
     if (!props.keyFrameName) {
       this.createKeyFrameName();
     }
-
     let origProps = Object.entries(props)
     .filter(([key,val]) => {
       return !key.startsWith('prop');
@@ -207,6 +206,7 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
       if (this.type === "transition") {
         this.currentTransitionInfo.keyframe = keyframe;
       }
+
 
       if(this.autoOpen){
         if(this.type === "animation"){
