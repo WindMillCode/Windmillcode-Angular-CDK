@@ -44,8 +44,6 @@ export class WMLUIProperty<V=any,T=any>{
         ...props
       }
     )
-
-
   }
 
 
@@ -131,15 +129,11 @@ export class WMLView<V=any,T=any> extends WMLUIProperty<V,T>{
     )
   }
 
-  /**
-   * @deprecated use angular.cdref instead
-  */
+
   get cdref(){
     return this.angular.cdref
   }
-  /**
-   * @deprecated use angular.cdref instead
-  */
+
   set cdref(val){
     this.angular.cdref = val
   }
@@ -222,6 +216,12 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
   }
 
   autoOpen = false
+  eventType : "subject" | "callback" =(()=>{
+    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
+      return "subject"
+    }
+    return "callback"
+  })()
  /**
  * Necessary for animations to work properly.
  * Modify only if you know what you are doing.
@@ -255,7 +255,7 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
   }
   triggerMotionEndEvent=(motionState?:WMLMotionUIPropertyState)=>{
     motionState ??= this.motionState
-    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
+    if(this.eventType === "subject"){
       // @ts-ignore
       this.motionEndEvent.next?.(motionState)
     }
@@ -267,7 +267,7 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
   }
   triggerMotionKeyFrameEvent=(keyFrame?:string)=>{
     keyFrame ??= this.currentTransitionInfo.keyframe
-    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
+    if(this.eventType === "subject"){
       // @ts-ignore
       this.motionKeyFrameEvent.next?.(keyFrame)
     }
@@ -293,12 +293,11 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
     })
 
     this.triggerMotionEndEvent()
-    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
+    if(this.eventType === "subject"){
       this.angular.cdref?.detectChanges()
     }
 
   }
-
   readonly transitionEnd:(evt?:TransitionEvent)=> void =(evt)=>{
     let state = this.getGroupMotionState()
     this.currentTransitionInfo.transitionEndStyles.push(evt?.propertyName.replace(/-./g, (match) => match.charAt(1).toUpperCase()))
@@ -632,6 +631,8 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
     return Object.fromEntries(transitionProperties);
   }
 }
+
+
 
 
 export class WMLWrapper<V=any,T=any> {
