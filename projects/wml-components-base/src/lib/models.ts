@@ -129,11 +129,16 @@ export class WMLView<V=any,T=any> extends WMLUIProperty<V,T>{
     )
   }
 
-
+  /**
+   * @description used in angular application for change detection
+  */
   get cdref(){
     return this.angular.cdref
   }
 
+  /**
+   * @description used in angular application for change detection
+  */
   set cdref(val){
     this.angular.cdref = val
   }
@@ -293,7 +298,7 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
     })
 
     this.triggerMotionEndEvent()
-    if(this.eventType === "subject"){
+    if(["Angular"].includes(getGlobalObject().WINDMILLCODE.framework.name )){
       this.angular.cdref?.detectChanges()
     }
 
