@@ -9,14 +9,14 @@
     "peerDependencies": {
         "@angular/common": "^18.0.0",
         "@angular/core": "^18.0.0",
-        "@windmillcode/angular-wml-button": "^18.2.8000",
-        "@windmillcode/angular-wml-components-base": "^18.2.8000",
-        "@windmillcode/wml-components-base": "^18.2.8000"
+        "@windmillcode/angular-wml-button": "^18.2.8001",
+        "@windmillcode/angular-wml-components-base": "^18.2.8001",
+        "@windmillcode/wml-components-base": "^18.2.8001"
     },
     "private": false,
     "schematics": "",
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "18.2.8000"
+    "version": "18.2.8001"
 }
