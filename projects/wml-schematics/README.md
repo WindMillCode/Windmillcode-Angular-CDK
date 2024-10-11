@@ -101,6 +101,134 @@ You will need a component and service to existTerminal window<code><div class="e
 
 <table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>string</td><td>The name of the scroll object.</td></tr><tr><td>path</td><td>string</td><td>The path where the target class is.</td></tr><tr><td>serviceFilePath</td><td>string</td><td>The path where the service is, to be passed to template-service-method schematic.</td></tr><tr><td>serviceMethodName</td><td>string</td><td>The name of the service method, to be passed to template-service-method schematic.</td></tr><tr><td>serviceMethodApiRoute</td><td>string</td><td>The HTTP API route, to be passed to template-service-method schematic.</td></tr><tr><td>serviceMethodEntityName</td><td>string</td><td>To be passed to template-service-method schematic, look up entityName definition there. Default is <code dir="auto">entity</code>.</td></tr><tr><td>serviceMethodUseDataSourceStrategy</td><td>boolean</td><td>Whether to use the datasource strategy for the service method. Default is <code dir="auto">true</code>.</td></tr><tr><td>createServiceMethod</td><td>boolean</td><td>Indicates whether to create the service method. Default is <code dir="auto">true</code>.</td></tr></tbody></table>
 
-v18.1.3001 [8/4/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3002 [8/4/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3003 [8/5/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3003 [8/5/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3004 [8/5/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3005 [8/5/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3006 [8/5/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3007 [8/5/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.4000 [8/14/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.4001 [8/14/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.0 [8/15/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.1 [8/20/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.1000 [8/22/24]updated package to reflect the version  18.2.1 of @angular/cli packagev18.2.2000 [8/30/24]updated package to reflect the version  18.2.2 of @angular/cli packagev18.2.2100 [9/1/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.2101 [9/1/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.2200 [9/3/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.3000 [9/4/24]updated package to reflect the version  18.2.3 of @angular/cli packagev18.2.3100 [9/8/24]updated package to reflect the version  18.2.3 of @angular/cli packagev18.2.3112 [9/10/24][FIX] ensure new imports match to conform with @windmillcode/angular-wml-components-base@18.2.3110v18.2.3200 [9/16/24]updated package to conform with @windmillcode/wml-components-basev18.2.4000 [9/16/24]updated package to reflect the version  18.2.4 of @angular/cli packagev18.2.4100 [9/19/24]updated package to reflect the version  18.2.4 of @angular/cli packagev18.2.4200 [9/21/24]updated package to conform with @windmillcode/wml-components-base[PATCH] ensured lint configraution gets added when creating a new library, tried to move the free and paid modules to the root folder of a library but only succcced in creating them in the addtl folderv18.2.5000 [9/22/24]updated package to reflect the version  18.2.5 of @angular/cli packagev18.2.5001 [9/22/24]updated package to reflect the version  18.2.5 of @angular/cli packagev18.2.6000 [10/1/24]updated package to reflect the version  18.2.6 of @angular/cli packagev18.2.7000 [10/2/24]updated package to reflect the version  18.2.7 of @angular/cli packagev18.2.7001 [10/6/24]updated package to conform with @windmillcode/wml-components-basev18.2.7010 [10/9/2024 11:27:56 AM EST][UPDATE] <code dir="auto">projects/wml-schematics/schematics/template-service-method/index.ts</code> updated <code dir="auto">url</code> method in the <code dir="auto">WMLEndpoint</code> to use <code dir="auto">backendURI0.fqdn</code> from WMLUri class of @windmillcode/wml-components-base instead of <code dir="auto">backendDomain0</code> . If you’re using this, just know the URLs are now built using <code dir="auto">fqdn</code> for more flexibility.And future project templates now use WMLUri and backendURI0 to reference to uri representation of the server
 
-v18.2.7020 [10/10/24]updated package to conform with @windmillcode/wml-components-basev18.2.8000 [10/10/24]updated package to reflect the version  18.2.8 of @angular/cli package[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-popup/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-select/)
+
+### v18.1.3001 [8/4/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3002 [8/4/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3003 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3003 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3004 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3005 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3006 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3007 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.4000 [8/14/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.4001 [8/14/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.0 [8/15/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.1 [8/20/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.1000 [8/22/24]
+
+updated package to reflect the version  18.2.1 of @angular/cli package
+
+### v18.2.2000 [8/30/24]
+
+updated package to reflect the version  18.2.2 of @angular/cli package
+
+### v18.2.2100 [9/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.2101 [9/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.2200 [9/3/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3000 [9/4/24]
+
+updated package to reflect the version  18.2.3 of @angular/cli package
+
+### v18.2.3100 [9/8/24]
+
+updated package to reflect the version  18.2.3 of @angular/cli package
+
+### v18.2.3112 [9/10/24]
+
+[FIX] ensure new imports match to conform with @windmillcode/angular-wml-components-base@18.2.3110
+
+### v18.2.3200 [9/16/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/cli package
+
+### v18.2.4100 [9/19/24]
+
+updated package to reflect the version  18.2.4 of @angular/cli package
+
+### v18.2.4200 [9/21/24]
+
+updated package to conform with @windmillcode/wml-components-base[PATCH] ensured lint configraution gets added when creating a new library, tried to move the free and paid modules to the root folder of a library but only succcced in creating them in the addtl folder
+
+### v18.2.5000 [9/22/24]
+
+updated package to reflect the version  18.2.5 of @angular/cli package
+
+### v18.2.5001 [9/22/24]
+
+updated package to reflect the version  18.2.5 of @angular/cli package
+
+### v18.2.6000 [10/1/24]
+
+updated package to reflect the version  18.2.6 of @angular/cli package
+
+### v18.2.7000 [10/2/24]
+
+updated package to reflect the version  18.2.7 of @angular/cli package
+
+### v18.2.7001 [10/6/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.7010 [10/9/2024 11:27:56 AM EST]
+
+[UPDATE] <code dir="auto">projects/wml-schematics/schematics/template-service-method/index.ts</code> updated <code dir="auto">url</code> method in the <code dir="auto">WMLEndpoint</code> to use <code dir="auto">backendURI0.fqdn</code> from WMLUri class of @windmillcode/wml-components-base instead of <code dir="auto">backendDomain0</code> . If you’re using this, just know the URLs are now built using <code dir="auto">fqdn</code> for more flexibility.And future project templates now use WMLUri and backendURI0 to reference to uri representation of the server
+
+
+
+### v18.2.7020 [10/10/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.8000 [10/10/24]
+
+updated package to reflect the version  18.2.8 of @angular/cli package[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-popup/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-select/)

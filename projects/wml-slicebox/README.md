@@ -36,8 +36,424 @@ Feel free to explore and use these configurations and methods to create a highly
 
 ## Changelog
 
-v0.0.1wml-select complete and readydisabled supportdefault value supportupdate component supportupdate via formcontrol supportv0.0.2added WMLSelectZeroProps.updateOptionValuesWithOptionText so that if users wanted text and value they can usemade a minor change that will allow defaulr fields to populate under certain circumstancesv16.2.60updated dependenciesv16.2.80updated package to reflect the version  16.2.80 of @angular/core package),v16.2.80updated package to reflect the version  16.2.80 of @angular/core package,v16.2.90updated package to reflect the version  16.2.90 of @angular/core package,v16.2.91updated package to reflect the version  16.2.91 of @angular/core package,v16.2.93updated package to conform with @windmillcode/angular-wml-components-base for unit testing features  ,v16.2.100updated package to conform with @windmillcode/angular-wml-components-base for unit testing features  ,v16.2.110updated package to conform with @windmillcode/angular-wml-components-base for unit testing features  ,v16.2.120updated package to conform with @windmillcode/angular-wml-components-base for unit testing features  ,v17.0.10updated package to conform with @windmillcode/angular-wml-components-base for unit testing features  ,v17.0.11updated package to conform with @windmillcode/angular-wml-components-base for unit testing features  ,v17.0.20updated package to reflect the version  ^17.0.2 of @angular/core package,v17.0.40updated package to reflect the version  ^17.0.4 of @angular/core package,v17.0.50updated package to reflect the version  ^17.0.5 of @angular/core package,v17.0.60updated package to reflect the version  ^17.0.6 of @angular/core package,v17.0.70updated package to reflect the version  ^17.0.7 of @angular/core package,v17.0.7100updated package to conform with @windmillcode/angular-wml-components-base   ,v17.0.7200updated package to conform with @windmillcode/angular-wml-components-base   ,v17.0.7300updated package to conform with @windmillcode/angular-wml-components-base   ,v17.0.80updated package to reflect the version  ^17.0.8 of @angular/core package,v17.0.8100updated package to conform with @windmillcode/angular-wml-components-base   ,v17.0.8102updated package to conform with @windmillcode/angular-wml-components-base   ,v17.0.8103updated package to conform with @windmillcode/angular-wml-components-base   ,v17.0.9000updated package to conform with @windmillcode/angular-wml-components-base   ,v17.0.9001updated package to conform with @windmillcode/angular-wml-components-base   ,v17.1.0000updated package to reflect the version  ^17.1.0 of @angular/core package,v17.1.2updated package to conform with @windmillcode/angular-wml-components-base   ,v17.1.1000updated package to conform with @windmillcode/angular-wml-components-base   ,v17.1.2000 [2/5/24]updated package to reflect the version  ^17.1.2 of @angular/core package,v17.1.2001 [2/8/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v17.1.3000 [2/8/24]updated package to reflect the version  ^17.1.3 of @angular/core package,v17.2.1000 [2/17/24]updated package to reflect the version  ^17.2.1 of @angular/core package,v17.2.2001 [2/23/24]updated package to reflect the version  ^17.2.2 of @angular/core package,v17.2.3000 [2/28/24]updated package to reflect the version  ^17.2.3 of @angular/core package,v17.2.3001 [3/2/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v17.2.3002 [3/5/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v17.2.4000 [3/8/24]updated package to reflect the version  ^17.2.4 of @angular/core package,v17.2.4001 [3/12/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v17.2.4002 [3/12/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v17.2.4003 [3/13/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v17.2.4004 [3/13/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v17.3.0 [3/17/24]updated package to reflect the version  ^17.3.0 of @angular/core package
-,v17.3.1000 [3/22/24]updated package to reflect the version  ^17.3.1 of @angular/core package,v17.3.2000 [3/28/24]updated package to reflect the version  ^17.3.2 of @angular/core package,v17.3.3000 [4/4/24]updated package to reflect the version  ^17.3.3 of @angular/core package,v17.3.4000 [4/11/24]updated package to reflect the version  ^17.3.4 of @angular/core package,v17.3.4001 [4/16/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v17.3.5000 [4/20/24]updated package to reflect the version  ^17.3.5 of @angular/core package,v17.3.5110 [5/1/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v17.3.6000 [5/1/24]updated package to reflect the version  ^17.3.6 of @angular/core package,v17.3.7000 [5/9/24]updated package to reflect the version  ^17.3.7 of @angular/core package,v17.3.8000 [5/9/24]updated package to reflect the version  ^17.3.8 of @angular/core package,v17.3.9000 [5/16/24]updated package to reflect the version  ^17.3.9 of @angular/core package,v18.0.1 [5/23/24]updated package to reflect the version  ^18.0.0 of @angular/core package,v18.0.4 [5/25/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v18.0.1000 [5/29/24]updated package to reflect the version  ^18.0.1 of @angular/core package,v18.0.2000 [6/6/24]updated package to reflect the version  ^18.0.2 of @angular/core package,v18.0.3000 [6/13/24]updated package to reflect the version  ^18.0.3 of @angular/core package,v18.0.3010 [6/18/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v18.0.4000 [6/23/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v18.0.5000 [6/26/24]updated package to reflect the version  ^18.0.5 of @angular/core package,v18.0.6000 [7/5/24]updated package to reflect the version  ^18.0.6 of @angular/core package,v18.1.4 [7/13/24]updated package to reflect the version  ^18.1.0 of @angular/core package,v18.1.6 [7/14/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v18.1.1000 [7/18/24]updated package to reflect the version  ^18.1.1 of @angular/core package,v18.1.2000 [7/24/24]updated package to reflect the version  ^18.1.2 of @angular/core package,v18.1.2300 [7/27/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v18.1.2301 [7/30/24]updated package to conform with @windmillcode/angular-wml-components-base
-,v18.1.3000-beta3 [8/1/24]updated package to conform with @windmillcode/angular-wml-components-base   ,v18.1.3000-beta4 [8/1/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3001[BREAKING CHANGES] changed from wml-slicebox to wml-slicebox-zero and replaced all Params with Props
 
-v18.1.3002 [8/4/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3001 [8/4/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3003 [8/5/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3004 [8/5/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3005 [8/5/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3006 [8/5/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.3007 [8/5/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.4000 [8/14/24]updated package to conform with @windmillcode/angular-wml-components-basev18.1.4001 [8/14/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.0 [8/15/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.1 [8/20/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.1000 [8/22/24]updated package to reflect the version  18.2.1 of @angular/core packagev18.2.2000 [8/30/24]updated package to reflect the version  18.2.2 of @angular/core packagev18.2.2100 [9/1/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.2101 [9/1/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.2200 [9/3/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.3000 [9/4/24]updated package to reflect the version  18.2.3 of @angular/core packagev18.2.3100 [9/8/24]updated package to reflect the version  18.2.3 of @angular/core packagev18.2.3110 [9/10/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.3112 [9/10/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.3200 [9/16/24]updated package to conform with @windmillcode/wml-components-basev18.2.4000 [9/16/24]updated package to reflect the version  18.2.4 of @angular/core packagev18.2.4100 [9/19/24]updated package to conform with @windmillcode/wml-components-basev18.2.4200 [9/21/24]updated package to conform with @windmillcode/wml-components-basev18.2.5001 [9/22/24]updated package to reflect the version  18.2.5 of @angular/core packagev18.2.6000 [10/1/24]updated package to reflect the version  18.2.6 of @angular/core packagev18.2.7000 [10/2/24]updated package to reflect the version  18.2.7 of @angular/core packagev18.2.7001 [10/6/24]updated package to conform with @windmillcode/wml-components-basev18.2.7010 [10/9/24]updated package to conform with @windmillcode/wml-components-basev18.2.7020 [10/10/24]updated package to conform with @windmillcode/wml-components-basev18.2.8000 [10/10/24]updated package to reflect the version  18.2.8 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-select/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-table/)
+
+### v0.0.1
+
+wml-select complete and readydisabled supportdefault value supportupdate component supportupdate via formcontrol support
+
+### v0.0.2
+
+added WMLSelectZeroProps.updateOptionValuesWithOptionText so that if users wanted text and value they can usemade a minor change that will allow defaulr fields to populate under certain circumstances
+
+### v16.2.60
+
+updated dependencies
+
+### v16.2.80
+
+updated package to reflect the version  16.2.80 of @angular/core package),
+
+### v16.2.80
+
+updated package to reflect the version  16.2.80 of @angular/core package,
+
+### v16.2.90
+
+updated package to reflect the version  16.2.90 of @angular/core package,
+
+### v16.2.91
+
+updated package to reflect the version  16.2.91 of @angular/core package,
+
+### v16.2.93
+
+updated package to conform with @windmillcode/angular-wml-components-base for unit testing features  ,
+
+### v16.2.100
+
+updated package to conform with @windmillcode/angular-wml-components-base for unit testing features  ,
+
+### v16.2.110
+
+updated package to conform with @windmillcode/angular-wml-components-base for unit testing features  ,
+
+### v16.2.120
+
+updated package to conform with @windmillcode/angular-wml-components-base for unit testing features  ,
+
+### v17.0.10
+
+updated package to conform with @windmillcode/angular-wml-components-base for unit testing features  ,
+
+### v17.0.11
+
+updated package to conform with @windmillcode/angular-wml-components-base for unit testing features  ,
+
+### v17.0.20
+
+updated package to reflect the version  ^17.0.2 of @angular/core package,
+
+### v17.0.40
+
+updated package to reflect the version  ^17.0.4 of @angular/core package,
+
+### v17.0.50
+
+updated package to reflect the version  ^17.0.5 of @angular/core package,
+
+### v17.0.60
+
+updated package to reflect the version  ^17.0.6 of @angular/core package,
+
+### v17.0.70
+
+updated package to reflect the version  ^17.0.7 of @angular/core package,
+
+### v17.0.7100
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.0.7200
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.0.7300
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.0.80
+
+updated package to reflect the version  ^17.0.8 of @angular/core package,
+
+### v17.0.8100
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.0.8102
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.0.8103
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.0.9000
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.0.9001
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.1.0000
+
+updated package to reflect the version  ^17.1.0 of @angular/core package,
+
+### v17.1.2
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.1.1000
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.1.2000 [2/5/24]
+
+updated package to reflect the version  ^17.1.2 of @angular/core package,
+
+### v17.1.2001 [2/8/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.1.3000 [2/8/24]
+
+updated package to reflect the version  ^17.1.3 of @angular/core package,
+
+### v17.2.1000 [2/17/24]
+
+updated package to reflect the version  ^17.2.1 of @angular/core package,
+
+### v17.2.2001 [2/23/24]
+
+updated package to reflect the version  ^17.2.2 of @angular/core package,
+
+### v17.2.3000 [2/28/24]
+
+updated package to reflect the version  ^17.2.3 of @angular/core package,
+
+### v17.2.3001 [3/2/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.2.3002 [3/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.2.4000 [3/8/24]
+
+updated package to reflect the version  ^17.2.4 of @angular/core package,
+
+### v17.2.4001 [3/12/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.2.4002 [3/12/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.2.4003 [3/13/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.2.4004 [3/13/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.3.0 [3/17/24]
+
+updated package to reflect the version  ^17.3.0 of @angular/core package
+,
+
+### v17.3.1000 [3/22/24]
+
+updated package to reflect the version  ^17.3.1 of @angular/core package,
+
+### v17.3.2000 [3/28/24]
+
+updated package to reflect the version  ^17.3.2 of @angular/core package,
+
+### v17.3.3000 [4/4/24]
+
+updated package to reflect the version  ^17.3.3 of @angular/core package,
+
+### v17.3.4000 [4/11/24]
+
+updated package to reflect the version  ^17.3.4 of @angular/core package,
+
+### v17.3.4001 [4/16/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.3.5000 [4/20/24]
+
+updated package to reflect the version  ^17.3.5 of @angular/core package,
+
+### v17.3.5110 [5/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v17.3.6000 [5/1/24]
+
+updated package to reflect the version  ^17.3.6 of @angular/core package,
+
+### v17.3.7000 [5/9/24]
+
+updated package to reflect the version  ^17.3.7 of @angular/core package,
+
+### v17.3.8000 [5/9/24]
+
+updated package to reflect the version  ^17.3.8 of @angular/core package,
+
+### v17.3.9000 [5/16/24]
+
+updated package to reflect the version  ^17.3.9 of @angular/core package,
+
+### v18.0.1 [5/23/24]
+
+updated package to reflect the version  ^18.0.0 of @angular/core package,
+
+### v18.0.4 [5/25/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v18.0.1000 [5/29/24]
+
+updated package to reflect the version  ^18.0.1 of @angular/core package,
+
+### v18.0.2000 [6/6/24]
+
+updated package to reflect the version  ^18.0.2 of @angular/core package,
+
+### v18.0.3000 [6/13/24]
+
+updated package to reflect the version  ^18.0.3 of @angular/core package,
+
+### v18.0.3010 [6/18/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v18.0.4000 [6/23/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v18.0.5000 [6/26/24]
+
+updated package to reflect the version  ^18.0.5 of @angular/core package,
+
+### v18.0.6000 [7/5/24]
+
+updated package to reflect the version  ^18.0.6 of @angular/core package,
+
+### v18.1.4 [7/13/24]
+
+updated package to reflect the version  ^18.1.0 of @angular/core package,
+
+### v18.1.6 [7/14/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v18.1.1000 [7/18/24]
+
+updated package to reflect the version  ^18.1.1 of @angular/core package,
+
+### v18.1.2000 [7/24/24]
+
+updated package to reflect the version  ^18.1.2 of @angular/core package,
+
+### v18.1.2300 [7/27/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v18.1.2301 [7/30/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+,
+
+### v18.1.3000-beta3 [8/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base   ,
+
+### v18.1.3000-beta4 [8/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3001
+
+[BREAKING CHANGES] changed from wml-slicebox to wml-slicebox-zero and replaced all Params with Props
+
+
+
+### v18.1.3002 [8/4/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3001 [8/4/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3003 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3004 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3005 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3006 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.3007 [8/5/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.4000 [8/14/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.1.4001 [8/14/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.0 [8/15/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.1 [8/20/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.1000 [8/22/24]
+
+updated package to reflect the version  18.2.1 of @angular/core package
+
+### v18.2.2000 [8/30/24]
+
+updated package to reflect the version  18.2.2 of @angular/core package
+
+### v18.2.2100 [9/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.2101 [9/1/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.2200 [9/3/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3000 [9/4/24]
+
+updated package to reflect the version  18.2.3 of @angular/core package
+
+### v18.2.3100 [9/8/24]
+
+updated package to reflect the version  18.2.3 of @angular/core package
+
+### v18.2.3110 [9/10/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3112 [9/10/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3200 [9/16/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package
+
+### v18.2.4100 [9/19/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.4200 [9/21/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.5001 [9/22/24]
+
+updated package to reflect the version  18.2.5 of @angular/core package
+
+### v18.2.6000 [10/1/24]
+
+updated package to reflect the version  18.2.6 of @angular/core package
+
+### v18.2.7000 [10/2/24]
+
+updated package to reflect the version  18.2.7 of @angular/core package
+
+### v18.2.7001 [10/6/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.7010 [10/9/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.7020 [10/10/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.8000 [10/10/24]
+
+updated package to reflect the version  18.2.8 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-select/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-table/)

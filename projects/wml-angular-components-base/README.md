@@ -48,21 +48,105 @@ Extends[WMLMotionUIProperty](/Windmillcode-Angular-CDK-Docs/intro/wml-components
 
 <table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">i18nLocation</code></td><td><code dir="auto">(lang: string) =&gt; any</code></td><td>A function that returns the translation file or object based on the language code.</td></tr></tbody></table>
 
-Methods<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">getTranslation(lang: string)</code></td><td>Fetches the translations for the given language and returns an observable with the translation data.</td></tr></tbody></table>
+
+
+### Methods
+
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">getTranslation(lang: string)</code></td><td>Fetches the translations for the given language and returns an observable with the translation data.</td></tr></tbody></table>
 
 
 
 ### Functions
 
-addCustomComponent<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">vcf</code></td><td><code dir="auto">ViewContainerRef</code></td><td>Angular ViewContainerRef for creating the component.</td></tr><tr><td><code dir="auto">cpnt</code></td><td><code dir="auto">Type&lt;any&gt;</code></td><td>Component type to be created.</td></tr><tr><td><code dir="auto">props</code></td><td><code dir="auto">any</code></td><td>Properties to be passed to the component.</td></tr><tr><td><code dir="auto">return</code></td><td><code dir="auto">ComponentRef&lt;any&gt;</code></td><td>Returns a reference to the created component.</td></tr><tr><td>,</td><td></td><td></td></tr></tbody></table>
+
+
+### addCustomComponent
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code dir="auto">vcf</code></td><td><code dir="auto">ViewContainerRef</code></td><td>Angular ViewContainerRef for creating the component.</td></tr><tr><td><code dir="auto">cpnt</code></td><td><code dir="auto">Type&lt;any&gt;</code></td><td>Component type to be created.</td></tr><tr><td><code dir="auto">props</code></td><td><code dir="auto">any</code></td><td>Properties to be passed to the component.</td></tr><tr><td><code dir="auto">return</code></td><td><code dir="auto">ComponentRef&lt;any&gt;</code></td><td>Returns a reference to the created component.</td></tr><tr><td>,</td><td></td><td></td></tr></tbody></table>
 
 
 
 ## Changelog
 
-v18.2.3100 [9/8/24]pulled features from  seperated angular features from core library to angular-wml-components-base
+
+
+### v18.2.3100 [9/8/24]
+
+pulled features from  seperated angular features from core library to angular-wml-components-base
 creating WMLAngularTestUtils,WMLAngularTestHttpHandler,WMLAngularModuleForRootProps,WMLAngularMotionUIProperty
-WMLAngularCustomComponent from their orginal respective part which exlude “Angular in their name”v18.2.3100 [9/8/24]updated package to reflect the version  18.2.3 of @angular/core packagev18.2.3100 [9/8/24]updated package to reflect the version  18.2.3 of @angular/core packagev18.2.3100 [9/8/24]updated package to reflect the version  18.2.3 of @angular/core packagev18.2.3110 [9/10/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.3111 [9/10/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.3112 [9/10/24]updated package to conform with @windmillcode/angular-wml-components-basev18.2.3200 [9/16/24][UPDATE] added motionKeyFrameEvent for css transitions WMLAngularMotionUIPropertyupdated package to conform with @windmillcode/wml-components-basev18.2.4000 [9/16/24]updated package to reflect the version  18.2.4 of @angular/core packagev18.2.4000 [9/17/24]updated package to reflect the version  18.2.4 of @angular/core packagev18.2.4100 [9/19/24]updated package to conform with @windmillcode/wml-components-basev18.2.4200 [9/21/24]updated package to conform with @windmillcode/wml-components-basev18.2.5001 [9/22/24]updated package to reflect the version  18.2.5 of @angular/core packagev18.2.6000 [10/1/24]updated package to reflect the version  18.2.6 of @angular/core packagev18.2.7000 [10/2/24]updated package to reflect the version  18.2.7 of @angular/core packagev18.2.7001 [10/5/24]updated package to conform with @windmillcode/wml-components-basev18.2.7010 [10/9/24]updated package to conform with @windmillcode/wml-components-basev18.2.7020 [10/10/2024 2:15:30 PM EST]updated package to conform with @windmillcode/wml-components-base
+WMLAngularCustomComponent from their orginal respective part which exlude “Angular in their name”
+
+### v18.2.3100 [9/8/24]
+
+updated package to reflect the version  18.2.3 of @angular/core package
+
+### v18.2.3100 [9/8/24]
+
+updated package to reflect the version  18.2.3 of @angular/core package
+
+### v18.2.3100 [9/8/24]
+
+updated package to reflect the version  18.2.3 of @angular/core package
+
+### v18.2.3110 [9/10/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3111 [9/10/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3112 [9/10/24]
+
+updated package to conform with @windmillcode/angular-wml-components-base
+
+### v18.2.3200 [9/16/24]
+
+[UPDATE] added motionKeyFrameEvent for css transitions WMLAngularMotionUIPropertyupdated package to conform with @windmillcode/wml-components-base
+
+### v18.2.4000 [9/16/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package
+
+### v18.2.4000 [9/17/24]
+
+updated package to reflect the version  18.2.4 of @angular/core package
+
+### v18.2.4100 [9/19/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.4200 [9/21/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.5001 [9/22/24]
+
+updated package to reflect the version  18.2.5 of @angular/core package
+
+### v18.2.6000 [10/1/24]
+
+updated package to reflect the version  18.2.6 of @angular/core package
+
+### v18.2.7000 [10/2/24]
+
+updated package to reflect the version  18.2.7 of @angular/core package
+
+### v18.2.7001 [10/5/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.7010 [10/9/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.7020 [10/10/2024 2:15:30 PM EST]
+
+updated package to conform with @windmillcode/wml-components-base
 [PATCH] <code dir="auto">WMLAngularMotionUIProperty</code> constructor got updated in <code dir="auto">projects/wml-angular-components-base/src/lib/models.ts</code> to take partial props, fixing a bug where custom props were not being overridden just know that for the time being you can only use WMLMotionUIProperty or WMLAngularMotionUIProperty you cant use both becuase internally there would be a conflict with the management of static variables between the two classes
 
-v18.2.8000 [10/10/24]updated package to reflect the version  18.2.8 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-accordion/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-button/)
+
+
+### v18.2.8000 [10/10/24]
+
+updated package to reflect the version  18.2.8 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-accordion/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-button/)
