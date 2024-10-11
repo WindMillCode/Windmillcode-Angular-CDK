@@ -1,7 +1,5 @@
 # WML Carousel (3D)
 
-This content is for the 18.2.4200 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/angular-components/wml-carousel/)for up-to-date documentation.
-
 The library is for carousels of all different types
 
 The <code dir="auto">WMLCarouselOneComponent</code> is an Angular component that provides a customizable 3D carousel experience. It allows developers to create interactive and dynamic carousels with customizable slides and controls. The functionality of the component is in the prop class passed to the component so if you have your own 3d carousel you would like to design all you need to worry about is styling.It is designed to be flexible and extendable, enabling developers to tailor the carousel to their specific needs.
@@ -24,7 +22,7 @@ increasing the height of the container seems to mess with it because of the marg
 
 ### WMLCarouselOneComponent
 
-Getting Started<iframe src="https://stackblitz.com/edit/stackblitz-starters-zxawib?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>Handling Slide Events<iframe src="https://stackblitz.com/edit/stackblitz-starters-yp9ufe?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>Customizing Slides<iframe src="https://stackblitz.com/edit/stackblitz-starters-adpxnh?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>Customizing Controls<iframe src="https://stackblitz.com/edit/stackblitz-starters-gyjcoq?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
+Getting Started<iframe src="https://stackblitz.com/edit/stackblitz-starters-zxawib?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>Handling Slide Events<iframe src="https://stackblitz.com/edit/stackblitz-starters-yp9ufe?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>[Customizing Slides](#customizing-slides)<iframe src="https://stackblitz.com/edit/stackblitz-starters-adpxnh?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>Customizing Controls<iframe src="https://stackblitz.com/edit/stackblitz-starters-gyjcoq?ctl=1&embed=1&file=src%2Fmain.ts&theme=dark" style="width: 100%; height: calc(500/16 * 1em) !important;"></iframe>
 
 ## References
 
@@ -68,4 +66,4 @@ Properties<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></
 
 ## Changelog
 
-v18.2.4200 [9/21/24]first version of libraryv18.2.4200 [9/21/24]updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/18.2.4200/angular-components/wml-button/)[](/Windmillcode-Angular-CDK-Docs/18.2.4200/angular-components/wml-chips/)
+v18.2.4200 [9/21/24]first version of libraryv18.2.4200 [9/21/24]updated package to conform with @windmillcode/wml-components-basev18.2.5001 [9/22/24]updated package to reflect the version  18.2.5 of @angular/core packagev18.2.6000 [10/1/24]updated package to reflect the version  18.2.6 of @angular/core packagev18.2.7000 [10/2/24]updated package to reflect the version  18.2.7 of @angular/core packagev18.2.7001 [10/5/2024 10:45:12 AM EST][PATCH] Changed WMLCarouselOneProps in wml-carousel-one.component.ts. You can now only change the slide when controller.motionState is either “closed” or “open”. This helps stop unwanted changes to slides during transitions.v18.2.7001 [10/5/24]updated package to conform with @windmillcode/wml-components-basev18.2.7010 [10/9/24]updated package to conform with @windmillcode/wml-components-basev18.2.7020 [10/10/24]updated package to conform with @windmillcode/wml-components-basev18.2.8000 [10/10/24]updated package to reflect the version  18.2.8 of @angular/core package[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-button/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-chips/)

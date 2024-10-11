@@ -92,6 +92,7 @@ export class WMLUri {
     if (fragment) this.url.hash = fragment;
   }
 
+  // TODO or return this.url.origin?
   get domain() {
     return this.url.port === '' ? this.url.hostname : `${this.url.hostname}:${this.url.port}`;
   }
