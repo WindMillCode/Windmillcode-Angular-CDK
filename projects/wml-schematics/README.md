@@ -231,4 +231,16 @@ updated package to conform with @windmillcode/wml-components-base
 
 ### v18.2.8000 [10/10/24]
 
-updated package to reflect the version  18.2.8 of @angular/cli package[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-popup/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-select/)
+updated package to reflect the version  18.2.8 of @angular/cli package
+
+### v18.2.8000 [10/11/24]
+
+updated package to reflect the version  18.2.8 of @angular/cli package
+
+### v18.2.8001 [10/11/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.9000 [10/23/24]
+
+updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-popup/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-select/)
