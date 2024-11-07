@@ -165,4 +165,8 @@ updated package to conform with @windmillcode/wml-components-base
 
 ### v18.2.9000 [10/23/24]
 
+updated package to conform with @windmillcode/wml-components-base
+
+### v18.2.10000 [10/31/24]
+
 updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-accordion/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-button/)
