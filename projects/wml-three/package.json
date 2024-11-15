@@ -3,6 +3,7 @@
         "tslib": "^2.3.0"
     },
     "funding": "https://github.com/sponsors/WindMillCode",
+"license":"CC-BY-4.0",
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/intro/wml-three",
     "name": "@windmillcode/wml-three",
     "peerDependencies": {

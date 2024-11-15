@@ -4,6 +4,7 @@
         "tslib": "^2.3.0"
     },
     "funding": "https://github.com/sponsors/WindMillCode",
+"license":"CC-BY-4.0",
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-tabs",
     "name": "@windmillcode/angular-wml-tabs",
     "peerDependencies": {
