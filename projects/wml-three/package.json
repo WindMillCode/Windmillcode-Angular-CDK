@@ -3,12 +3,11 @@
         "tslib": "^2.3.0"
     },
     "funding": "https://github.com/sponsors/WindMillCode",
-"license":"CC-BY-4.0",
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/intro/wml-three",
     "name": "@windmillcode/wml-three",
     "peerDependencies": {
         "@types/three": "^0.169.0",
-        "@windmillcode/wml-components-base": "^18.2.11000",
+        "@windmillcode/wml-components-base": "^18.2.12000",
         "dat.gui": "^0.7.9",
         "lil-gui": "^0.19.2",
         "three": "^0.169.0"
@@ -18,5 +17,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "18.2.11000"
+    "version": "18.2.12000"
 }
