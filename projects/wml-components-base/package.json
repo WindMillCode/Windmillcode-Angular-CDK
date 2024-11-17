@@ -6,9 +6,12 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/intro/wml-components-base",
     "name": "@windmillcode/wml-components-base",
     "private": false,
+    "repository": {
+        "url": "https://github.com/WindMillCode/Windmillcode-Angular-CDK"
+    },
     "schematics": "",
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "18.2.12000"
+    "version": "18.2.12001"
 }
