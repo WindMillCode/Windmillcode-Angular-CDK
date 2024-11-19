@@ -36,10 +36,11 @@ let updateClassString=(obj:any,myClassDefault:string,classListDefault:string)=>{
 // misc
 
 @Component({
-  selector: 'wml-slicebox-zero',
-  templateUrl: './wml-slicebox-zero.component.html',
-  styleUrls: ['./wml-slicebox-zero.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'wml-slicebox-zero',
+    templateUrl: './wml-slicebox-zero.component.html',
+    styleUrls: ['./wml-slicebox-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLSliceboxZeroComponent {
   constructor(

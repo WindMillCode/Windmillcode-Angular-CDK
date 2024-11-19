@@ -18,14 +18,11 @@ import { WMLButtonZeroProps } from '@windmillcode/angular-wml-button';
 
 
 @Component({
-
-  selector: 'wml-table-zero-page-size',
-  templateUrl: './wml-table-zero-page-size.component.html',
-  styleUrls: ['./wml-table-zero-page-size.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
-
-
+    selector: 'wml-table-zero-page-size',
+    templateUrl: './wml-table-zero-page-size.component.html',
+    styleUrls: ['./wml-table-zero-page-size.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLTableZeroPageSizeComponent  {
 

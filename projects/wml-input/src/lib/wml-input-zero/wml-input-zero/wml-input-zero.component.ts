@@ -8,10 +8,11 @@ import { WMLFieldZeroProps } from '@windmillcode/angular-wml-field';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'wml-input-zero',
-  templateUrl: './wml-input-zero.component.html',
-  styleUrls: ['./wml-input-zero.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'wml-input-zero',
+    templateUrl: './wml-input-zero.component.html',
+    styleUrls: ['./wml-input-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLInputZeroComponent  {
 

@@ -18,14 +18,11 @@ import { takeUntil,tap } from 'rxjs/operators';
 
 
 @Component({
-
-  selector: 'wml-table-zero-select-page',
-  templateUrl: './wml-table-zero-select-page.component.html',
-  styleUrls: ['./wml-table-zero-select-page.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
-
-
+    selector: 'wml-table-zero-select-page',
+    templateUrl: './wml-table-zero-select-page.component.html',
+    styleUrls: ['./wml-table-zero-select-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLTableZeroSelectPageComponent  {
 

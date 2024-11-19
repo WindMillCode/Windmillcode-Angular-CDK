@@ -12,11 +12,12 @@ import { WMLSelectZeroProps } from '../wml-select-zero/wml-select-zero.component
 
 
 @Component({
-  selector: 'wml-select-zero-select',
-  templateUrl: './wml-select-zero-select.component.html',
-  styleUrls: ['./wml-select-zero-select.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  encapsulation:ViewEncapsulation.None
+    selector: 'wml-select-zero-select',
+    templateUrl: './wml-select-zero-select.component.html',
+    styleUrls: ['./wml-select-zero-select.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLSelectZeroSelectComponent  {
 

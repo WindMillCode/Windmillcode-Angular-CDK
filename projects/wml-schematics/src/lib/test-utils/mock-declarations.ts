@@ -6,8 +6,9 @@ import { Component, NO_ERRORS_SCHEMA } from "@angular/core";
 
 
 @Component({
-  selector:"example",
-  template: ``,
+    selector: "example",
+    template: ``,
+    standalone: false
 })
 export class ExampleCpnt {
 }

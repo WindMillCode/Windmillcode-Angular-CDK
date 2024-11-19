@@ -17,11 +17,11 @@ import { AbstractControl } from '@angular/forms';
 import { generateClassPrefix, WMLWrapper } from '@windmillcode/wml-components-base';
 
 @Component({
-  selector: 'wml-label-zero',
-  templateUrl: './wml-label-zero.component.html',
-  styleUrls: ['./wml-label-zero.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
+    selector: 'wml-label-zero',
+    templateUrl: './wml-label-zero.component.html',
+    styleUrls: ['./wml-label-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLLabelZeroComponent  {
 

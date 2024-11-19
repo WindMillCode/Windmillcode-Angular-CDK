@@ -12,11 +12,12 @@ import { WMLCarouselOneSlideProps } from '../wml-carousel-one-slide/wml-carousel
 import { WMLCarouselOneControlProps } from '../wml-carousel-one-control/wml-carousel-one-control.component';
 
 @Component({
-  selector: 'wml-carousel-one',
-  templateUrl: './wml-carousel-one.component.html',
-  styleUrls: ['./wml-carousel-one.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+    selector: 'wml-carousel-one',
+    templateUrl: './wml-carousel-one.component.html',
+    styleUrls: ['./wml-carousel-one.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLCarouselOneComponent {
 

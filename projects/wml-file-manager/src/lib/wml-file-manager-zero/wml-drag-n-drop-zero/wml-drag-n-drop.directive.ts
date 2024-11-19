@@ -1,7 +1,8 @@
 import { Directive, EventEmitter, HostBinding, HostListener, Output } from '@angular/core';
 
 @Directive({
-  selector: '[wmlDragNDrop]'
+    selector: '[wmlDragNDrop]',
+    standalone: false
 })
 export class WMLDragNDropDirective {
 

@@ -11,10 +11,11 @@ import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 // misc
 @Component({
-  selector: 'wml-table-zero-sample-row',
-  templateUrl: './wml-table-zero-sample-row.component.html',
-  styleUrls: ['./wml-table-zero-sample-row.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
+    selector: 'wml-table-zero-sample-row',
+    templateUrl: './wml-table-zero-sample-row.component.html',
+    styleUrls: ['./wml-table-zero-sample-row.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLTableZeroSampleRowComponent  {
 

@@ -8,11 +8,12 @@ import { WMLInfiniteDropdownZeroProps } from '../models';
 
 // misc
 @Component({
-  selector: 'wml-infinite-dropdown-zero',
-  templateUrl: './wml-infinite-dropdown-zero.component.html',
-  styleUrls: ['./wml-infinite-dropdown-zero.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  encapsulation:ViewEncapsulation.None
+    selector: 'wml-infinite-dropdown-zero',
+    templateUrl: './wml-infinite-dropdown-zero.component.html',
+    styleUrls: ['./wml-infinite-dropdown-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLInfiniteDropdownZeroComponent  {
 

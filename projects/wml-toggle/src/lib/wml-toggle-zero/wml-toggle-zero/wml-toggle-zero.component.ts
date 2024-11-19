@@ -12,11 +12,12 @@ import { AbstractControl } from '@angular/forms';
 // misc
 
 @Component({
-  selector: 'wml-toggle-zero',
-  templateUrl: './wml-toggle-zero.component.html',
-  styleUrls: ['./wml-toggle-zero.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  encapsulation:ViewEncapsulation.None
+    selector: 'wml-toggle-zero',
+    templateUrl: './wml-toggle-zero.component.html',
+    styleUrls: ['./wml-toggle-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLToggleZeroComponent  {
 

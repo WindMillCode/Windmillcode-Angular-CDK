@@ -10,12 +10,11 @@ import { Subject } from 'rxjs';
 
 
 @Component({
-
-  selector: 'wml-panel-zero-item-example',
-  templateUrl: './wml-panel-zero-item-example.component.html',
-  styleUrls: ['./wml-panel-zero-item-example.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
+    selector: 'wml-panel-zero-item-example',
+    templateUrl: './wml-panel-zero-item-example.component.html',
+    styleUrls: ['./wml-panel-zero-item-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLSamplePanelItemComponent  {
 

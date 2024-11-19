@@ -13,11 +13,11 @@ import {WMLButtonIconType, WMLButtonPropsTypeEnum} from '../../models';
 
 
 @Component({
-  selector: 'wml-button-zero',
-  templateUrl: './wml-button-zero.component.html',
-  styleUrls: ['./wml-button-zero.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-
+    selector: 'wml-button-zero',
+    templateUrl: './wml-button-zero.component.html',
+    styleUrls: ['./wml-button-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLButtonZeroComponent  {
 

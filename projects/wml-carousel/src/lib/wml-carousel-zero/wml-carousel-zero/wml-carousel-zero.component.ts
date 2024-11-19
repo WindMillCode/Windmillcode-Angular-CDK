@@ -9,11 +9,12 @@ import { takeUntil, tap } from 'rxjs/operators';
 import { WMLConstructorDecorator, generateClassPrefix } from '@windmillcode/wml-components-base';
 
 @Component({
-  selector: 'wml-carousel-zero',
-  templateUrl: './wml-carousel-zero.component.html',
-  styleUrls: ['./wml-carousel-zero.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+    selector: 'wml-carousel-zero',
+    templateUrl: './wml-carousel-zero.component.html',
+    styleUrls: ['./wml-carousel-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLCarouselZeroComponent {
 

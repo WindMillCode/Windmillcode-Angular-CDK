@@ -16,12 +16,12 @@ import { generateClassPrefix,WMLCustomComponent } from '@windmillcode/wml-compon
 
 
 @Component({
-
-  selector: 'wml-select-zero',
-  templateUrl: './wml-select-zero.component.html',
-  styleUrls: ['./wml-select-zero.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  encapsulation:ViewEncapsulation.None
+    selector: 'wml-select-zero',
+    templateUrl: './wml-select-zero.component.html',
+    styleUrls: ['./wml-select-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLSelectZeroComponent  {
 

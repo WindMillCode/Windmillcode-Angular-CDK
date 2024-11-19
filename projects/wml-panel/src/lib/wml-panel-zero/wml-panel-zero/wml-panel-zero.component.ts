@@ -12,12 +12,10 @@ import { generateClassPrefix, updateClassString,WMLUIProperty } from '@windmillc
 
 
 @Component({
-
-  selector: 'wml-panel-zero',
-  templateUrl: './wml-panel-zero.component.html',
-  styleUrls: ['./wml-panel-zero.component.scss'],
-  // changeDetection:ChangeDetectionStrategy.OnPush
-
+    selector: 'wml-panel-zero',
+    templateUrl: './wml-panel-zero.component.html',
+    styleUrls: ['./wml-panel-zero.component.scss'],
+    standalone: false
 })
 export class WMLPanelZeroComponent  {
 

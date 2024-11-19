@@ -15,12 +15,11 @@ import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 
 
 @Component({
-
-  selector: 'wml-table-zero-item',
-  templateUrl: './wml-table-zero-item.component.html',
-  styleUrls: ['./wml-table-zero-item.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
+    selector: 'wml-table-zero-item',
+    templateUrl: './wml-table-zero-item.component.html',
+    styleUrls: ['./wml-table-zero-item.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLTableZeroItemComponent  {
 

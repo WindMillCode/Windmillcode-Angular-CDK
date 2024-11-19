@@ -15,14 +15,12 @@ import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 
 @Component({
-
-  selector: 'wml-accordion-zero-title',
-  templateUrl: './wml-accordion-zero-title.component.html',
-  styleUrls: ['./wml-accordion-zero-title.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-
-  encapsulation:ViewEncapsulation.None
-
+    selector: 'wml-accordion-zero-title',
+    templateUrl: './wml-accordion-zero-title.component.html',
+    styleUrls: ['./wml-accordion-zero-title.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLAccordionZeroTitleComponent  {
 

@@ -12,11 +12,11 @@ import { WMLNotifyOneService } from './wml-notify-one.service';
 export const NOTIFICATION_BAR_MESSAGES_CONFIG = new InjectionToken('notification-bar.messages.config');
 
 @Component({
-
-  selector: 'wml-notify-one',
-  templateUrl:"./wml-notify-one.component.html",
-  styleUrls: ["./wml-notify-one.component.scss"],
-  changeDetection:ChangeDetectionStrategy.OnPush
+    selector: 'wml-notify-one',
+    templateUrl: "./wml-notify-one.component.html",
+    styleUrls: ["./wml-notify-one.component.scss"],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLNotifyOneComponent  {
 

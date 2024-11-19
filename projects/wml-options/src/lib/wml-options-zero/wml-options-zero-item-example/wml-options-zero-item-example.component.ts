@@ -7,10 +7,11 @@ import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 // misc
 @Component({
-  selector: 'wml-options-zero-item-example',
-  templateUrl: './wml-options-zero-item-example.component.html',
-  styleUrls: ['./wml-options-zero-item-example.component.scss'],
-  encapsulation:ViewEncapsulation.None
+    selector: 'wml-options-zero-item-example',
+    templateUrl: './wml-options-zero-item-example.component.html',
+    styleUrls: ['./wml-options-zero-item-example.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLOptionsZeroItemExampleComponent  {
   constructor(

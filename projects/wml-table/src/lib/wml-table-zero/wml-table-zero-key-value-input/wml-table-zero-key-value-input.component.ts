@@ -19,12 +19,11 @@ import { takeUntil,tap } from 'rxjs/operators';
 
 
 @Component({
-
-  selector: 'wml-table-zero-key-value-input',
-  templateUrl: './wml-table-zero-key-value-input.component.html',
-  styleUrls: ['./wml-table-zero-key-value-input.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
+    selector: 'wml-table-zero-key-value-input',
+    templateUrl: './wml-table-zero-key-value-input.component.html',
+    styleUrls: ['./wml-table-zero-key-value-input.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLTableZeroKeyValueInputComponent  {
 

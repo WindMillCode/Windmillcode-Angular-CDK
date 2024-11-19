@@ -11,14 +11,11 @@ import { getRandomImage, getRandomProductPrice, getRandomProductSubTitle, getRan
 
 
 @Component({
-
-  selector: 'wml-table-zero-sample-card',
-  templateUrl: './wml-table-zero-sample-card.component.html',
-  styleUrls: ['./wml-table-zero-sample-card.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
-
-
+    selector: 'wml-table-zero-sample-card',
+    templateUrl: './wml-table-zero-sample-card.component.html',
+    styleUrls: ['./wml-table-zero-sample-card.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLTableZeroSampleCardComponent  {
 

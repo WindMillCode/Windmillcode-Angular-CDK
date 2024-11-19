@@ -12,11 +12,12 @@ import { WMLConstructorDecorator, generateClassPrefix } from '@windmillcode/wml-
 
 
 @Component({
-  selector: 'wml-carousel-one-slide-example',
-  templateUrl: './wml-carousel-one-slide-example.component.html',
-  styleUrls: ['./wml-carousel-one-slide-example.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  encapsulation:ViewEncapsulation.None
+    selector: 'wml-carousel-one-slide-example',
+    templateUrl: './wml-carousel-one-slide-example.component.html',
+    styleUrls: ['./wml-carousel-one-slide-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLCarouselOneSlideExampleComponent  {
 

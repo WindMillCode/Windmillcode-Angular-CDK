@@ -10,10 +10,11 @@ import { WMLOptionZeroItemProps, WMLOptionsZeroProps } from '../models';
 import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 @Component({
-  selector: 'wml-options-zero',
-  templateUrl: './wml-options-zero.component.html',
-  styleUrls: ['./wml-options-zero.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'wml-options-zero',
+    templateUrl: './wml-options-zero.component.html',
+    styleUrls: ['./wml-options-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLOptionsZeroComponent {
   constructor(

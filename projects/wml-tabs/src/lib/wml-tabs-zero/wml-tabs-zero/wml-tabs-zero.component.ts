@@ -11,10 +11,11 @@ import { WMLTabsZero, WMLTabsZeroProps, WMLTabsZeroPropsUpdateTabsSubjProps } fr
 
 
 @Component({
-  selector: 'wml-tabs-zero',
-  templateUrl: './wml-tabs-zero.component.html',
-  styleUrls: ['./wml-tabs-zero.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
+    selector: 'wml-tabs-zero',
+    templateUrl: './wml-tabs-zero.component.html',
+    styleUrls: ['./wml-tabs-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLTabsZeroComponent  {
 

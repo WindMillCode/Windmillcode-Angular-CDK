@@ -11,11 +11,11 @@ import {  generateClassPrefix, WMLCustomComponent, WMLUIProperty, WMLView } from
 import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 
 @Component({
-  selector: 'wml-popup-zero',
-  templateUrl: './wml-popup-zero.component.html',
-  styleUrls: ['./wml-popup-zero.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
+    selector: 'wml-popup-zero',
+    templateUrl: './wml-popup-zero.component.html',
+    styleUrls: ['./wml-popup-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLPopupZeroComponent  {
 
@@ -88,11 +88,12 @@ export class WMLPopupZeroProps extends WMLCustomComponent  {
   togglePopupSubj= new Subject<boolean>()
 }
 @Component({
-  template:`
+    template: `
     <code>
     {{myStr}}
     </code>
-  `
+  `,
+    standalone: false
 })
 class SampleForWMLPopupZeroCpntComponent{
   @Input("props") props:any ={}

@@ -7,10 +7,11 @@ import { tap,takeUntil } from 'rxjs/operators';
 
 
 @Component({
-  selector: 'penrose',
-  templateUrl: './penrose.component.html',
-  styleUrls: ['./penrose.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'penrose',
+    templateUrl: './penrose.component.html',
+    styleUrls: ['./penrose.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PenroseComponent implements OnInit {
 

@@ -22,11 +22,12 @@ import { addCustomComponent, WMLAngularCustomComponent } from '@windmillcode/ang
 
 // misc
 @Component({
-  selector: 'wml-table-zero',
-  templateUrl: './wml-table-zero.component.html',
-  styleUrls: ['./wml-table-zero.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  encapsulation:ViewEncapsulation.None
+    selector: 'wml-table-zero',
+    templateUrl: './wml-table-zero.component.html',
+    styleUrls: ['./wml-table-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLTableZeroComponent  {
 

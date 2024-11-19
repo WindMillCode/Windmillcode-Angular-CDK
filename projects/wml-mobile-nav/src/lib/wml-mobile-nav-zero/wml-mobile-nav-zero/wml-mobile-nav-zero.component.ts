@@ -9,10 +9,10 @@ import { takeUntil,tap } from 'rxjs/operators';
 
 // misc
 @Component({
-  selector: 'wml-mobile-nav-zero',
-  templateUrl: './wml-mobile-nav-zero.component.html',
-  styleUrls: ['./wml-mobile-nav-zero.component.scss'],
-  // changeDetection:ChangeDetectionStrategy.OnPush
+    selector: 'wml-mobile-nav-zero',
+    templateUrl: './wml-mobile-nav-zero.component.html',
+    styleUrls: ['./wml-mobile-nav-zero.component.scss'],
+    standalone: false
 })
 export class WMLMobileNavZeroComponent  {
 

@@ -4,8 +4,9 @@ import { Component } from "@angular/core";
 
 
 @Component({
-  selector:"example",
-  template: ``,
+    selector: "example",
+    template: ``,
+    standalone: false
 })
 export class ExampleCpnt {
 }

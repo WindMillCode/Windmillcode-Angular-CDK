@@ -8,11 +8,12 @@ import { takeUntil,tap } from 'rxjs/operators';
 
 // misc
 @Component({
-  selector: 'wml-table-zero-dropdown-item',
-  templateUrl: './wml-table-zero-dropdown-item.component.html',
-  styleUrls: ['./wml-table-zero-dropdown-item.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+    selector: 'wml-table-zero-dropdown-item',
+    templateUrl: './wml-table-zero-dropdown-item.component.html',
+    styleUrls: ['./wml-table-zero-dropdown-item.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLTableZeroDropdownItemComponent  {
 

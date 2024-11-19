@@ -17,10 +17,11 @@ import { WMLOptionZeroItemProps } from '@windmillcode/angular-wml-options';
 
 
 @Component({
-  selector: 'wml-table-zero-sort',
-  templateUrl: './wml-table-zero-sort.component.html',
-  styleUrls: ['./wml-table-zero-sort.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
+    selector: 'wml-table-zero-sort',
+    templateUrl: './wml-table-zero-sort.component.html',
+    styleUrls: ['./wml-table-zero-sort.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLTableZeroSortComponent  {
 

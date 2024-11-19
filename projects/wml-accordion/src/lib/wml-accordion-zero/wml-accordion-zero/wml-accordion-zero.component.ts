@@ -16,12 +16,12 @@ import { WMLAccordionZeroItemProps } from '../wml-accordion-zero-item/wml-accord
 
 
 @Component({
-
-  selector: 'wml-accordion-zero',
-  templateUrl: './wml-accordion-zero.component.html',
-  styleUrls: ['./wml-accordion-zero.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  encapsulation:ViewEncapsulation.None
+    selector: 'wml-accordion-zero',
+    templateUrl: './wml-accordion-zero.component.html',
+    styleUrls: ['./wml-accordion-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLAccordionZeroComponent  {
 

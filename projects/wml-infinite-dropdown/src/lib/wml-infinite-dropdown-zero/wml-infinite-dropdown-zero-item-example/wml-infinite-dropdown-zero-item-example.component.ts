@@ -12,14 +12,12 @@ import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 
 @Component({
-
-  selector: 'wml-infinite-dropdown-zero-item-example',
-  templateUrl: './wml-infinite-dropdown-zero-item-example.component.html',
-  styleUrls: ['./wml-infinite-dropdown-zero-item-example.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  encapsulation:ViewEncapsulation.None
-
-
+    selector: 'wml-infinite-dropdown-zero-item-example',
+    templateUrl: './wml-infinite-dropdown-zero-item-example.component.html',
+    styleUrls: ['./wml-infinite-dropdown-zero-item-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLInfiniteDropdownZeroItemExampleComponent  {
 

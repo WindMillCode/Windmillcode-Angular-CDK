@@ -9,11 +9,12 @@ import { WMLButtonIconType, WMLButtonPropsTypeEnum } from '../../models';
 
 // misc
 @Component({
-  selector: 'wml-button-one',
-  templateUrl: './wml-button-one.component.html',
-  styleUrls: ['./wml-button-one.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  encapsulation:ViewEncapsulation.None
+    selector: 'wml-button-one',
+    templateUrl: './wml-button-one.component.html',
+    styleUrls: ['./wml-button-one.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLButtonOneComponent  {
 

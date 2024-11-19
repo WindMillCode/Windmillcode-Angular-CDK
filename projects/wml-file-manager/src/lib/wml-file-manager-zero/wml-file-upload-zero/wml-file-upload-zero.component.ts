@@ -10,10 +10,11 @@ import { takeUntil,tap } from 'rxjs/operators';
 
 // misc
 @Component({
-  selector: 'wml-file-upload-zero',
-  templateUrl: './wml-file-upload-zero.component.html',
-  styleUrls: ['./wml-file-upload-zero.component.scss'],
-  encapsulation:ViewEncapsulation.None
+    selector: 'wml-file-upload-zero',
+    templateUrl: './wml-file-upload-zero.component.html',
+    styleUrls: ['./wml-file-upload-zero.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLFileUploadZeroComponent  {
 

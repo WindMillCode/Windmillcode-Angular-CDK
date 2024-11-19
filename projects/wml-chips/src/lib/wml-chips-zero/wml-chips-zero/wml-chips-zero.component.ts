@@ -12,11 +12,12 @@ import {  map, startWith, takeUntil,tap } from 'rxjs/operators';
 // misc
 
 @Component({
-  selector: 'wml-chips-zero',
-  templateUrl: './wml-chips-zero.component.html',
-  styleUrls: ['./wml-chips-zero.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  encapsulation:ViewEncapsulation.None
+    selector: 'wml-chips-zero',
+    templateUrl: './wml-chips-zero.component.html',
+    styleUrls: ['./wml-chips-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLChipsZeroComponent  {
 

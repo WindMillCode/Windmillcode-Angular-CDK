@@ -8,12 +8,11 @@ import { generateClassPrefix, WMLUIProperty } from '@windmillcode/angular-wml-co
 // misc
 
 @Component({
-
-  selector: 'wml-table-zero-popup-overlay',
-  templateUrl: './wml-table-zero-popup-overlay.component.html',
-  styleUrls: ['./wml-table-zero-popup-overlay.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
+    selector: 'wml-table-zero-popup-overlay',
+    templateUrl: './wml-table-zero-popup-overlay.component.html',
+    styleUrls: ['./wml-table-zero-popup-overlay.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLTableZeroPopupOverlayComponent  {
 

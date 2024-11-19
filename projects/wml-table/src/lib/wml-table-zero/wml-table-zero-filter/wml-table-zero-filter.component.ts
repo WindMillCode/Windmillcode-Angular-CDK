@@ -14,11 +14,11 @@ import { checkIfFieldExists } from '../functions';
 // misc
 
 @Component({
-  selector: 'wml-table-zero-filter',
-  templateUrl: './wml-table-zero-filter.component.html',
-  styleUrls: ['./wml-table-zero-filter.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
+    selector: 'wml-table-zero-filter',
+    templateUrl: './wml-table-zero-filter.component.html',
+    styleUrls: ['./wml-table-zero-filter.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLTableZeroFilterComponent  {
 

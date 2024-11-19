@@ -15,14 +15,11 @@ import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 
 @Component({
-
-  selector: 'wml-table-zero-row-type',
-  templateUrl: './wml-table-zero-row-type.component.html',
-  styleUrls: ['./wml-table-zero-row-type.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
-
-
+    selector: 'wml-table-zero-row-type',
+    templateUrl: './wml-table-zero-row-type.component.html',
+    styleUrls: ['./wml-table-zero-row-type.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLTableZeroRowTypeComponent  {
 

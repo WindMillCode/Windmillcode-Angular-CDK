@@ -9,11 +9,11 @@ import { WMLLabelZeroComponent, WMLLabelZeroProps } from '../wml-label-zero/wml-
 
 
 @Component({
-  selector: 'wml-field-zero',
-  templateUrl: './wml-field-zero.component.html',
-  styleUrls: ['./wml-field-zero.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
+    selector: 'wml-field-zero',
+    templateUrl: './wml-field-zero.component.html',
+    styleUrls: ['./wml-field-zero.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLFieldZeroPropsComponent  {
 
@@ -223,7 +223,7 @@ export class WMLFieldZeroProps<FC=any,FP=any> extends WMLWrapper {
 }
 
 @Component({
-  template:`
+    template: `
     <p> please install wml-input and pass
     the component and props class like so to the wmlfield .custom constructor
     fieldCustomCpnt : WMLInputZeroComponent,
@@ -231,6 +231,7 @@ export class WMLFieldZeroProps<FC=any,FP=any> extends WMLWrapper {
     This was meant to be used in wml-form so now you understand the example
     create your own form field component with the appropriate props and use accordingly
     </p>
-  `
+  `,
+    standalone: false
 })
 class SampleCpntComponent{}

@@ -11,11 +11,12 @@ import { generateClassPrefix } from '@windmillcode/wml-components-base';
 // misc
 
 @Component({
-  selector: 'wml-accordion-zero-sample',
-  templateUrl: './wml-accordion-zero-sample.component.html',
-  styleUrls: ['./wml-accordion-zero-sample.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  encapsulation:ViewEncapsulation.None
+    selector: 'wml-accordion-zero-sample',
+    templateUrl: './wml-accordion-zero-sample.component.html',
+    styleUrls: ['./wml-accordion-zero-sample.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLAccordionZeroSampleComponent  {
 

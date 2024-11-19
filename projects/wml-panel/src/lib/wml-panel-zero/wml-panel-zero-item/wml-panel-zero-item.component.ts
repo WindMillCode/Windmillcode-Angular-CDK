@@ -10,10 +10,11 @@ import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 
 // misc
 @Component({
-  selector: 'wml-panel-zero-item',
-  templateUrl: './wml-panel-zero-item.component.html',
-  styleUrls: ['./wml-panel-zero-item.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
+    selector: 'wml-panel-zero-item',
+    templateUrl: './wml-panel-zero-item.component.html',
+    styleUrls: ['./wml-panel-zero-item.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLPanelZeroItemComponent  {
 

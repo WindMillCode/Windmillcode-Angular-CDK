@@ -18,14 +18,12 @@ import { addCustomComponent } from '@windmillcode/angular-wml-components-base';
 
 
 @Component({
-  selector: 'wml-carousel-one-control',
-  templateUrl: './wml-carousel-one-control.component.html',
-  styleUrls: ['./wml-carousel-one-control.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-
-  encapsulation:ViewEncapsulation.None
-
-
+    selector: 'wml-carousel-one-control',
+    templateUrl: './wml-carousel-one-control.component.html',
+    styleUrls: ['./wml-carousel-one-control.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLCarouselOneControlComponent  {
 

@@ -18,13 +18,12 @@ type toggleAccordionEventType = Partial<{
 }>
 
 @Component({
-
-  selector: 'wml-accordion-zero-item',
-  templateUrl: './wml-accordion-zero-item.component.html',
-  styleUrls: ['./wml-accordion-zero-item.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-  encapsulation:ViewEncapsulation.None
-
+    selector: 'wml-accordion-zero-item',
+    templateUrl: './wml-accordion-zero-item.component.html',
+    styleUrls: ['./wml-accordion-zero-item.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLAccordionZeroItemComponent  {
 

@@ -14,11 +14,11 @@ import { WMLNotifyOneBarModel } from '../models';
 
 
 @Component({
-  selector: 'wml-notify-one-msg',
-  templateUrl: './wml-notify-one-msg.component.html',
-  styleUrls: ['./wml-notify-one-msg.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
+    selector: 'wml-notify-one-msg',
+    templateUrl: './wml-notify-one-msg.component.html',
+    styleUrls: ['./wml-notify-one-msg.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLNotifyOneMsgComponent  {
 

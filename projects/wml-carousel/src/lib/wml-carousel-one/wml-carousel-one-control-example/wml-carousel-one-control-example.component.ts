@@ -16,14 +16,12 @@ import { WMLConstructorDecorator, generateClassPrefix } from '@windmillcode/wml-
 
 
 @Component({
-  selector: 'wml-carousel-one-control-example',
-  templateUrl: './wml-carousel-one-control-example.component.html',
-  styleUrls: ['./wml-carousel-one-control-example.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush,
-
-  encapsulation:ViewEncapsulation.None
-
-
+    selector: 'wml-carousel-one-control-example',
+    templateUrl: './wml-carousel-one-control-example.component.html',
+    styleUrls: ['./wml-carousel-one-control-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WMLCarouselOneControlExampleComponent  {
 

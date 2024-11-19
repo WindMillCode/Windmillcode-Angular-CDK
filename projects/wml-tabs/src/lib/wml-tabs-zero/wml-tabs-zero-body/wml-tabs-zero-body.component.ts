@@ -15,13 +15,11 @@ import { generateClassPrefix } from '@windmillcode/wml-components-base';
 
 
 @Component({
-
-  selector: 'wml-tabs-zero-body',
-  templateUrl: './wml-tabs-zero-body.component.html',
-  styleUrls: ['./wml-tabs-zero-body.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
-
-
+    selector: 'wml-tabs-zero-body',
+    templateUrl: './wml-tabs-zero-body.component.html',
+    styleUrls: ['./wml-tabs-zero-body.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WMLTabBodyComponent  {
 
