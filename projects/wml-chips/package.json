@@ -24,5 +24,5 @@
         "build": "npx ng build",
         "test": "npx ng test wml-chips --code-coverage"
     },
-    "version": "18.2.12001"
+    "version": "19.0.0"
 }

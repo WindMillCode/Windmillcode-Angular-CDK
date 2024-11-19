@@ -22,5 +22,5 @@
         "postbuild": "npx copyfiles schematics/collection.json schematics/*/schema.json schematics/*/files/** ../../dist/wml-schematics/",
         "test": "npx ng test templates --code-coverage"
     },
-    "version": "18.2.12001"
+    "version": "19.0.0"
 }
