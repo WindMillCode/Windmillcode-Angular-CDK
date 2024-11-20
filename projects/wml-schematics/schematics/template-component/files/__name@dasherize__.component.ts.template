@@ -31,7 +31,7 @@ import { ENV } from '@env/environment';
   <%  if(cpntType === 'library') { %>
   encapsulation:ViewEncapsulation.None
   <% } %>
-  <%  if(standalone === true){ %>standalone:true,
+  <%  if(standalone !== true){ %>standalone:false,
   imports:[
     SharedModule
   ],<% } %>

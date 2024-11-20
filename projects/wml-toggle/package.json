@@ -9,9 +9,9 @@
     "peerDependencies": {
         "@angular/common": "^18.0.0",
         "@angular/core": "^18.0.0",
-        "@windmillcode/angular-wml-components-base": "^19.0.0",
-        "@windmillcode/angular-wml-field": "^19.0.0",
-        "@windmillcode/wml-components-base": "^19.0.0"
+        "@windmillcode/angular-wml-components-base": "^19.0.3",
+        "@windmillcode/angular-wml-field": "^19.0.3",
+        "@windmillcode/wml-components-base": "^19.0.3"
     },
     "private": false,
     "repository": {
@@ -21,5 +21,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "19.0.0"
+    "version": "19.0.3"
 }
