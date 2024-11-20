@@ -152,7 +152,7 @@ function addDeclarationToModuleCpntsArr(options: TemplateComponentSchema) {
       );
       let entitiesVar: any
 
-      if(!options.standalone){
+      if(options.standalone !== false){
         entitiesVar = moduleFile.statements
         .filter(ts.isVariableStatement)
         .find((v) => {
