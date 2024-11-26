@@ -31,10 +31,12 @@ import { ENV } from '@env/environment';
   <%  if(cpntType === 'library') { %>
   encapsulation:ViewEncapsulation.None
   <% } %>
-  <%  if(standalone !== true){ %>standalone:false,
+  <%  if(standalone !== true){ %>standalone:false<% } %>
+  <%  if(standalone === true){ %>
   imports:[
     SharedModule
-  ],<% } %>
+  ]
+  <% } %>
 })
 export class <%= classify(name) %>Component  {
 

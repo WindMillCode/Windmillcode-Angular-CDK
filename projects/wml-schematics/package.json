@@ -6,10 +6,10 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-schematics",
     "name": "@windmillcode/angular-wml-schematics",
     "peerDependencies": {
-        "@angular/common": "^18.0.0",
-        "@angular/core": "^18.0.0",
-        "@windmillcode/angular-wml-components-base": "^19.0.3",
-        "@windmillcode/wml-components-base": "^19.0.3"
+        "@angular/common": "^19.0.0",
+        "@angular/core": "^19.0.0",
+        "@windmillcode/angular-wml-components-base": "^19.0.4",
+        "@windmillcode/wml-components-base": "^19.0.4"
     },
     "private": false,
     "repository": {
@@ -22,5 +22,5 @@
         "postbuild": "npx copyfiles schematics/collection.json schematics/*/schema.json schematics/*/files/** ../../dist/wml-schematics/",
         "test": "npx ng test templates --code-coverage"
     },
-    "version": "19.0.3"
+    "version": "19.0.4"
 }

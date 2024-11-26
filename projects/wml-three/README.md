@@ -16,7 +16,7 @@ multiple renderers need to be able to accurately choose the correct object from 
 
 must set     in tsconfig.json compilerOptions<code><div class="ec-line"><div class="code"><span style="--0:#D9F5DD;--1:#111111">&#34;</span><span style="--0:#ECC48D;--1:#9B504E">noImplicitAny</span><span style="--0:#D9F5DD;--1:#111111">&#34;</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#82AAFF;--1:#3C63B3">false</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D9F5DD;--1:#111111">&#34;</span><span style="--0:#ECC48D;--1:#9B504E">skipLibCheck</span><span style="--0:#D9F5DD;--1:#111111">&#34;</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#82AAFF;--1:#3C63B3">true</span></div></div></code>
 
-also when you know a property exists on an object you must use @ts-ignore and debug the property to make sure until we can have more advanced typescript types, for our classes we provide getters for different types of the same property but for threejs objects thats harder if not impossible to do
+also when you know a property exists on an object you must use @ts-ignore and debug the property to make sure until we can have more advanced typescript types, for our classes we provide getters for different types of the same property but for threejs objects thats harder if not impossible to dosometimes it seems there is a resize needed in order to see the threejs scene. you need to set a delay now before calling WMLThreeProps.init because there seems to be an issue with Angular v19 where the height of the element will be 0 before initial navigation of an element. It might be we have to listen for the resize on the element itselfensure you are using the exact version that this package is using or you might get severe type errors, these can be ignored as fundamental changes in three.js features truly require you to change the version but if you can get past types that will be great
 
 ## Usage
 
@@ -221,5 +221,9 @@ updated package to conform with @windmillcode/wml-components-base
 updated package to conform with @windmillcode/wml-components-base
 
 ### v19.0.0 [11/19/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.3 [11/20/24]
 
 updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/intro/wml-components-base)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-accordion/)

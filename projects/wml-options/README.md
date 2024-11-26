@@ -240,4 +240,8 @@ updated package to conform with @windmillcode/wml-components-base
 
 ### v19.0.0 [11/19/24]
 
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.3 [11/20/24]
+
 updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-notify/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-panel/)
