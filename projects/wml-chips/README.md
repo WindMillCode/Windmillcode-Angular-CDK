@@ -1,5 +1,7 @@
 # WML Chips
 
+This content is for the 19.0.0 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/angular-components/wml-chips/)for up-to-date documentation.
+
 The Angular WML Chips library provides a highly customizable chips component for Angular applications. It offers a variety of features to enhance user interaction and improve the overall user experience.
 
 
@@ -567,4 +569,12 @@ updated package to conform with @windmillcode/wml-components-base
 
 ### v19.0.3 [11/20/24]
 
-updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-carousel/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-field/)
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.4 [11/26/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.1000 [11/26/24]
+
+updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-carousel/)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-field/)

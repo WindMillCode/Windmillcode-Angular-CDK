@@ -1,5 +1,7 @@
 # WML Three
 
+This content is for the 19.0.0 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/intro/wml-three/)for up-to-date documentation.
+
 The WML Three.js library provides a streamlined way to integrate Three.js into your  applications. THIS LIBRARY DOES NOT DEPEND ON ANGULAR SO YOU CAN USE IN ANY PROJECT, Astro,React,Svelte,Vue,Next.js … It offers a set of classes and utilities that simplify the creation and management of 3D scenes, renderers, cameras, controls, lights, objects, and animations. This library is designed to help developers quickly set up interactive 3D graphics without dealing with the boile2.rplate code typically associated with Three.js.
 
 
@@ -10,7 +12,7 @@ Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#8
 
 ## Roadmap
 
-multiple renderers need to be able to accurately choose the correct object from the mouseexamples with the effect composersany unifed and comphesive progress loader for all features in a threejs prop
+[ ] multiple renderers need to be able to accurately choose the correct object from the mouse[ ] examples with the effect composers[ ] any unifed and comphesive progress loader for all features in a threejs prop
 
 ### Caveats
 
@@ -226,4 +228,12 @@ updated package to conform with @windmillcode/wml-components-base
 
 ### v19.0.3 [11/20/24]
 
-updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/intro/wml-components-base)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-accordion/)
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.4 [11/26/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.1000 [11/26/24]
+
+updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/intro/wml-components-base)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-accordion/)

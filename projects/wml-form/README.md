@@ -1,5 +1,7 @@
 # WML Form
 
+This content is for the 19.0.0 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/angular-components/wml-form/)for up-to-date documentation.
+
 The Angular WML Form Libary is a versatile and customizable library designed to streamline form creation and management in Angular applications. This component offers the following features:
 
 **Dynamic Field Management**: Easily manage and update fields dynamically using the <code dir="auto">updateFields</code> and <code dir="auto">updateFieldsWrapper</code> methods.**Flexible Layouts**: Define field sections to organize and layout fields in a structured manner.**Responsive Design**: Ensures forms look great on various screen sizes with built-in media queries.**Custom Styling**: Supports custom styles including glassmorphism effects for a modern UI.**Input Handling**: Handles various types of inputs including standalone fields and WML cards.**Event Handling**: Emits events when fields are updated, allowing for reactive and interactive forms.
@@ -254,4 +256,12 @@ updated package to conform with @windmillcode/wml-components-base
 
 ### v19.0.3 [11/20/24]
 
-updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-file-manager/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-infinite-dropdown/)
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.4 [11/26/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.1000 [11/26/24]
+
+updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-file-manager/)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-infinite-dropdown/)

@@ -1,5 +1,7 @@
 # WML Toggle
 
+This content is for the 19.0.0 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/angular-components/wml-toggle/)for up-to-date documentation.
+
 The Angular WML Toggle library offers a customizable toggle switch component for Angular applications. This library provides an easy-to-integrate toggle switch that enhances user interfaces by allowing binary choices such as settings or preferences. The core component, <code dir="auto">WMLToggleZeroComponent</code> , is designed to be flexible and modular, enabling developers to tailor its appearance and behavior to fit their application’s requirements. Features include:
 
 Customizable Appearance: Modify the toggle’s background colors, text, and styles.Event Handling: Define actions on toggle state changes.Integration with Forms: Supports reactive forms and updates based on form control status.Responsive Design: Adapts to different screen sizes for a consistent user experience.
@@ -472,4 +474,12 @@ updated package to conform with @windmillcode/wml-components-base
 
 ### v19.0.3 [11/20/24]
 
-updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-tabs/)
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.4 [11/26/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.1000 [11/26/24]
+
+updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-tabs/)

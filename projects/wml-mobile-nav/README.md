@@ -1,5 +1,7 @@
 # WML Mobile Nav
 
+This content is for the 19.0.0 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/angular-components/wml-mobile-nav/)for up-to-date documentation.
+
 The Angular WML Mobile Nav library offers a comprehensive solution for integrating a mobile navigation menu into Angular applications. It’s designed to enhance user experience on mobile devices by providing a dynamic and responsive navigation system. The library leverages Angular’s powerful framework to offer a seamless and interactive menu system, which is both easy to integrate and customizable to fit the specific needs of an application. The primary goal of the library is to simplify the implementation of a mobile navigation menu, providing developers with a set of tools that facilitate the creation of a multi-level, collapsible, and accessible navigation structure.
 
 Central to the library is the <code dir="auto">WMLMobileNavZeroComponent</code> , which acts as the main container for the navigation system. This component utilizes the <code dir="auto">WMLInfiniteDropdownZeroProps</code> to dynamically generate a mobile-friendly, nested dropdown structure. The interactivity within the components allows for a highly customizable user experience, enabling developers to define their navigation hierarchy and visual style with ease. Customization is further supported through a variety of parameters and methods, allowing for dynamic content loading and real-time updates to the navigation structure. The typical implementation involves integrating the <code dir="auto">WMLMobileNavZeroComponent</code> within an Angular application, configuring its parameters to define the navigation items, and customizing its appearance and behavior to match the application’s design and functional requirements.
@@ -38,7 +40,7 @@ This is the same as adding custom components from wml infinite dropdown guide<if
 
 ### WMLMobileNavZeroProps
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>cdrefArray</td><td>Array&lt;ChangeDetectorRef&gt;</td><td>Array of ChangeDetectorRef instances for manual triggering of change detection</td></tr><tr><td>items</td><td>Array&lt;WMLInfiniteDropdownZeroProps&gt;</td><td>Array of dropdown properties to define navigation items</td></tr><tr><td>opened</td><td>Subject&lt;void&gt;</td><td>Subject that emits when the navigation is opened</td></tr><tr><td>closed</td><td>Subject&lt;void&gt;</td><td>Subject that emits when the navigation is closed</td></tr><tr><td>isPresent</td><td>boolean</td><td>Boolean flag to control the presence of the navigation on the DOM</td></tr><tr><td>state</td><td>”open” | “closed”</td><td>Current state of the navigation</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>cdrefArray</td><td>Array&lt;ChangeDetectorRef&gt;</td><td>Array of ChangeDetectorRef instances for manual triggering of change detection</td></tr><tr><td>items</td><td>Array&lt;WMLInfiniteDropdownZeroProps&gt;</td><td>Array of dropdown properties to define navigation items</td></tr><tr><td>opened</td><td>Subject&lt;void&gt;</td><td>Subject that emits when the navigation is opened</td></tr><tr><td>closed</td><td>Subject&lt;void&gt;</td><td>Subject that emits when the navigation is closed</td></tr><tr><td>isPresent</td><td>boolean</td><td>Boolean flag to control the presence of the navigation on the DOM</td></tr><tr><td>state</td><td>”open&#34;</td><td>&#34;closed”</td></tr></tbody></table>
 
 
 
@@ -529,4 +531,12 @@ updated package to conform with @windmillcode/wml-components-base
 
 ### v19.0.3 [11/20/24]
 
-updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-input/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-notify/)
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.4 [11/26/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.1000 [11/26/24]
+
+updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-input/)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-notify/)

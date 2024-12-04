@@ -1,5 +1,7 @@
 # WML Schematics
 
+This content is for the 19.0.0 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/angular-components/wml-schematics/)for up-to-date documentation.
+
 The Angular WML Schematics library serves as a foundational toolkit for Angular web application development, establishing a solid baseline from which developers can construct and expand their projects. Central to this library is the concept of WMLUIProperty, a fundamental element that encapsulates the essence of web application components, down to the finest detail. This library not only streamlines the development process by providing pre-defined subclasses like WMLRoute for routing, WMLView for dynamic components, and WMLMotionUIProperty for CSS animations and transitions but also ensures consistency and scalability across your application. Dive into the documentation to explore how these building blocks can be orchestrated to create robust, maintainable, and dynamic web applications.
 
 
@@ -261,18 +263,18 @@ updated package to conform with @windmillcode/wml-components-base
 
 updated package to conform with @windmillcode/wml-components-base
 
-### v19.0.0 [11/19/24]
+### v19.0.4 [11/19/24]
 
 updated package to conform with @windmillcode/wml-components-base
 
-### v19.0.1 [11/20/24]
+[FIX] -fixed a in template component to match the new standalone logic
 
-updated package to conform with @windmillcode/wml-components-base
+by default standalone is true and the SharedModule should be imported
 
-### v19.0.2 [11/20/24]
+if its false then its specified
 
-updated package to conform with @windmillcode/wml-components-base[FIX] fixed logic now that in v19 by default standalone is true
 
-### v19.0.3 [11/20/24]
 
-updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-popup/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-select/)
+### v19.0.1000 [11/26/24]
+
+updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-popup/)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-select/)

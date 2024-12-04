@@ -1,5 +1,7 @@
 # WML File Manager
 
+This content is for the 19.0.0 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/angular-components/wml-file-manager/)for up-to-date documentation.
+
 The Angular WML File Manager library is designed to enhance Angular applications by providing robust file upload capabilities. This library streamlines the process of integrating file upload functionality, addressing common challenges such as handling multiple file formats, validating file sizes, and providing feedback on the upload process. Its primary goal is to offer a configurable and efficient solution for developers to incorporate file upload features into their applications, with a focus on ease of use and flexibility.
 
 At the heart of the library are several key components that facilitate its core functionality. The library includes components for file selection, upload progress indication, and error handling. These components work in concert to provide a seamless user experience, allowing for the asynchronous upload of files with real-time progress feedback. Developers have the ability to customize these components, tailoring the file upload experience to their application’s specific needs. Parameters and services are exposed to enable customization, such as defining file size limits, specifying allowed file types, and customizing the UI elements. The library also supports interactivity, offering hooks and events that developers can leverage to create dynamic responses to the file upload process. In terms of implementation, the library encourages a modular approach, where developers can integrate and configure the file upload components within their existing Angular applications, ensuring flexibility and adaptability to various use cases.
@@ -537,4 +539,12 @@ updated package to conform with @windmillcode/wml-components-base
 
 ### v19.0.3 [11/20/24]
 
-updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-field/)[](/Windmillcode-Angular-CDK-Docs/angular-components/wml-form/)
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.4 [11/26/24]
+
+updated package to conform with @windmillcode/wml-components-base
+
+### v19.0.1000 [11/26/24]
+
+updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-field/)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-form/)
