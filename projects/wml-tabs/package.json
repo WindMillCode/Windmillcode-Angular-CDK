@@ -7,10 +7,10 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-tabs",
     "name": "@windmillcode/angular-wml-tabs",
     "peerDependencies": {
-        "@angular/common": "^19.0.3",
-        "@angular/core": "^19.0.3",
-        "@windmillcode/angular-wml-components-base": "^19.0.3000",
-        "@windmillcode/wml-components-base": "^19.0.3000"
+        "@angular/common": "^19.0.4",
+        "@angular/core": "^19.0.4",
+        "@windmillcode/angular-wml-components-base": "^19.0.4000",
+        "@windmillcode/wml-components-base": "^19.0.4000"
     },
     "private": false,
     "repository": {
@@ -20,5 +20,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "19.0.3000"
+    "version": "19.0.4000"
 }
