@@ -8,7 +8,8 @@
     "inlineSources": true,
     "types": [],
     "noUnusedLocals": false,
-    "noUnusedParameters": false
+    "noUnusedParameters": false,
+    "strict": false
   },
   "exclude": [
     "src/test.ts",

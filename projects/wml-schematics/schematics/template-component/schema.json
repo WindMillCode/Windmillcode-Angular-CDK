@@ -79,6 +79,10 @@
     "isPageModule":{
       "type":"boolean",
       "description":"whether the component is a page or not (page standalone component if you will)"
+    },
+    "isLayout":{
+      "type":"boolean",
+      "description":"whether the component is a layout or not"
     }
 
    },

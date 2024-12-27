@@ -25,6 +25,7 @@ export type TemplateComponentSchema = {
   flat?: boolean;
   type: string;
   isPageModule: boolean;
+  isLayout: boolean;
   route?: string;
   routeKey?: string;
   routesFilePath?:string;
@@ -87,6 +88,7 @@ export function generateComponentTemplate(
       templateSources.push(mergeWith(subTemplateSource, MergeStrategy.Overwrite));
     }
 
+
     let routingModulePath: Path | undefined;
 
     if(options.route){
@@ -95,6 +97,18 @@ export function generateComponentTemplate(
       options.isPageModule = true
     }
 
+    let appIntegration = noop()
+    if(options.isPageModule){
+      appIntegration = modifyAppToAddNewPage(options)
+    }
+    else if(options.isLayout){
+      appIntegration = (tree: Tree) => {
+        applyAdditionalAppFeaturesForNewComponent(options, tree);
+      }
+    }
+    else if(!options.isLayout){
+      appIntegration = addDeclarationToModuleCpntsArr(options)
+    }
     return  chain([
       externalSchematic('@schematics/angular', 'component', {
         name: options.name,
@@ -103,17 +117,16 @@ export function generateComponentTemplate(
         project: options.project,
         style: 'scss',
         skipImport: !options.isPageModule,
+        // skipImport:true,
         module:options.module
       }),
       options.route && options.standalone ? addRouteDeclarationToNgModule(options, routingModulePath,"component") : noop(),
-      options.isPageModule
-        ? modifyAppToAddNewPage(options)
-        : addDeclarationToModuleCpntsArr(options),
-        ...templateSources,
-        (tree: Tree, _context: SchematicContext) => {
-          excludeSubFolders(options, tree, _context);
-          return tree;
-        }
+      appIntegration,
+      ...templateSources,
+      (tree: Tree, _context: SchematicContext) => {
+        excludeSubFolders(options, tree, _context);
+        return tree;
+      }
 
     ])
   }
@@ -192,12 +205,7 @@ function addDeclarationToModuleCpntsArr(options: TemplateComponentSchema) {
       // add import path
       addTsImportPath(options, modulePath, changes, moduleFile, componentVar, tree);
 
-
-
-    // add scss
-    addScssToAppStyles(options, tree);
-
-    updateIdPrefixObj(options, tree)
+    applyAdditionalAppFeaturesForNewComponent(options, tree);
     return tree;
   };
 }
@@ -304,6 +312,12 @@ let addRouteEntryToEnvArr = (options: TemplateComponentSchema, tree: Tree) => {
     return;
   }
 };
+
+function applyAdditionalAppFeaturesForNewComponent(options: TemplateComponentSchema, tree:Tree) {
+  addScssToAppStyles(options, tree);
+
+  updateIdPrefixObj(options, tree);
+}
 
 function addScssToAppStyles(options: TemplateComponentSchema, tree: Tree) {
   try {
