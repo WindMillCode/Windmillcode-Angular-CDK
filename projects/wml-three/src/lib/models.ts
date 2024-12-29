@@ -1,6 +1,5 @@
 import { getGlobalObject, WMLConstructorDecorator } from "@windmillcode/wml-components-base";
 import { AmbientLight, BufferGeometry, Camera, CameraHelper, Clock, Controls, DirectionalLight, DirectionalLightHelper, HemisphereLight, HemisphereLightHelper, Intersection, Light, Loader, LoadingManager, Material, Mesh,  Object3D, Object3DEventMap, OrthographicCamera, PerspectiveCamera, PointLight, PointLightHelper, Raycaster, Renderer, Scene, SpotLight, SpotLightHelper, Vector2, Vector3, WebGLRenderer,InstancedMesh } from "three";
-import { GUI as DatGUI } from "dat.gui";
 import { GUI as LilGUI } from "lil-gui";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
@@ -11,13 +10,13 @@ import { CSS2DRenderer, CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRe
 export class WMLThreeProps<R = Renderer> {
   constructor(params: Partial<WMLThreeProps> = {}) { }
   renderers: Array<any| Renderer > = [new WebGLRenderer({ antialias: true })];
-  rendererParentElement = getGlobalObject().document.body;
+  rendererParentElement = getGlobalObject()?.document?.body;
   // TODO Array<Object3D> was there for a reason why
   scenes: Array<Scene> = [new Scene()]
   cameras: Array<Camera> = [];
   controls: Array<Controls<any>> = [];
   inspectors: Array<{
-    gui?: DatGUI | LilGUI,
+    gui?:  LilGUI,
     values: {
       [key: string]: {
         value:any,
@@ -67,10 +66,10 @@ export class WMLThreeProps<R = Renderer> {
   }
 
   preCheck = () => {
-    let myGlobal = getGlobalObject()
-    if(!myGlobal?.document) {
-      throw new Error('Three.js cannot work in your program, because it requires the "document" global.Browser environments usually hold this in the global window variable')
-    }
+    // let myGlobal = getGlobalObject()
+    // if(!myGlobal?.document) {
+    //   throw new Error('Three.js cannot work in your program, because it requires the "document" global.Browser environments usually hold this in the global window variable')
+    // }
   }
   animate = () => {
     this.animateFunctions.forEach(fn => fn({clock:this.clock}))
@@ -205,30 +204,31 @@ export class WMLThreeProps<R = Renderer> {
     }))
   }
   initInspectors = () => {
-    this.inspectors.forEach((inspector) => {
-      if(inspector.gui instanceof DatGUI){
-        Object.entries(inspector.values).forEach(([key,val]:any) => {
-          inspector.options = inspector.options ?? {}
-          inspector.options[key] = val.value
-        })
-        Object.entries(inspector.values).forEach(([key,val]:any) => {
-          let control
-          if(['boolean'].includes(typeof val.value) ){
-            control =inspector.gui.add(inspector.options, key)
-          }
-          if(['string'].includes(typeof val.value) ){
-            control =inspector.gui.addColor(inspector.options, key)
-          }
-          else if(typeof val.value === 'number'){
-            control = inspector.gui.add(inspector.options, key, val?.min,val?.max)
-          }
-          if(val?.onChange){
-            val?.onChange(val.value,true)
-            control.onChange(val?.onChange)
-          }
-        })
-      }
-    })
+    // TODO handle inspect logic for lil.gui dat.gui is removed does not work in server environments
+    // this.inspectors.forEach((inspector) => {
+    //   if(inspector.gui instanceof DatGUI){
+    //     Object.entries(inspector.values).forEach(([key,val]:any) => {
+    //       inspector.options = inspector.options ?? {}
+    //       inspector.options[key] = val.value
+    //     })
+    //     Object.entries(inspector.values).forEach(([key,val]:any) => {
+    //       let control
+    //       if(['boolean'].includes(typeof val.value) ){
+    //         control =inspector.gui.add(inspector.options, key)
+    //       }
+    //       if(['string'].includes(typeof val.value) ){
+    //         control =inspector.gui.addColor(inspector.options, key)
+    //       }
+    //       else if(typeof val.value === 'number'){
+    //         control = inspector.gui.add(inspector.options, key, val?.min,val?.max)
+    //       }
+    //       if(val?.onChange){
+    //         val?.onChange(val.value,true)
+    //         control.onChange(val?.onChange)
+    //       }
+    //     })
+    //   }
+    // })
   }
   initRayCasters = () => {
     this.rayCasters.forEach((item) => {

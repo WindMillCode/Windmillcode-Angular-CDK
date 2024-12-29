@@ -1,6 +1,16 @@
 
 import { detectFramework, getGlobalObject, updateClassString } from "./functions";
 
+export let WML_WINDOW: any;
+export let WML_DOCUMENT: any;
+
+try {
+  WML_WINDOW = window;
+  WML_DOCUMENT = document;
+} catch {
+  WML_WINDOW = {};
+  WML_DOCUMENT = {};
+}
 
 export type WMLUIFrameworkType='React' | 'Angular' | 'Vue.js' | 'Svelte' | 'Ember.js' | 'Backbone.js' | 'Preact' | 'Next.js' | 'Nuxt.js' | 'Gatsby' | 'Remix' | 'NestJS' | 'VanillaJS'| 'Lit' | 'Alpine.js' | 'Mithril.js' | 'Aurelia' | 'Riot.js' | 'Inferno' | 'Stencil'
 
@@ -528,8 +538,8 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
       return
     }
     // Create a new style element
-    this.currentStyleElement = document.createElement('style');
-    document.head.appendChild(this.currentStyleElement);
+    this.currentStyleElement = WML_DOCUMENT.createElement('style');
+    WML_DOCUMENT.head.appendChild(this.currentStyleElement);
 
     // Generate the keyframes string from the keyFrameStyles property
     let keyframes = `@keyframes ${this.keyFrameName} {`;
@@ -547,6 +557,7 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
     }`;
 
     // Insert the keyframes rule into the style element
+    // @ts-ignore
     let styleSheet = this.currentStyleElement.sheet!
     styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
 
@@ -626,7 +637,7 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
     }
   }
   getElement = ()=> {
-    return document.getElementsByClassName(this.keyFrameName)[0];
+    return WML_DOCUMENT.getElementsByClassName(this.keyFrameName)[0];
   }
   getTransitionProperties = ()=> {
     let htmlElement = this.getElement();

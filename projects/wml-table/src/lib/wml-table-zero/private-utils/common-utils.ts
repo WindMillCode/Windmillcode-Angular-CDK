@@ -1,5 +1,7 @@
+import { WML_DOCUMENT } from "@windmillcode/wml-components-base";
+
 export let getCSSVARS =(selector:string="wml-table-zero")=> {
-  let root = document.querySelector(selector) as HTMLElement;
+  let root = WML_DOCUMENT.querySelector(selector) as HTMLElement;
   let rootStyle = () => getComputedStyle(root);
   let cssvars= {
     wmlMobile: rootStyle().getPropertyValue('--wml-table-mobile'),

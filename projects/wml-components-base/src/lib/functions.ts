@@ -1,28 +1,30 @@
-import { WMLUIProperty,WMLUIFrameworkType, WMLUIGlobal, WMLDeepPartial } from "./models";
+import {WMLUIFrameworkType, WMLUIGlobal, WMLDeepPartial, WML_DOCUMENT, WML_WINDOW } from "./models";
+
 
 export function detectFramework(): WMLUIFrameworkType {
-  let myWindow: any = window ?? {};
+
+
   let detectedFramework: WMLUIFrameworkType = 'VanillaJS';
 
-  const isReact = !!document.querySelector('[data-reactroot], [data-reactid]');
-  const isAngular = !!myWindow.ng || !!document.querySelector('[ng-version]');
-  const isVue = !!myWindow.Vue;
-  const isSvelte = !!document.querySelector('[class*="svelte-"]');
-  const isEmber = !!myWindow.Ember || !!document.querySelector('[id*="ember"]');
-  const isBackbone = !!myWindow.Backbone;
-  const isPreact = !!myWindow.preact || !!document.querySelector('[data-preactroot]');
-  const isNext = !!document.querySelector('#__next') || !!myWindow.__NEXT_DATA__;
-  const isNuxt = !!myWindow.__NUXT__;
-  const isGatsby = !!myWindow.___gatsby;
-  const isRemix = typeof myWindow.__remixManifest !== 'undefined';
-  const isNest = !!document.querySelector('[ng-version]') && !!myWindow.NestFactory;
-  const isLit = !!myWindow.litHtml || !!document.querySelector('template[shadowroot]');
-  const isAlpine = !!myWindow.Alpine;
-  const isMithril = !!myWindow.m || !!document.querySelector('[data-mithril]');
-  const isAurelia = !!myWindow.Aurelia;
-  const isRiot = !!myWindow.riot;
-  const isInferno = !!myWindow.Inferno;
-  const isStencil = !!document.querySelector('script[data-stencil-namespace]');
+  const isReact = !!WML_DOCUMENT.querySelector?.('[data-reactroot], [data-reactid]');
+  const isAngular = !!WML_WINDOW.ng || !!WML_DOCUMENT.querySelector?.('[ng-version]');
+  const isVue = !!WML_WINDOW.Vue;
+  const isSvelte = !!WML_DOCUMENT.querySelector?.('[class*="svelte-"]');
+  const isEmber = !!WML_WINDOW.Ember || !!WML_DOCUMENT.querySelector?.('[id*="ember"]');
+  const isBackbone = !!WML_WINDOW.Backbone;
+  const isPreact = !!WML_WINDOW.preact || !!WML_DOCUMENT.querySelector?.('[data-preactroot]');
+  const isNext = !!WML_DOCUMENT.querySelector?.('#__next') || !!WML_WINDOW.__NEXT_DATA__;
+  const isNuxt = !!WML_WINDOW.__NUXT__;
+  const isGatsby = !!WML_WINDOW.___gatsby;
+  const isRemix = typeof WML_WINDOW.__remixManifest !== 'undefined';
+  const isNest = !!WML_DOCUMENT.querySelector?.('[ng-version]') && !!WML_WINDOW.NestFactory;
+  const isLit = !!WML_WINDOW.litHtml || !!WML_DOCUMENT.querySelector?.('template[shadowroot]');
+  const isAlpine = !!WML_WINDOW.Alpine;
+  const isMithril = !!WML_WINDOW.m || !!WML_DOCUMENT.querySelector?.('[data-mithril]');
+  const isAurelia = !!WML_WINDOW.Aurelia;
+  const isRiot = !!WML_WINDOW.riot;
+  const isInferno = !!WML_WINDOW.Inferno;
+  const isStencil = !!WML_DOCUMENT.querySelector?.('script[data-stencil-namespace]');
 
   if (isReact) detectedFramework = 'React';
   else if (isAngular) detectedFramework = 'Angular';
@@ -68,7 +70,8 @@ export function  getGlobalObject  ():any   {
     return globalThis; // ECMAScript standard global object
   }
   if (typeof window !== 'undefined') {
-    return window; // Browser environment
+    // TODO double check if this should be returned
+    return WML_WINDOW; // Browser environment
   }
   // @ts-ignore
   if (typeof global !== 'undefined') {
@@ -164,30 +167,29 @@ export let   toggleClassString =(targetClass:string,classList:Array<string>,pred
 /**
  * @obsolete, cant get to work properly
 */
-let WMLUIPropertyDecorator = (target:any,key:any)=>{
-  let text = target[key];
-  let uiProperty = new WMLUIProperty({
-    text
-  })
-  const getter = () => uiProperty;
+// let WMLUIPropertyDecorator = (target:any,key:any)=>{
+//   let text = target[key];
+//   let uiProperty = new WMLUIProperty({
+//     text
+//   })
+//   const getter = () => uiProperty;
 
-  const setter = (newValue: any) => {
-    uiProperty = newValue;
-  };
+//   const setter = (newValue: any) => {
+//     uiProperty = newValue;
+//   };
 
-  Object.defineProperty(target, key, {
-    get: getter,
-    set: setter,
-    enumerable: true,
-    configurable: true,
-  });
-}
+//   Object.defineProperty(target, key, {
+//     get: getter,
+//     set: setter,
+//     enumerable: true,
+//     configurable: true,
+//   });
+// }
 
 
 export let generateRandomNumber = (range: number = 100, additional: number = 0) => {
   return Math.floor(Math.random() * range) + additional
 }
-
 
 export let generateRandomColor = () => {
   let randomNumber = generateRandomNumber(0xFFFFFF);
@@ -195,11 +197,9 @@ export let generateRandomColor = () => {
   return `#${hexColor}`;
 };
 
-
 export let selectRandomOptionFromArray = (myArray: Array<any>, index?: number) => {
   return myArray[generateRandomNumber(index ?? myArray.length)]
 }
-
 
 export const replaceValuesWithPaths = <T = any>(
   obj: any,
