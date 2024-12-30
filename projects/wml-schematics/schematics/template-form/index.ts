@@ -323,7 +323,7 @@ let updateFormsServiceFile = (
   let snippet = ""
   let indentTarget: ts.Node
   let spacingPrefix = ""
-  console.log(options.fields)
+  // console.log(options.fields)
   let fieldsArray= options.fields.map((val)=>{
     return `${val}:new FormControl("")`
   })

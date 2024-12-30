@@ -650,8 +650,6 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
 }
 
 
-
-
 export class WMLWrapper<V=any,T=any> {
   constructor(props:Partial<WMLWrapper> = {}){
     Object.assign(

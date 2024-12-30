@@ -9,7 +9,7 @@
     "peerDependencies": {
         "@angular/common": "^19.0.5",
         "@angular/core": "^19.0.5",
-        "@windmillcode/angular-wml-button": "^19.0.5000"
+        "@windmillcode/angular-wml-button": "^19.0.5100"
     },
     "private": false,
     "repository": {
@@ -19,5 +19,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "19.0.5000"
+    "version": "19.0.5100"
 }

@@ -96,7 +96,7 @@ export class WMLOptionsZeroComponent {
   };
 
   ngAfterViewInit(): void {
-    console.log("got here")
+
     if(this.props.hasBeenInitalized){
       return
     }

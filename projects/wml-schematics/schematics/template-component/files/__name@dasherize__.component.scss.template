@@ -1,13 +1,12 @@
 <%  if(cpntType !== 'library'){ %>
-  @import "src/assets/styles/global.scss";
-  @import "src/assets/styles/common.scss";
-  @import "src/assets/styles/layouts.scss";
-  @import "src/assets/styles/media-queries.scss";
+  @use "src/assets/styles/global.scss";
+  @use "src/assets/styles/layouts.scss";
+  @use "src/assets/styles/media-queries.scss";
 <% } %>
 
 
 <%  if(cpntType === 'library'){ %>
-  @import '../../../../styles';
+  @use '../../../../styles';
 <% } %>
 
 
@@ -21,8 +20,8 @@
     .<%= classify(name) %>{
       &Main{
         &Pod{
-          <%  if(styleType === 'type0' && cpntType !== 'library'){ %>@include MainPodCssRule0;<% } %>
-          <%  if(styleType === 'type1' && cpntType !== 'library'){ %>@include MainPodCssRule1;<% } %>
+          <%  if(styleType === 'type0' && cpntType !== 'library'){ %>@include layouts.MainPodCssRule0;<% } %>
+          <%  if(styleType === 'type1' && cpntType !== 'library'){ %>@include layouts.MainPodCssRule1;<% } %>
           height:100%;
         }
       }
