@@ -8,8 +8,8 @@
     "peerDependencies": {
         "@angular/common": "^19.0.5",
         "@angular/core": "^19.0.5",
-        "@windmillcode/angular-wml-components-base": "^19.0.5100",
-        "@windmillcode/wml-components-base": "^19.0.5100"
+        "@windmillcode/angular-wml-components-base": "^19.0.5101",
+        "@windmillcode/wml-components-base": "^19.0.5101"
     },
     "private": false,
     "repository": {
@@ -22,5 +22,5 @@
         "postbuild": "npx copyfiles schematics/collection.json schematics/*/schema.json schematics/*/files/** ../../dist/wml-schematics/",
         "test": "npx ng test templates --code-coverage"
     },
-    "version": "19.0.5100"
+    "version": "19.0.5101"
 }

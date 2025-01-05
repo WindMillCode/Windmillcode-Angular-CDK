@@ -1,25 +1,20 @@
 <button [type]="props.attr.type"  *ngIf="props.btnIsPresent && !props.link && !props.routerLink"  (click)="props.click($event)" [class]="props.btnClass" [ngStyle]="props.btnStyle">
-  <ng-container *ngIf="props.iconIsPresent" >
-    <img *ngIf="props.iconType === 'img'" [src]=props.iconSrc [alt]="props.iconAlt" [class]="props.iconClass" />
-    <i *ngIf="props.iconType === 'icon'"  [class]="props.iconClass"></i>
-  </ng-container>
-  <span [ngStyle]="props.style" [class]="props.class">{{ props.text | translate}}</span>
+  <ng-container [ngTemplateOutlet]="buttonBody"></ng-container>
 </button>
 
 <a [href]="props.link" *ngIf="props.btnIsPresent && props.link"    [class]="props.btnClass + ' ' + classPrefix('MainLink0')" [ngStyle]="props.btnStyle">
-  <ng-container *ngIf="props.iconIsPresent" >
-    <img *ngIf="props.iconType === 'img'" [src]=props.iconSrc [alt]="props.iconAlt" [class]="props.iconClass" />
-    <i *ngIf="props.iconType === 'icon'"  [class]="props.iconClass"></i>
-  </ng-container>
-  <span [ngStyle]="props.style" [class]="props.class">{{ props.text | translate}}</span>
+  <ng-container [ngTemplateOutlet]="buttonBody"></ng-container>
 </a>
 
 <a [routerLink]="props.routerLink" *ngIf="props.btnIsPresent && props.routerLink"    [class]="props.btnClass + ' ' + classPrefix('MainLink0')" [ngStyle]="props.btnStyle">
+  <ng-container [ngTemplateOutlet]="buttonBody"></ng-container>
+</a>
+
+
+<ng-template #buttonBody>
   <ng-container *ngIf="props.iconIsPresent" >
     <img *ngIf="props.iconType === 'img'" [src]=props.iconSrc [alt]="props.iconAlt" [class]="props.iconClass" />
     <i *ngIf="props.iconType === 'icon'"  [class]="props.iconClass"></i>
   </ng-container>
   <span [ngStyle]="props.style" [class]="props.class">{{ props.text | translate}}</span>
-</a>
-
-
+</ng-template>

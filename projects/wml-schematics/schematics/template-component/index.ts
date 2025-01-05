@@ -148,7 +148,7 @@ function addDeclarationToModuleCpntsArr(options: TemplateComponentSchema) {
   return (tree: Tree) => {
     options.module = findModuleFromOptions(tree, {
       ...options,
-      standalone:options.isPageModule
+      standalone:options.isPageModule || options.standalone
     });
 
       let modulePath = options.module?.toString() as string;
@@ -165,7 +165,7 @@ function addDeclarationToModuleCpntsArr(options: TemplateComponentSchema) {
       );
       let entitiesVar: any
 
-      if(options.standalone !== false){
+      if(options.standalone !== true){
         entitiesVar = moduleFile.statements
         .filter(ts.isVariableStatement)
         .find((v) => {

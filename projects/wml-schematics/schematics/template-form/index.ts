@@ -13,6 +13,11 @@ let importsToAdd = [
     importMembers: ["WMLFormZeroProps"]
   },
   {
+    packageName: "@windmillcode/angular-wml-field",
+    importStatement: "import { WMLFieldZeroProps } from '@windmillcode/angular-wml-field';\n",
+    importMembers: ["WMLFieldZeroProps"]
+  },
+  {
     packageName: "@windmillcode/angular-wml-button",
     importStatement: "import { WMLButtonOneProps, WMLButtonPropsTypeEnum } from '@windmillcode/angular-wml-button';\n",
     importMembers: ["WMLButtonOneProps", "WMLButtonPropsTypeEnum"]
@@ -27,11 +32,11 @@ let importsToAdd = [
     importStatement: "import { BaseService, BaseServiceSubmitFormProps } from '@core/base/base.service';\n",
     importMembers: ["BaseService", "BaseServiceSubmitFormProps"]
   },
-  // {
-  //   packageName: "@core/utility/form-utils",
-  //   importStatement: "import { createFieldString , createI18nErrorMsgsBasedOnValidations } from '@core/utility/form-utils';\n",
-  //   importMembers: ["createFieldString","createI18nErrorMsgsBasedOnValidations"]
-  // },
+  {
+    packageName: "@core/utility/form-utils",
+    importStatement: "import { GenerateFieldProps } from '@core/utility/form-utils';\n",
+    importMembers: ["GenerateFieldProps"]
+  },
   {
     packageName: "@shared/services/forms/forms.service",
     importStatement: "import { FormsService } from '@shared/services/forms/forms.service';\n",

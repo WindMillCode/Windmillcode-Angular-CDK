@@ -108,8 +108,8 @@ export class <%= classify(name) %>Props {
   id = ""
   <% } %>
   setStateSubj = new Subject<<%= classify(name) %>Props>()
-  setState = (value)=>{
-    this.setStateSubj.next(value)
+  setState = (value?)=>{
+    this.setStateSubj.next(value ?? this)
   }
 }
 <% } %>

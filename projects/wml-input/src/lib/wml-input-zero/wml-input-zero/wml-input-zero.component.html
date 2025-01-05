@@ -5,7 +5,7 @@
   [style]="props.input.style"
   [class]="classPrefix('MainPodInput0') + props.input.class"
   [type]="props.type"
-  *ngIf="['input','password','number','email'].includes(props.type)"
+  *ngIf="['input','password','number','email','color','tel'].includes(props.type)"
   [formControlName]="props.wmlField.field.formControlName"
   (input)="triggerChange($event)"
   [placeholder]="props.input.placeholder  | translate"

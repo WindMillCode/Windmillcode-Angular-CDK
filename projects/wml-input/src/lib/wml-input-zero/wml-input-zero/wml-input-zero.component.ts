@@ -62,7 +62,7 @@ export class WMLInputZeroProps {
   range =new WMLInputZeroAreaProps({})
   checkbox = new WMLInputZeroCheckboxProps({})
   datetime = new WMLInputZeroDatetimeProps({})
-  type:"datetime"| "time"| "date"| "range"| "input" | "number" | "password" | "email" | "tel" | "textarea" | "checkbox" = "input";
+  type:HTMLInputElement["type"] = "input";
   wmlField: WMLFieldZeroProps = new WMLFieldZeroProps()
 }
 

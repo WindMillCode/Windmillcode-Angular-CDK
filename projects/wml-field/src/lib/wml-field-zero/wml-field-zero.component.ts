@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component,  HostBinding,  Input, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
-import {  generateClassPrefix, WMLCustomComponent, WMLDeepPartial, WMLWrapper } from '@windmillcode/wml-components-base';
+import {  generateClassPrefix, WMLCustomComponent, WMLDeepPartial, WMLUIProperty, WMLWrapper } from '@windmillcode/wml-components-base';
 import {addCustomComponent} from '@windmillcode/angular-wml-components-base';
 
 // rxjs
@@ -22,9 +22,10 @@ export class WMLFieldZeroPropsComponent  {
   ) { }
 
   classPrefix = generateClassPrefix('WMLField')
-  @Input("props") wmlField = new WMLFieldZeroProps()
+  @Input("props") props = new WMLFieldZeroProps()
   @HostBinding('class') myClass: string = this.classPrefix(`View`);
   @HostBinding('attr.id') myId?:string;
+  @HostBinding('style') myStyle: Partial<CSSStyleDeclaration> = {};
   ngUnsub= new Subject<void>()
   @ViewChild("customLabel",{read:ViewContainerRef,static:true}) customLabel!:ViewContainerRef;
   @ViewChild("customField", {read:ViewContainerRef,static:true}) customField!:ViewContainerRef;
@@ -32,17 +33,17 @@ export class WMLFieldZeroPropsComponent  {
 
   initComponent(){
 
-    if(this.wmlField){
-      this.wmlField.view.cdref = this.cdref
+    if(this.props){
+      this.props.view.cdref = this.cdref
     }
 
     ["label","field","error"].forEach((key,index0)=>{
-      if(  this.wmlField?.[key]?.type === "custom"){
-        this.wmlField[key].custom.props.wmlField = this.wmlField
+      if(  this.props?.[key]?.type === "custom"){
+        this.props[key].custom.props.wmlField = this.props
         addCustomComponent(
           [this.customLabel,this.customField,this.customError][index0],
-          this.wmlField[key].custom.cpnt as Type<any>,
-          this.wmlField[key].custom.props
+          this.props[key].custom.cpnt as Type<any>,
+          this.props[key].custom.props
         )
       }
     })
@@ -51,7 +52,8 @@ export class WMLFieldZeroPropsComponent  {
 
   ngOnInit(): void {
     this.initComponent()
-    this.myId = this.wmlField.view.id
+    this.myId = this.props.view.id
+    this.myStyle = this.props.view.style
   }
 
   ngOnDestroy(){
@@ -126,6 +128,8 @@ export class WMLFieldZeroProps<FC=any,FP=any> extends WMLWrapper {
   }= {
     type:"wml-card"
   }
+
+  parentContainer = new WMLUIProperty({})
   label = {
     type:"custom",
     custom:new WMLCustomComponent<WMLLabelZeroComponent,WMLLabelZeroProps>({

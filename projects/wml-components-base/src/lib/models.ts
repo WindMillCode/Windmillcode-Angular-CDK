@@ -292,7 +292,6 @@ export class WMLMotionUIProperty<V=any,T="animation" | "transition"> extends WML
     }
   }
   readonly animationEnd:(evt?:AnimationEvent)=> void =(evt)=>{
-
     let state = this.getGroupMotionState()
     let finalStyles ={
       "opening":this.keyFrameStyles["100%"],
