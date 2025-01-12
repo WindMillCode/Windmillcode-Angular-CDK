@@ -7,9 +7,9 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-options",
     "name": "@windmillcode/angular-wml-options",
     "peerDependencies": {
-        "@angular/common": "^19.0.5",
-        "@angular/core": "^19.0.5",
-        "@windmillcode/angular-wml-button": "^19.0.5100"
+        "@angular/common": "^19.0.6",
+        "@angular/core": "^19.0.6",
+        "@windmillcode/angular-wml-button": "^19.0.6000"
     },
     "private": false,
     "repository": {
@@ -19,5 +19,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "19.0.5100"
+    "version": "19.0.6000"
 }

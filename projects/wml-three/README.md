@@ -2,7 +2,7 @@
 
 This content is for the 19.0.0 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/intro/wml-three/)for up-to-date documentation.
 
-The WML Three.js library provides a streamlined way to integrate Three.js into your  applications. THIS LIBRARY DOES NOT DEPEND ON ANGULAR SO YOU CAN USE IN ANY PROJECT, Astro,React,Svelte,Vue,Next.js … It offers a set of classes and utilities that simplify the creation and management of 3D scenes, renderers, cameras, controls, lights, objects, and animations. This library is designed to help developers quickly set up interactive 3D graphics without dealing with the boile2.rplate code typically associated with Three.js.
+The WML Three.js library provides a streamlined way to integrate Three.js into your  applications. THIS LIBRARY DOES NOT DEPEND ON ANGULAR SO YOU CAN USE IN ANY PROJECT, Astro, React, Svelte, Vue, Next.js, etc.  It offers a set of classes and utilities that simplify the creation and management of 3D scenes, renderers, cameras, controls, lights, objects, and animations. This library is designed to help developers quickly set up interactive 3D graphics without dealing with the boilerplate code typically associated with Three.js.
 
 
 
