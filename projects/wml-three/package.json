@@ -7,7 +7,7 @@
     "name": "@windmillcode/wml-three",
     "peerDependencies": {
         "@types/three": "^0.170.0",
-        "@windmillcode/wml-components-base": "^19.1.0",
+        "@windmillcode/wml-components-base": "^19.1.1000",
         "lil-gui": "0.20.0",
         "three": "0.171.0"
     },
