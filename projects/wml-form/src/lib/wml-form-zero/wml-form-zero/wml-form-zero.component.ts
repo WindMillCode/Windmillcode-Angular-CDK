@@ -9,11 +9,11 @@ import { generateClassPrefix, WMLUIProperty, WMLView } from '@windmillcode/wml-c
 import { WMLFieldZeroProps } from '@windmillcode/angular-wml-field';
 
 @Component({
-    selector: 'wml-form-zero',
-    templateUrl: './wml-form-zero.component.html',
-    styleUrls: ['./wml-form-zero.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'wml-form-zero',
+  templateUrl: './wml-form-zero.component.html',
+  styleUrls: ['./wml-form-zero.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class WMLFormZeroComponent  {
 
