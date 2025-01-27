@@ -7,3 +7,4 @@ export * from './lib/models';
 
 export * from './lib/error-utils';
 export * from './lib/data-source-utils';
+export * from './lib/string-utils';
