@@ -60,6 +60,11 @@ export class WMLStringObject {
       .replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ""))
       .replace(/^(.)/, (_, c) => c.toUpperCase()) + suffix;
   };
+
+  snakeCase = (stripSuffix = true, suffix = "") => {
+    const str = stripSuffix ? this.prefix : this.orig;
+    return str.replace(/([A-Z])/g, "_$1").toLowerCase().replace(/[-\s]+/g, "_") + suffix;
+  };
 }
 
 
