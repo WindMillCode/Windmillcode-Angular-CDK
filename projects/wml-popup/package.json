@@ -7,10 +7,10 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-popup",
     "name": "@windmillcode/angular-wml-popup",
     "peerDependencies": {
-        "@angular/common": "^19.1.4",
-        "@angular/core": "^19.1.4",
-        "@windmillcode/angular-wml-components-base": "^19.1.4000",
-        "@windmillcode/wml-components-base": "^19.1.4000"
+        "@angular/common": "^19.1.5",
+        "@angular/core": "^19.1.5",
+        "@windmillcode/angular-wml-components-base": "^19.1.5000",
+        "@windmillcode/wml-components-base": "^19.1.5000"
     },
     "private": false,
     "repository": {
@@ -20,5 +20,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "19.1.4000"
+    "version": "19.1.5000"
 }

@@ -7,7 +7,7 @@
     "name": "@windmillcode/wml-three",
     "peerDependencies": {
         "@types/three": "0.172.0",
-        "@windmillcode/wml-components-base": "^19.1.4000",
+        "@windmillcode/wml-components-base": "^19.1.5000",
         "lil-gui": "0.20.0",
         "three": "0.172.0"
     },
@@ -19,5 +19,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "19.1.4000"
+    "version": "19.1.5000"
 }
