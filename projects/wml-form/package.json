@@ -7,10 +7,10 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-form",
     "name": "@windmillcode/angular-wml-form",
     "peerDependencies": {
-        "@angular/common": "^19.1.7",
-        "@angular/core": "^19.1.7",
-        "@windmillcode/angular-wml-components-base": "^19.1.7000",
-        "@windmillcode/wml-components-base": "^19.1.7000"
+        "@angular/common": "^19.2.0",
+        "@angular/core": "^19.2.0",
+        "@windmillcode/angular-wml-components-base": "^19.2.0",
+        "@windmillcode/wml-components-base": "^19.2.0"
     },
     "private": false,
     "repository": {
@@ -20,5 +20,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "19.1.7000"
+    "version": "19.2.0"
 }
