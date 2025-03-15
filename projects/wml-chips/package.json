@@ -7,13 +7,13 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-chips",
     "name": "@windmillcode/angular-wml-chips",
     "peerDependencies": {
-        "@angular/animations": "^19.2.1",
-        "@angular/cdk": "^19.2.1",
-        "@angular/common": "^19.2.1",
-        "@angular/core": "^19.2.1",
-        "@windmillcode/angular-wml-button": "^19.2.1000",
-        "@windmillcode/angular-wml-components-base": "^19.2.1000",
-        "@windmillcode/wml-components-base": "^19.2.1000"
+        "@angular/animations": "^19.2.2",
+        "@angular/cdk": "^19.2.2",
+        "@angular/common": "^19.2.2",
+        "@angular/core": "^19.2.2",
+        "@windmillcode/angular-wml-button": "^19.2.2000",
+        "@windmillcode/angular-wml-components-base": "^19.2.2000",
+        "@windmillcode/wml-components-base": "^19.2.2000"
     },
     "private": false,
     "repository": {
@@ -24,5 +24,5 @@
         "build": "npx ng build",
         "test": "npx ng test wml-chips --code-coverage"
     },
-    "version": "19.2.1000"
+    "version": "19.2.2000"
 }
