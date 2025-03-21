@@ -7,11 +7,11 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-slicebox",
     "name": "@windmillcode/angular-wml-slicebox",
     "peerDependencies": {
-        "@angular/common": "^19.2.2",
-        "@angular/core": "^19.2.2",
-        "@windmillcode/angular-wml-button": "^19.2.2000",
-        "@windmillcode/angular-wml-components-base": "^19.2.2000",
-        "@windmillcode/wml-components-base": "^19.2.2000"
+        "@angular/common": "^19.2.3",
+        "@angular/core": "^19.2.3",
+        "@windmillcode/angular-wml-button": "^19.2.3000",
+        "@windmillcode/angular-wml-components-base": "^19.2.3000",
+        "@windmillcode/wml-components-base": "^19.2.3000"
     },
     "private": false,
     "repository": {
@@ -21,5 +21,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "19.2.2000"
+    "version": "19.2.3000"
 }
