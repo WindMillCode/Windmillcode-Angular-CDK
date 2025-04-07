@@ -17,6 +17,10 @@ let getIndexInfo =(pageNum,pageSize)=>{
 export type WMLAPIPageRequestModelFilterPredicateEnum= {
   EQUALS,STARTSWITH,ENDSWITH,CONTAINS
 }
+
+/**
+ * @deprecated use WMLAPIPageRequestModel instead
+*/
 @WMLConstructorDecorator
 export class WMLAPIPaginationRequestModel {
   constructor(props: Partial<WMLAPIPaginationRequestModel> = {}) {}
@@ -35,6 +39,11 @@ export class WMLAPIPaginationRequestModel {
   }
 }
 
+export let WMLAPIPageRequestModel = WMLAPIPaginationRequestModel
+
+/**
+ * @deprecated use WMLAPIPageResponseModel instead
+*/
 @WMLConstructorDecorator
 export class WMLAPIPaginationResponseModel<DT=any>  {
   constructor(props: Partial<WMLAPIPaginationResponseModel<DT>> = {}) {}
@@ -82,3 +91,5 @@ export class WMLAPIPaginationResponseModel<DT=any>  {
     this.data = data.slice(startIndex, endIndex);
   }
 }
+
+export let  WMLAPIPageResponseModel = WMLAPIPaginationResponseModel

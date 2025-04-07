@@ -1,8 +1,6 @@
 # WML Panel
 
-This content is for the 19.0.0 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/angular-components/wml-panel/)for up-to-date documentation.
-
-t
+[Switch to Zen Mode](/Windmillcode-Angular-CDK-Docs/zen-mode/19.0.0/angular-components/wml-panel)function h(){const t=window.location.hash;document.querySelectorAll(".starlight-view-modes-switcher-a").forEach(e=>{e.href&&(e.href=e.href.split("#")[0]+t)})}h();window.addEventListener("hashchange",h);t
 The Angular WML Panel library is a sophisticated Angular module designed to offer a robust and versatile panel component system within Angular applications. This library is meticulously engineered to provide developers with a seamless and intuitive interface for creating, managing, and interactingtt with panels in their web applications. The core objective of the  library is to streamline the process of panel management, offering a suite of features that cater to various panel-related needs, such as dynamic content loading, customization, and responsive layout management.
 
 Central to the Angular WML Panel library are its principal components, which include the main panel container and various subcomponents designed for specific functionalities. The main panel component acts as the container, orchestrating the overall behavior and layout of the panel, while the subcomponents provide granular control over the panel’s content and interactive features. Developers can leverage these components to build intricate panel layouts, customize appearance and behavior, and dynamically load content based on application context or user interactions. The library emphasizes modularity and reusability, encouraging developers to utilize these components in a composable manner to construct complex yet maintainable panel structures. Furthermore, the library provides APIs and services that enable extensive customization and interactivity, allowing developers to tailor the panel’s functionality to meet the specific requirements of their applications.
@@ -13,7 +11,7 @@ Central to the Angular WML Panel library are its principal components, which inc
 
 To install the Angular WML Panel library, use the following npm command:
 
-Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-panel</span></div></div></code> 
+Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">@windmillcode/angular-wml-panel</span></div></div></code> 
 
 ## Usage
 
@@ -55,13 +53,33 @@ TRY YOUR self you can add additional panels to the items array and open and clos
 
 ## Changelog
 
-v0.1.0made WMLPanelItemProps.state private and ensured that you can  have default state by calling WMLPanelItemProps.open if you want the panel open
 
-v0.1.1closed panels dont slide backv0.1.2update to v16v0.1.3added a feature where the developer can added the container classv0.2.0fixed an issue where on it the panel would animate into the closed position
+
+### v0.1.0
+
+made WMLPanelItemProps.state private and ensured that you can  have default state by calling WMLPanelItemProps.open if you want the panel open
+
+
+
+### v0.1.1
+
+closed panels dont slide back
+
+### v0.1.2
+
+update to v16
+
+### v0.1.3
+
+added a feature where the developer can added the container class
+
+### v0.2.0
+
+fixed an issue where on it the panel would animate into the closed position
 
 ### v1.0.0
 
-fixed major problems concerning ngx-translate<code><div class="ec-line"><div class="code"><span style="--0:#809191;--1:#5E6578">// translate</span></div></div><div class="ec-line"><div class="code"><span style="--0:#809191;--1:#5E6578">// first make sure to have ONLY ONE in the imports for AppModule</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">TranslateModule</span><span style="--0:#C792EA;--1:#8D46B4">.</span><span style="--0:#82AAFF;--1:#3C63B3">forRoot</span><span style="--0:#D6DEEB;--1:#403F53">({</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">      </span></span><span style="--0:#D6DEEB;--1:#403F53">defaultLanguage: </span><span style="--0:#D9F5DD;--1:#111111">&#39;</span><span style="--0:#ECC48D;--1:#9B504E">en</span><span style="--0:#D9F5DD;--1:#111111">&#39;</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">      </span></span><span style="--0:#D6DEEB;--1:#403F53">loader: {</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">provide: TranslateLoader,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">useFactory: HttpLoaderFactory,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">deps:[HttpClient]</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">      </span></span><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">}),</span></div></div><div class="ec-line"><div class="code"><span style="--0:#809191;--1:#5E6578">// then</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">WmlPanelNGXTranslateModule</span></div></div><div class="ec-line"><div class="code"><span style="--0:#809191;--1:#5E6578">// for regular</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">WmlPanelModule</span></div></div></code>
+fixed major problems concerning ngx-translate<code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5D6376">// translate</span></div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5D6376">// first make sure to have ONLY ONE in the imports for AppModule</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">TranslateModule</span><span style="--0:#C792EA;--1:#8844AE">.</span><span style="--0:#82AAFF;--1:#3B61B0">forRoot</span><span style="--0:#D6DEEB;--1:#403F53">({</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">      </span></span><span style="--0:#D6DEEB;--1:#403F53">defaultLanguage: </span><span style="--0:#D9F5DD;--1:#111111">&#39;</span><span style="--0:#ECC48D;--1:#984E4D">en</span><span style="--0:#D9F5DD;--1:#111111">&#39;</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">      </span></span><span style="--0:#D6DEEB;--1:#403F53">loader: {</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">provide: TranslateLoader,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">useFactory: HttpLoaderFactory,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">deps:[HttpClient]</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">      </span></span><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">}),</span></div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5D6376">// then</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">WmlPanelNGXTranslateModule</span></div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5D6376">// for regular</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">WmlPanelModule</span></div></div></code>
 
 %!(EXTRA string=
 

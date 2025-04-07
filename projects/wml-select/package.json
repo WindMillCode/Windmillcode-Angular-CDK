@@ -9,10 +9,10 @@
     "peerDependencies": {
         "@angular/common": "^19.2.5",
         "@angular/core": "^19.2.5",
-        "@windmillcode/angular-wml-components-base": "^19.2.5000",
-        "@windmillcode/angular-wml-field": "^19.2.5000",
-        "@windmillcode/angular-wml-infinite-dropdown": "^19.2.5000",
-        "@windmillcode/wml-components-base": "^19.2.5000"
+        "@windmillcode/angular-wml-components-base": "^19.2.5001",
+        "@windmillcode/angular-wml-field": "^19.2.5001",
+        "@windmillcode/angular-wml-infinite-dropdown": "^19.2.5001",
+        "@windmillcode/wml-components-base": "^19.2.5001"
     },
     "private": false,
     "repository": {
@@ -22,5 +22,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "19.2.5000"
+    "version": "19.2.5001"
 }

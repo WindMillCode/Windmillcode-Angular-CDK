@@ -1,8 +1,6 @@
 # WML Toggle
 
-This content is for the 19.0.0 version. Switch to the[latest version](/Windmillcode-Angular-CDK-Docs/angular-components/wml-toggle/)for up-to-date documentation.
-
-The Angular WML Toggle library offers a customizable toggle switch component for Angular applications. This library provides an easy-to-integrate toggle switch that enhances user interfaces by allowing binary choices such as settings or preferences. The core component, <code dir="auto">WMLToggleZeroComponent</code> , is designed to be flexible and modular, enabling developers to tailor its appearance and behavior to fit their application’s requirements. Features include:
+[Switch to Zen Mode](/Windmillcode-Angular-CDK-Docs/zen-mode/19.0.0/angular-components/wml-toggle)function h(){const t=window.location.hash;document.querySelectorAll(".starlight-view-modes-switcher-a").forEach(e=>{e.href&&(e.href=e.href.split("#")[0]+t)})}h();window.addEventListener("hashchange",h);The Angular WML Toggle library offers a customizable toggle switch component for Angular applications. This library provides an easy-to-integrate toggle switch that enhances user interfaces by allowing binary choices such as settings or preferences. The core component, <code dir="auto">WMLToggleZeroComponent</code> , is designed to be flexible and modular, enabling developers to tailor its appearance and behavior to fit their application’s requirements. Features include:
 
 Customizable Appearance: Modify the toggle’s background colors, text, and styles.Event Handling: Define actions on toggle state changes.Integration with Forms: Supports reactive forms and updates based on form control status.Responsive Design: Adapts to different screen sizes for a consistent user experience.
 
@@ -10,7 +8,7 @@ Customizable Appearance: Modify the toggle’s background colors, text, and styl
 
 To install the WML Toggle library, use the following command:
 
-Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-s</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">@windmillcode/angular-wml-toggle</span></div></div></code> 
+Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">npm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">install</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">-s</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">--verbose</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">@windmillcode/angular-wml-toggle</span></div></div></code> 
 
 ## Usage
 
