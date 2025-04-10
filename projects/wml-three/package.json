@@ -6,10 +6,10 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/intro/wml-three",
     "name": "@windmillcode/wml-three",
     "peerDependencies": {
-        "@types/three": "0.172.0",
-        "@windmillcode/wml-components-base": "^19.2.5100",
+        "@types/three": ">=0.172.0",
+        "@windmillcode/wml-components-base": "^19.2.6000",
         "lil-gui": "0.20.0",
-        "three": "0.172.0"
+        "three": ">=0.172.0"
     },
     "private": false,
     "repository": {
@@ -19,5 +19,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "19.2.5100"
+    "version": "19.2.6000"
 }
