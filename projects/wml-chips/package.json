@@ -11,9 +11,9 @@
         "@angular/cdk": "^19.2.5",
         "@angular/common": "^19.2.5",
         "@angular/core": "^19.2.5",
-        "@windmillcode/angular-wml-button": "^19.2.5001",
-        "@windmillcode/angular-wml-components-base": "^19.2.5001",
-        "@windmillcode/wml-components-base": "^19.2.5001"
+        "@windmillcode/angular-wml-button": "^19.2.5100",
+        "@windmillcode/angular-wml-components-base": "^19.2.5100",
+        "@windmillcode/wml-components-base": "^19.2.5100"
     },
     "private": false,
     "repository": {
@@ -24,5 +24,5 @@
         "build": "npx ng build",
         "test": "npx ng test wml-chips --code-coverage"
     },
-    "version": "19.2.5001"
+    "version": "19.2.5100"
 }

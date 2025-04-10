@@ -58,7 +58,7 @@ export class WMLAPIPaginationResponseModel<DT=any>  {
     startOrderValue?:number
   }={}
   pageNum:number = 0
-  pageSize:number = 0
+  pageSize:number = 5
   totalPages:number = 0
   totalItems:number = 0
   getIndexInfo (){
@@ -67,13 +67,12 @@ export class WMLAPIPaginationResponseModel<DT=any>  {
   calculateCurrentState(totalPages?: number, totalItems?: number, pageSize?: number) {
     let displayPageNum = this.pageNum + 1;
 
+    this.pageSize = pageSize ?? this.data.length;
     if (totalItems) {
-      this.pageSize = this.data.length;
       this.totalItems = totalItems;
-      this.totalPages = Math.ceil(totalItems / (pageSize || this.pageSize));
+      this.totalPages = Math.ceil(totalItems / this.pageSize);
     } else {
-      totalPages = totalPages || displayPageNum;
-      this.pageSize = this.data.length;
+      totalPages = totalPages ?? displayPageNum;
       this.totalPages = totalPages;
       this.totalItems = totalPages * this.pageSize;
     }
