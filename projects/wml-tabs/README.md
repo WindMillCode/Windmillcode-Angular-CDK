@@ -1,6 +1,6 @@
 # WML Tabs
 
-[Switch to Zen Mode](/Windmillcode-Angular-CDK-Docs/zen-mode/19.0.0/angular-components/wml-tabs)function h(){const t=window.location.hash;document.querySelectorAll(".starlight-view-modes-switcher-a").forEach(e=>{e.href&&(e.href=e.href.split("#")[0]+t)})}h();window.addEventListener("hashchange",h);The WML Tabs Zero component is a customizable tab component for Angular applications. It offers the following features:
+[starlightViewModes.switchTo](/Windmillcode-Angular-CDK-Docs/zen-mode/19.0.0/angular-components/wml-tabs)function h(){const t=window.location.hash;document.querySelectorAll(".starlight-view-modes-switcher-a").forEach(e=>{e.href&&(e.href=e.href.split("#")[0]+t)})}h();window.addEventListener("hashchange",h);The WML Tabs Zero component is a customizable tab component for Angular applications. It offers the following features:
 
 Customizable Headers: Each tab can have a custom header or a predefined WML tab header.Dynamic Tab Content: The body of each tab can be customized to include any component.Event Handling: The component provides events for tab changes and updates.Responsive Design: The component is designed to be responsive and adapts to various screen sizes.Custom Styling: Supports custom styles through SCSS variables and mixins.
 

@@ -1,6 +1,6 @@
 # WML Chips
 
-[Switch to Zen Mode](/Windmillcode-Angular-CDK-Docs/zen-mode/19.0.0/angular-components/wml-chips)function h(){const t=window.location.hash;document.querySelectorAll(".starlight-view-modes-switcher-a").forEach(e=>{e.href&&(e.href=e.href.split("#")[0]+t)})}h();window.addEventListener("hashchange",h);The Angular WML Chips library provides a highly customizable chips component for Angular applications. It offers a variety of features to enhance user interaction and improve the overall user experience.
+[starlightViewModes.switchTo](/Windmillcode-Angular-CDK-Docs/zen-mode/19.0.0/angular-components/wml-chips)function h(){const t=window.location.hash;document.querySelectorAll(".starlight-view-modes-switcher-a").forEach(e=>{e.href&&(e.href=e.href.split("#")[0]+t)})}h();window.addEventListener("hashchange",h);The Angular WML Chips library provides a highly customizable chips component for Angular applications. It offers a variety of features to enhance user interaction and improve the overall user experience.
 
 
 

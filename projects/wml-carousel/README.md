@@ -1,6 +1,6 @@
 # WML Carousel (3D)
 
-[Switch to Zen Mode](/Windmillcode-Angular-CDK-Docs/zen-mode/19.0.0/angular-components/wml-carousel)function h(){const t=window.location.hash;document.querySelectorAll(".starlight-view-modes-switcher-a").forEach(e=>{e.href&&(e.href=e.href.split("#")[0]+t)})}h();window.addEventListener("hashchange",h);The library is for carousels of all different types
+[starlightViewModes.switchTo](/Windmillcode-Angular-CDK-Docs/zen-mode/19.0.0/angular-components/wml-carousel)function h(){const t=window.location.hash;document.querySelectorAll(".starlight-view-modes-switcher-a").forEach(e=>{e.href&&(e.href=e.href.split("#")[0]+t)})}h();window.addEventListener("hashchange",h);The library is for carousels of all different types
 
 The <code dir="auto">WMLCarouselOneComponent</code> is an Angular component that provides a customizable 3D carousel experience. It allows developers to create interactive and dynamic carousels with customizable slides and controls. The functionality of the component is in the prop class passed to the component so if you have your own 3d carousel you would like to design all you need to worry about is styling.It is designed to be flexible and extendable, enabling developers to tailor the carousel to their specific needs.
 
