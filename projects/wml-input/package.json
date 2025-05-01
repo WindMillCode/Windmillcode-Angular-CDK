@@ -7,10 +7,10 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-input",
     "name": "@windmillcode/angular-wml-input",
     "peerDependencies": {
-        "@angular/common": "^19.2.8",
-        "@angular/core": "^19.2.8",
-        "@windmillcode/angular-wml-components-base": "^19.2.8000",
-        "@windmillcode/wml-components-base": "^19.2.8000"
+        "@angular/common": "^19.2.9",
+        "@angular/core": "^19.2.9",
+        "@windmillcode/angular-wml-components-base": "^19.2.9000",
+        "@windmillcode/wml-components-base": "^19.2.9000"
     },
     "private": false,
     "repository": {
@@ -20,5 +20,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "19.2.8000"
+    "version": "19.2.9000"
 }
