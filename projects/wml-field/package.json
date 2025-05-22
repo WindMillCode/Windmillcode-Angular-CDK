@@ -7,10 +7,10 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-field",
     "name": "@windmillcode/angular-wml-field",
     "peerDependencies": {
-        "@angular/common": "^19.2.11",
-        "@angular/core": "^19.2.11",
-        "@windmillcode/angular-wml-components-base": "^19.2.11000",
-        "@windmillcode/wml-components-base": "^19.2.11000"
+        "@angular/common": "^19.2.12",
+        "@angular/core": "^19.2.12",
+        "@windmillcode/angular-wml-components-base": "^19.2.12000",
+        "@windmillcode/wml-components-base": "^19.2.12000"
     },
     "private": false,
     "repository": {
@@ -20,5 +20,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "19.2.11000"
+    "version": "19.2.12000"
 }
