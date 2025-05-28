@@ -7,10 +7,10 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-accordion",
     "name": "@windmillcode/angular-wml-accordion",
     "peerDependencies": {
-        "@angular/common": "^19.2.13",
-        "@angular/core": "^19.2.13",
-        "@windmillcode/angular-wml-components-base": "^19.2.13000",
-        "@windmillcode/wml-components-base": "^19.2.13000"
+        "@angular/common": "^19.2.14",
+        "@angular/core": "^19.2.14",
+        "@windmillcode/angular-wml-components-base": "^19.2.14000",
+        "@windmillcode/wml-components-base": "^19.2.14000"
     },
     "private": false,
     "repository": {
@@ -20,5 +20,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "19.2.13000"
+    "version": "19.2.14000"
 }
