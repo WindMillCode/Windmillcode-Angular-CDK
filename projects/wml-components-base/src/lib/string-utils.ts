@@ -51,12 +51,15 @@ export class WMLStringObject {
   };
 
   upperCase = (stripSuffix = true, suffix = "") => {
-    return (stripSuffix ? this.prefix : this.orig).toUpperCase() + suffix;
+    const str = stripSuffix ? this.prefix : this.orig;
+    return str
+      .toUpperCase() + suffix;
   };
 
   titleCase = (stripSuffix = true, suffix = "") => {
     const str = stripSuffix ? this.prefix : this.orig;
     return str
+      .toLowerCase()
       .replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ""))
       .replace(/^(.)/, (_, c) => c.toUpperCase()) + suffix;
   };
