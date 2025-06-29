@@ -537,4 +537,6 @@ Terminal window <code><div class="ec-line"><div class="code"><span style="--0:#8
 
 ### v19.0.1000 [11/26/24]
 
-[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-options/)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-popup/)
+[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[Previous
+WML Options](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-options/)[Next
+WML Popup](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-popup/)

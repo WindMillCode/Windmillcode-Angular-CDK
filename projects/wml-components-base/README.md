@@ -1160,4 +1160,5 @@ Deprecated comments on <code dir="auto">cdref</code> getter and setter were remo
 
 ### v19.0.1000 [11/26/24]
 
-[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/intro/wml-three)
+[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[Next
+WML Three](/Windmillcode-Angular-CDK-Docs/19.0.0/intro/wml-three)

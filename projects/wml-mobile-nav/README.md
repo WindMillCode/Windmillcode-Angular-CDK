@@ -537,4 +537,6 @@ fixed a css issues where nav items that opened to the side were not seen
 
 ### v19.0.1000 [11/26/24]
 
-[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-input/)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-notify/)
+[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[Previous
+WML Input](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-input/)[Next
+WML Notify](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-notify/)

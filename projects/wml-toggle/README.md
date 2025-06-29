@@ -480,4 +480,5 @@ In wml-toggle-zero.component.ts, adjusted toggle method to conditionally patch f
 
 ### v19.0.1000 [11/26/24]
 
-[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-tabs/)
+[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[Previous
+WML Tabs](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-tabs/)

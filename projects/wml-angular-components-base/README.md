@@ -195,4 +195,6 @@ WMLAngularCustomComponent from their orginal respective part which exlude “Ang
 
 ### v19.0.1000 [11/26/24]
 
-[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-accordion/)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-button/)
+[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[Previous
+WML Accordion](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-accordion/)[Next
+WML Button](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-button/)

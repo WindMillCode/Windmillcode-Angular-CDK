@@ -575,4 +575,6 @@ Introduced @windmillcode/angular-wml-button-zero in dependencies to enhance butt
 
 ### v19.0.1000 [11/26/24]
 
-[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-carousel/)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-field/)
+[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[Previous
+WML Carousel (3D)](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-carousel/)[Next
+WML Field](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-field/)

@@ -504,4 +504,6 @@ At the core of the Angular WML Select library are its central components: <code 
 
 ### v19.0.1000 [11/26/24]
 
-[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-schematics/)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-slicebox/)
+[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[Previous
+WML Schematics](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-schematics/)[Next
+WML Slicebox (3D)](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-slicebox/)

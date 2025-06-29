@@ -252,4 +252,6 @@ Customizable option items with dynamic content.Support for reactive forms, allow
 
 ### v19.0.1000 [11/26/24]
 
-[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-notify/)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-panel/)
+[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[Previous
+WML Notify](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-notify/)[Next
+WML Panel](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-panel/)

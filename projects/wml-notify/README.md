@@ -530,4 +530,6 @@ At the heart of the <code dir="auto">wml-notify</code> library are two central c
 
 ### v19.0.1000 [11/26/24]
 
-[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-mobile-nav/)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-options/)
+[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[Previous
+WML Mobile Nav](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-mobile-nav/)[Next
+WML Options](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-options/)

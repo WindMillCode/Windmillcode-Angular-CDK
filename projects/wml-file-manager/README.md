@@ -549,4 +549,6 @@ Changed the updateFormArrayPredicate function in WMLFileUploadZeroComponent of w
 
 ### v19.0.1000 [11/26/24]
 
-[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-field/)[](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-form/)
+[Section titled “v19.0.1000 [11/26/24]”](#v1901000-112624)updated package to conform with @windmillcode/wml-components-base[Previous
+WML Field](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-field/)[Next
+WML Form](/Windmillcode-Angular-CDK-Docs/19.0.0/angular-components/wml-form/)
