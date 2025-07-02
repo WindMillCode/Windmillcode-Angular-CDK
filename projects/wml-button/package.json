@@ -7,10 +7,10 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-button",
     "name": "@windmillcode/angular-wml-button",
     "peerDependencies": {
-        "@angular/common": "^20.0.2",
-        "@angular/core": "^20.0.2",
-        "@windmillcode/angular-wml-components-base": "^20.0.2000",
-        "@windmillcode/wml-components-base": "^20.0.2000"
+        "@angular/common": "^20.0.3",
+        "@angular/core": "^20.0.3",
+        "@windmillcode/angular-wml-components-base": "^20.0.3000",
+        "@windmillcode/wml-components-base": "^20.0.3000"
     },
     "private": false,
     "repository": {
@@ -20,5 +20,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "20.0.2000"
+    "version": "20.0.3000"
 }
