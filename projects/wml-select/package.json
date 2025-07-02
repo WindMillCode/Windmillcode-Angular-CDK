@@ -7,12 +7,12 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-select",
     "name": "@windmillcode/angular-wml-select",
     "peerDependencies": {
-        "@angular/common": "^20.0.4",
-        "@angular/core": "^20.0.4",
-        "@windmillcode/angular-wml-components-base": "^20.0.4000",
-        "@windmillcode/angular-wml-field": "^20.0.4000",
-        "@windmillcode/angular-wml-infinite-dropdown": "^20.0.4000",
-        "@windmillcode/wml-components-base": "^20.0.4000"
+        "@angular/common": "^20.0.5",
+        "@angular/core": "^20.0.5",
+        "@windmillcode/angular-wml-components-base": "^20.0.5000",
+        "@windmillcode/angular-wml-field": "^20.0.5000",
+        "@windmillcode/angular-wml-infinite-dropdown": "^20.0.5000",
+        "@windmillcode/wml-components-base": "^20.0.5000"
     },
     "private": false,
     "repository": {
@@ -22,5 +22,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "20.0.4000"
+    "version": "20.0.5000"
 }
