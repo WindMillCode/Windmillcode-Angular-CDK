@@ -7,9 +7,9 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-angular-components-base",
     "name": "@windmillcode/angular-wml-components-base",
     "peerDependencies": {
-        "@angular/common": "^20.1.1",
-        "@angular/core": "^20.1.1",
-        "@windmillcode/wml-components-base": "^20.1.1000"
+        "@angular/common": "^20.1.2",
+        "@angular/core": "^20.1.2",
+        "@windmillcode/wml-components-base": "^20.1.2000"
     },
     "private": false,
     "repository": {
@@ -19,5 +19,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "20.1.1000"
+    "version": "20.1.2000"
 }
