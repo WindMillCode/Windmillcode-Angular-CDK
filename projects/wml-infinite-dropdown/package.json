@@ -7,10 +7,10 @@
     "homepage": "https://windmillcode.github.io/Windmillcode-Angular-CDK-Docs/angular-components/wml-infinite-dropdown",
     "name": "@windmillcode/angular-wml-infinite-dropdown",
     "peerDependencies": {
-        "@angular/common": "^20.0.6",
-        "@angular/core": "^20.0.6",
-        "@windmillcode/angular-wml-components-base": "^20.0.6000",
-        "@windmillcode/wml-components-base": "^20.0.6000"
+        "@angular/common": "^20.1.0",
+        "@angular/core": "^20.1.0",
+        "@windmillcode/angular-wml-components-base": "^20.1.0",
+        "@windmillcode/wml-components-base": "^20.1.0"
     },
     "private": false,
     "repository": {
@@ -20,5 +20,5 @@
     "scripts": {
         "build": "npx ng build"
     },
-    "version": "20.0.6000"
+    "version": "20.1.0"
 }
